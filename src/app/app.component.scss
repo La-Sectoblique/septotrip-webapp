@@ -15,13 +15,9 @@ mgl-map{
 }
 
 .point-info{
-
-}
-
-.point-wrapper {
     position: relative;
     border: 1px solid black;
-    margin: .25rem;
+    margin: 0 .25rem;
     border-radius: .75rem;
     padding: .5rem;
 }
@@ -37,7 +33,7 @@ mgl-map{
     margin: .25rem;
 
     &:hover {
-        background-color: rgb(226, 226, 226);
+        background-color: rgb(255, 144, 144);
         cursor: pointer;
     }
 }
@@ -54,4 +50,23 @@ p {
 
 .txt-undernline{
     text-decoration: underline;
+}
+
+.travel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .line {
+        background-color: black;
+        width: 2px;
+        height: 30px;
+    }
+    .point {
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        background-color: black;
+        position: absolute;
+    }
 }

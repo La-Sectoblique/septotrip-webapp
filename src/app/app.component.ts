@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
   selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null = null;
   cursorStyle: string = "";
 
+  imageLoaded = false;
+
   points: GeoJSON.FeatureCollection<GeoJSON.Point> = {
     type: 'FeatureCollection',
     features: [{
@@ -28,6 +30,17 @@ export class AppComponent implements OnInit {
           'icon': 'border-dot-13',
           'title': 'Départ',
           'description': 'Point de départ de notre expédition !'
+        },
+      },{
+        'type': 'Feature',
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [7.750149, 48.585551]
+        },
+        'properties': {
+          'icon': 'border-dot-13',
+          'title': 'second',
+          'description': 'notre expédition !'
         },
       },]
   };
