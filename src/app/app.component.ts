@@ -7,10 +7,11 @@ import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'septotrip-webapp';
+  newPointName = '';
+  newPointDesc = '';
   
-  mapCenter: LngLatLike = [7.750290, 60.581571];
-  mapZoom: [number] = [17];
+  mapCenter: LngLatLike = [7.750149, 48.581551];
+  mapZoom: [number] = [14];
 
   selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null = null;
   cursorStyle: string = "";
@@ -21,11 +22,12 @@ export class AppComponent implements OnInit {
         'type': 'Feature',
         'geometry': {
           'type': 'Point',
-          'coordinates': [7.750390, 60.581571]
+          'coordinates': [7.750149, 48.585551]
         },
         'properties': {
           'icon': 'border-dot-13',
-          'title': 'Départ'
+          'title': 'Départ',
+          'description': 'Point de départ de notre expédition !'
         },
       },]
   };
@@ -40,6 +42,9 @@ export class AppComponent implements OnInit {
   }
 
   mapClick(evt: MapMouseEvent): void {
+    if(this.newPointName.length <= 0) {
+      return;
+    }
     this.points = {
       ...this.points,
       features: [
@@ -52,11 +57,14 @@ export class AppComponent implements OnInit {
           },
           'properties': {
             'icon': 'border-dot-13',
-            'title': 'nouveau'
+            'title': this.newPointName,
+            'description': this.newPointDesc || ''
           },
         }
       ]
     }
+    this.newPointName = '';
+    this.newPointDesc = '';
   }
 
   delete(idx: number): void {

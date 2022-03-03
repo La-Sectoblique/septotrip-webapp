@@ -2,10 +2,22 @@
 <div class="page">
   <div class="menu">
     <h4>MAP</h4>
+    <div class="inputs-wrapper">
+      <label for="pointName">Nom du point:</label>
+      <input id="pointName" type="text" placeholder="ex: Cathédrale Strasbourg" [(ngModel)]="newPointName" data-form-type="other"/>
+      <label for="pointDescription"></label>
+      <textarea id="pointDescription"
+        [(ngModel)]="newPointDesc"
+        placeholder="ex: Un très bel endroit à visiter ! Entrée du côté gauche.
+Possibilité de monter en haut de la cathédrale via un escalier sur le côté droit."
+        rows="5"
+      ></textarea>
+    </div>
     <div *ngFor="let point of points.features; let idx = index" class="point-wrapper">
       <div class="point-info">
-        <p>Point: {{point.properties?.['title']}}</p>
-        <p>Coords: {{point.geometry.coordinates}}</p>
+        <p><span class="txt-undernline">Point:</span> {{point.properties?.['title']}}</p>
+        <p><span class="txt-undernline">Description</span></p>
+        <p>{{point.properties?.['description']}}</p>
       </div>
       <button class="delete-point-btn"
         (click)="delete(idx)"
@@ -33,7 +45,7 @@
       [layout]="{
         'icon-image': '{icon}',
         'icon-allow-overlap': true,
-        'icon-size': 5
+        'icon-size': 3
       }"
       (click)="onClick($event)"
       (mouseEnter)="cursorStyle = 'pointer'"
