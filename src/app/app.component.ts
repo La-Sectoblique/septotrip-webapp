@@ -19,14 +19,14 @@ export class AppComponent implements OnInit {
     type: 'FeatureCollection',
     features: [{
         'type': 'Feature',
-        'properties': {
-          // tslint:disable-next-line:max-line-length
-          'icon': 'pin-outline'
-        },
         'geometry': {
           'type': 'Point',
           'coordinates': [7.750390, 60.581571]
-        }
+        },
+        'properties': {
+          'icon': 'border-dot-13',
+          'title': 'Départ'
+        },
       },]
   };
 
@@ -46,13 +46,14 @@ export class AppComponent implements OnInit {
         ...this.points.features,
         {
           'type': 'Feature',
-            'properties': {
-              'icon': 'pin-outline'
-            },
-            'geometry': {
-              'type': 'Point',
-              'coordinates': [evt.lngLat.lng, evt.lngLat.lat]
-            }
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [evt.lngLat.lng, evt.lngLat.lat]
+          },
+          'properties': {
+            'icon': 'border-dot-13',
+            'title': 'nouveau'
+          },
         }
       ]
     }

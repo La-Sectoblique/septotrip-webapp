@@ -1,7 +1,13 @@
 
 <div class="page">
   <div class="menu">
-    <h4>COUCOU</h4>
+    <h4>MAP</h4>
+    <div>
+      <div *ngFor="let point of points.features" class="point-info">
+        <p>Point: {{point.properties?.['title']}}</p>
+        <p>Coords: {{point.geometry.coordinates}}</p>
+      </div>
+    </div>
   </div>
   <mgl-map
     [style]="'mapbox://styles/augustin417/ckz8hkmbq001114rk93al2alb'"
@@ -10,6 +16,7 @@
     [cursorStyle]="cursorStyle"
     (mapClick)="mapClick($event)"
   >
+    
     <mgl-geojson-source
       id="points"
       [data]="points"
@@ -20,7 +27,8 @@
       type="symbol"
       [layout]="{
         'icon-image': '{icon}',
-        'icon-allow-overlap': true
+        'icon-allow-overlap': true,
+        'icon-size': 5
       }"
       (click)="onClick($event)"
       (mouseEnter)="cursorStyle = 'pointer'"
