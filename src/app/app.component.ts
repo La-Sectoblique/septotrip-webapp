@@ -37,7 +37,6 @@ export class AppComponent implements OnInit {
   }
 
   onClick(evt: MapMouseEvent): void {
-    console.log("mouseClick", evt)
     this.selectedPoint = (<any>evt).features[0];
   }
 
@@ -74,4 +73,7 @@ export class AppComponent implements OnInit {
     }
   }
 
+  get getSelectedPointsCoord(): LngLatLike {
+    return this.selectedPoint?.geometry.coordinates as LngLatLike
+  }
 }

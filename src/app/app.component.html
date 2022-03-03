@@ -51,5 +51,15 @@ Possibilité de monter en haut de la cathédrale via un escalier sur le côté d
       (mouseEnter)="cursorStyle = 'pointer'"
       (mouseLeave)="cursorStyle = ''"
     ></mgl-layer>
+    <mgl-popup
+      *ngIf="selectedPoint"
+      [lngLat]="getSelectedPointsCoord"
+    >
+    <div class="point-info">
+        <p><span class="txt-undernline">Point:</span> {{selectedPoint.properties?.['title']}}</p>
+        <p><span class="txt-undernline">Description</span></p>
+        <p>{{selectedPoint.properties?.['description']}}</p>
+      </div>
+  </mgl-popup>
   </mgl-map>
 </div>
