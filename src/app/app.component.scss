@@ -1,4 +1,10 @@
 mgl-map{
+    height: 100%;
+    width: 100%;
+}
+
+.page {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     height: 100vh;
-    width: 100vw;
 }

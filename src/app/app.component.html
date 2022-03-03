@@ -1,5 +1,30 @@
-<mgl-map
-  [style]="'mapbox://styles/augustin417/ckz8hkmbq001114rk93al2alb'"
-  [zoom]="[9]"
-  [center]="[-74, 40]"
-></mgl-map>
+
+<div class="page">
+  <div class="menu">
+    <h4>COUCOU</h4>
+  </div>
+  <mgl-map
+    [style]="'mapbox://styles/augustin417/ckz8hkmbq001114rk93al2alb'"
+    [zoom]="mapZoom"
+    [center]="mapCenter"
+    [cursorStyle]="cursorStyle"
+    (mapClick)="mapClick($event)"
+  >
+    <mgl-geojson-source
+      id="points"
+      [data]="points"
+    ></mgl-geojson-source>
+    <mgl-layer
+      id="points"
+      source="points"
+      type="symbol"
+      [layout]="{
+        'icon-image': '{icon}',
+        'icon-allow-overlap': true
+      }"
+      (click)="onClick($event)"
+      (mouseEnter)="cursorStyle = 'pointer'"
+      (mouseLeave)="cursorStyle = ''"
+    ></mgl-layer>
+  </mgl-map>
+</div>
