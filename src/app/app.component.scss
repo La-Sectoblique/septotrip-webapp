@@ -10,5 +10,16 @@ mgl-map{
 }
 
 .point-info{
-    border-bottom: 1px solid black;
+    border: 1px solid black;
+}
+
+.point-wrapper {
+    position: relative;
+}
+
+.delete-point-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
 }

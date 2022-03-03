@@ -59,4 +59,11 @@ export class AppComponent implements OnInit {
     }
   }
 
+  delete(idx: number): void {
+    this.points = {
+      ...this.points,
+      features: this.points.features.filter((_, pointIdx) => idx !== pointIdx)
+    }
+  }
+
 }

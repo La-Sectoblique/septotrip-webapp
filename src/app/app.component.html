@@ -2,11 +2,16 @@
 <div class="page">
   <div class="menu">
     <h4>MAP</h4>
-    <div>
-      <div *ngFor="let point of points.features" class="point-info">
+    <div *ngFor="let point of points.features; let idx = index" class="point-wrapper">
+      <div class="point-info">
         <p>Point: {{point.properties?.['title']}}</p>
         <p>Coords: {{point.geometry.coordinates}}</p>
       </div>
+      <button class="delete-point-btn"
+        (click)="delete(idx)"
+      >
+        X
+      </button>
     </div>
   </div>
   <mgl-map
