@@ -32,6 +32,24 @@ export class AppComponent implements OnInit {
       },]
   };
 
+  point: GeoJSON.FeatureCollection<GeoJSON.Point> = {
+    type: 'FeatureCollection',
+    features: [{
+        'type': 'Feature',
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [8, 49]
+        },
+        'properties': {
+          'icon': 'border-dot-13',
+          'title': 'arrivé',
+          'description': 'Point de d\'arrivé de notre expédition !'
+        },
+      },]
+  };
+
+  pointsCoordinates = [[7.750149, 48.585551],[8, 49]];
+
   ngOnInit(): void {
       
   }

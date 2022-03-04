@@ -51,6 +51,30 @@ Possibilité de monter en haut de la cathédrale via un escalier sur le côté d
       (mouseEnter)="cursorStyle = 'pointer'"
       (mouseLeave)="cursorStyle = ''"
     ></mgl-layer>
+    <mgl-layer
+        id="route"
+        type="line"
+        [source]="{
+          type: 'geojson',
+          data: {
+            type: 'Feature',
+            properties: {},
+            geometry: {
+              type: 'LineString',
+              coordinates: [[7.750149, 48.585551],[7.800200, 48.585551]]
+            }
+          }
+        }"
+        [layout]="{
+          'line-join': 'round',
+          'line-cap': 'round'
+        }"
+        [paint]="{
+          'line-color': '#888',
+          'line-width': 8
+        }"
+      >
+      </mgl-layer>
     <mgl-popup
       *ngIf="selectedPoint"
       [lngLat]="getSelectedPointsCoord"
