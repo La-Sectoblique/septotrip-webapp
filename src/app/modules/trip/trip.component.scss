@@ -1,0 +1,34 @@
+:host{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.trip-wrapper {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.step-wrapper {
+    background-color: #CACAFA;
+    padding: 1rem;
+
+    .step {
+        background-color: #6E6FCC;
+        border: 1px solid black;
+        padding: .5rem;
+    }
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #FACACA;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

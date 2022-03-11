@@ -1,0 +1,18 @@
+<h1>{{tripName}}</h1>
+
+<div class="trip-wrapper">
+  <div class="step-wrapper">
+    <div *ngFor="let step of steps; let idx = index" class="step" (click)="selectStep(idx)">
+      <h5>{{step.title}}</h5>
+      <h5>{{step.description}}</h5>
+      <ul *ngIf="selectedStep === idx">
+        <li *ngFor="let poi of step.poi">
+          {{poi}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="map-wrapper">
+    <h2>😶‍🌫️ here goes the map 😎</h2>
+  </div>
+</div>

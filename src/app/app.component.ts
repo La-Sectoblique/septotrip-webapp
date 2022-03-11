@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
+import {addPoint, getUserPoints, init, login, register} from '@la-sectoblique/septoblique-service';
+import { environment } from 'src/environments/environment';
+import { registerLocaleData } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -35,7 +38,7 @@ export class AppComponent implements OnInit {
         'type': 'Feature',
         'geometry': {
           'type': 'Point',
-          'coordinates': [7.750149, 48.585551]
+          'coordinates': [7.750149, 48.589551]
         },
         'properties': {
           'icon': 'border-dot-13',
@@ -45,8 +48,24 @@ export class AppComponent implements OnInit {
       },]
   };
 
-  ngOnInit(): void {
-      
+  async ngOnInit(): Promise<void> {
+    init({url: 'http://api.septotrip.com', 
+    getToken: () => {
+      return 'prout'
+    },
+    storeToken: (token: string) => {
+      console.log("token", token)
+    }
+  })
+  
+  // await register({email: 'ougoug@africa.oug', password: '1234'})
+  await login({email: 'ougoug@africa.oug', password: '1234'})
+
+  await addPoint({title: "bo point", localisation: {coordinates: [7.750149, 48.589551], type: 'Point'}});
+
+  const userPoints = await getUserPoints();
+  console.log("user points", userPoints)
+
   }
 
   onClick(evt: MapMouseEvent): void {

@@ -6,10 +6,12 @@ import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TripComponent } from './modules/trip/trip.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TripComponent,
   ],
   imports: [
     BrowserModule,

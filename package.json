@@ -18,6 +18,7 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "@la-sectoblique/septoblique-service": "0.1.0",
     "@mapbox/mapbox-gl-geocoder": "^4.7.4",
     "mapbox-gl": "^2.7.0",
     "ngx-mapbox-gl": "^7.1.2",
