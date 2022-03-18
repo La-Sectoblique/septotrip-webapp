@@ -10,18 +10,18 @@ import { CoreModule } from './modules/core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxMapboxGLModule.withConfig({
-      accessToken: environment.mapBoxToken
+      accessToken: environment.mapBoxToken,
     }),
     FormsModule,
     CoreModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

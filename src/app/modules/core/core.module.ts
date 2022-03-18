@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
   ],
   declarations: [
-    HeaderComponent
+    HeaderComponent,
   ],
 })
 export class CoreModule { }
