@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from './modules/core/core.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
       accessToken: environment.mapBoxToken
     }),
     FormsModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
