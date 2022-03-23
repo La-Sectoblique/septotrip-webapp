@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Trip } from 'src/app/modules/trip/models/trip';
 
 @Component({
   selector: 'spt-trips',
@@ -12,13 +13,13 @@ export class TripsComponent {
   // ngOnInit() {
   // }
 
-  trips = [
+  trips: Trip[] = [
     {
       name: 'Voyage en France',
-      participantCount: 5,
+      memberCount: 5,
       stepCount: 3,
       departDate: new Date('10-04-2022'),
-      arivalDate: new Date('14-04-2022'),
+      arivalDate: new Date('12-04-2022'),
     },
   ];
 

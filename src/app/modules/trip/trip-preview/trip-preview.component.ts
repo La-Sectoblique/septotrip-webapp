@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Trip } from '../models/trip';
 
 @Component({
   selector: 'spt-trip-preview',
@@ -8,6 +9,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class TripPreviewComponent {
 
-  @Input() name: string;
+  @Input() trip: Trip;
 
 }

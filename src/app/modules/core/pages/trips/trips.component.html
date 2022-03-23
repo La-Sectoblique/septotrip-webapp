@@ -1,5 +1,7 @@
-<h2>Mes voyages :</h2>
-
-<spt-trip-preview
-    name="bannane"    
-></spt-trip-preview>
+<div class="page-wrapper d-flex flex-column align-items-center">
+    <h2>Mes voyages :</h2>
+    
+    <spt-trip-preview *ngFor="let trip of trips"
+        [trip]="trip"
+    ></spt-trip-preview>
+</div>
