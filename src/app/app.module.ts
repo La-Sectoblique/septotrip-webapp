@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { NbThemeModule } from '@nebular/theme';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { environment } from 'src/environments/environment';
 
@@ -18,6 +19,7 @@ import { CoreModule } from './modules/core/core.module';
     NgxMapboxGLModule.withConfig({
       accessToken: environment.mapBoxToken,
     }),
+    NbThemeModule.forRoot(),
     FormsModule,
     CoreModule,
   ],

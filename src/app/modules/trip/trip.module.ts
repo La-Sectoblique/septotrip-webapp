@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TripComponent } from './trip/trip.component';
+import { TripPreviewComponent } from './trip-preview/trip-preview.component';
 
 @NgModule({
   imports: [
     CommonModule,
   ],
-  declarations: [TripComponent],
+  declarations: [TripPreviewComponent],
   exports: [
-    TripComponent,
+    TripPreviewComponent,
   ],
 })
 export class TripModule { }
