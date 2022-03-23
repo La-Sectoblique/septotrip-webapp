@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { parseDateToString } from '../../shared/utils';
 import { Trip } from '../models/trip';
 
 @Component({
@@ -9,6 +10,8 @@ import { Trip } from '../models/trip';
 })
 export class TripPreviewComponent {
 
+
   @Input() trip: Trip;
+  parseDate = parseDateToString;
 
 }
