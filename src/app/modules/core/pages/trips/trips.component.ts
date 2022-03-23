@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'septo-trips',
+  selector: 'spt-trips',
   templateUrl: './trips.component.html',
   styleUrls: ['./trips.component.scss'],
 })
