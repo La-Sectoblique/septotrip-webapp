@@ -1,7 +1,13 @@
-<spt-header>
-</spt-header>
+<!-- <spt-header>
+</spt-header> -->
 
-<div class="main-layout">
-    <router-outlet>
-    </router-outlet>
-</div>
+<nb-layout>
+
+    <nb-layout-header fixed class="layout-header">
+        <spt-header class="h-100"></spt-header>
+    </nb-layout-header>
+    <nb-layout-column>
+        <router-outlet>
+        </router-outlet>
+    </nb-layout-column>
+</nb-layout>

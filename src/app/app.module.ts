@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NbIconModule, NbThemeModule } from '@nebular/theme';
+import { NbIconModule, NbLayoutModule, NbThemeModule } from '@nebular/theme';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { environment } from 'src/environments/environment';
 
@@ -24,6 +24,7 @@ import { CoreModule } from './modules/core/core.module';
     NbEvaIconsModule,
     FormsModule,
     CoreModule,
+    NbLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

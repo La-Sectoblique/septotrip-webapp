@@ -1,6 +1,6 @@
 <div class="page-wrapper d-flex flex-column align-items-center">
     <h2>Mes voyages :</h2>
-    <button nbButton><nb-icon icon="plus-square-outline"></nb-icon>AJOUTER</button>
+    <button nbButton status="success">Active</button>
     <spt-trip-preview *ngFor="let trip of trips"
         [trip]="trip"
     ></spt-trip-preview>
