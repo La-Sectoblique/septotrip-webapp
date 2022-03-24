@@ -3892,6 +3892,11 @@ etag@~1.8.1:
   resolved "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
+eva-icons@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/eva-icons/-/eva-icons-1.1.3.tgz#d4a88a93e92250c769703eb90920752ab0f72c0a"
+  integrity sha512-QBSEWNbEx1H0numXP1qgxKVCZHonRaky5ft4pGzQBcO4cy7mEja6TuJ8rc7BqX2pmkvetVQWKDH+DK/8y7GTag==
+
 eventemitter-asyncresource@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/eventemitter-asyncresource/-/eventemitter-asyncresource-1.0.0.tgz"
