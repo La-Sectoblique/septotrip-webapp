@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbIconModule, NbLayoutModule, NbThemeModule } from '@nebular/theme';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { environment } from 'src/environments/environment';
 
@@ -18,8 +20,11 @@ import { CoreModule } from './modules/core/core.module';
     NgxMapboxGLModule.withConfig({
       accessToken: environment.mapBoxToken,
     }),
+    NbThemeModule.forRoot(),
+    NbEvaIconsModule,
     FormsModule,
     CoreModule,
+    NbLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

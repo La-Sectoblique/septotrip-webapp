@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'septo-header',
+  selector: 'spt-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
