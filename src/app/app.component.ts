@@ -22,33 +22,18 @@ export class AppComponent implements OnInit {
         'type': 'Feature',
         'geometry': {
           'type': 'Point',
-          'coordinates': [7.750149, 48.585551]
+          'coordinates': []
         },
         'properties': {
           'icon': 'border-dot-13',
-          'title': 'Départ',
-          'description': 'Point de départ de notre expédition !'
+          'title': '',
+          'description': ''
         },
       },]
   };
 
-  point: GeoJSON.FeatureCollection<GeoJSON.Point> = {
-    type: 'FeatureCollection',
-    features: [{
-        'type': 'Feature',
-        'geometry': {
-          'type': 'Point',
-          'coordinates': [8, 49]
-        },
-        'properties': {
-          'icon': 'border-dot-13',
-          'title': 'arrivé',
-          'description': 'Point de d\'arrivé de notre expédition !'
-        },
-      },]
-  };
-
-  pointsCoordinates = [[7.750149, 48.585551],[8, 49]];
+  pointsCoordinates:number[][] = [];
+  
 
   ngOnInit(): void {
       
@@ -80,8 +65,14 @@ export class AppComponent implements OnInit {
         }
       ]
     }
+    
     this.newPointName = '';
     this.newPointDesc = '';
+    this.pointsCoordinates = [
+      ...this.pointsCoordinates,
+      [evt.lngLat.lng, evt.lngLat.lat]
+    ]
+    console.log(this.pointsCoordinates);
   }
 
   delete(idx: number): void {
