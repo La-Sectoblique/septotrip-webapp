@@ -1,7 +1,9 @@
 <div class="page-wrapper d-flex flex-column align-items-center">
     <h2>Mes voyages :</h2>
-    <button nbButton status="success">Active</button>
-    <spt-trip-preview *ngFor="let trip of trips"
+    <div class="w-100 d-flex justify-content-end">
+        <button nbButton status="primary"><nb-icon icon="plus-square-outline"></nb-icon>AJOUTER</button>
+    </div>
+    <spt-trip-preview class="" *ngFor="let trip of trips"
         [trip]="trip"
     ></spt-trip-preview>
 </div>
