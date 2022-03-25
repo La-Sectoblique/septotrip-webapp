@@ -1,0 +1,11 @@
+<div class="d-flex align-items-center justify-content-space-between card trip-preview-wrapper">
+  <p>{{trip.name}}</p>
+  <div class="d-flex flex-column">
+    <p>step:{{trip.stepCount}}</p>
+    <p>membr:{{trip.memberCount}}</p>
+  </div>
+  <div class="d-flex flex-column">
+    <p>dpt:{{parseDate(trip.departDate)}}</p>
+    <p>arv:{{parseDate(trip.arivalDate)}}</p>
+  </div>
+</div>

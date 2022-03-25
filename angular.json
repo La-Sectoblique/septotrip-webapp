@@ -31,7 +31,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
+              "src/styles/styles.scss",
+              "node_modules/@nebular/theme/styles/prebuilt/default.css",
               "./node_modules/mapbox-gl/dist/mapbox-gl.css",
               "./node_modules/@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css"
             ],
@@ -105,9 +106,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "septotrip-webapp"
+  "defaultProject": "septotrip-webapp",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
