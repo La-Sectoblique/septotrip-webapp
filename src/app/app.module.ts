@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbLayoutModule, NbThemeModule } from '@nebular/theme';
+import { StoreModule } from '@ngrx/store';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { environment } from 'src/environments/environment';
 
@@ -21,6 +22,7 @@ import { CoreModule } from './modules/core/core.module';
       accessToken: environment.mapBoxToken,
     }),
     NbThemeModule.forRoot(),
+    StoreModule.forRoot({}, {}),
     NbEvaIconsModule,
     FormsModule,
     CoreModule,
