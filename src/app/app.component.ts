@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { login, init } from '@la-sectoblique/septoblique-service';
+import { SuccessLoginResponse } from '@la-sectoblique/septoblique-service/dist/types/utils/Api';
 import { environment } from 'src/environments/environment';
 import { TokenStorageService } from './modules/core/services/token-storage.service';
 @Component({
@@ -22,8 +23,8 @@ export class AppComponent implements OnInit {
       url: environment.baseURL,
     });
 
-    const loginReturn = login({ email: 'jean', password: 'jean' });
-    console.log('loginreturn', loginReturn);
+    login({ email: 'jean', password: 'jean' })
+      .then((res: SuccessLoginResponse) => console.log('loginres', res));
   }
 
 }
