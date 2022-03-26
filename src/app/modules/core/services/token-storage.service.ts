@@ -7,8 +7,8 @@ export class TokenStorageService {
 
   TOKEN_KEY = 'septo-token';
 
-  getToken(): string | null{
-    return localStorage.getItem(this.TOKEN_KEY);
+  getToken(): string {
+    return localStorage.getItem(this.TOKEN_KEY) as string;
   }
 
   setToken(token: string): void {
