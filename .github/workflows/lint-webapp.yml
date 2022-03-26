@@ -15,5 +15,5 @@ jobs:
     - name: Install dépendencies
       run: yarn install
 
-    - name: Lint & build (only build for the moment)
-      run: yarn build
+    - name: Lint & build (only lint for the moment)
+      run: yarn lint
