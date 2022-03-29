@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { parseDateToString } from '../../shared/utils';
-import { Trip } from '../models/trip';
+import { parseDateToString } from 'src/app/modules/shared/utils';
+import { Trip } from '../../models/trip';
+
 
 @Component({
   selector: 'spt-trip-preview',

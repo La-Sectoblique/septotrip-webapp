@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { getUserTrips } from '@la-sectoblique/septoblique-service';
-import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
-import { Trip } from 'src/app/modules/trip/models/trip';
+import { Component } from '@angular/core';
+import { Trip } from '../../models/trip';
 
 @Component({
   selector: 'spt-trips',
   templateUrl: './trips.component.html',
   styleUrls: ['./trips.component.scss'],
 })
-export class TripsComponent implements OnInit {
+export class TripsComponent {
 
   // constructor() { }
+
+  // ngOnInit() {
+  // }
+
   trips: Trip[] = [
     {
       name: 'Voyage en France',
@@ -21,10 +23,5 @@ export class TripsComponent implements OnInit {
       pictureSrc: 'https://www.meteociel.fr/cartes_obs/archives/23-03-2022/temp2_1h-18.png',
     },
   ];
-
-  ngOnInit() {
-    getUserTrips().then((trips: TripOutput[]) => console.log('userTrips:', trips));
-  }
-
 
 }
