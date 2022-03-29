@@ -3,7 +3,9 @@
     <div class="w-100 d-flex justify-content-end">
         <button nbButton status="primary"><nb-icon icon="plus-square-outline"></nb-icon>AJOUTER</button>
     </div>
-    <spt-trip-preview class="" *ngFor="let trip of trips"
-        [trip]="trip"
-    ></spt-trip-preview>
+    <ng-container *ngIf="(trips | async) as trips">
+        <spt-trip-preview *ngFor="let trip of trips"
+            [trip]="trip"
+        ></spt-trip-preview>
+    </ng-container>
 </div>
