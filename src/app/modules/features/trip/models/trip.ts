@@ -4,4 +4,5 @@ export interface Trip {
   stepCount: number;
   departDate: Date;
   arivalDate: Date;
+  pictureSrc: string;
 }

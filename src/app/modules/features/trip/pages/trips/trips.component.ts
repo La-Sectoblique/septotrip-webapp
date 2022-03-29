@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Trip } from 'src/app/modules/trip/models/trip';
+import { Trip } from '../../models/trip';
 
 @Component({
   selector: 'spt-trips',
@@ -20,6 +20,7 @@ export class TripsComponent {
       stepCount: 3,
       departDate: new Date('10-04-2022'),
       arivalDate: new Date('12-04-2022'),
+      pictureSrc: 'https://www.meteociel.fr/cartes_obs/archives/23-03-2022/temp2_1h-18.png',
     },
   ];
 
