@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-step-preview',
   templateUrl: './step-preview.component.html',
-  styleUrls: ['./step-preview.component.scss']
+  styleUrls: ['./step-preview.component.scss'],
 })
-export class StepPreviewComponent implements OnInit {
+export class StepPreviewComponent {
 
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit() {
-  }
+  // ngOnInit() {
+  // }
 
 }
