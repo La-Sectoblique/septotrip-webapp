@@ -8,6 +8,7 @@ import { CreateTripComponent } from './pages/create-trip/create-trip.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { StepModule } from '../step/step.module';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { StepModule } from '../step/step.module';
     NbRadioModule,
     FormsModule,
     StepModule,
+    SharedModule,
   ],
   declarations: [
     TripPreviewComponent,

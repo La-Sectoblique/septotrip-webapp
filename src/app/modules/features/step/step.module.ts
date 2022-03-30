@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { StepPreviewComponent } from './comonents/step-preview/step-preview.component';
 import { StepsListComponent } from './comonents/steps-list/steps-list.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { StepsListComponent } from './comonents/steps-list/steps-list.component'
     NbInputModule,
     NbRadioModule,
     FormsModule,
+    SharedModule,
   ],
   declarations: [
     StepPreviewComponent,
