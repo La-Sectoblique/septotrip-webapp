@@ -1,5 +1,5 @@
-<div class="page-wrapper d-flex flex-column align-items-center">
-    <h2>Mes voyages :</h2>
+<div class="d-flex flex-column align-items-center">
+    <h2>Mes voyages</h2>
     <div class="w-100 d-flex justify-content-center">
         <button nbButton status="primary"
             routerLink="/trips/create"
@@ -7,7 +7,9 @@
     </div>
     <ng-container *ngIf="(trips | async) as trips">
         <spt-trip-preview *ngFor="let trip of trips"
+            class="cursor-pointer"
             [trip]="trip"
+            [routerLink]="['/trips', trip.id]"
         ></spt-trip-preview>
     </ng-container>
 </div>
