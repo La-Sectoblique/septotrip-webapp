@@ -24,9 +24,7 @@ export class CreateTripComponent {
 
 
   create(): void {
-    console.log('name:', this.tripName, 'visibility', this.visibility);
     this.tripService.createUserTrips( this.tripName, this.visibility).subscribe((trip) => {
-      console.log('created trip', trip);
       this.router.navigate(['/trips', trip.id]);
     });
   }
