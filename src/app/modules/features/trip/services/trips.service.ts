@@ -15,11 +15,11 @@ export class TripsService {
     return from(getUserTrips());
   }
 
-  createUserTrips(name: string, visibility: Visibility): void {
-    createTrip({
+  createUserTrips(name: string, visibility: Visibility): Observable<TripOutput> {
+    return from(createTrip({
       name,
       visibility,
-    });
+    }));
   }
 
 }
