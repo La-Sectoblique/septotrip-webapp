@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modules/core/pages/home/home.component';
+import { CreateTripComponent } from './modules/core/pages/trips/create-trip/create-trip.component';
 import { TripsComponent } from './modules/core/pages/trips/trips.component';
 
 const routes: Routes = [
@@ -24,6 +25,27 @@ const routes: Routes = [
           {
             path: '',
             component: TripsComponent,
+            pathMatch: 'full',
+          },
+          // { @example
+          //   path: ':tripsId',
+          //   component:,
+          // },
+        ],
+      },
+    ],
+  },
+  {
+    // Put protected routes under this
+    path: '',
+    // canActivate: @todo: set routeGuards here
+    children: [
+      {
+        path: 'create-trips',
+        children: [
+          {
+            path: '',
+            component: CreateTripComponent,
             pathMatch: 'full',
           },
           // { @example

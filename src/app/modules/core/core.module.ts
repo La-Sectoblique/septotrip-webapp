@@ -4,7 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
 import { TripModule } from '../trip/trip.module';
 import { TripsComponent } from './pages/trips/trips.component';
-import { NbButtonModule, NbIconModule } from '@nebular/theme';
+import { NbButtonModule, NbIconModule, NbInputModule } from '@nebular/theme';
 
 @NgModule({
   imports: [
@@ -13,6 +13,7 @@ import { NbButtonModule, NbIconModule } from '@nebular/theme';
     TripModule,
     NbButtonModule,
     NbIconModule,
+    NbInputModule
   ],
   exports: [
     HeaderComponent,

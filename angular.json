@@ -121,6 +121,7 @@
   },
   "defaultProject": "septotrip-webapp",
   "cli": {
+    "analytics": "c4b64864-f640-4fc4-ba19-11f83e3c2825",
     "defaultCollection": "@angular-eslint/schematics"
   }
 }
