@@ -13,7 +13,7 @@ import { NbButtonModule, NbIconModule, NbInputModule } from '@nebular/theme';
     TripModule,
     NbButtonModule,
     NbIconModule,
-    NbInputModule
+    NbInputModule,
   ],
   exports: [
     HeaderComponent,

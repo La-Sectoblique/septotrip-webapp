@@ -11,7 +11,7 @@ describe('CreateTripComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateTripComponent ]
+      declarations: [ CreateTripComponent ],
     })
     .compileComponents();
   }));
