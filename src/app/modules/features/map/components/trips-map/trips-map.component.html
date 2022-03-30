@@ -1,0 +1,31 @@
+<mgl-map
+    [style]="'mapbox://styles/augustin417/ckz8hkmbq001114rk93al2alb'"
+    [zoom]="mapZoom"
+    [center]="mapCenter"
+    [cursorStyle]="cursorStyle"
+  >
+    <!-- <mgl-image
+      id="custom-marker"
+      url="./assets/map-marker-icon.png"
+      (imageLoaded)="imageLoaded = true"
+    ></mgl-image> -->
+    <mgl-geojson-source
+      id="points"
+      [data]="points"
+    ></mgl-geojson-source>
+    <mgl-layer
+      *ngIf="imageLoaded"
+      id="points"
+      source="points"
+      type="symbol"
+      [layout]="{
+        'icon-image': 'custom-marker',
+        'icon-allow-overlap': true,
+        'icon-size': .05,
+        'icon-anchor': 'top'
+      }"
+      (click)="onClick($event)"
+      (mouseEnter)="cursorStyle = 'pointer'"
+      (mouseLeave)="cursorStyle = ''"
+    ></mgl-layer>
+  </mgl-map>
