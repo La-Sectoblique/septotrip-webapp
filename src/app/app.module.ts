@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
+import { StepModule } from './modules/features/step/step.module';
 import { TripModule } from './modules/features/trip/trip.module';
 
 @NgModule({
@@ -26,6 +27,7 @@ import { TripModule } from './modules/features/trip/trip.module';
     FormsModule,
     CoreModule,
     TripModule,
+    StepModule,
     NbLayoutModule,
   ],
   providers: [],

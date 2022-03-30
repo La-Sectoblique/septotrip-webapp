@@ -7,6 +7,7 @@ import { TripsComponent } from './pages/trips/trips.component';
 import { CreateTripComponent } from './pages/create-trip/create-trip.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { StepModule } from '../step/step.module';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     NbInputModule,
     NbRadioModule,
     FormsModule,
+    StepModule,
   ],
   declarations: [
     TripPreviewComponent,
