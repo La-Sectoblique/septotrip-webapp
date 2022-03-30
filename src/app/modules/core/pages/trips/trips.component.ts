@@ -8,10 +8,6 @@ import { Trip } from 'src/app/modules/trip/models/trip';
 })
 export class TripsComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
   trips: Trip[] = [
     {
       name: 'Voyage en France',
