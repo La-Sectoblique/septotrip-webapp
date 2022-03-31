@@ -17,13 +17,13 @@ export class StepsListComponent {
     private stepsService: StepsService,
   ) {}
 
-  createStep(): void {
-    this.stepsService.createTripSteps(
-      this.tripId,
-      'JESUS ?',
-      this.steps.length,
-      { type: 'Point', coordinates: [30, 8] });
-  }
+  // createStep(): void {
+  //   this.stepsService.createTripSteps(
+  //     this.tripId,
+  //     'JESUS ?',
+  //     this.steps.length,
+  //     { type: 'Point', coordinates: [30, 8] });
+  // }
 
   deleteStep(stepId: number): void {
     this.stepsService.deleteStep(stepId);

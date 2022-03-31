@@ -1,6 +1,8 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
+import { NbDialogService } from '@nebular/theme';
 import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
+import { AddStepComponent } from '../../../step/components/add-step/add-step.component';
 
 @Component({
   selector: 'spt-trips-map',
@@ -10,6 +12,8 @@ import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
 export class TripsMapComponent implements OnChanges {
 
   @Input() steps: StepOutput[];
+  @Input() tripId: number;
+
 
 
   mapCenter: LngLatLike = [7.750149, 48.581551];
@@ -22,21 +26,13 @@ export class TripsMapComponent implements OnChanges {
 
   points: GeoJSON.FeatureCollection<GeoJSON.Point> = {
     type: 'FeatureCollection',
-    features: [
-      // {
-      //   type: 'Feature',
-      //   geometry: {
-      //     type: 'Point',
-      //     coordinates: [7.750149, 48.585551],
-      //   },
-      //   properties: {
-      //     icon: 'border-dot-13',
-      //     title: 'Départ',
-      //     description: 'Point de départ de notre expédition !',
-      //   },
-      // },
-    ],
+    features: [],
   };
+
+
+  constructor(
+    private nbDialogService: NbDialogService,
+  ) {}
 
 
   ngOnChanges({ steps }: SimpleChanges): void {
@@ -57,9 +53,14 @@ export class TripsMapComponent implements OnChanges {
   }
 
 
-  onClick(evt: MapMouseEvent): void {
-    // this.selectedPoint = (evt as any).features[0];
+  onMapClick(evt: MapMouseEvent): void {
     console.log('click evt', evt);
+    this.nbDialogService.open(AddStepComponent, {
+      context: {
+        clickedCoordinates: evt.lngLat,
+        tripId: this.tripId,
+      },
+    });
   }
 
 }

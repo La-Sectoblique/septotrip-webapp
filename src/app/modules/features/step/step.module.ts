@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { StepPreviewComponent } from './components/step-preview/step-preview.component';
 import { StepsListComponent } from './components/steps-list/steps-list.component';
 import { SharedModule } from '../../shared/shared.module';
+import { AddStepComponent } from './components/add-step/add-step.component';
 
 @NgModule({
   imports: [
@@ -17,10 +18,13 @@ import { SharedModule } from '../../shared/shared.module';
     NbRadioModule,
     FormsModule,
     SharedModule,
+    NbInputModule,
+    FormsModule,
   ],
   declarations: [
     StepPreviewComponent,
     StepsListComponent,
+    AddStepComponent,
   ],
   exports: [
     StepPreviewComponent,

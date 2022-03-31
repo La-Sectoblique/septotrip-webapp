@@ -3,7 +3,7 @@
     [zoom]="mapZoom"
     [center]="mapCenter"
     [cursorStyle]="cursorStyle"
-    (click)="onClick($event)"
+    (mapClick)="onMapClick($event)"
 >
     <mgl-image
         id="custom-marker"

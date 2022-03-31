@@ -1,0 +1,11 @@
+@use 'src/styles/mixins' as mixins;
+
+.step-creation-wrapper {
+    background-color: white;
+    padding: 1.5rem;
+    @include mixins.rounded-corner;
+
+    .input-wrapper {
+        margin: 1rem 0;
+    }
+}
