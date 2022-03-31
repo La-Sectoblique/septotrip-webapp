@@ -4,11 +4,11 @@
     [center]="mapCenter"
     [cursorStyle]="cursorStyle"
   >
-    <!-- <mgl-image
+    <mgl-image
       id="custom-marker"
-      url="./assets/map-marker-icon.png"
+      url="./assets/red_marker.png"
       (imageLoaded)="imageLoaded = true"
-    ></mgl-image> -->
+    ></mgl-image>
     <mgl-geojson-source
       id="points"
       [data]="points"
@@ -22,7 +22,7 @@
         'icon-image': 'custom-marker',
         'icon-allow-overlap': true,
         'icon-size': .05,
-        'icon-anchor': 'top'
+        'icon-anchor': 'bottom'
       }"
       (click)="onClick($event)"
       (mouseEnter)="cursorStyle = 'pointer'"

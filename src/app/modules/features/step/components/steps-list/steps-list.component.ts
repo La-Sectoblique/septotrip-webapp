@@ -27,7 +27,7 @@ export class StepsListComponent implements OnInit {
 
   createStep(): void {
     this.steps.pipe(first()).subscribe((s) => {
-      this.stepsService.createTripSteps(this.tripId, 'Cathédrale', s.length, { type: 'Point', coordinates: [12, 25] });
+      this.stepsService.createTripSteps(this.tripId, 'Paris ?', s.length, { type: 'Point', coordinates: [47, 8] });
     });
   }
 

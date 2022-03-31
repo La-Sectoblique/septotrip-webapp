@@ -9,7 +9,7 @@ import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
 export class TripsMapComponent  {
 
   mapCenter: LngLatLike = [7.750149, 48.581551];
-  mapZoom: [number] = [14];
+  mapZoom: [number] = [13];
 
   selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null = null;
   cursorStyle = '';
@@ -33,7 +33,7 @@ export class TripsMapComponent  {
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [7.750149, 48.585551],
+        coordinates: [7.760149, 48.585551],
       },
       properties: {
         icon: 'border-dot-13',
