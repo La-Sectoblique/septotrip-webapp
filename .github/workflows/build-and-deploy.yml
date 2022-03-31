@@ -40,3 +40,5 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
         build-args: |
           MAPBOX_TOKEN=${{ secrets.MAPBOX_TOKEN }}
+          NPM_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          BASE_URL=${{ secrets.API_BASE_URL }}
