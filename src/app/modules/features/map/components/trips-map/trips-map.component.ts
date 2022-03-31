@@ -43,7 +43,7 @@ export class TripsMapComponent implements OnChanges {
     console.log('steps changes', steps);
     this.points = {
       ...this.points,
-      features: this.steps.map((step) => ({
+      features: steps.currentValue.map((step: StepOutput) => ({
         type: 'Feature',
         geometry: {
           type: step.localisation.type,
