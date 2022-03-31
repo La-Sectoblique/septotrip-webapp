@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
 
 @Component({
@@ -6,7 +7,10 @@ import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
   templateUrl: './trips-map.component.html',
   styleUrls: ['./trips-map.component.scss'],
 })
-export class TripsMapComponent  {
+export class TripsMapComponent implements OnChanges {
+
+  @Input() steps: StepOutput[];
+
 
   mapCenter: LngLatLike = [7.750149, 48.581551];
   mapZoom: [number] = [13];
@@ -14,34 +18,44 @@ export class TripsMapComponent  {
   selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null = null;
   cursorStyle = '';
 
-  imageLoaded = false;
+  markerImageLoaded = false;
 
   points: GeoJSON.FeatureCollection<GeoJSON.Point> = {
     type: 'FeatureCollection',
-    features: [{
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [7.750149, 48.585551],
-      },
-      properties: {
-        icon: 'border-dot-13',
-        title: 'Départ',
-        description: 'Point de départ de notre expédition !',
-      },
-    }, {
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [7.760149, 48.585551],
-      },
-      properties: {
-        icon: 'border-dot-13',
-        title: 'second',
-        description: 'notre expédition !',
-      },
-    }],
+    features: [
+      // {
+      //   type: 'Feature',
+      //   geometry: {
+      //     type: 'Point',
+      //     coordinates: [7.750149, 48.585551],
+      //   },
+      //   properties: {
+      //     icon: 'border-dot-13',
+      //     title: 'Départ',
+      //     description: 'Point de départ de notre expédition !',
+      //   },
+      // },
+    ],
   };
+
+
+  ngOnChanges({ steps }: SimpleChanges): void {
+    console.log('steps changes', steps);
+    this.points = {
+      ...this.points,
+      features: this.steps.map((step) => ({
+        type: 'Feature',
+        geometry: {
+          type: step.localisation.type,
+          coordinates: step.localisation.coordinates,
+        },
+        properties: {
+          title: step.name,
+        },
+      })),
+    };
+  }
+
 
   onClick(evt: MapMouseEvent): void {
     // this.selectedPoint = (evt as any).features[0];

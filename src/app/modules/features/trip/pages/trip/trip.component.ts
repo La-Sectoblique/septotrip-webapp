@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { Observable } from 'rxjs';
+import { StepsService } from '../../../step/services/steps.service';
 import { TripsService } from '../../services/trips.service';
 
 @Component({
@@ -12,17 +14,19 @@ import { TripsService } from '../../services/trips.service';
 export class TripComponent implements OnInit {
 
   trip: Observable<TripOutput>;
+  steps: Observable<StepOutput[]>;
 
   constructor(
-    private tripsService: TripsService,
     private route: ActivatedRoute,
+    private tripsService: TripsService,
+    private stepsService: StepsService,
   ) { }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.trip = this.tripsService.getTrip(params['tripsId']);
+      this.steps = this.stepsService.getTripSteps(params['tripsId']);
     });
-
   }
 
 }

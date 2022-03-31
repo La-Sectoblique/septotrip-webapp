@@ -3,29 +3,29 @@
     [zoom]="mapZoom"
     [center]="mapCenter"
     [cursorStyle]="cursorStyle"
-  >
+    (click)="onClick($event)"
+>
     <mgl-image
-      id="custom-marker"
-      url="./assets/red_marker.png"
-      (imageLoaded)="imageLoaded = true"
+        id="custom-marker"
+        url="./assets/red_marker.png"
+        (imageLoaded)="markerImageLoaded = true"
     ></mgl-image>
     <mgl-geojson-source
-      id="points"
-      [data]="points"
+        id="points-source"
+        [data]="points"
     ></mgl-geojson-source>
-    <mgl-layer
-      *ngIf="imageLoaded"
-      id="points"
-      source="points"
-      type="symbol"
-      [layout]="{
-        'icon-image': 'custom-marker',
-        'icon-allow-overlap': true,
-        'icon-size': .05,
-        'icon-anchor': 'bottom'
-      }"
-      (click)="onClick($event)"
-      (mouseEnter)="cursorStyle = 'pointer'"
-      (mouseLeave)="cursorStyle = ''"
+    <mgl-layer *ngIf="markerImageLoaded"
+        id="points"
+        source="points-source"
+        type="symbol"
+        [layout]="{
+            'icon-image': 'custom-marker',
+            'icon-allow-overlap': true,
+            'icon-size': .05,
+            'icon-anchor': 'bottom'
+        }"
+        
+        (mouseEnter)="cursorStyle = 'pointer'"
+        (mouseLeave)="cursorStyle = ''"
     ></mgl-layer>
-  </mgl-map>
+</mgl-map>
