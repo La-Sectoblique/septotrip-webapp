@@ -14,6 +14,6 @@ export class TripPreviewComponent {
   @Input() trip: TripOutput;
   parseDate = parseDateToString;
 
-  fakePictureSrc = 'https://www.meteociel.fr/cartes_obs/archives/23-03-2022/temp2_1h-18.png';
+  fakePictureSrc = 'https://ionnews.mu/wp-content/uploads/2021/09/Avion-Airplane.jpg';
 
 }

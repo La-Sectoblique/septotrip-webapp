@@ -15,15 +15,15 @@ export class TripsService {
     return from(getUserTrips());
   }
 
-  getTrip(id: number): Observable<TripOutput> {
-    return from(getTripById(id));
-  }
-
-  createUserTrips(name: string, visibility: Visibility): void {
-    createTrip({
+  createUserTrips(name: string, visibility: Visibility): Observable<TripOutput> {
+    return from(createTrip({
       name,
       visibility,
-    });
+    }));
+  }
+
+  getTrip(id: number): Observable<TripOutput> {
+    return from(getTripById(id));
   }
 
 }
