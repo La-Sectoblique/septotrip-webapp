@@ -14,6 +14,5 @@ jobs:
         submodules: recursive
     - name: Install dépendencies
       run: yarn install
-
     - name: Lint
       run: yarn lint
