@@ -13,7 +13,7 @@ jobs:
       with:
         submodules: recursive
     - name: Substitute token
-      run: TOKEN=${{ secrets.GITHUB_TOKEN }} && envsubst < .npmrc.example > .npmrc
+      run: TOKEN=${{ secrets.GITHUB_TOKEN }} && envsubst < .npmrc.example > .npmrc && cat .npmrc
     - name: Install dépendencies
       run: yarn install
     - name: Lint
