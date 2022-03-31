@@ -25,5 +25,9 @@ export class StepsListComponent {
       { type: 'Point', coordinates: [30, 8] });
   }
 
+  deleteStep(stepId: number): void {
+    this.stepsService.deleteStep(stepId);
+  }
+
 
 }

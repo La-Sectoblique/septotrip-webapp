@@ -1,7 +1,9 @@
 <ng-container *ngIf="steps.length > 0; else emptyBlock">
   <spt-step-preview *ngFor="let step of steps"
     [step]="step"
-  ></spt-step-preview>
+  >
+    <nb-icon class="cursor-pointer trash-icon" (click)="deleteStep(step.id)" icon="trash-2-outline"></nb-icon>
+  </spt-step-preview>
 </ng-container>
 
 <ng-template #emptyBlock>

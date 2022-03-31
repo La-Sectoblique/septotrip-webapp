@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/member-ordering */
 import { Injectable } from '@angular/core';
-import { addStep, getTripSteps } from '@la-sectoblique/septoblique-service';
+import { addStep, deleteStep, getTripSteps } from '@la-sectoblique/septoblique-service';
 import { LocalisationPoint } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { BehaviorSubject } from 'rxjs';
@@ -41,6 +41,10 @@ export class StepsService {
         newStep,
       ];
     });
+  }
+
+  async deleteStep(stepId: number): Promise<void> {
+    await deleteStep(stepId).then(() => this.steps = this.steps.filter((step) => step.id !== stepId));
   }
 
 }
