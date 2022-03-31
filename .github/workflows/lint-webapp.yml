@@ -12,7 +12,9 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-    - name: Substitute token and install dépendencies
-      run: token=${{ secrets.GITHUB_TOKEN }} && envsubst < src/environments/environment.template.ts > src/environments/environment.prod.ts && yarn install
+    - name: Substitute token
+      run: TOKEN=${{ secrets.GITHUB_TOKEN }} && envsubst < .npmrc.example > .npmrc
+    - name: Install dépendencies
+      run: yarn install
     - name: Lint
       run: yarn lint
