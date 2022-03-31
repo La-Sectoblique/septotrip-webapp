@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NbButtonModule, NbIconModule, NbInputModule, NbRadioModule } from '@nebular/theme';
-import { TripPreviewComponent } from './components/trip-preview/trip-preview.component';
-import { TripComponent } from './pages/trip/trip.component';
-import { TripsComponent } from './pages/trips/trips.component';
-import { CreateTripComponent } from './pages/create-trip/create-trip.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { StepModule } from '../step/step.module';
+import { StepPreviewComponent } from './components/step-preview/step-preview.component';
+import { StepsListComponent } from './components/steps-list/steps-list.component';
 import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
@@ -19,17 +16,15 @@ import { SharedModule } from '../../shared/shared.module';
     NbInputModule,
     NbRadioModule,
     FormsModule,
-    StepModule,
     SharedModule,
   ],
   declarations: [
-    TripPreviewComponent,
-    TripComponent,
-    TripsComponent,
-    CreateTripComponent,
+    StepPreviewComponent,
+    StepsListComponent,
   ],
   exports: [
-    TripPreviewComponent,
+    StepPreviewComponent,
+    StepsListComponent,
   ],
 })
-export class TripModule { }
+export class StepModule { }

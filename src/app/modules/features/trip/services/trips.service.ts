@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { createTrip, getTripById, getUserTrips } from '@la-sectoblique/septoblique-service';
+import { createTrip, deleteTrip, getTripById, getUserTrips } from '@la-sectoblique/septoblique-service';
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { Visibility } from '@la-sectoblique/septoblique-service/dist/types/utils/Visibility';
 import { from, Observable } from 'rxjs';
@@ -24,6 +24,10 @@ export class TripsService {
 
   getTrip(id: number): Observable<TripOutput> {
     return from(getTripById(id));
+  }
+
+  deleteTrip(id: number): void {
+    deleteTrip(id);
   }
 
 }
