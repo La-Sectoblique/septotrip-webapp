@@ -1,0 +1,9 @@
+.trip-preview-wrapper {
+    width: max-content;
+
+    .thumbnail {
+        height: 6rem;
+        width: 6rem;
+        object-fit: cover;
+    }
+}

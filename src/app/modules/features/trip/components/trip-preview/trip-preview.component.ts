@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { parseDateToString } from '../../shared/utils';
-import { Trip } from '../models/trip';
+import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
+import { parseDateToString } from 'src/app/modules/shared/utils';
+
 
 @Component({
   selector: 'spt-trip-preview',
@@ -10,8 +11,9 @@ import { Trip } from '../models/trip';
 })
 export class TripPreviewComponent {
 
-
-  @Input() trip: Trip;
+  @Input() trip: TripOutput;
   parseDate = parseDateToString;
+
+  fakePictureSrc = 'https://ionnews.mu/wp-content/uploads/2021/09/Avion-Airplane.jpg';
 
 }

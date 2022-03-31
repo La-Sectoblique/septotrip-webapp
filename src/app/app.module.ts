@@ -9,6 +9,9 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
+import { StepModule } from './modules/features/step/step.module';
+import { TripModule } from './modules/features/trip/trip.module';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { CoreModule } from './modules/core/core.module';
     NbEvaIconsModule,
     FormsModule,
     CoreModule,
+    TripModule,
+    StepModule,
     NbLayoutModule,
   ],
   providers: [],

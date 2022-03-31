@@ -1,0 +1,12 @@
+<ng-container *ngIf="(trip | async) as trip">
+  <spt-trip-preview
+    [trip]="trip"
+  ></spt-trip-preview>
+
+  <div class="trip-wrapper">
+    <spt-steps-list [tripId]="trip.id"></spt-steps-list>
+    <div class="map-wrapper">
+      <h2>😶‍🌫️ here goes the map 😎</h2>
+    </div>
+  </div>
+</ng-container>
