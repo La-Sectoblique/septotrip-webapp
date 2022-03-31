@@ -39,4 +39,4 @@ jobs:
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
         build-args: |
-        MAPBOX_TOKEN=${{ secrets.MAPBOX_TOKEN }}
+          MAPBOX_TOKEN=${{ secrets.MAPBOX_TOKEN }}
