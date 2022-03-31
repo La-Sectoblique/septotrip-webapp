@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NbButtonModule, NbIconModule, NbInputModule, NbRadioModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { StepPreviewComponent } from './comonents/step-preview/step-preview.component';
-import { StepsListComponent } from './comonents/steps-list/steps-list.component';
+import { StepPreviewComponent } from './components/step-preview/step-preview.component';
+import { StepsListComponent } from './components/steps-list/steps-list.component';
 import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
