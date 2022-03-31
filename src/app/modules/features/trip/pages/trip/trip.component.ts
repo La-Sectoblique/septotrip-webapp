@@ -25,7 +25,9 @@ export class TripComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.trip = this.tripsService.getTrip(params['tripsId']);
-      this.steps = this.stepsService.getTripSteps(params['tripsId']);
+
+      this.stepsService.updateSteps(params['tripsId']);
+      this.steps = this.stepsService.steps$;
     });
   }
 

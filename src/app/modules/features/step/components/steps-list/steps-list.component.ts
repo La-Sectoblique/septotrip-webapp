@@ -20,9 +20,9 @@ export class StepsListComponent {
   createStep(): void {
     this.stepsService.createTripSteps(
       this.tripId,
-      'Paris ?',
+      'CLAUDE ?',
       this.steps.length,
-      { type: 'Point', coordinates: [47, 8] });
+      { type: 'Point', coordinates: [42, 8] });
   }
 
 
