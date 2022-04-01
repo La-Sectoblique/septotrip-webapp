@@ -14,8 +14,6 @@ export class TripsMapComponent implements OnChanges {
   @Input() steps: StepOutput[];
   @Input() tripId: number;
 
-
-
   mapCenter: LngLatLike = [7.750149, 48.581551];
   mapZoom: [number] = [7];
 
@@ -65,18 +63,22 @@ export class TripsMapComponent implements OnChanges {
         coordinates: steps.currentValue.map((step: StepOutput) => step.localisation.coordinates),
       },
     };
-    console.log('new line', this.line);
   }
 
 
   onMapClick(evt: MapMouseEvent): void {
-    console.log('click evt', evt);
-    this.nbDialogService.open(AddStepComponent, {
-      context: {
-        clickedCoordinates: evt.lngLat,
-        tripId: this.tripId,
-      },
-    });
+    if (this.cursorStyle !== 'pointer') {
+      this.nbDialogService.open(AddStepComponent, {
+        context: {
+          clickedCoordinates: evt.lngLat,
+          tripId: this.tripId,
+        },
+      });
+    }
+  }
+
+  centerMapTo(evt: MapMouseEvent) {
+    this.mapCenter = (evt as any).features[0].geometry.coordinates;
   }
 
 }

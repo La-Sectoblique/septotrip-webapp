@@ -28,8 +28,9 @@
             'icon-size': .05,
             'icon-anchor': 'bottom'
         }"
-        (mouseEnter)="cursorStyle = 'pointer'"
-        (mouseLeave)="cursorStyle = ''"
+        (layerMouseEnter)="cursorStyle = 'pointer'"
+        (layerMouseLeave)="cursorStyle = ''"
+        (layerClick)="centerMapTo($event)"
     ></mgl-layer>
     <mgl-layer
         id="route"
