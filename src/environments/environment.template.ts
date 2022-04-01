@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   mapBoxToken: '${MAPBOX_TOKEN}',
+  baseURL: '${BASE_URL}',
 };
 
 /*

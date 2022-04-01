@@ -1,0 +1,22 @@
+name: Lint webapp
+
+on:
+  pull_request: 
+    branches: [ dev, master ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Substitute token for septotrip-service
+      run: export TOKEN=${{ secrets.GITHUB_TOKEN }} && envsubst < .npmrc.example > .npmrc
+    - name: Substitute env for environment file
+      run: envsubst < src/environments/environment.template.ts > src/environments/environment.ts
+    - name: Install dépendencies
+      run: yarn install
+    - name: Lint
+      run: yarn lint
