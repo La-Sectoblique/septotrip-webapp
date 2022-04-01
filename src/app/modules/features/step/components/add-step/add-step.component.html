@@ -2,7 +2,7 @@
   <h2>Création d'une étape</h2>
   <div class="input-wrapper">
     <label>Nom:</label>
-    <input nbInput [(ngModel)]="stepName" placeholder="Cathédrale, Musée, Stück Burger">
+    <input nbInput [(ngModel)]="stepName" placeholder="Strasbourg, Lille, Paris">
   </div>
   <button nbButton status="success" (click)="create()" [disabled]="!isCreationValid()">Créer l'étape</button>
 </div>

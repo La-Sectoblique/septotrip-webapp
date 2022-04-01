@@ -14,6 +14,10 @@
         id="points-source"
         [data]="points"
     ></mgl-geojson-source>
+    <mgl-geojson-source
+        id="line-source"
+        [data]="line"
+    ></mgl-geojson-source>
     <mgl-layer *ngIf="markerImageLoaded"
         id="points"
         source="points-source"
@@ -24,8 +28,20 @@
             'icon-size': .05,
             'icon-anchor': 'bottom'
         }"
-        
         (mouseEnter)="cursorStyle = 'pointer'"
         (mouseLeave)="cursorStyle = ''"
+    ></mgl-layer>
+    <mgl-layer
+        id="route"
+        type="line"
+        source="line-source"
+        [layout]="{
+            'line-join': 'round',
+            'line-cap': 'round'
+          }"
+          [paint]="{
+            'line-color': '#00F',
+            'line-width': 5
+          }"
     ></mgl-layer>
 </mgl-map>

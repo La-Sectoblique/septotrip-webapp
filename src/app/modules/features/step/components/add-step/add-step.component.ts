@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 import { LngLat } from 'mapbox-gl';
 import { StepsService } from '../../services/steps.service';
