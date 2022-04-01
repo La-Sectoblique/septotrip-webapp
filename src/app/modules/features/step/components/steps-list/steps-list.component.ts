@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
+import { Observable } from 'rxjs';
 import { StepsService } from '../../services/steps.service';
 
 @Component({
@@ -7,26 +8,28 @@ import { StepsService } from '../../services/steps.service';
   templateUrl: './steps-list.component.html',
   styleUrls: ['./steps-list.component.scss'],
 })
-export class StepsListComponent {
+export class StepsListComponent implements OnInit {
 
   @Input() tripId: number;
 
   @Input() steps: StepOutput[];
 
+  selectedStepId$: Observable<number>;
+
   constructor(
     private stepsService: StepsService,
   ) {}
 
-  // createStep(): void {
-  //   this.stepsService.createTripSteps(
-  //     this.tripId,
-  //     'JESUS ?',
-  //     this.steps.length,
-  //     { type: 'Point', coordinates: [30, 8] });
-  // }
+  ngOnInit(): void {
+    this.selectedStepId$ = this.stepsService.selectedStepId$;
+  }
 
   deleteStep(stepId: number): void {
     this.stepsService.deleteStep(stepId);
+  }
+
+  selectStep(stepId: number): void {
+
   }
 
 

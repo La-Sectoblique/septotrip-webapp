@@ -42,7 +42,6 @@ export class TripsMapComponent implements OnChanges {
 
 
   ngOnChanges({ steps }: SimpleChanges): void {
-    console.log('steps changes', steps);
     this.points = {
       ...this.points,
       features: steps.currentValue.map((step: StepOutput) => ({
@@ -77,7 +76,7 @@ export class TripsMapComponent implements OnChanges {
     }
   }
 
-  centerMapTo(evt: MapMouseEvent) {
+  centerMapTo(evt: MapMouseEvent): void {
     this.mapCenter = (evt as any).features[0].geometry.coordinates;
   }
 

@@ -21,7 +21,6 @@ export class AddStepComponent {
   ) {}
 
   create(): void {
-    console.log('clickedCoordinates', this.clickedCoordinates);
     this.stepsService.createTripSteps(
       this.tripId,
       this.stepName,

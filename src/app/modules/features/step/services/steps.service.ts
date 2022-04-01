@@ -14,12 +14,31 @@ export class StepsService {
 
   readonly steps$ = this._steps.asObservable();
 
+  private readonly _selectedStepId = new BehaviorSubject<number>(-1);
+  readonly selectedStepId$ = this._selectedStepId.asObservable();
+
   get steps(): StepOutput[] {
     return this._steps.getValue();
   }
 
   private set steps(steps: StepOutput[]){
     this._steps.next(steps);
+  }
+
+  get selectedStepId(): number {
+    return this._selectedStepId.getValue();
+  }
+
+  private set selectedStepId(id: number) {
+    this._selectedStepId.next(id);
+  }
+
+  setSelectedStepId(stepId: number): void {
+    this.selectedStepId = stepId;
+  }
+
+  unselectStep(): void {
+    this.selectedStepId = -1;
   }
 
   async updateSteps(tripId: number): Promise<void> {
