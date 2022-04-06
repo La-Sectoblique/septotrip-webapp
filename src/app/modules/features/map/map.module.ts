@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { environment } from 'src/environments/environment';
 import { TripsMapComponent } from './components/trips-map/trips-map.component';
+import { NbDialogModule } from '@nebular/theme';
 
 @NgModule({
   imports: [
@@ -10,6 +11,7 @@ import { TripsMapComponent } from './components/trips-map/trips-map.component';
     NgxMapboxGLModule.withConfig({
       accessToken: environment.mapBoxToken,
     }),
+    NbDialogModule.forChild(),
   ],
   declarations: [
     TripsMapComponent,

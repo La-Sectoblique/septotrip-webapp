@@ -3,7 +3,7 @@
     <div class="w-100 d-flex justify-content-center">
         <button nbButton status="primary"
             routerLink="/trips/create"
-        ><nb-icon icon="plus-square-outline"></nb-icon>AJOUTER</button>
+        ><nb-icon icon="plus-square-outline"></nb-icon>Créer un voyage</button>
     </div>
     <ng-container *ngIf="(trips | async) as trips; else loadingBlock">
         <ng-container *ngIf="trips.length > 0; else emptyBlock">

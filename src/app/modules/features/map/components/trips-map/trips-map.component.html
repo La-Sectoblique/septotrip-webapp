@@ -3,29 +3,46 @@
     [zoom]="mapZoom"
     [center]="mapCenter"
     [cursorStyle]="cursorStyle"
-  >
-    <!-- <mgl-image
-      id="custom-marker"
-      url="./assets/map-marker-icon.png"
-      (imageLoaded)="imageLoaded = true"
-    ></mgl-image> -->
+    (mapClick)="onMapClick($event)"
+>
+    <mgl-image
+        id="custom-marker"
+        url="./assets/red_marker.png"
+        (imageLoaded)="markerImageLoaded = true"
+    ></mgl-image>
     <mgl-geojson-source
-      id="points"
-      [data]="points"
+        id="points-source"
+        [data]="points"
     ></mgl-geojson-source>
-    <mgl-layer
-      *ngIf="imageLoaded"
-      id="points"
-      source="points"
-      type="symbol"
-      [layout]="{
-        'icon-image': 'custom-marker',
-        'icon-allow-overlap': true,
-        'icon-size': .05,
-        'icon-anchor': 'top'
-      }"
-      (click)="onClick($event)"
-      (mouseEnter)="cursorStyle = 'pointer'"
-      (mouseLeave)="cursorStyle = ''"
+    <mgl-geojson-source
+        id="line-source"
+        [data]="line"
+    ></mgl-geojson-source>
+    <mgl-layer *ngIf="markerImageLoaded"
+        id="points"
+        source="points-source"
+        type="symbol"
+        [layout]="{
+            'icon-image': 'custom-marker',
+            'icon-allow-overlap': true,
+            'icon-size': .05,
+            'icon-anchor': 'bottom'
+        }"
+        (layerMouseEnter)="cursorStyle = 'pointer'"
+        (layerMouseLeave)="cursorStyle = ''"
+        (layerClick)="centerMapTo($event)"
     ></mgl-layer>
-  </mgl-map>
+    <mgl-layer
+        id="route"
+        type="line"
+        source="line-source"
+        [layout]="{
+            'line-join': 'round',
+            'line-cap': 'round'
+          }"
+          [paint]="{
+            'line-color': '#00F',
+            'line-width': 5
+          }"
+    ></mgl-layer>
+</mgl-map>
