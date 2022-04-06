@@ -25,6 +25,7 @@
     "@mapbox/mapbox-gl-geocoder": "^4.7.4",
     "@nebular/eva-icons": "^9.0.1",
     "@nebular/theme": "^9.0.1",
+    "@ngrx/effects": "^13.1.0",
     "@ngrx/store": "^13.1.0",
     "date-fns": "^2.28.0",
     "dotenv": "^16.0.0",

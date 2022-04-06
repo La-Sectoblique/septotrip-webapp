@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
+import { Store, StoreModule } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { StepsService } from '../../../step/services/steps.service';
 import { TripsService } from '../../services/trips.service';
@@ -20,6 +21,7 @@ export class TripComponent implements OnInit {
     private route: ActivatedRoute,
     private tripsService: TripsService,
     private stepsService: StepsService,
+    private store: Store,
   ) { }
 
   ngOnInit() {
