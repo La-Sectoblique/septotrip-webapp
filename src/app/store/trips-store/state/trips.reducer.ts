@@ -6,6 +6,8 @@ import { initialTripState } from './trips.state';
 export const tripReducer = createReducer(
   initialTripState,
 
+  // TRIPS
+
   on(TripsAction.GetUserTripsSuccess, (state, { trips }) => {
     let newTrips = state.trips;
     trips.forEach((trip) => {
@@ -33,6 +35,8 @@ export const tripReducer = createReducer(
       },
     },
   })),
+
+  // STEPS
 
   on(TripsAction.GetTripStepsSuccess, (state, { steps, tripId }) => ({
     ...state,
@@ -65,9 +69,49 @@ export const tripReducer = createReducer(
       ...state.trips,
       [tripId]: {
         ...state.trips[tripId],
-        steps: state.trips[tripId].steps.filter((step) => step.stepInstance.id !== stepId),
+        steps: state.trips[tripId].steps.filter((step) => step.stepInstance?.id !== stepId),
       },
     },
   })),
+
+  // POINTS
+
+  on(TripsAction.GetTripPointsSuccess, (state, { points, tripId }) => ({
+    ...state,
+    trips: {
+      ...state.trips,
+      [tripId]: {
+        ...state.trips[tripId],
+        points,
+      },
+    },
+  })),
+
+  on(TripsAction.CreateTripPointSuccess, (state, { point, tripId }) => ({
+    ...state,
+    trips: {
+      ...state.trips,
+      [tripId]: {
+        ...state.trips[tripId],
+        points: [
+          ...state.trips[tripId].points,
+          point,
+        ],
+      },
+    },
+  })),
+
+  on(TripsAction.DeleteTripPointSuccess, (state, { pointId, tripId }) => ({
+    ...state,
+    trips: {
+      ...state.trips,
+      [tripId]: {
+        ...state.trips[tripId],
+        points: state.trips[tripId].points.filter((point) => point.id !== pointId),
+      },
+    },
+  })),
+
+
 
 );

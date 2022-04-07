@@ -15,8 +15,8 @@ export class PointsService {
   createTripPoint(
     tripId: number,
     title: string,
-    description: string,
     localisation: LocalisationPoint,
+    description?: string,
   ): Observable<PointOutput> {
     return from(addPoint(tripId, {
       title,
