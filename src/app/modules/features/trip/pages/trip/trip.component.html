@@ -1,0 +1,19 @@
+<ng-container *ngIf="(trip | async) as trip">
+  <spt-trip-preview
+    [trip]="trip"
+  ></spt-trip-preview>
+
+  <ng-container *ngIf="(steps | async) as steps; else stepsLoadingBlock">
+
+    <div class="trip-wrapper">
+      <spt-steps-list [tripId]="trip.id" [steps]="steps"></spt-steps-list>
+      <div class="map-wrapper">
+        <spt-trips-map [steps]="steps" [tripId]="trip.id"></spt-trips-map>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #stepsLoadingBlock>
+    <spt-loader></spt-loader>
+  </ng-template>
+</ng-container>

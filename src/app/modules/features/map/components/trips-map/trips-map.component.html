@@ -1,0 +1,48 @@
+<mgl-map
+    [style]="'mapbox://styles/augustin417/ckz8hkmbq001114rk93al2alb'"
+    [zoom]="mapZoom"
+    [center]="mapCenter"
+    [cursorStyle]="cursorStyle"
+    (mapClick)="onMapClick($event)"
+>
+    <mgl-image
+        id="custom-marker"
+        url="./assets/red_marker.png"
+        (imageLoaded)="markerImageLoaded = true"
+    ></mgl-image>
+    <mgl-geojson-source
+        id="points-source"
+        [data]="points"
+    ></mgl-geojson-source>
+    <mgl-geojson-source
+        id="line-source"
+        [data]="line"
+    ></mgl-geojson-source>
+    <mgl-layer *ngIf="markerImageLoaded"
+        id="points"
+        source="points-source"
+        type="symbol"
+        [layout]="{
+            'icon-image': 'custom-marker',
+            'icon-allow-overlap': true,
+            'icon-size': .05,
+            'icon-anchor': 'bottom'
+        }"
+        (layerMouseEnter)="cursorStyle = 'pointer'"
+        (layerMouseLeave)="cursorStyle = ''"
+        (layerClick)="centerMapTo($event)"
+    ></mgl-layer>
+    <mgl-layer
+        id="route"
+        type="line"
+        source="line-source"
+        [layout]="{
+            'line-join': 'round',
+            'line-cap': 'round'
+          }"
+          [paint]="{
+            'line-color': '#00F',
+            'line-width': 5
+          }"
+    ></mgl-layer>
+</mgl-map>

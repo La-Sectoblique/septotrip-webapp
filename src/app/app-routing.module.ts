@@ -27,10 +27,15 @@ const routes: Routes = [
             component: TripsComponent,
             pathMatch: 'full',
           },
-          // { @example
-          //   path: ':tripsId',
-          //   component:,
-          // },
+          {
+            path: 'create',
+            component: CreateTripComponent,
+            pathMatch: 'full',
+          },
+          {
+            path: ':tripsId',
+            component: TripsComponent,
+          },
         ],
       },
     ],

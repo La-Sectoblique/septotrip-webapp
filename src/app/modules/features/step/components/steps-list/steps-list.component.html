@@ -1,0 +1,14 @@
+<ng-container *ngIf="steps.length > 0; else emptyBlock">
+  <spt-step-preview *ngFor="let step of steps"
+    [step]="step"
+  >
+    <nb-icon class="cursor-pointer trash-icon" (click)="deleteStep(step.id)" icon="trash-2-outline"></nb-icon>
+  </spt-step-preview>
+</ng-container>
+
+<ng-template #emptyBlock>
+  <div class="d-flex flex-column align-items-center">
+    <h5>Il n'y a aucune étape.</h5>
+    <h6>Cliquez sur la carte pour commencer !</h6>
+  </div>
+</ng-template>
