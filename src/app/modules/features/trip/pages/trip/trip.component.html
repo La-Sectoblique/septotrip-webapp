@@ -6,7 +6,7 @@
   <ng-container *ngIf="(steps$ | async) as steps; else stepsLoadingBlock">
 
     <div class="trip-wrapper">
-      <spt-steps-list [tripId]="trip.tripInstance.id" [steps]="steps"></spt-steps-list>
+      <spt-steps-list class="step-wrapper" [tripId]="trip.tripInstance.id" [steps]="steps"></spt-steps-list>
       <div class="map-wrapper">
         <spt-trips-map [steps]="steps" [tripId]="trip.tripInstance.id"></spt-trips-map>
       </div>
