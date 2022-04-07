@@ -11,7 +11,3 @@ export const GetUserTripsSuccess = createAction(
   props<{ trips: TripOutput[] }>(),
 );
 
-export const TripUpdate = createAction(
-  '[Trips]: Update single trip state',
-  props<{ trip: TripOutput }>(),
-);
