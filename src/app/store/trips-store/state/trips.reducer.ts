@@ -45,4 +45,15 @@ export const tripReducer = createReducer(
     },
   })),
 
+  on(TripsAction.DeleteTripStepSuccess, (state, { stepId, tripId }) => ({
+    ...state,
+    trips: {
+      ...state.trips,
+      [tripId]: {
+        ...state.trips[tripId],
+        steps: state.trips[tripId].steps.filter((step) => step.stepInstance.id !== stepId),
+      },
+    },
+  })),
+
 );

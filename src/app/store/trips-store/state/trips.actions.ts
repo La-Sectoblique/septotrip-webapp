@@ -31,3 +31,14 @@ export const GetTripStepsSuccess = createAction(
   '[Trip] Get trip steps Success',
   props<{ steps: StepOutput[]; tripId: number }>(),
 );
+
+export const DeleteTripStep = createAction(
+  '[Trip] Delete trip step',
+  props<{ tripId: number; stepId: number }>(),
+);
+
+export const DeleteTripStepSuccess = createAction(
+  '[Trip] Delete trip step Success',
+  props<{ tripId: number; stepId: number }>(),
+);
+

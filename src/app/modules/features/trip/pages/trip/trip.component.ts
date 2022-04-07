@@ -41,12 +41,6 @@ export class TripComponent implements OnInit {
       this.store.dispatch(GetTripSteps({ tripId }));
       this.steps$ = this.store.select(selectTripSteps(tripId));
 
-      // this.stepsService.updateSteps(tripId);
-      // this.steps$ = this.stepsService.steps$;
-
-      // this.trip$ = getTripById(tripId);
-      // this.steps$ = getTripSteps(tripId);
-
     });
   }
 

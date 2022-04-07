@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { FlattenedTrip } from 'src/app/modules/features/trip/models/flattened-trip';
 import { TripState } from './trips.state';
 
 export const TRIP_FEATURE_KEY = 'trip_feature_key';

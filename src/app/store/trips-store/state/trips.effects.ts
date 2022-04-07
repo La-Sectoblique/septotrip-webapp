@@ -40,6 +40,16 @@ export class TripsEffects {
     ),
   ));
 
+  DeleteTripStep$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.DeleteTripStep),
+    mergeMap(({ stepId, tripId }) => this.stepsService.deleteStep(stepId)
+      .pipe(
+        map(() => TripsActions.DeleteTripStepSuccess({ stepId, tripId })),
+        // @TODO: catchError(() => CALL ERROR ACTION),
+      ),
+    ),
+  ));
+
   constructor(
     private actions$: Actions,
     private tripsService: TripsService,
