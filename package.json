@@ -21,7 +21,7 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
-    "@la-sectoblique/septoblique-service": "0.6.0",
+    "@la-sectoblique/septoblique-service": "0.6.1",
     "@mapbox/mapbox-gl-geocoder": "^4.7.4",
     "@nebular/eva-icons": "^9.0.1",
     "@nebular/theme": "^9.0.1",
