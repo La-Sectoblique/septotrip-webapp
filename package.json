@@ -21,7 +21,7 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
-    "@la-sectoblique/septoblique-service": "0.5.2",
+    "@la-sectoblique/septoblique-service": "0.6.0",
     "@mapbox/mapbox-gl-geocoder": "^4.7.4",
     "@nebular/eva-icons": "^9.0.1",
     "@nebular/theme": "^9.0.1",
@@ -36,7 +36,7 @@
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
-  "devDependencies": {
+  "devDependencies": {  
     "@angular-devkit/build-angular": "~13.2.5",
     "@angular-eslint/builder": "13.1.0",
     "@angular-eslint/eslint-plugin": "13.1.0",
