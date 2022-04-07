@@ -32,9 +32,10 @@ export class StepsService {
   async createTripSteps(
     tripId: number,
     name: string,
+    duration: number,
     localisation: LocalisationPoint,
   ): Promise<void> {
-    await addStep(tripId, { name, order: this.steps.length, localisation }).then((newStep) => {
+    await addStep(tripId, { name, order: this.steps.length, duration, localisation }).then((newStep) => {
       this.steps = [
         ...this.steps,
         newStep,

@@ -13,7 +13,7 @@ export class AddStepComponent {
   @Input() clickedCoordinates: LngLat;
   @Input() tripId: number;
   stepName = '';
-
+  stepDuration = 1;
 
   constructor(
     private stepsService: StepsService,
@@ -25,6 +25,7 @@ export class AddStepComponent {
     this.stepsService.createTripSteps(
       this.tripId,
       this.stepName,
+      this.stepDuration,
       { coordinates: [this.clickedCoordinates.lng, this.clickedCoordinates.lat], type: 'Point' },
     ).finally(() => {
       this.dialogRef.close();
