@@ -22,14 +22,14 @@ export class AddStepComponent {
 
   create(): void {
     console.log('clickedCoordinates', this.clickedCoordinates);
-    this.stepsService.createTripSteps(
-      this.tripId,
-      this.stepName,
-      this.stepDuration,
-      { coordinates: [this.clickedCoordinates.lng, this.clickedCoordinates.lat], type: 'Point' },
-    ).finally(() => {
-      this.dialogRef.close();
-    });
+    // this.stepsService.createTripSteps(
+    //   this.tripId,
+    //   this.stepName,
+    //   this.stepDuration,
+    //   { coordinates: [this.clickedCoordinates.lng, this.clickedCoordinates.lat], type: 'Point' },
+    // ).finally(() => {
+    //   this.dialogRef.close();
+    // });
   }
 
   isCreationValid(): boolean {

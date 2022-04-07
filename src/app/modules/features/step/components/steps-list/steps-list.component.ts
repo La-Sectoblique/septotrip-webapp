@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
+import { FlattenedStep } from '../../models/flattened-step';
 import { StepsService } from '../../services/steps.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class StepsListComponent {
 
   @Input() tripId: number;
 
-  @Input() steps: StepOutput[];
+  @Input() steps: FlattenedStep[];
 
   constructor(
     private stepsService: StepsService,
@@ -19,7 +20,7 @@ export class StepsListComponent {
 
 
   deleteStep(stepId: number): void {
-    this.stepsService.deleteStep(stepId);
+    // this.stepsService.deleteStep(stepId);
   }
 
 

@@ -5,6 +5,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbLayoutModule, NbThemeModule } from '@nebular/theme';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { FeaturesStoreModule } from './store/features-store.module';
     // Store imports
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({}),
     FeaturesStoreModule,
     //
     NbThemeModule.forRoot(),

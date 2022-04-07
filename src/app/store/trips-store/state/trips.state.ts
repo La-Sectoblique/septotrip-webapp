@@ -1,20 +1,9 @@
-import { DayOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Day';
-import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
-import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
-import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
+import { FlattenedTrip } from 'src/app/modules/features/trip/models/flattened-trip';
 
 export interface TripState {
-  // trips: TripOutput[] | null;
-  trips: { [tripId: number]: {
-    tripInstance: TripOutput;
-    steps: { [stepId: number]: {
-      stepInstance: StepOutput;
-      daysInstance: DayOutput[];
-      pointsInstance: PointOutput[];
-    }; };
-  }; } | null;
+  trips: { [tripId: number]: FlattenedTrip };
 }
 
 export const initialTripState: TripState = {
-  trips: null,
+  trips: {},
 };
