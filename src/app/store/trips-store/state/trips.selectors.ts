@@ -21,5 +21,5 @@ export const selectUserTrip = (tripId: number) => createSelector(
 
 export const selectTripSteps = (tripId: number) => createSelector(
   selectFeature,
-  (state: TripState) => state.trips[tripId].steps && Object.values(state.trips[tripId].steps),
+  (state: TripState) => state.trips[tripId].steps,
 );

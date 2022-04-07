@@ -34,27 +34,15 @@ export const tripReducer = createReducer(
     },
   })),
 
-  on(TripsAction.GetTripStepsSuccess, (state, { steps, tripId }) => {
-    let newSteps = state.trips[tripId].steps;
-    steps.forEach((step) => {
-      newSteps = {
-        ...newSteps,
-        [step.id]: {
-          stepInstance: step,
-        },
-      };
-    });
-
-    return {
-      ...state,
-      trips: {
-        ...state.trips,
-        [tripId]: {
-          ...state.trips[tripId],
-          steps: newSteps,
-        },
+  on(TripsAction.GetTripStepsSuccess, (state, { steps, tripId }) => ({
+    ...state,
+    trips: {
+      ...state.trips,
+      [tripId]: {
+        ...state.trips[tripId],
+        steps: steps.map((step) => ({ stepInstance: step })),
       },
-    };
-  }),
+    },
+  })),
 
 );
