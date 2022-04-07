@@ -1,0 +1,17 @@
+<div class="d-flex flex-column align-items-center">
+  <h2>Création de voyage</h2>
+  <div class="input-wrapper">
+    <label>Nom:</label>
+    <input nbInput [(ngModel)]="tripName" placeholder="Voyage en France">
+  </div>
+  <div class="input-wrapper d-flex align-items-center">
+    <nb-radio-group [(ngModel)]="visibility">
+      <nb-radio
+        *ngFor="let option of visibilityOptions"
+        [value]="option.value">
+        {{ option.label }}
+      </nb-radio>
+    </nb-radio-group>
+  </div>
+  <button nbButton status="success" (click)="create()" [disabled]="!isCreationValid()">Créer le voyage</button>
+</div>

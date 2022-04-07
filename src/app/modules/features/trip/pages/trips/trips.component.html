@@ -1,0 +1,25 @@
+<div class="d-flex flex-column align-items-center">
+    <h2>Mes voyages</h2>
+    <div class="w-100 d-flex justify-content-center">
+        <button nbButton status="primary"
+            routerLink="/trips/create"
+        ><nb-icon icon="plus-square-outline"></nb-icon>Créer un voyage</button>
+    </div>
+    <ng-container *ngIf="(trips | async) as trips; else loadingBlock">
+        <ng-container *ngIf="trips.length > 0; else emptyBlock">
+            <spt-trip-preview *ngFor="let trip of trips"
+                class="cursor-pointer"
+                [trip]="trip"
+                [routerLink]="['/trips', trip.id]"
+            ></spt-trip-preview>
+        </ng-container>
+        <ng-template #emptyBlock>
+            <div class="d-flex justify-content-center">
+                Vous n'avez aucun voyage.
+            </div>
+        </ng-template>
+    </ng-container>
+    <ng-template #loadingBlock>
+        <spt-loader></spt-loader>
+    </ng-template>
+</div>
