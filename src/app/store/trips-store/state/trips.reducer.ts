@@ -45,6 +45,20 @@ export const tripReducer = createReducer(
     },
   })),
 
+  on(TripsAction.CreateTripStepSuccess, (state, { step, tripId }) => ({
+    ...state,
+    trips: {
+      ...state.trips,
+      [tripId]: {
+        ...state.trips[tripId],
+        steps: [
+          ...state.trips[tripId].steps,
+          { stepInstance: step },
+        ],
+      },
+    },
+  })),
+
   on(TripsAction.DeleteTripStepSuccess, (state, { stepId, tripId }) => ({
     ...state,
     trips: {

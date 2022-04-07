@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
+import { Store } from '@ngrx/store';
 import {  map, mergeMap } from 'rxjs';
 import { StepsService } from 'src/app/modules/features/step/services/steps.service';
 import { TripsService } from 'src/app/modules/features/trip/services/trips.service';
 import * as TripsActions from './trips.actions';
+import { selectTripSteps } from './trips.selectors';
 
 @Injectable()
 export class TripsEffects {
@@ -40,6 +42,23 @@ export class TripsEffects {
     ),
   ));
 
+  CreateTripStep$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.CreateTripStep),
+    concatLatestFrom(({ tripId }) => this.store.select(selectTripSteps(tripId))),
+    mergeMap(([{ tripId, step }, steps]) => this.stepsService.createTripStep(
+      tripId,
+      step.name,
+      step.duration,
+      steps.length,
+      step.localisation,
+    )
+      .pipe(
+        map((newStep: StepOutput) => TripsActions.CreateTripStepSuccess({ step: newStep, tripId })),
+        // @TODO: catchError(() => CALL ERROR ACTION),
+      ),
+    ),
+  ));
+
   DeleteTripStep$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.DeleteTripStep),
     mergeMap(({ stepId, tripId }) => this.stepsService.deleteStep(stepId)
@@ -54,6 +73,7 @@ export class TripsEffects {
     private actions$: Actions,
     private tripsService: TripsService,
     private stepsService: StepsService,
+    private store: Store,
   ) {}
 
 }

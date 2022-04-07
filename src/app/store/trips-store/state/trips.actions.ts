@@ -1,4 +1,4 @@
-import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
+import { StepAttributes, StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { createAction, props } from '@ngrx/store';
 
@@ -30,6 +30,16 @@ export const GetTripSteps = createAction(
 export const GetTripStepsSuccess = createAction(
   '[Trip] Get trip steps Success',
   props<{ steps: StepOutput[]; tripId: number }>(),
+);
+
+export const CreateTripStep = createAction(
+  '[Trip] Create trip step',
+  props<{ tripId: number; step: Omit<Omit<StepAttributes, 'tripId'>, 'order'> }>(),
+);
+
+export const CreateTripStepSuccess = createAction(
+  '[Trip] Create trip step Success',
+  props<{ tripId: number; step: StepOutput }>(),
 );
 
 export const DeleteTripStep = createAction(
