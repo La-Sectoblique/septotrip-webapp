@@ -8,10 +8,9 @@ export const tripReducer = createReducer(
 
   on(TripsAction.GetUserTripsSuccess, (state, { trips }) => {
     console.log('tripreducer', trips);
-    const newTrips = trips.map((trip) => )
+    const newTrips = trips.map((trip) => console.log('coucou'));
     return {
       ...state,
-      trips: 
     };
   }),
 
