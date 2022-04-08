@@ -1,76 +1,83 @@
-<mgl-map
-    [style]="'mapbox://styles/augustin417/ckz8hkmbq001114rk93al2alb'"
-    [zoom]="mapZoom"
-    [center]="mapCenter"
-    [cursorStyle]="cursorStyle"
-    (mapClick)="onMapClick($event)"
->
-    <!-- STEPS MANAGEMENT -->
-    <mgl-image
-        id="steps-marker"
-        url="./assets/steps_marker.png"
-        (imageLoaded)="stepMarkerImageLoaded = true"
-    ></mgl-image>
-    <mgl-geojson-source
-        id="steps-source"
-        [data]="stepsMapPoints"
-    ></mgl-geojson-source>
-    <mgl-layer *ngIf="stepMarkerImageLoaded"
-    id="steps"
-    source="steps-source"
-    type="symbol"
-    [layout]="{
-        'icon-image': 'steps-marker',
-        'icon-allow-overlap': true,
-        'icon-size': .05,
-        'icon-anchor': 'bottom'
-    }"
-    (layerMouseEnter)="cursorStyle = 'pointer'"
-    (layerMouseLeave)="cursorStyle = ''"
-    (layerClick)="centerMapTo($event)"
-    ></mgl-layer>
-
-    <!-- POINTS MANAGEMENT -->
-    <mgl-image
-        id="points-marker"
-        url="./assets/points_marker.png"
-        (imageLoaded)="pointMarkerImageLoaded = true"
-    ></mgl-image>
-    <mgl-geojson-source
-        id="points-source"
-        [data]="pointsMapPoints"
-    ></mgl-geojson-source>
-    <mgl-layer *ngIf="pointMarkerImageLoaded"
-    id="points"
-    source="points-source"
-    type="symbol"
-    [layout]="{
-        'icon-image': 'points-marker',
-        'icon-allow-overlap': true,
-        'icon-size': .035,
-        'icon-anchor': 'bottom'
-    }"
-    (layerMouseEnter)="cursorStyle = 'pointer'"
-    (layerMouseLeave)="cursorStyle = ''"
-    (layerClick)="centerMapTo($event)"
-    ></mgl-layer>
-
-    <!-- LINE MANAGEMENT -->
-    <mgl-geojson-source
-        id="line-source"
-        [data]="line"
-    ></mgl-geojson-source>
-    <mgl-layer
-        id="route"
-        type="line"
-        source="line-source"
+<div class="w-100 h-100 map-wrapper">
+    <mgl-map
+        [style]="'mapbox://styles/augustin417/ckz8hkmbq001114rk93al2alb'"
+        [zoom]="mapZoom"
+        [center]="mapCenter"
+        [cursorStyle]="cursorStyle"
+        (mapClick)="onMapClick($event)"
+    >
+        <!-- STEPS MANAGEMENT -->
+        <mgl-image
+            id="steps-marker"
+            url="./assets/steps_marker.png"
+            (imageLoaded)="stepMarkerImageLoaded = true"
+        ></mgl-image>
+        <mgl-geojson-source
+            id="steps-source"
+            [data]="stepsMapPoints"
+        ></mgl-geojson-source>
+        <mgl-layer *ngIf="stepMarkerImageLoaded"
+        id="steps"
+        source="steps-source"
+        type="symbol"
         [layout]="{
-            'line-join': 'round',
-            'line-cap': 'round'
-          }"
-          [paint]="{
-            'line-color': '#00F',
-            'line-width': 5
-          }"
-    ></mgl-layer>
-</mgl-map>
+            'icon-image': 'steps-marker',
+            'icon-allow-overlap': true,
+            'icon-size': .05,
+            'icon-anchor': 'bottom'
+        }"
+        (layerMouseEnter)="cursorStyle = 'pointer'"
+        (layerMouseLeave)="cursorStyle = ''"
+        (layerClick)="centerMapTo($event)"
+        ></mgl-layer>
+    
+        <!-- POINTS MANAGEMENT -->
+        <mgl-image
+            id="points-marker"
+            url="./assets/points_marker.png"
+            (imageLoaded)="pointMarkerImageLoaded = true"
+        ></mgl-image>
+        <mgl-geojson-source
+            id="points-source"
+            [data]="pointsMapPoints"
+        ></mgl-geojson-source>
+        <mgl-layer *ngIf="pointMarkerImageLoaded"
+        id="points"
+        source="points-source"
+        type="symbol"
+        [layout]="{
+            'icon-image': 'points-marker',
+            'icon-allow-overlap': true,
+            'icon-size': .035,
+            'icon-anchor': 'bottom'
+        }"
+        (layerMouseEnter)="cursorStyle = 'pointer'"
+        (layerMouseLeave)="cursorStyle = ''"
+        (layerClick)="centerMapTo($event)"
+        ></mgl-layer>
+    
+        <!-- LINE MANAGEMENT -->
+        <mgl-geojson-source
+            id="line-source"
+            [data]="line"
+        ></mgl-geojson-source>
+        <mgl-layer
+            id="route"
+            type="line"
+            source="line-source"
+            [layout]="{
+                'line-join': 'round',
+                'line-cap': 'round'
+              }"
+              [paint]="{
+                'line-color': '#00F',
+                'line-width': 5
+              }"
+        ></mgl-layer>
+    </mgl-map>
+
+    <spt-map-edit-mode-preview *ngIf="(mapEditMode$ | async) as mapEditMode"
+        class="map-edit-mode-preview"
+        [mapMode]="mapEditMode"
+    ></spt-map-edit-mode-preview>
+</div>
