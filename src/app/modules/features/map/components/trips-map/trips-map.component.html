@@ -8,7 +8,7 @@
     <!-- STEPS MANAGEMENT -->
     <mgl-image
         id="steps-marker"
-        url="./assets/steps_red_marker.png"
+        url="./assets/steps_marker.png"
         (imageLoaded)="stepMarkerImageLoaded = true"
     ></mgl-image>
     <mgl-geojson-source
@@ -33,7 +33,7 @@
     <!-- POINTS MANAGEMENT -->
     <mgl-image
         id="points-marker"
-        url="./assets/points_yellow_marker.png"
+        url="./assets/points_marker.png"
         (imageLoaded)="pointMarkerImageLoaded = true"
     ></mgl-image>
     <mgl-geojson-source
@@ -47,7 +47,7 @@
     [layout]="{
         'icon-image': 'points-marker',
         'icon-allow-overlap': true,
-        'icon-size': .025,
+        'icon-size': .035,
         'icon-anchor': 'bottom'
     }"
     (layerMouseEnter)="cursorStyle = 'pointer'"

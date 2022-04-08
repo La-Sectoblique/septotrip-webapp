@@ -40,10 +40,6 @@ export class TripComponent implements OnInit {
 
       this.store.dispatch(GetTripPoints({ tripId }));
       this.points$ = this.store.select(selectTripPoints(tripId));
-
-      this.points$.subscribe((point) => {
-        console.log('trip points', point);
-      });
     });
   }
 

@@ -21,8 +21,6 @@ export class TripsComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(GetUserTrips());
     this.trips$ = this.store.select(selectUserTrips());
-
-    this.trips$.subscribe((trips) => console.log('store trips', trips));
   }
 
 }
