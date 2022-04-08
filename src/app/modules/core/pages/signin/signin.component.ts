@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss']
+  styleUrls: ['./signin.component.scss'],
 })
-export class SigninComponent implements OnInit {
+export class SigninComponent /*implements OnInit*/ {
 
-  constructor() { }
+  //constructor() { }
 
-  ngOnInit() {
-  }
+  /*ngOnInit() {
+  }*/
 
 }

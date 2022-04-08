@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modules/core/pages/home/home.component';
+import { LoginComponent } from './modules/core/pages/login/login.component';
 import { CreateTripComponent } from './modules/core/pages/trips/create-trip/create-trip.component';
 import { TripsComponent } from './modules/core/pages/trips/trips.component';
 
@@ -60,6 +61,10 @@ const routes: Routes = [
         ],
       },
     ],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
 ];
 
