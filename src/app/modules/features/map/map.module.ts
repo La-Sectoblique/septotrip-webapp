@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { environment } from 'src/environments/environment';
 import { TripsMapComponent } from './components/trips-map/trips-map.component';
-import { NbDialogModule } from '@nebular/theme';
+import { NbButtonModule, NbDialogModule, NbIconModule } from '@nebular/theme';
 import { MapEditModePreviewComponent } from './components/map-edit-mode-preview/map-edit-mode-preview.component';
 
 @NgModule({
@@ -13,6 +13,8 @@ import { MapEditModePreviewComponent } from './components/map-edit-mode-preview/
       accessToken: environment.mapBoxToken,
     }),
     NbDialogModule.forChild(),
+    NbButtonModule,
+    NbIconModule,
   ],
   declarations: [
     TripsMapComponent,
