@@ -2,6 +2,6 @@ import { DayOutput } from '@la-sectoblique/septoblique-service/dist/types/models
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 
 export interface FlattenedStep {
-  stepInstance?: StepOutput;
+  stepInstance: StepOutput;
   daysInstance?: DayOutput[];
 }

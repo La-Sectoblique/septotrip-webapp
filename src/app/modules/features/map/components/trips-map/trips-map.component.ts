@@ -11,7 +11,7 @@ import { FlattenedStep } from '../../../step/models/flattened-step';
 })
 export class TripsMapComponent implements OnChanges {
 
-  @Input() steps: FlattenedStep[];
+  @Input() steps: FlattenedStep[] | null;
   @Input() tripId: number;
 
   mapCenter: LngLatLike = [7.750149, 48.581551];

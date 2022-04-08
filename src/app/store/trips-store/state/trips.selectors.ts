@@ -22,3 +22,8 @@ export const selectTripSteps = (tripId: number) => createSelector(
   selectFeature,
   (state: TripState) => state.trips[tripId].steps,
 );
+
+export const selectTripPoints = (tripId: number) => createSelector(
+  selectFeature,
+  (state: TripState) => state.trips[tripId]?.points,
+);

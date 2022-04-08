@@ -1,0 +1,5 @@
+<div class="d-flex flex-column align-items-center justify-content-space-between card">
+  <p>{{point.title}}</p>
+  <p *ngIf="point.description">Desc: {{point.description}}</p>
+  <ng-content></ng-content>
+</div>

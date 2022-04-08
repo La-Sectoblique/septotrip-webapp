@@ -19,6 +19,7 @@ export class PointsService {
     description?: string,
   ): Observable<PointOutput> {
     return from(addPoint(tripId, {
+      tripId, // If there is an error on tripId, it's seems to be normal, probably due to septoservice issue
       title,
       localisation,
       description,

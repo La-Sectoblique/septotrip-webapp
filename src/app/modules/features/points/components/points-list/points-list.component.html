@@ -1,0 +1,14 @@
+<ng-container *ngIf="points; else emptyBlock">
+  <spt-point-preview *ngFor="let point of points"
+    [point]="point"
+  >
+    <nb-icon class="cursor-pointer trash-icon" (click)="deletePoint(point.id)" icon="trash-2-outline"></nb-icon>
+  </spt-point-preview>
+</ng-container>
+
+<ng-template #emptyBlock>
+  <div class="d-flex flex-column align-items-center">
+    <h5>Il n'y a aucun point d'intérêt</h5>
+    <h6>Cliquez sur la carte pour commencer !</h6>
+  </div>
+</ng-template>
