@@ -14,10 +14,10 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 5fr 1fr;
+    grid-template-rows: 80% 20%;
 }
 
-.step-wrapper {
+.steps-wrapper {
     grid-area: 1 / 1 / 2 / 2;
 }
 
@@ -32,6 +32,6 @@
     align-items: center;
 }
 
-.poi-wrapper {
+.points-wrapper {
     grid-area: 2 / 1 / 3 / 3;
 }

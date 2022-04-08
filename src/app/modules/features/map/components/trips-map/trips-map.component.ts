@@ -95,6 +95,7 @@ export class TripsMapComponent implements OnChanges {
 
 
   onMapClick(evt: MapMouseEvent): void {
+    console.log('map clicked', evt);
     if (this.cursorStyle !== 'pointer') {
       this.nbDialogService.open(AddStepComponent, {
         context: {

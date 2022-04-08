@@ -1,9 +1,12 @@
 <ng-container *ngIf="points; else emptyBlock">
-  <spt-point-preview *ngFor="let point of points"
-    [point]="point"
-  >
-    <nb-icon class="cursor-pointer trash-icon" (click)="deletePoint(point.id)" icon="trash-2-outline"></nb-icon>
-  </spt-point-preview>
+  <div class="d-flex flex-row w-100 h-100 align-items-center list-card">
+    <h4 class="text-align-center">Points<br>d'intérêts</h4>
+    <spt-point-preview class="h-100" *ngFor="let point of points"
+      [point]="point"
+    >
+      <nb-icon class="cursor-pointer trash-icon" (click)="deletePoint(point.id)" icon="trash-2-outline"></nb-icon>
+    </spt-point-preview>
+  </div>
 </ng-container>
 
 <ng-template #emptyBlock>
