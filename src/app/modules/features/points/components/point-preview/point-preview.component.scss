@@ -1,3 +1,10 @@
 .point-preview-wrapper {
     height: 100%;
+    max-width: 30rem;
+    .infos-wrapper {
+        h6 {
+            margin: 0,
+        }
+        overflow: auto;
+    }
 }
