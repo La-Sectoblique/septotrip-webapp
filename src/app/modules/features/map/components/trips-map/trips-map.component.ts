@@ -1,8 +1,8 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { NbDialogService } from '@nebular/theme';
 import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
 import { AddStepComponent } from '../../../step/components/add-step/add-step.component';
+import { FlattenedStep } from '../../../step/models/flattened-step';
 
 @Component({
   selector: 'spt-trips-map',
@@ -11,7 +11,7 @@ import { AddStepComponent } from '../../../step/components/add-step/add-step.com
 })
 export class TripsMapComponent implements OnChanges {
 
-  @Input() steps: StepOutput[];
+  @Input() steps: FlattenedStep[];
   @Input() tripId: number;
 
   mapCenter: LngLatLike = [7.750149, 48.581551];
@@ -45,14 +45,14 @@ export class TripsMapComponent implements OnChanges {
     console.log('steps changes', steps);
     this.points = {
       ...this.points,
-      features: steps.currentValue.map((step: StepOutput) => ({
+      features: steps.currentValue.map((step: FlattenedStep) => ({
         type: 'Feature',
         geometry: {
-          type: step.localisation.type,
-          coordinates: step.localisation.coordinates,
+          type: step.stepInstance.localisation.type,
+          coordinates: step.stepInstance.localisation.coordinates,
         },
         properties: {
-          title: step.name,
+          title: step.stepInstance.name,
         },
       })),
     };
@@ -60,7 +60,7 @@ export class TripsMapComponent implements OnChanges {
       ...this.line,
       geometry: {
         ...this.line.geometry,
-        coordinates: steps.currentValue.map((step: StepOutput) => step.localisation.coordinates),
+        coordinates: steps.currentValue.map((step: FlattenedStep) => step.stepInstance.localisation.coordinates),
       },
     };
   }
@@ -77,7 +77,7 @@ export class TripsMapComponent implements OnChanges {
     }
   }
 
-  centerMapTo(evt: MapMouseEvent) {
+  centerMapTo(evt: MapMouseEvent): void {
     this.mapCenter = (evt as any).features[0].geometry.coordinates;
   }
 
