@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { LngLat } from 'mapbox-gl';
+import { CreateTripPoint } from 'src/app/store/trips-store/state/trips.actions';
 import { PointsService } from '../../services/points.service';
 
 @Component({
@@ -16,16 +18,18 @@ export class CreatePointComponent {
   pointDescription = '';
 
   constructor(
-    private pointService: PointsService,
+    private store: Store,
   ) {}
 
   createPoint(): void {
-    this.pointService.createTripPoint(
-      this.tripId,
-      this.pointTitle,
-      { coordinates: [this.clickedCoordinates.lng, this.clickedCoordinates.lat], type: 'Point' },
-      this.pointDescription,
-    );
+    this.store.dispatch(CreateTripPoint({ tripId: this.tripId, point: {
+      title: this.pointTitle,
+      description: this.pointDescription,
+      localisation: {
+        coordinates: [this.clickedCoordinates.lng, this.clickedCoordinates.lat],
+        type: 'Point',
+      },
+    } }));
   }
 
   isCreationValid(): boolean {
