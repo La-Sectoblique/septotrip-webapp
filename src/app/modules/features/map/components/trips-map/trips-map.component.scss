@@ -5,6 +5,16 @@
     height: 100%;
 }
 
+.map-wrapper {
+    position: relative;
+}
+
+.map-edit-mode-preview {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 mgl-map{
     height: 100%;
     width: 100%;
