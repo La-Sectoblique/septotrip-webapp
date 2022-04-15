@@ -14,7 +14,7 @@ export class StepsListComponent {
 
   @Input() tripId: number;
 
-  @Input() steps: FlattenedStep[];
+  @Input() steps: FlattenedStep[] | null;
 
   constructor(
     private store: Store,

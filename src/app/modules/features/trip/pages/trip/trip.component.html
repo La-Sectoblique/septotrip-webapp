@@ -3,14 +3,21 @@
     [trip]="trip.tripInstance"
   ></spt-trip-preview>
 
+  <!-- <ng-container *ngIf="(steps$ | async) as steps; else stepsLoadingBlock"> -->
   <ng-container *ngIf="(steps$ | async) as steps; else stepsLoadingBlock">
-
-    <div class="trip-wrapper">
-      <spt-steps-list [tripId]="trip.tripInstance.id" [steps]="steps"></spt-steps-list>
-      <div class="map-wrapper">
-        <spt-trips-map [steps]="steps" [tripId]="trip.tripInstance.id"></spt-trips-map>
+    <ng-container *ngIf="(points$ | async) as points">
+      <div class="trip-wrapper">
+        <spt-steps-list class="steps-wrapper" [tripId]="trip.tripInstance.id" [steps]="steps"></spt-steps-list>
+        <div class="map-wrapper">
+          <spt-trips-map [steps]="steps" [points]="points" [tripId]="trip.tripInstance.id"></spt-trips-map>
+        </div>
+        <div class="points-wrapper">
+          <spt-points-list
+            [points]="points"
+          ></spt-points-list>
+        </div>
       </div>
-    </div>
+    </ng-container>
   </ng-container>
 
   <ng-template #stepsLoadingBlock>
