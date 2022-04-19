@@ -5,20 +5,10 @@
 }
 
 .card {
-    @include mixins.rounded-corner();
-    @include mixins.card-shadow();
+    @extend .rounded-corner !optional;
     border: 1px solid #C7C7C7;
+    box-shadow: 0px 4px 4px 0px #0000001A;
     background-color: white;
     padding: 1rem;
     margin: .5rem;
-}
-
-.list-card {
-    @include mixins.rounded-corner();
-    @include mixins.card-shadow();
-    background-color: rgb(230, 230, 230);
-    padding: .5rem;
-    margin: .25rem;
-    max-height: 100%;
-    overflow: auto;
 }
