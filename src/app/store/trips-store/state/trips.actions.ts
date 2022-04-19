@@ -70,7 +70,7 @@ export const GetTripPointsSuccess = createAction(
 
 export const CreateTripPoint = createAction(
   '[Trip] Create trip point',
-  props<{ tripId: number; point: Omit<Omit<PointAttributes, 'tripId'>, 'order'> }>(),
+  props<{ tripId: number; point: Omit<PointAttributes, 'tripId' | 'order' | 'authorId'> }>(),
 );
 
 export const CreateTripPointSuccess = createAction(

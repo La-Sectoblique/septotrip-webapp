@@ -107,7 +107,7 @@ export const tripReducer = createReducer(
       ...state.trips,
       [tripId]: {
         ...state.trips[tripId],
-        points: state.trips[tripId].points.filter((point) => point.id !== pointId),
+        points: state.trips[tripId]?.points?.filter((point) => point.id !== pointId),
       },
     },
   })),

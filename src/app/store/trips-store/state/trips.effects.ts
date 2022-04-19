@@ -104,7 +104,7 @@ export class TripsEffects {
 
   DeleteTripPoint$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.DeleteTripPoint),
-    mergeMap(({ pointId, tripId }) => this.pointsService.deletePoint(pointId)
+    mergeMap(({ tripId, pointId }) => this.pointsService.deletePoint(pointId)
       .pipe(
         map(() => TripsActions.DeleteTripPointSuccess({ pointId, tripId })),
         // @TODO: catchError(() => CALL ERROR ACTION),

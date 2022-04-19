@@ -6,6 +6,16 @@
     >
       <nb-icon class="cursor-pointer trash-icon" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
     </spt-step-preview>
+    <button nbButton
+      *ngIf="(mapEditMode$ | async) as editMode"
+      status="primary" 
+      [outline]="editMode !== mapEditMode.EDIT_STEPS"
+      [hero]="editMode === mapEditMode.EDIT_STEPS"
+      (click)="switchStepEditMode()"
+    >
+      <nb-icon icon="edit-outline"></nb-icon>
+      EDITION
+    </button>
   </div>
 </ng-container>
 

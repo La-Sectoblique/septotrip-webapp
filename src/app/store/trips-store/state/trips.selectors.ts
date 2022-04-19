@@ -2,7 +2,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { TripState } from './trips.state';
 
-export const TRIP_FEATURE_KEY = 'trip_feature_key';
+export const TRIP_FEATURE_KEY = 'trips';
 
 const selectFeature = createFeatureSelector<TripState>(
   TRIP_FEATURE_KEY,

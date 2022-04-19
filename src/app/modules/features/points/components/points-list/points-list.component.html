@@ -6,6 +6,16 @@
     >
       <nb-icon class="cursor-pointer trash-icon" (click)="deletePoint(point.id)" icon="trash-2-outline"></nb-icon>
     </spt-point-preview>
+    <button nbButton
+      *ngIf="(mapEditMode$ | async) as editMode"
+      status="primary" 
+      [outline]="editMode !== mapEditMode.EDIT_POINTS"
+      [hero]="editMode === mapEditMode.EDIT_POINTS"
+      (click)="switchPointEditMode()"
+    >
+      <nb-icon icon="edit-outline"></nb-icon>
+      EDITION
+    </button>
   </div>
 </ng-container>
 

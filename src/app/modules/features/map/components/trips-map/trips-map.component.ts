@@ -1,7 +1,12 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { NbDialogService } from '@nebular/theme';
+import { Store } from '@ngrx/store';
 import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
+import { first, Observable } from 'rxjs';
+import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
+import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
+import { CreatePointComponent } from '../../../points/components/create-point/create-point.component';
 import { AddStepComponent } from '../../../step/components/add-step/add-step.component';
 import { FlattenedStep } from '../../../step/models/flattened-step';
 
@@ -10,11 +15,13 @@ import { FlattenedStep } from '../../../step/models/flattened-step';
   templateUrl: './trips-map.component.html',
   styleUrls: ['./trips-map.component.scss'],
 })
-export class TripsMapComponent implements OnChanges {
+export class TripsMapComponent implements OnChanges, OnInit {
 
   @Input() steps: FlattenedStep[];
   @Input() points: PointOutput[];
   @Input() tripId: number;
+
+  mapEditMode$: Observable<MapEditMode>;
 
   mapCenter: LngLatLike = [7.750149, 48.581551];
   mapZoom: [number] = [7];
@@ -46,8 +53,12 @@ export class TripsMapComponent implements OnChanges {
 
   constructor(
     private nbDialogService: NbDialogService,
+    private store: Store,
   ) {}
 
+  ngOnInit(): void {
+    this.mapEditMode$ = this.store.select(selectMapEditMode());
+  }
 
   ngOnChanges({ steps, points }: SimpleChanges): void {
     if (steps) {
@@ -97,11 +108,25 @@ export class TripsMapComponent implements OnChanges {
   onMapClick(evt: MapMouseEvent): void {
     console.log('map clicked', evt);
     if (this.cursorStyle !== 'pointer') {
-      this.nbDialogService.open(AddStepComponent, {
-        context: {
-          clickedCoordinates: evt.lngLat,
-          tripId: this.tripId,
-        },
+      this.mapEditMode$.pipe(first()).subscribe((mapMode) => {
+        if (mapMode === MapEditMode.EDIT_STEPS) {
+          this.nbDialogService.open(AddStepComponent, {
+            context: {
+              clickedCoordinates: evt.lngLat,
+              tripId: this.tripId,
+            },
+          });
+        }
+
+        if (mapMode === MapEditMode.EDIT_POINTS) {
+          console.log('ADD POINT');
+          this.nbDialogService.open(CreatePointComponent, {
+            context: {
+              clickedCoordinates:  evt.lngLat,
+              tripId: this.tripId,
+            },
+          });
+        }
       });
     }
   }
