@@ -34,7 +34,7 @@ const routes: Routes = [
             pathMatch: 'full',
           },
           {
-            path: ':tripId',
+            path: ':tripsId',
             component: TripComponent,
           },
         ],

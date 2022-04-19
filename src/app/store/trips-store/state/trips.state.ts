@@ -1,9 +1,9 @@
-import { FlattenedTrip } from 'src/app/modules/features/trip/models/flattened-trip';
+import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 
 export interface TripState {
-  trips: { [tripId: number]: FlattenedTrip };
+  trips: TripOutput[] | null;
 }
 
 export const initialTripState: TripState = {
-  trips: {},
+  trips: null,
 };

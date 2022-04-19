@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { StepModule } from '../step/step.module';
 import { SharedModule } from '../../shared/shared.module';
 import { MapModule } from '../map/map.module';
-import { PointsModule } from '../points/points.module';
 
 @NgModule({
   imports: [
@@ -24,7 +23,6 @@ import { PointsModule } from '../points/points.module';
     StepModule,
     SharedModule,
     MapModule,
-    PointsModule,
   ],
   declarations: [
     TripPreviewComponent,

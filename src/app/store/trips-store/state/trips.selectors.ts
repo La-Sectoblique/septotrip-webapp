@@ -2,7 +2,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { TripState } from './trips.state';
 
-export const TRIP_FEATURE_KEY = 'trips';
+export const TRIP_FEATURE_KEY = 'trip_feature_key';
 
 const selectFeature = createFeatureSelector<TripState>(
   TRIP_FEATURE_KEY,
@@ -10,20 +10,5 @@ const selectFeature = createFeatureSelector<TripState>(
 
 export const selectUserTrips = () => createSelector(
   selectFeature,
-  (state: TripState) => Object.values(state.trips),
-);
-
-export const selectUserTrip = (tripId: number) => createSelector(
-  selectFeature,
-  (state: TripState) => state.trips[tripId],
-);
-
-export const selectTripSteps = (tripId: number) => createSelector(
-  selectFeature,
-  (state: TripState) => state.trips[tripId].steps,
-);
-
-export const selectTripPoints = (tripId: number) => createSelector(
-  selectFeature,
-  (state: TripState) => state.trips[tripId]?.points,
+  (state: TripState) => state.trips,
 );

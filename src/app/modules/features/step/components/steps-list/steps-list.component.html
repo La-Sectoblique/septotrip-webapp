@@ -1,22 +1,9 @@
-<ng-container *ngIf="steps; else emptyBlock">
-  <div class="list-card">
-    <h4>Etapes</h4>
-    <spt-step-preview *ngFor="let step of steps"
-      [step]="step.stepInstance"
-    >
-      <nb-icon class="cursor-pointer trash-icon" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
-    </spt-step-preview>
-    <button nbButton
-      *ngIf="(mapEditMode$ | async) as editMode"
-      status="primary" 
-      [outline]="editMode !== mapEditMode.EDIT_STEPS"
-      [hero]="editMode === mapEditMode.EDIT_STEPS"
-      (click)="switchStepEditMode()"
-    >
-      <nb-icon icon="edit-outline"></nb-icon>
-      EDITION
-    </button>
-  </div>
+<ng-container *ngIf="steps.length > 0; else emptyBlock">
+  <spt-step-preview *ngFor="let step of steps"
+    [step]="step"
+  >
+    <nb-icon class="cursor-pointer trash-icon" (click)="deleteStep(step.id)" icon="trash-2-outline"></nb-icon>
+  </spt-step-preview>
 </ng-container>
 
 <ng-template #emptyBlock>

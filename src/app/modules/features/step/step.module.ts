@@ -19,6 +19,7 @@ import { AddStepComponent } from './components/add-step/add-step.component';
     FormsModule,
     SharedModule,
     NbInputModule,
+    FormsModule,
   ],
   declarations: [
     StepPreviewComponent,
