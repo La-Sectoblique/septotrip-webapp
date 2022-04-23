@@ -5,11 +5,11 @@ import { LngLat } from 'mapbox-gl';
 import { CreateTripStep } from 'src/app/store/trips-store/state/trips.actions';
 
 @Component({
-  selector: 'app-add-step',
-  templateUrl: './add-step.component.html',
-  styleUrls: ['./add-step.component.scss'],
+  selector: 'spt-create-step',
+  templateUrl: './create-step.component.html',
+  styleUrls: ['./create-step.component.scss'],
 })
-export class AddStepComponent {
+export class CreateStepComponent {
 
   @Input() clickedCoordinates: LngLat;
   @Input() tripId: number;
@@ -17,7 +17,7 @@ export class AddStepComponent {
   stepDuration = 1;
 
   constructor(
-    private dialogRef: NbDialogRef<AddStepComponent>,
+    private dialogRef: NbDialogRef<CreateStepComponent>,
     private store: Store,
   ) {}
 
