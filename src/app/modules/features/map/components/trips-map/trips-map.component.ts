@@ -17,8 +17,8 @@ import { FlattenedStep } from '../../../step/models/flattened-step';
 })
 export class TripsMapComponent implements OnChanges, OnInit {
 
-  @Input() steps: FlattenedStep[];
-  @Input() points: PointOutput[];
+  @Input() steps: FlattenedStep[] = [];
+  @Input() points: PointOutput[] = [];
   @Input() tripId: number;
 
   mapEditMode$: Observable<MapEditMode>;

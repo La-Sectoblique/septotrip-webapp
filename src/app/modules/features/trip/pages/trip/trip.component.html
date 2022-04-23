@@ -26,15 +26,15 @@
 </ng-container> -->
 
 <ng-container *ngIf="(trip$ | async) as trip">
-  <div class="d-flex flex-column h-100" *ngIf="(points$ | async) as points">
-    <div class="d-flex h-100" *ngIf="(steps$ | async) as steps">
-      <div class="d-flex flex-column h-100">
+  <div class="d-flex flex-column h-100 w-100" *ngIf="(points$ | async) as points" >
+    <div class="d-flex h-100 w-100" *ngIf="(steps$ | async) as steps">
+      <div class="d-flex flex-column h-100 left-bar align-items-center">
         <spt-trip-preview
         [trip]="trip.tripInstance"
         ></spt-trip-preview>
-        <spt-steps-list class="steps-wrapper h-100" [tripId]="trip.tripInstance.id" [steps]="steps"></spt-steps-list>
+        <spt-steps-list class="steps-wrapper h-100 w-100" [tripId]="trip.tripInstance.id" [steps]="steps"></spt-steps-list>
       </div>
-      <spt-trips-map [steps]="steps" [points]="points" [tripId]="trip.tripInstance.id"></spt-trips-map>
+      <spt-trips-map class="map-wrapper" [steps]="steps" [points]="points" [tripId]="trip.tripInstance.id"></spt-trips-map>
     </div>
     <spt-points-list
       [tripId]="trip.tripInstance.id"
@@ -42,3 +42,7 @@
     ></spt-points-list>
   </div>
 </ng-container>
+
+<ng-template #map let-steps="steps" let-points="points" let-tripId="tripId">
+  <spt-trips-map class="map-wrapper" [steps]="steps" [points]="points" [tripId]="tripId"></spt-trips-map>
+</ng-template>
