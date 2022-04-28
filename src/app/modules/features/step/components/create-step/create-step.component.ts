@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { updateStep } from '@la-sectoblique/septoblique-service';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { NbDialogRef } from '@nebular/theme';
@@ -16,7 +16,6 @@ export class CreateStepComponent implements OnInit {
   @Input() clickedCoordinates: LngLat;
   @Input() tripId: number;
 
-
   @Input() isEditMode = false;
   @Input() editedStep: StepOutput;
 
@@ -28,6 +27,13 @@ export class CreateStepComponent implements OnInit {
     private store: Store,
   ) {}
 
+  @HostListener('document:keypress', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    if (event.key === 'Enter') {
+      this.create();
+    }
+  }
+
   ngOnInit(): void {
     if (this.isEditMode) {
       this.stepName = this.editedStep.name;
@@ -35,7 +41,13 @@ export class CreateStepComponent implements OnInit {
     }
   }
 
+
+
   create(): void {
+    if (!this.isCreationValid()) {
+      return;
+    }
+
     if (!this.isEditMode) {
       this.store.dispatch(CreateTripStep({ tripId: this.tripId,
         step: {
