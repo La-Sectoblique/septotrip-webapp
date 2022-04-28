@@ -8,7 +8,6 @@ import { from, Observable } from 'rxjs';
 export class DaysService {
 
   getStepDays(stepId: number): Observable<DayOutput[]> {
-    console.log('step id who have days', stepId);
     return from(getStepDays(stepId));
   }
 
