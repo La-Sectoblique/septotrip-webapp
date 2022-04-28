@@ -27,7 +27,7 @@
 
 <ng-container *ngIf="(trip$ | async) as trip">
   <div class="d-flex flex-column h-100 w-100" *ngIf="(points$ | async) as points" >
-    <div class="d-flex h-100 w-100" *ngIf="(steps$ | async) as steps">
+    <div class="d-flex w-100 top-line" *ngIf="(steps$ | async) as steps">
       <div class="d-flex flex-column h-100 left-bar align-items-center">
         <spt-trip-preview
         [trip]="trip.tripInstance"

@@ -10,6 +10,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
+import { DaysModule } from './modules/features/days/days.module';
 import { PointsModule } from './modules/features/points/points.module';
 import { StepModule } from './modules/features/step/step.module';
 import { TripModule } from './modules/features/trip/trip.module';
@@ -34,6 +35,7 @@ import { FeaturesStoreModule } from './store/features-store.module';
     CoreModule,
     TripModule,
     StepModule,
+    DaysModule,
     PointsModule,
     NbLayoutModule,
   ],

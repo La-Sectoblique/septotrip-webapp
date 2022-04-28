@@ -74,6 +74,12 @@ export const tripReducer = createReducer(
     },
   })),
 
+  // DAYS
+
+  on(TripsAction.GetStepDaysSuccess, (state, { days }) => ({
+    ...state,
+  })),
+
   // POINTS
 
   on(TripsAction.GetTripPointsSuccess, (state, { points, tripId }) => ({

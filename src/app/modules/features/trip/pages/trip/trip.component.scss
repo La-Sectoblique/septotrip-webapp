@@ -8,6 +8,10 @@
     padding: 0;
 }
 
+.top-line {
+    height: 65vh;
+}
+
 .trip-wrapper {
     height: 100%;
     width: 100%;
@@ -26,7 +30,5 @@
 }
 
 .left-bar {
-    $left-bar--width: 25vw;
-    min-width: $left-bar--width;
-    max-width: $left-bar--width;
+    width: 25vw;
 }

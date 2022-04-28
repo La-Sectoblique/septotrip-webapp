@@ -13,12 +13,14 @@
         EDITION
       </button>
     </div>
-    <spt-step-preview *ngFor="let step of steps"
-      [step]="step.stepInstance"
-    >
-      <nb-icon class="cursor-pointer trash-icon" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
-    </spt-step-preview>
-  </div>
+    <div class="step-list-wrapper">
+      <spt-step-preview *ngFor="let step of steps"
+        [step]="step.stepInstance"
+      >
+        <nb-icon class="cursor-pointer trash-icon" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
+      </spt-step-preview>
+    </div>
+    </div>
 </ng-container>
 
 <ng-template #emptyBlock>

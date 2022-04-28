@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
+import { DayOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Day';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import {  map, mergeMap } from 'rxjs';
+import {  map, mergeMap, switchMap } from 'rxjs';
+import { DaysService } from 'src/app/modules/features/days/services/days.service';
 import { PointsService } from 'src/app/modules/features/points/services/points.service';
 import { StepsService } from 'src/app/modules/features/step/services/steps.service';
 import { TripsService } from 'src/app/modules/features/trip/services/trips.service';
@@ -42,7 +44,12 @@ export class TripsEffects {
     ofType(TripsActions.GetTripSteps),
     mergeMap(({ tripId }) => this.stepsService.getTripSteps(tripId)
       .pipe(
-        map((steps: StepOutput[]) => TripsActions.GetTripStepsSuccess({ steps, tripId })),
+        switchMap((steps: StepOutput[]) => [
+          TripsActions.GetTripStepsSuccess({ steps, tripId }),
+          ...(steps.map((step) =>
+            TripsActions.GetStepDays({ stepId: step.id }),
+          )),
+        ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
     ),
@@ -71,6 +78,18 @@ export class TripsEffects {
       .pipe(
         map(() => TripsActions.DeleteTripStepSuccess({ stepId, tripId })),
         // @TODO: catchError(() => CALL ERROR ACTION),
+      ),
+    ),
+  ));
+
+  // Days
+
+  GetStepDays$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.GetStepDays),
+    mergeMap(({ stepId }) => this.daysService.getStepDays(stepId)
+      .pipe(
+        map((days: DayOutput[]) => TripsActions.GetStepDaysSuccess({ days })),
+        // @TODO: catchError(()) => CALL ERROR ACTION),
       ),
     ),
   ));
@@ -119,6 +138,7 @@ export class TripsEffects {
     private tripsService: TripsService,
     private stepsService: StepsService,
     private pointsService: PointsService,
+    private daysService: DaysService,
     private store: Store,
   ) {}
 
