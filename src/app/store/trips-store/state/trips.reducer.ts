@@ -76,9 +76,26 @@ export const tripReducer = createReducer(
 
   // DAYS
 
-  on(TripsAction.GetStepDaysSuccess, (state, { days }) => ({
-    ...state,
-  })),
+  on(TripsAction.GetStepDaysSuccess, (state, { days, tripId, stepId }) => {
+    console.log('new days', days);
+    const steps = state.trips[tripId].steps.map((step) => {
+      if (step.stepInstance.id === stepId) {
+        return {
+          ...step,
+          daysInstance: days,
+        };
+      }
+      return step;
+    });
+    return { ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          steps,
+        },
+      } };
+  }),
 
   // POINTS
 

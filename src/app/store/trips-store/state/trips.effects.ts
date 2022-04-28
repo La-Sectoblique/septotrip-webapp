@@ -47,9 +47,10 @@ export class TripsEffects {
         switchMap((steps: StepOutput[]) => [
           TripsActions.GetTripStepsSuccess({ steps, tripId }),
           ...(steps.map((step) =>
-            TripsActions.GetStepDays({ stepId: step.id }),
+            TripsActions.GetStepDays({ stepId: step.id, tripId }),
           )),
-        ]),
+        ],
+        ),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
     ),
@@ -86,9 +87,11 @@ export class TripsEffects {
 
   GetStepDays$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.GetStepDays),
-    mergeMap(({ stepId }) => this.daysService.getStepDays(stepId)
+    mergeMap(({ stepId, tripId }) => this.daysService.getStepDays(stepId)
       .pipe(
-        map((days: DayOutput[]) => TripsActions.GetStepDaysSuccess({ days })),
+        map((days: DayOutput[]) =>
+          TripsActions.GetStepDaysSuccess({ days, stepId, tripId }),
+        ),
         // @TODO: catchError(()) => CALL ERROR ACTION),
       ),
     ),

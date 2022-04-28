@@ -61,12 +61,12 @@ export const DeleteTripStepSuccess = createAction(
 
 export const GetStepDays = createAction(
   '[Trip] Get Step Days',
-  props<{ stepId: number }>(),
+  props<{ stepId: number; tripId: number }>(),
 );
 
 export const GetStepDaysSuccess = createAction(
   '[Trip] Get Step Days Success',
-  props<{ days: DayOutput[] }>(),
+  props<{ days: DayOutput[]; stepId: number; tripId: number }>(),
 );
 
 // Point

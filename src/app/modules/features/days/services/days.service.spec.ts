@@ -1,12 +1,12 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async, inject } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 import { DaysService } from './days.service';
 
 describe('Service: Days', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [DaysService]
+      providers: [DaysService],
     });
   });
 
