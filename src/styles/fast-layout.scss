@@ -18,6 +18,18 @@
     &-column {
         flex-direction: column;
     }
+
+    &-shrink {
+        &-0 {
+            flex-shrink: 0;
+        }
+    }
+
+    &-grow {
+        &-0 {
+            flex-grow: 0;
+        }
+    }
 }
 
 .align-items-center {
@@ -33,6 +45,9 @@
 }
 
 .m {
+    &-0 {
+        margin: 0;
+    }
     &r{
         &-4{
             margin-right: 1.5rem;
@@ -42,4 +57,12 @@
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.word-break-all {
+    word-break: break-all;
 }
