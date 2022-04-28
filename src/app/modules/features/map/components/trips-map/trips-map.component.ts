@@ -7,7 +7,7 @@ import { first, Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
 import { CreatePointComponent } from '../../../points/components/create-point/create-point.component';
-import { AddStepComponent } from '../../../step/components/add-step/add-step.component';
+import { CreateStepComponent } from '../../../step/components/create-step/create-step.component';
 import { FlattenedStep } from '../../../step/models/flattened-step';
 
 @Component({
@@ -17,8 +17,8 @@ import { FlattenedStep } from '../../../step/models/flattened-step';
 })
 export class TripsMapComponent implements OnChanges, OnInit {
 
-  @Input() steps: FlattenedStep[];
-  @Input() points: PointOutput[];
+  @Input() steps: FlattenedStep[] = [];
+  @Input() points: PointOutput[] = [];
   @Input() tripId: number;
 
   mapEditMode$: Observable<MapEditMode>;
@@ -110,7 +110,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
     if (this.cursorStyle !== 'pointer') {
       this.mapEditMode$.pipe(first()).subscribe((mapMode) => {
         if (mapMode === MapEditMode.EDIT_STEPS) {
-          this.nbDialogService.open(AddStepComponent, {
+          this.nbDialogService.open(CreateStepComponent, {
             context: {
               clickedCoordinates: evt.lngLat,
               tripId: this.tripId,

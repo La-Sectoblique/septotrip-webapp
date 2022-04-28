@@ -1,21 +1,21 @@
 /* tslint:disable:no-unused-variable */
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddStepComponent } from './add-step.component';
+import { CreateStepComponent } from './create-step.component';
 
-describe('AddStepComponent', () => {
-  let component: AddStepComponent;
-  let fixture: ComponentFixture<AddStepComponent>;
+describe('CreateStepComponent', () => {
+  let component: CreateStepComponent;
+  let fixture: ComponentFixture<CreateStepComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddStepComponent ],
+      declarations: [ CreateStepComponent ],
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddStepComponent);
+    fixture = TestBed.createComponent(CreateStepComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

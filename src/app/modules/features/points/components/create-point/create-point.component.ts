@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { NbDialogRef } from '@nebular/theme';
 import { Store } from '@ngrx/store';
 import { LngLat } from 'mapbox-gl';
 import { CreateTripPoint } from 'src/app/store/trips-store/state/trips.actions';
-import { PointsService } from '../../services/points.service';
 
 @Component({
   selector: 'app-create-point',
@@ -18,6 +18,7 @@ export class CreatePointComponent {
   pointDescription = '';
 
   constructor(
+    private dialogRef: NbDialogRef<CreatePointComponent>,
     private store: Store,
   ) {}
 
@@ -30,6 +31,7 @@ export class CreatePointComponent {
         type: 'Point',
       },
     } }));
+    this.dialogRef.close();
   }
 
   isCreationValid(): boolean {
