@@ -1,5 +1,7 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit } from '@angular/core';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
+import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
 import { first, Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
@@ -8,6 +10,7 @@ import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.s
 import { DeleteTripStep } from 'src/app/store/trips-store/state/trips.actions';
 import { FlattenedStep } from '../../models/flattened-step';
 import { StepsService } from '../../services/steps.service';
+import { CreateStepComponent } from '../create-step/create-step.component';
 
 @Component({
   selector: 'spt-steps-list',
@@ -17,7 +20,7 @@ import { StepsService } from '../../services/steps.service';
 export class StepsListComponent implements OnInit {
 
   @Input() tripId: number;
-  @Input() steps: FlattenedStep[] | null;
+  @Input() steps: FlattenedStep[];
 
   mapEditMode$: Observable<MapEditMode>;
   mapEditMode = MapEditMode;
@@ -25,6 +28,7 @@ export class StepsListComponent implements OnInit {
 
   constructor(
     private store: Store,
+    private nbDialogService: NbDialogService,
   ) {}
 
   ngOnInit(): void {
@@ -44,6 +48,21 @@ export class StepsListComponent implements OnInit {
 
   deleteStep(stepId: number): void {
     this.store.dispatch(DeleteTripStep({ tripId: this.tripId, stepId }));
+  }
+
+  editStep(step: StepOutput): void {
+    this.nbDialogService.open(CreateStepComponent, {
+      context: {
+        tripId: this.tripId,
+        isEditMode: true,
+        editedStep: step,
+      },
+    });
+  }
+
+  drop(event: CdkDragDrop<FlattenedStep[]>): void {
+    console.log('event', event);
+    moveItemInArray(this.steps, event.previousIndex, event.currentIndex);
   }
 
 

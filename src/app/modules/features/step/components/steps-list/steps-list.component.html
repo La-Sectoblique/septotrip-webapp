@@ -13,11 +13,20 @@
         EDITION
       </button>
     </div>
-    <div class="step-list-wrapper">
+    <div 
+      cdkDropList 
+      class="step-list-wrapper"
+      (cdkDropListDropped)="drop($event)"
+    >
       <spt-step-preview *ngFor="let step of steps"
-        [step]="step.stepInstance"
+        cdkDrag
+        [step]="step"
       >
-        <nb-icon class="cursor-pointer trash-icon" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
+      <div>
+        <nb-icon class="cursor-pointer trash-icon-color" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
+        <nb-icon class="cursor-pointer" (click)="editStep(step.stepInstance)" icon="edit-outline"></nb-icon>
+        
+      </div>
       </spt-step-preview>
     </div>
     </div>

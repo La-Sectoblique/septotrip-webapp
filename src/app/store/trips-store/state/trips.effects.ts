@@ -73,14 +73,25 @@ export class TripsEffects {
     ),
   ));
 
+  UpdateTripStep$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.UpdateTripStep),
+    mergeMap(({ tripId, stepId, editedStep }) => this.stepsService.updateTripStep(stepId, editedStep)
+      .pipe(
+        switchMap((newStep) => [
+          TripsActions.UpdateTripStepSuccess({ tripId, newStep }),
+          TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
+        ]),
+        // @TODO: catchError(() => CALL ERROR ACTION),
+      )),
+  ));
+
   DeleteTripStep$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.DeleteTripStep),
     mergeMap(({ stepId, tripId }) => this.stepsService.deleteStep(stepId)
       .pipe(
         map(() => TripsActions.DeleteTripStepSuccess({ stepId, tripId })),
         // @TODO: catchError(() => CALL ERROR ACTION),
-      ),
-    ),
+      )),
   ));
 
   // Days

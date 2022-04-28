@@ -63,6 +63,30 @@ export const tripReducer = createReducer(
     },
   })),
 
+  on(TripsAction.UpdateTripStepSuccess, (state, { tripId, newStep }) => {
+    const steps = state.trips[tripId].steps.map((step) => {
+      if (step.stepInstance.id === newStep.id) {
+        return {
+          ...step,
+          stepInstance: newStep,
+        };
+      }
+      return step;
+    });
+    console.log('new steps', steps);
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          steps,
+        },
+      },
+    };
+  }),
+
   on(TripsAction.DeleteTripStepSuccess, (state, { stepId, tripId }) => ({
     ...state,
     trips: {

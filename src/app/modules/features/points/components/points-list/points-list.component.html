@@ -1,7 +1,7 @@
 <ng-container *ngIf="points; else emptyBlock">
   <div class="d-flex flex-row w-100 h-100 align-items-center list-card">
     <div class="d-flex flex-column align-items-center">
-      <h4 class="text-align-center">Points<br>d'intérêts</h4>
+      <h4 class="text-align-center m-0 mb-4">Points<br>d'intérêts</h4>
       <button nbButton
       *ngIf="(mapEditMode$ | async) as editMode"
       status="primary" 
@@ -13,7 +13,7 @@
       EDITION
     </button>
     </div>
-    <spt-point-preview class="h-100" *ngFor="let point of points"
+    <spt-point-preview *ngFor="let point of points"
       [point]="point"
     >
       <nb-icon class="cursor-pointer trash-icon" (click)="deletePoint(point.id)" icon="trash-2-outline"></nb-icon>
