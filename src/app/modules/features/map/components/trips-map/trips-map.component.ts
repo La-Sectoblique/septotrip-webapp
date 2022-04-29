@@ -1,11 +1,13 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
+import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
 import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
 import { first, Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
+import { UpdateTripStep } from 'src/app/store/trips-store/state/trips.actions';
 import { CreatePointComponent } from '../../../points/components/create-point/create-point.component';
 import { CreateStepComponent } from '../../../step/components/create-step/create-step.component';
 import { FlattenedStep } from '../../../step/models/flattened-step';
@@ -22,6 +24,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
   @Input() tripId: number;
 
   mapEditMode$: Observable<MapEditMode>;
+  MapEditMode = MapEditMode;
 
   mapCenter: LngLatLike = [7.750149, 48.581551];
   mapZoom: [number] = [7];
@@ -62,7 +65,6 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   ngOnChanges({ steps, points }: SimpleChanges): void {
     if (steps) {
-      console.log('map steps changes', steps);
       this.stepsMapPoints = {
         ...this.stepsMapPoints,
         features: steps.currentValue.map((step: FlattenedStep) => ({
@@ -87,7 +89,6 @@ export class TripsMapComponent implements OnChanges, OnInit {
     }
 
     if (points) {
-      console.log('map points schange', points);
       this.pointsMapPoints = {
         ...this.pointsMapPoints,
         features: points.currentValue.map((point: PointOutput) => ({
@@ -106,7 +107,6 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
 
   onMapClick(evt: MapMouseEvent): void {
-    console.log('map clicked', evt);
     if (this.cursorStyle !== 'pointer') {
       this.mapEditMode$.pipe(first()).subscribe((mapMode) => {
         if (mapMode === MapEditMode.EDIT_STEPS) {
@@ -119,7 +119,6 @@ export class TripsMapComponent implements OnChanges, OnInit {
         }
 
         if (mapMode === MapEditMode.EDIT_POINTS) {
-          console.log('ADD POINT');
           this.nbDialogService.open(CreatePointComponent, {
             context: {
               clickedCoordinates:  evt.lngLat,
@@ -133,6 +132,22 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   centerMapTo(evt: MapMouseEvent): void {
     this.mapCenter = (evt as any).features[0].geometry.coordinates;
+  }
+
+  updateStepAfterDrag(evt: any, updatedStep: FlattenedStep): void {
+    console.log('evt', evt);
+    this.store.dispatch(UpdateTripStep({
+      stepId: updatedStep.stepInstance.id,
+      tripId: this.tripId,
+      editedStep: {
+        ...updatedStep.stepInstance,
+        localisation: {
+          ...updatedStep.stepInstance.localisation,
+          // eslint-disable-next-line no-underscore-dangle
+          coordinates: [evt._lngLat.lng, evt._lngLat.lat],
+        },
+      },
+    }));
   }
 
 }

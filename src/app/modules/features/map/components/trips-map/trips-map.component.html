@@ -5,9 +5,10 @@
         [center]="mapCenter"
         [cursorStyle]="cursorStyle"
         (mapClick)="onMapClick($event)"
+        [dragRotate]="false"
     >
         <!-- STEPS MANAGEMENT -->
-        <mgl-image
+        <!-- <mgl-image
             id="steps-marker"
             url="./assets/steps_marker.png"
             (imageLoaded)="stepMarkerImageLoaded = true"
@@ -17,19 +18,32 @@
             [data]="stepsMapPoints"
         ></mgl-geojson-source>
         <mgl-layer *ngIf="stepMarkerImageLoaded"
-        id="steps"
-        source="steps-source"
-        type="symbol"
-        [layout]="{
-            'icon-image': 'steps-marker',
-            'icon-allow-overlap': true,
-            'icon-size': .05,
-            'icon-anchor': 'bottom'
-        }"
-        (layerMouseEnter)="cursorStyle = 'pointer'"
-        (layerMouseLeave)="cursorStyle = ''"
-        (layerClick)="centerMapTo($event)"
-        ></mgl-layer>
+            [draggable]="true"
+            id="steps"
+            source="steps-source"
+            type="symbol"
+            [layout]="{
+                'icon-image': 'steps-marker',
+                'icon-allow-overlap': true,
+                'icon-size': .05,
+                'icon-anchor': 'bottom'
+            }"
+            (layerMouseEnter)="cursorStyle = 'pointer'"
+            (layerMouseLeave)="cursorStyle = ''"
+            (layerClick)="centerMapTo($event)"
+        ></mgl-layer> -->
+        <ng-container *ngFor="let step of steps">
+            <mgl-marker
+                [lngLat]="[step.stepInstance.localisation.coordinates[0], step.stepInstance.localisation.coordinates[1]]"
+                anchor="bottom"
+                [draggable]="(mapEditMode$ | async) === MapEditMode.EDIT_STEPS"
+                (dragEnd)="updateStepAfterDrag($event, step)"
+            >
+                <div class="marker">
+                    <img src="./assets/steps_marker.png" alt="" width="30">
+                </div>
+            </mgl-marker>
+        </ng-container>
     
         <!-- POINTS MANAGEMENT -->
         <mgl-image
@@ -42,18 +56,19 @@
             [data]="pointsMapPoints"
         ></mgl-geojson-source>
         <mgl-layer *ngIf="pointMarkerImageLoaded"
-        id="points"
-        source="points-source"
-        type="symbol"
-        [layout]="{
-            'icon-image': 'points-marker',
-            'icon-allow-overlap': true,
-            'icon-size': .035,
-            'icon-anchor': 'bottom'
-        }"
-        (layerMouseEnter)="cursorStyle = 'pointer'"
-        (layerMouseLeave)="cursorStyle = ''"
-        (layerClick)="centerMapTo($event)"
+            [draggable]="true"
+            id="points"
+            source="points-source"
+            type="symbol"
+            [layout]="{
+                'icon-image': 'points-marker',
+                'icon-allow-overlap': true,
+                'icon-size': .035,
+                'icon-anchor': 'bottom'
+            }"
+            (layerMouseEnter)="cursorStyle = 'pointer'"
+            (layerMouseLeave)="cursorStyle = ''"
+            (layerClick)="centerMapTo($event)"
         ></mgl-layer>
     
         <!-- LINE MANAGEMENT -->
