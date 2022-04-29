@@ -1,5 +1,4 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { updateStep } from '@la-sectoblique/septoblique-service';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { NbDialogRef } from '@nebular/theme';
 import { Store } from '@ngrx/store';
