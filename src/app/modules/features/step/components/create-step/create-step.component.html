@@ -6,5 +6,5 @@
     <label>Durée</label>
     <input nbInput type="number" [(ngModel)]="stepDuration" >
   </div>
-  <button nbButton status="success" (click)="create()" [disabled]="!isCreationValid()">Créer l'étape</button>
+  <button nbButton status="success" (click)="create()" [disabled]="!isCreationValid()">{{isEditMode ? 'Modifier' : 'Créer'}} l'étape</button>
 </div>
