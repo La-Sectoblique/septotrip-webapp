@@ -1,6 +1,6 @@
 <div class="d-flex flex-column card w-100 wrapper">
-
   <div class="d-flex align-items-center justify-content-between w-100">
+    <ng-content select="[handle]"></ng-content>
     <p class="step-name word-break-all" >{{step.stepInstance.name}}</p>
   
     <p>Durée: {{step.daysInstance?.length || step.stepInstance.duration}} jours</p>

@@ -22,11 +22,11 @@
         cdkDrag
         [step]="step"
       >
-      <div>
-        <nb-icon class="cursor-pointer trash-icon-color" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
-        <nb-icon class="cursor-pointer" (click)="editStep(step.stepInstance)" icon="edit-outline"></nb-icon>
-        
-      </div>
+        <div>
+          <nb-icon class="cursor-pointer trash-icon-color" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
+          <nb-icon class="cursor-pointer" (click)="editStep(step.stepInstance)" icon="edit-outline"></nb-icon>
+        </div>
+        <nb-icon cdkDragHandle handle icon="menu-outline" class="cursor-grab"></nb-icon>
       </spt-step-preview>
     </div>
     </div>
