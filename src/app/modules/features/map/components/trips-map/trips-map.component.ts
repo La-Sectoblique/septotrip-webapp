@@ -1,6 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
-import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
 import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
@@ -133,6 +132,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
     this.mapCenter = [coordinates[0], coordinates[1]];
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   updateStepAfterDrag(evt: any, updatedStep: FlattenedStep): void {
     console.log('evt', evt);
     this.store.dispatch(UpdateTripStep({
@@ -149,6 +149,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
     }));
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   updatePointAfterDrag(evt: any, updatePoint: PointOutput): void {
     this.store.dispatch(UpdateTripPoint({
       pointId: updatePoint.id,

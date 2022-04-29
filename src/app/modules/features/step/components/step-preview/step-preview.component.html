@@ -4,15 +4,18 @@
     <p class="step-name word-break-all" >{{step.stepInstance.name}}</p>
   
     <p>Durée: {{step.daysInstance?.length || step.stepInstance.duration}} jours</p>
-    <button
-    nbButton 
-    ghost 
-    status="primary"
-    (click)="switchMode()"
-    >
-      <nb-icon [icon]="isDetailedModeEnabled ? 'arrow-ios-upward-outline' : 'arrow-ios-downward-outline'"></nb-icon>
-    </button>
-    <ng-content></ng-content>
+    
+    <div class="d-flex align-items-center">
+      <button
+      nbButton 
+      ghost 
+      status="primary"
+      (click)="switchMode()"
+      >
+        <nb-icon [icon]="isDetailedModeEnabled ? 'arrow-ios-upward-outline' : 'arrow-ios-downward-outline'"></nb-icon>
+      </button>
+      <ng-content></ng-content>
+    </div>
   </div>
   <div *ngIf="isDetailedModeEnabled">
     <p *ngFor="let day of step.daysInstance">Jour {{day.number}}</p>
