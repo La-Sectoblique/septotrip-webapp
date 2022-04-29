@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
+import { AuthentificationModule } from './modules/features/authentification/authentification.module';
 import { StepModule } from './modules/features/step/step.module';
 import { TripModule } from './modules/features/trip/trip.module';
 import { FeaturesStoreModule } from './store/features-store.module';
@@ -32,6 +33,7 @@ import { FeaturesStoreModule } from './store/features-store.module';
     TripModule,
     StepModule,
     NbLayoutModule,
+    AuthentificationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

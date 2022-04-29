@@ -23,8 +23,8 @@ export class AppComponent implements OnInit {
       url: environment.baseURL,
     });
 
-    login({ email: 'jean', password: 'jean' })
-      .then((res: SuccessLoginResponse) => console.log('loginres', res));
+    /*login({ email: 'jean', password: 'jean' })
+      .then((res: SuccessLoginResponse) => console.log('loginres', res));*/
   }
 
 }
