@@ -7,7 +7,7 @@ import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
 import { first, Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
-import { UpdateTripStep } from 'src/app/store/trips-store/state/trips.actions';
+import { UpdateTripPoint, UpdateTripStep } from 'src/app/store/trips-store/state/trips.actions';
 import { CreatePointComponent } from '../../../points/components/create-point/create-point.component';
 import { CreateStepComponent } from '../../../step/components/create-step/create-step.component';
 import { FlattenedStep } from '../../../step/models/flattened-step';
@@ -143,6 +143,21 @@ export class TripsMapComponent implements OnChanges, OnInit {
         ...updatedStep.stepInstance,
         localisation: {
           ...updatedStep.stepInstance.localisation,
+          // eslint-disable-next-line no-underscore-dangle
+          coordinates: [evt._lngLat.lng, evt._lngLat.lat],
+        },
+      },
+    }));
+  }
+
+  updatePointAfterDrag(evt: any, updatePoint: PointOutput): void {
+    this.store.dispatch(UpdateTripPoint({
+      pointId: updatePoint.id,
+      tripId: this.tripId,
+      editedPoint: {
+        ...updatePoint,
+        localisation: {
+          ...updatePoint.localisation,
           // eslint-disable-next-line no-underscore-dangle
           coordinates: [evt._lngLat.lng, evt._lngLat.lat],
         },

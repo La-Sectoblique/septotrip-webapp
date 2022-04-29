@@ -148,6 +148,26 @@ export const tripReducer = createReducer(
     },
   })),
 
+  on(TripsAction.UpdateTripPointSuccess, (state, { tripId, newPoint }) => {
+    const points = state.trips[tripId].points.map((point) => {
+      if (point.id === newPoint.id) {
+        return newPoint;
+      }
+      return point;
+    });
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          points,
+        },
+      },
+    };
+  }),
+
   on(TripsAction.DeleteTripPointSuccess, (state, { pointId, tripId }) => ({
     ...state,
     trips: {

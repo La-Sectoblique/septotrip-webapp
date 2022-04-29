@@ -135,6 +135,16 @@ export class TripsEffects {
     ),
   ));
 
+  UpdateTripPoint$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.UpdateTripPoint),
+    mergeMap(({ tripId, pointId, editedPoint }) => this.pointsService.updatePoint(
+      pointId, editedPoint,
+    ).pipe(
+      map((newPoint: PointOutput) => TripsActions.UpdateTripPointSuccess({ tripId, newPoint })),
+      // @TODO: catchError(() => CALL ERROR ACTION),
+    )),
+  ));
+
   DeleteTripPoint$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.DeleteTripPoint),
     mergeMap(({ tripId, pointId }) => this.pointsService.deletePoint(pointId)
