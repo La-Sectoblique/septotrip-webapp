@@ -3,7 +3,6 @@
         [style]="'mapbox://styles/augustin417/ckz8hkmbq001114rk93al2alb'"
         [zoom]="mapZoom"
         [center]="mapCenter"
-        [cursorStyle]="cursorStyle"
         (mapClick)="onMapClick($event)"
         [dragRotate]="false"
     >
@@ -13,10 +12,10 @@
                 [lngLat]="[step.stepInstance.localisation.coordinates[0], step.stepInstance.localisation.coordinates[1]]"
                 anchor="bottom"
                 [draggable]="(mapEditMode$ | async) === MapEditMode.EDIT_STEPS"
-                (dragEnd)="updateStepAfterDrag($event, step)"
+                (markerDragEnd)="updateStepAfterDrag($event, step)"
             >
-                <div class="marker">
-                    <img src="./assets/steps_marker.png" alt="" width="30">
+                <div class="marker" (click)="centerMapTo(step.stepInstance.localisation.coordinates)">
+                    <img class="cursor-pointer" src="./assets/steps_marker.png" alt="" width="30">
                 </div>
             </mgl-marker>
         </ng-container>
@@ -27,10 +26,10 @@
                 [lngLat]="[point.localisation.coordinates[0], point.localisation.coordinates[1]]"
                 anchor="bottom"
                 [draggable]="(mapEditMode$ | async) === MapEditMode.EDIT_POINTS"
-                (dragEnd)="updatePointAfterDrag($event, point)"
+                (markerDragEnd)="updatePointAfterDrag($event, point)"
             >
-                <div class="marker">
-                    <img src="./assets/points_marker.png" alt="" width="25">
+                <div class="marker" (click)="centerMapTo(point.localisation.coordinates)">
+                    <img class="cursor-pointer" src="./assets/points_marker.png" alt="" width="25">
                 </div>
             </mgl-marker>
         </ng-container>

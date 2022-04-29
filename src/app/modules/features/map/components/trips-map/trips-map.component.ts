@@ -30,7 +30,6 @@ export class TripsMapComponent implements OnChanges, OnInit {
   mapZoom: [number] = [7];
 
   selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null = null;
-  cursorStyle = '';
 
   stepMarkerImageLoaded = false;
   pointMarkerImageLoaded = false;
@@ -107,31 +106,29 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
 
   onMapClick(evt: MapMouseEvent): void {
-    if (this.cursorStyle !== 'pointer') {
-      this.mapEditMode$.pipe(first()).subscribe((mapMode) => {
-        if (mapMode === MapEditMode.EDIT_STEPS) {
-          this.nbDialogService.open(CreateStepComponent, {
-            context: {
-              clickedCoordinates: evt.lngLat,
-              tripId: this.tripId,
-            },
-          });
-        }
+    this.mapEditMode$.pipe(first()).subscribe((mapMode) => {
+      if (mapMode === MapEditMode.EDIT_STEPS) {
+        this.nbDialogService.open(CreateStepComponent, {
+          context: {
+            clickedCoordinates: evt.lngLat,
+            tripId: this.tripId,
+          },
+        });
+      }
 
-        if (mapMode === MapEditMode.EDIT_POINTS) {
-          this.nbDialogService.open(CreatePointComponent, {
-            context: {
-              clickedCoordinates:  evt.lngLat,
-              tripId: this.tripId,
-            },
-          });
-        }
-      });
-    }
+      if (mapMode === MapEditMode.EDIT_POINTS) {
+        this.nbDialogService.open(CreatePointComponent, {
+          context: {
+            clickedCoordinates:  evt.lngLat,
+            tripId: this.tripId,
+          },
+        });
+      }
+    });
   }
 
-  centerMapTo(evt: MapMouseEvent): void {
-    this.mapCenter = (evt as any).features[0].geometry.coordinates;
+  centerMapTo(coordinates: number[]): void {
+    this.mapCenter = [coordinates[0], coordinates[1]];
   }
 
   updateStepAfterDrag(evt: any, updatedStep: FlattenedStep): void {

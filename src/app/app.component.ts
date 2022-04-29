@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
       storeToken: (token: string): void => this.tokenStorageService.setToken(token),
       url: environment.baseURL,
       platform: Platform.BROWSER,
+      context: 'development',
     });
 
     login({ email: 'jean', password: 'jean' })
