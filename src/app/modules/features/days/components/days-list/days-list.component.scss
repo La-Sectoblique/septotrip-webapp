@@ -1,0 +1,8 @@
+@use '/src//styles/mixins';
+
+.point-dropzone {
+    width: 20rem;
+    height: 5rem;
+    @include mixins.rounded-corner();
+    border: 2px dashed blue;
+}

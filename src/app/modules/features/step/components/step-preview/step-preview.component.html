@@ -18,6 +18,7 @@
     </div>
   </div>
   <div *ngIf="isDetailedModeEnabled">
-    <p *ngFor="let day of step.daysInstance">Jour {{day.number}}</p>
+    <!-- <p *ngFor="let day of step.daysInstance">Jour {{day.number}}</p> -->
+    <spt-days-list></spt-days-list>
   </div>
 </div>
