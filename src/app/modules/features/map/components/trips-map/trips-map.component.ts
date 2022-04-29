@@ -60,6 +60,8 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   ngOnInit(): void {
     this.mapEditMode$ = this.store.select(selectMapEditMode());
+    this.mapCenter = [this.steps[0].stepInstance.localisation.coordinates[0],
+      this.steps[0].stepInstance.localisation.coordinates[1]];
   }
 
   ngOnChanges({ steps, points }: SimpleChanges): void {
