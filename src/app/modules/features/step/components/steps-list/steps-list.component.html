@@ -18,18 +18,28 @@
       class="step-list-wrapper"
       (cdkDropListDropped)="drop($event)"
     >
-      <spt-step-preview *ngFor="let step of steps"
-        cdkDrag
-        [step]="step"
-      >
-        <div>
-          <nb-icon class="cursor-pointer trash-icon-color" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
-          <nb-icon class="cursor-pointer" (click)="editStep(step.stepInstance)" icon="edit-outline"></nb-icon>
+      <ng-container *ngFor="let step of steps">
+        <div cdkDrag>
+          <spt-step-preview 
+            cdkDrag
+            [step]="step"
+          >
+            <div>
+              <nb-icon class="cursor-pointer trash-icon-color" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
+              <nb-icon class="cursor-pointer" (click)="editStep(step.stepInstance)" icon="edit-outline"></nb-icon>
+            </div>
+            <nb-icon cdkDragHandle handle icon="menu-outline" class="cursor-grab"></nb-icon>
+          </spt-step-preview>
         </div>
-        <nb-icon cdkDragHandle handle icon="menu-outline" class="cursor-grab"></nb-icon>
-      </spt-step-preview>
+      </ng-container>
     </div>
-    </div>
+    <!-- <div cdkDropList>
+      <p cdkDrag>Truc</p>
+      <p cdkDrag>Machin</p>
+      <p cdkDrag>COUCO</p>
+      <p cdkDrag>SALUT</p>
+    </div> -->
+  </div>
 </ng-container>
 
 <ng-template #emptyBlock>
