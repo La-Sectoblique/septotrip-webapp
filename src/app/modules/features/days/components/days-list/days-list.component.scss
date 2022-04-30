@@ -1,7 +1,7 @@
-@use '/src//styles/mixins';
+@use '/src/styles/mixins';
 
 .point-dropzone {
-    width: 10rem;
+    width: 7rem;
     height: 5rem;
     @include mixins.rounded-corner();
     border: 2px dashed blue;

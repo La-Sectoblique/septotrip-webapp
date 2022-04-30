@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DayOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Day';
 
 @Component({
   selector: 'spt-days-list',
@@ -6,5 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./days-list.component.scss'],
 })
 export class DaysListComponent  {
+
+  @Input() days: DayOutput[];
 
 }
