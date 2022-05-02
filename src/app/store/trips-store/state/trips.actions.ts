@@ -66,6 +66,11 @@ export const DeleteTripStepSuccess = createAction(
   props<{ tripId: number; stepId: number }>(),
 );
 
+export const UpdateTripStepOrder = createAction(
+  '[Trip] Update Trip Step Order',
+  props<{ fromIdx: number; toIdx: number; tripId: number }>(),
+);
+
 // Days
 
 export const GetStepDays = createAction(

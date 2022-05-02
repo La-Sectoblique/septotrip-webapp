@@ -1,3 +1,4 @@
+import { moveItemInArray } from '@angular/cdk/drag-drop';
 import { createReducer, on } from '@ngrx/store';
 
 import * as TripsAction from './trips.actions';
@@ -73,7 +74,6 @@ export const tripReducer = createReducer(
       }
       return step;
     });
-    console.log('new steps', steps);
 
     return {
       ...state,
@@ -97,6 +97,23 @@ export const tripReducer = createReducer(
       },
     },
   })),
+
+  on(TripsAction.UpdateTripStepOrder, (state, { fromIdx, toIdx, tripId }) => {
+
+    const reorderedSteps = [...state.trips[tripId].steps];
+    moveItemInArray(reorderedSteps, fromIdx, toIdx);
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          steps: reorderedSteps,
+        },
+      },
+    };
+  }),
 
   // DAYS
 
