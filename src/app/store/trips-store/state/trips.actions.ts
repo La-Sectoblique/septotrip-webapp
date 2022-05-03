@@ -26,6 +26,16 @@ export const GetTripSuccess = createAction(
   props<{ trip: TripOutput }>(),
 );
 
+export const DeleteTrip = createAction(
+  '[Trips] Delete user trip',
+  props<{ tripId: number }>(),
+);
+
+export const DeleteTripSuccess = createAction(
+  '[Trips] Delete user trip success',
+  props<{ tripId: number }>(),
+);
+
 // Steps
 
 export const GetTripSteps = createAction(

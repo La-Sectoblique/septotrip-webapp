@@ -26,8 +26,8 @@ export class TripsService {
     return from(getTripById(id));
   }
 
-  deleteTrip(id: number): void {
-    deleteTrip(id);
+  deleteTrip(id: number): Observable<any> {
+    return from(deleteTrip(id));
   }
 
 }

@@ -38,6 +38,17 @@ export class TripsEffects {
     ),
   ));
 
+  DeleteUserTrip$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.DeleteTrip),
+    mergeMap(({ tripId }) => this.tripsService.deleteTrip(tripId)
+      .pipe(
+        map(() => TripsActions.DeleteTripSuccess({ tripId })),
+      ),
+    ),
+  ));
+
+
+
   // Steps
 
   GetTripSteps$ = createEffect(() => this.actions$.pipe(
