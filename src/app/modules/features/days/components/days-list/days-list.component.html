@@ -2,21 +2,22 @@
     <div class="d-flex flex-column" *ngFor="let day of days">
         <p>Jour {{day.number}}</p>
         <!-- here are going the points preview for this day ! -->
-
-        <ng-container *ngFor="let point of (points | filterPointsByDayId:day.id)">
-            <spt-point-preview
-                [point]="point"
-            ></spt-point-preview>
-        </ng-container>
-
-        <!-- DropZone -->
-        <div
-            cdkDropList
-            id="day-dropzone"
-            (cdkDropListDropped)="itemDropped($event, day.id)"
-        >
-            <div class="point-dropzone d-flex justify-content-center align-items-center">
-                <nb-icon icon="corner-right-down-outline"></nb-icon>
+        <div class="d-flex flex-wrap align-items-center">
+            <ng-container *ngFor="let point of (points | filterPointsByDayId:day.id)">
+                <spt-point-preview
+                    [point]="point"
+                ></spt-point-preview>
+            </ng-container>
+    
+            <!-- DropZone -->
+            <div
+                cdkDropList
+                id="day-dropzone"
+                (cdkDropListDropped)="itemDropped($event, day.id)"
+            >
+                <div class="point-dropzone d-flex justify-content-center align-items-center">
+                    <nb-icon icon="corner-right-down-outline"></nb-icon>
+                </div>
             </div>
         </div>
     </div>    
