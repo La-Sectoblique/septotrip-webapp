@@ -21,6 +21,8 @@
     <!-- <p *ngFor="let day of step.daysInstance">Jour {{day.number}}</p> -->
     <spt-days-list *ngIf="step.daysInstance"
       [days]="step.daysInstance"
+      [stepId]="step.stepInstance.id"
+      [tripId]="step.stepInstance.tripId"
     ></spt-days-list>
   </div>
 </div>

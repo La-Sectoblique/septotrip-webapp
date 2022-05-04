@@ -26,6 +26,7 @@
       cdkDropList 
       class="d-flex align-items-center"
       [cdkDropListData]="points"
+      [cdkDropListConnectedTo]="['day-dropzone']"
       cdkDropListOrientation="horizontal"
     >
       <ng-container *ngFor="let point of points">
