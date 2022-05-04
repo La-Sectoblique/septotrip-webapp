@@ -7,16 +7,17 @@
       nbButton
       ghost
       [nbPopover]="tripOptions"
+      nbPopoverPlacement="bottom"
     >
       <nb-icon icon="more-vertical-outline"></nb-icon>
     </button>
   
     <ng-template #tripOptions>
-      <div class="d-flex flex-column rounded-corner p-2">
-        <div class="d-flex justify-content-between align-items-center cursor-pointer" (click)="deleteTrip()">
-          <nb-icon class="delete-icon" icon="trash-outline"></nb-icon>
+      <div class="d-flex flex-column p-2">
+        <button nbButton ghost class="d-flex justify-content-between align-items-center cursor-pointer" (click)="deleteTrip()">
+          <nb-icon class="delete-icon rounded-corner" icon="trash-outline"></nb-icon>
           <p>Supprimer</p>
-        </div>
+        </button>
       </div>
     </ng-template>
   </ng-container>

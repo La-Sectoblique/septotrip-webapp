@@ -1,7 +1,9 @@
+@import '/src/styles/variables.scss';
+
 .title {
     text-align: center;
 }
 
 .trash-icon {
-    color: rgb(184, 64, 64);
+    color: $danger--color;
 }
