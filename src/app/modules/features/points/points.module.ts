@@ -5,6 +5,7 @@ import { PointPreviewComponent } from './components/point-preview/point-preview.
 import { NbButtonModule, NbIconModule, NbInputModule } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
 import { CreatePointComponent } from './components/create-point/create-point.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { CreatePointComponent } from './components/create-point/create-point.com
     NbIconModule,
     FormsModule,
     NbInputModule,
+    DragDropModule,
   ],
   declarations: [
     PointsListComponent,
