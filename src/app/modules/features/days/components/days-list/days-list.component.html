@@ -12,7 +12,7 @@
             <!-- DropZone -->
             <div
                 cdkDropList
-                id="day-dropzone"
+                [id]="day.id+'-day-dropzone'"
                 (cdkDropListDropped)="itemDropped($event, day.id)"
             >
                 <div class="point-dropzone d-flex justify-content-center align-items-center">
