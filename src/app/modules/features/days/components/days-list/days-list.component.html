@@ -3,6 +3,12 @@
         <p>Jour {{day.number}}</p>
         <!-- here are going the points preview for this day ! -->
 
+        <ng-container *ngFor="let point of (points | filterPointsByDayId:day.id)">
+            <spt-point-preview
+                [point]="point"
+            ></spt-point-preview>
+        </ng-container>
+
         <!-- DropZone -->
         <div
             cdkDropList

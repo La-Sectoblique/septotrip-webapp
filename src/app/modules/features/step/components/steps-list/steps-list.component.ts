@@ -1,5 +1,6 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit } from '@angular/core';
+import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
@@ -20,6 +21,7 @@ export class StepsListComponent implements OnInit {
 
   @Input() tripId: number;
   @Input() steps: FlattenedStep[];
+  @Input() points: PointOutput[];
 
   mapEditMode$: Observable<MapEditMode>;
   mapEditMode = MapEditMode;

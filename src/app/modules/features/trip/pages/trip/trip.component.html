@@ -6,7 +6,12 @@
           [trip]="trip.tripInstance"
           [optionsEnabled]="true"
         ></spt-trip-preview>
-        <spt-steps-list class="steps-wrapper h-100 w-100" [tripId]="trip.tripInstance.id" [steps]="steps"></spt-steps-list>
+        <spt-steps-list 
+          class="steps-wrapper h-100 w-100"
+          [tripId]="trip.tripInstance.id"
+          [steps]="steps"
+          [points]="points"
+        ></spt-steps-list>
       </div>
       <spt-trips-map class="map-wrapper" [steps]="steps" [points]="points" [tripId]="trip.tripInstance.id"></spt-trips-map>
     </div>

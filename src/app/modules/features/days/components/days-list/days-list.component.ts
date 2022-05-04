@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DayOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Day';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { UpdateTripPoint } from 'src/app/store/trips-store/state/trips.actions';
 
 @Component({
@@ -15,6 +16,7 @@ export class DaysListComponent  {
   @Input() days: DayOutput[];
   @Input() stepId: number;
   @Input() tripId: number;
+  @Input() points: PointOutput[];
 
   constructor(
     private store: Store,
