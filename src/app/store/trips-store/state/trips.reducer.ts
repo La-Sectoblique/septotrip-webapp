@@ -1,3 +1,4 @@
+import { moveItemInArray } from '@angular/cdk/drag-drop';
 import { createReducer, on } from '@ngrx/store';
 
 import * as TripsAction from './trips.actions';
@@ -36,6 +37,11 @@ export const tripReducer = createReducer(
     },
   })),
 
+  on(TripsAction.DeleteTripSuccess, (state, { tripId }) => ({
+    ...state,
+    trips: Object.values(state.trips).filter((trip) => trip.tripInstance.id !== tripId),
+  })),
+
   // STEPS
 
   on(TripsAction.GetTripStepsSuccess, (state, { steps, tripId }) => ({
@@ -63,6 +69,29 @@ export const tripReducer = createReducer(
     },
   })),
 
+  on(TripsAction.UpdateTripStepSuccess, (state, { tripId, newStep }) => {
+    const steps = state.trips[tripId].steps.map((step) => {
+      if (step.stepInstance.id === newStep.id) {
+        return {
+          ...step,
+          stepInstance: newStep,
+        };
+      }
+      return step;
+    });
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          steps,
+        },
+      },
+    };
+  }),
+
   on(TripsAction.DeleteTripStepSuccess, (state, { stepId, tripId }) => ({
     ...state,
     trips: {
@@ -73,6 +102,23 @@ export const tripReducer = createReducer(
       },
     },
   })),
+
+  on(TripsAction.UpdateTripStepOrder, (state, { fromIdx, toIdx, tripId }) => {
+
+    const reorderedSteps = [...state.trips[tripId].steps];
+    moveItemInArray(reorderedSteps, fromIdx, toIdx);
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          steps: reorderedSteps,
+        },
+      },
+    };
+  }),
 
   // DAYS
 
@@ -123,6 +169,26 @@ export const tripReducer = createReducer(
       },
     },
   })),
+
+  on(TripsAction.UpdateTripPointSuccess, (state, { tripId, newPoint }) => {
+    const points = state.trips[tripId].points.map((point) => {
+      if (point.id === newPoint.id) {
+        return newPoint;
+      }
+      return point;
+    });
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          points,
+        },
+      },
+    };
+  }),
 
   on(TripsAction.DeleteTripPointSuccess, (state, { pointId, tripId }) => ({
     ...state,

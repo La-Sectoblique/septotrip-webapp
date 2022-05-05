@@ -1,10 +1,10 @@
 <div class="d-flex flex-column align-items-center step-creation-wrapper">
-  <h2>Création d'une étape</h2>
+  <h2>{{isEditMode ? 'Modification' : 'Création'}} d'une étape</h2>
   <div class="input-wrapper d-flex flex-column">
     <label>Nom:</label>
     <input nbInput [(ngModel)]="stepName" placeholder="Strasbourg, Lille, Paris">
     <label>Durée</label>
     <input nbInput type="number" [(ngModel)]="stepDuration" >
   </div>
-  <button nbButton status="success" (click)="create()" [disabled]="!isCreationValid()">Créer l'étape</button>
+  <button nbButton status="success" (click)="create()" [disabled]="!isCreationValid()">{{isEditMode ? 'Modifier' : 'Créer'}} l'étape</button>
 </div>

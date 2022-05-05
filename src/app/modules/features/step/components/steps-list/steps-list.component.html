@@ -1,5 +1,5 @@
 <ng-container *ngIf="steps; else emptyBlock">
-  <div class="list-card">
+  <div class="list-card h-100">
     <div class="d-flex flex-column align-items-center">
       <h4>Etapes</h4>
       <button nbButton
@@ -7,20 +7,35 @@
         status="primary" 
         [outline]="editMode !== mapEditMode.EDIT_STEPS"
         [hero]="editMode === mapEditMode.EDIT_STEPS"
-        (click)="switchStepEditMode()"
+        (click)="switchStepEditMode(editMode)"
       >
         <nb-icon icon="edit-outline"></nb-icon>
         EDITION
       </button>
     </div>
-    <div class="step-list-wrapper">
-      <spt-step-preview *ngFor="let step of steps"
-        [step]="step.stepInstance"
-      >
-        <nb-icon class="cursor-pointer trash-icon" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
-      </spt-step-preview>
+    <div 
+      cdkDropList 
+      class="step-list-wrapper"
+      (cdkDropListDropped)="drop($event)"
+      [cdkDropListData]="steps"
+    >
+      <ng-container *ngFor="let step of steps">
+        <div
+          cdkDrag
+          [cdkDragData]="step"
+          cdk
+        >
+          <spt-step-preview [step]="step" [stepPoints]="points | filterPointsByStepId:step.stepInstance.id">
+            <div>
+              <nb-icon class="cursor-pointer trash-icon-color" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
+              <nb-icon class="cursor-pointer" (click)="editStep(step.stepInstance)" icon="edit-outline"></nb-icon>
+            </div>
+            <nb-icon cdkDragHandle handle icon="menu-outline" class="cursor-grab"></nb-icon>
+          </spt-step-preview>
+        </div>
+      </ng-container>
     </div>
-    </div>
+  </div>
 </ng-container>
 
 <ng-template #emptyBlock>
