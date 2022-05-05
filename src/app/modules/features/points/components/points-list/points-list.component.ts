@@ -1,3 +1,4 @@
+import { CdkDropList } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { NbDialogService } from '@nebular/theme';
@@ -19,6 +20,7 @@ export class PointsListComponent implements OnInit {
   @Input() tripId: number;
 
   @Input() points: PointOutput[] | null;
+  @Input() daysId: number[];
 
   mapEditMode$: Observable<MapEditMode>;
   mapEditMode = MapEditMode;
@@ -52,6 +54,10 @@ export class PointsListComponent implements OnInit {
         editedPoint,
       },
     });
+  }
+
+  getLinkedDropListId(): string[] {
+    return this.daysId.map((dayId) => `${dayId}-day-dropzone`);
   }
 
 

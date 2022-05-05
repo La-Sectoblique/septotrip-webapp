@@ -1,4 +1,24 @@
-<div class="d-flex align-items-center justify-content-space-between card trip-preview-wrapper">
+<div class="d-flex align-items-center justify-content-space-between card w-100">
   <img [src]="fakePictureSrc" class="thumbnail mr-4">
   <h6 class="m-0">{{trip?.name}}</h6>
+
+  <ng-container *ngIf="optionsEnabled">
+    <button
+      nbButton
+      ghost
+      [nbPopover]="tripOptions"
+      nbPopoverPlacement="bottom"
+    >
+      <nb-icon icon="more-vertical-outline"></nb-icon>
+    </button>
+  
+    <ng-template #tripOptions>
+      <div class="d-flex flex-column p-2">
+        <button nbButton ghost class="d-flex justify-content-between align-items-center cursor-pointer" (click)="deleteTrip()">
+          <nb-icon class="delete-icon rounded-corner" icon="trash-outline"></nb-icon>
+          <p>Supprimer</p>
+        </button>
+      </div>
+    </ng-template>
+  </ng-container>
 </div>

@@ -30,6 +30,9 @@
             flex-grow: 0;
         }
     }
+    &-wrap {
+        flex-wrap: wrap;
+    }
 }
 
 .align-items-center {
@@ -40,8 +43,22 @@
     height: 100%;
 }
 
-.w-100 {
-    width: 100%;
+.w- {
+    &100 {
+        width: 100%;
+    }
+}
+
+.vw- {
+    &75 {
+        width: 75vw;
+    }
+    &50 {
+        width: 50vw;
+    }
+    &25 {
+        width: 25vw;
+    }
 }
 
 .m {
@@ -62,6 +79,12 @@
         &-2 {
             margin-top: .75rem;
         }
+    }
+}
+
+.p {
+    &-2 {
+        padding: .75rem;
     }
 }
 

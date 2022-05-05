@@ -1,5 +1,5 @@
-import { LocalisationPoint, PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
-import { StepAttributes, StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
+import { LocalisationPoint } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
+
 export interface EditedStep {
   name?: string;
   order?: number;

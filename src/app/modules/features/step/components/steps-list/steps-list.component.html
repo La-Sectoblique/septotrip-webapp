@@ -25,7 +25,7 @@
           [cdkDragData]="step"
           cdk
         >
-          <spt-step-preview [step]="step">
+          <spt-step-preview [step]="step" [stepPoints]="points | filterPointsByStepId:step.stepInstance.id">
             <div>
               <nb-icon class="cursor-pointer trash-icon-color" (click)="deleteStep(step.stepInstance.id)" icon="trash-2-outline"></nb-icon>
               <nb-icon class="cursor-pointer" (click)="editStep(step.stepInstance)" icon="edit-outline"></nb-icon>

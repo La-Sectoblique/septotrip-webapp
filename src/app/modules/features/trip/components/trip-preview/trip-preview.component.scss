@@ -1,9 +1,9 @@
-.trip-preview-wrapper {
-    width: max-content;
+.thumbnail {
+    height: 6rem;
+    width: 6rem;
+    object-fit: cover;
+}
 
-    .thumbnail {
-        height: 6rem;
-        width: 6rem;
-        object-fit: cover;
-    }
+.delete-icon {
+    color: red
 }

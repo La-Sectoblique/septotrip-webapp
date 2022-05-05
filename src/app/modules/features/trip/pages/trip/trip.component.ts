@@ -23,8 +23,6 @@ export class TripComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private tripsService: TripsService,
-    private stepsService: StepsService,
     private store: Store,
   ) { }
 
@@ -41,6 +39,18 @@ export class TripComponent implements OnInit {
       this.store.dispatch(GetTripPoints({ tripId }));
       this.points$ = this.store.select(selectTripPoints(tripId));
     });
+  }
+
+  getDaysIds(steps: FlattenedStep[]): number[] {
+    const daysIds: number[] = [];
+
+    steps.forEach((step) => {
+      step.daysInstance?.forEach((day) => {
+        daysIds.push(day.id);
+      });
+    });
+
+    return daysIds;
   }
 
 }

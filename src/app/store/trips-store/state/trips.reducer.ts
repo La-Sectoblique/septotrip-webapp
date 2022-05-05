@@ -37,6 +37,11 @@ export const tripReducer = createReducer(
     },
   })),
 
+  on(TripsAction.DeleteTripSuccess, (state, { tripId }) => ({
+    ...state,
+    trips: Object.values(state.trips).filter((trip) => trip.tripInstance.id !== tripId),
+  })),
+
   // STEPS
 
   on(TripsAction.GetTripStepsSuccess, (state, { steps, tripId }) => ({
