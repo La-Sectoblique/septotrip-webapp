@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { addPoint, deletePoint, getTripPoints } from '@la-sectoblique/septoblique-service';
+import { addPoint, deletePoint, getTripPoints, updatePoint } from '@la-sectoblique/septoblique-service';
 import { LocalisationPoint, PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { from, Observable } from 'rxjs';
+import { EditedPoint } from 'src/app/store/trips-store/state/trips.payload';
 
 @Injectable({
   providedIn: 'root',
@@ -29,5 +30,8 @@ export class PointsService {
     return from(deletePoint(pointId));
   }
 
+  updatePoint(pointId: number, editedPoint: EditedPoint): Observable<PointOutput> {
+    return from(updatePoint(pointId, editedPoint));
+  }
 
 }

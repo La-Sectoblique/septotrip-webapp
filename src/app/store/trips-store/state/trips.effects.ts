@@ -73,14 +73,25 @@ export class TripsEffects {
     ),
   ));
 
+  UpdateTripStep$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.UpdateTripStep),
+    mergeMap(({ tripId, stepId, editedStep }) => this.stepsService.updateTripStep(stepId, editedStep)
+      .pipe(
+        switchMap((newStep) => [
+          TripsActions.UpdateTripStepSuccess({ tripId, newStep }),
+          TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
+        ]),
+        // @TODO: catchError(() => CALL ERROR ACTION),
+      )),
+  ));
+
   DeleteTripStep$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.DeleteTripStep),
     mergeMap(({ stepId, tripId }) => this.stepsService.deleteStep(stepId)
       .pipe(
         map(() => TripsActions.DeleteTripStepSuccess({ stepId, tripId })),
         // @TODO: catchError(() => CALL ERROR ACTION),
-      ),
-    ),
+      )),
   ));
 
   // Days
@@ -122,6 +133,16 @@ export class TripsEffects {
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
     ),
+  ));
+
+  UpdateTripPoint$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.UpdateTripPoint),
+    mergeMap(({ tripId, pointId, editedPoint }) => this.pointsService.updatePoint(
+      pointId, editedPoint,
+    ).pipe(
+      map((newPoint: PointOutput) => TripsActions.UpdateTripPointSuccess({ tripId, newPoint })),
+      // @TODO: catchError(() => CALL ERROR ACTION),
+    )),
   ));
 
   DeleteTripPoint$ = createEffect(() => this.actions$.pipe(

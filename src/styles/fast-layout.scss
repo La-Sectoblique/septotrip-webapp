@@ -48,10 +48,15 @@
     &-0 {
         margin: 0;
     }
-    &r{
-        &-4{
+    &r {
+        &-4 {
             margin-right: 1.5rem;
         }  
+    }
+    &b {
+        &-4 {
+            margin-bottom: 1.5rem;
+        }
     }
 }
 

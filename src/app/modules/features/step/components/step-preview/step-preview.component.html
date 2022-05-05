@@ -1,7 +1,20 @@
-<div class="d-flex align-items-center justify-content-space-between card w-100 wrapper">
+<div class="d-flex flex-column card w-100 wrapper">
 
-  <p class="step-name word-break-all" >{{step.name}}</p>
-
-  <p>Durée: {{step.duration}} jours</p>
-  <ng-content></ng-content>
+  <div class="d-flex align-items-center justify-content-between w-100">
+    <p class="step-name word-break-all" >{{step.stepInstance.name}}</p>
+  
+    <p>Durée: {{step.daysInstance?.length || step.stepInstance.duration}} jours</p>
+    <button
+    nbButton 
+    ghost 
+    status="primary"
+    (click)="switchMode()"
+    >
+      <nb-icon [icon]="isDetailedModeEnabled ? 'arrow-ios-upward-outline' : 'arrow-ios-downward-outline'"></nb-icon>
+    </button>
+    <ng-content></ng-content>
+  </div>
+  <div *ngIf="isDetailedModeEnabled">
+    <p *ngFor="let day of step.daysInstance">Jour {{day.number}}</p>
+  </div>
 </div>

@@ -3,6 +3,7 @@ import { PointAttributes, PointOutput } from '@la-sectoblique/septoblique-servic
 import { StepAttributes, StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { createAction, props } from '@ngrx/store';
+import { UpdateTripPointPayload, UpdateTripStepPayload } from './trips.payload';
 
 // Trip
 
@@ -36,15 +37,23 @@ export const GetTripStepsSuccess = createAction(
   '[Trip] Get trip steps Success',
   props<{ steps: StepOutput[]; tripId: number }>(),
 );
-
 export const CreateTripStep = createAction(
   '[Trip] Create trip step',
-  props<{ tripId: number; step: Omit<Omit<StepAttributes, 'tripId'>, 'order'> }>(),
+  props<{ tripId: number; step: Omit<StepAttributes, 'tripId' | 'order'> }>(),
 );
 
 export const CreateTripStepSuccess = createAction(
   '[Trip] Create trip step Success',
   props<{ tripId: number; step: StepOutput }>(),
+);
+
+export const UpdateTripStep = createAction(
+  '[Trip] Update Trip Step',
+  props<UpdateTripStepPayload>(),
+);
+export const UpdateTripStepSuccess = createAction(
+  '[Trip] Update Trip Step Success',
+  props<{ tripId: number; newStep: StepOutput }>(),
 );
 
 export const DeleteTripStep = createAction(
@@ -89,6 +98,16 @@ export const CreateTripPoint = createAction(
 export const CreateTripPointSuccess = createAction(
   '[Trip] Create trip point Success',
   props<{ tripId: number; point: PointOutput }>(),
+);
+
+export const UpdateTripPoint = createAction(
+  '[Trip] Update trip point',
+  props<UpdateTripPointPayload>(),
+);
+
+export const UpdateTripPointSuccess = createAction(
+  '[Trip] Update trip point Success',
+  props<{ tripId: number; newPoint: PointOutput }>(),
 );
 
 export const DeleteTripPoint = createAction(

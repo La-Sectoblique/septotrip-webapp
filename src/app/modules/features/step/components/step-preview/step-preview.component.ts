@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
+import { FlattenedStep } from '../../models/flattened-step';
 
 @Component({
   selector: 'spt-step-preview',
@@ -8,6 +9,11 @@ import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/model
 })
 export class StepPreviewComponent {
 
-  @Input() step: StepOutput;
+  @Input() step: FlattenedStep;
+  @Input() isDetailedModeEnabled = false;
+
+  switchMode(): void {
+    this.isDetailedModeEnabled = !this.isDetailedModeEnabled;
+  }
 
 }
