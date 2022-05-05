@@ -23,8 +23,6 @@ export class TripComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private tripsService: TripsService,
-    private stepsService: StepsService,
     private store: Store,
   ) { }
 

@@ -12,7 +12,7 @@
 .map-edit-mode-preview {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
 }
 
 mgl-map{
@@ -22,4 +22,8 @@ mgl-map{
 
 ::ng-deep mgl-map canvas {
     @include mixins.rounded-corner;
+}
+
+.marker {
+    transform: translateY(5px);
 }

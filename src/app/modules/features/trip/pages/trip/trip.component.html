@@ -1,36 +1,10 @@
-<!-- <ng-container *ngIf="(trip$ | async) as trip">
-  <spt-trip-preview
-    [trip]="trip.tripInstance"
-  ></spt-trip-preview>
-
-  <ng-container *ngIf="(steps$ | async) as steps; else stepsLoadingBlock">
-    <ng-container *ngIf="(points$ | async) as points">
-      <div class="trip-wrapper">
-        <spt-steps-list class="steps-wrapper" [tripId]="trip.tripInstance.id" [steps]="steps"></spt-steps-list>
-        <div class="map-wrapper">
-          <spt-trips-map [steps]="steps" [points]="points" [tripId]="trip.tripInstance.id"></spt-trips-map>
-        </div>
-        <div class="points-wrapper">
-          <spt-points-list
-            [tripId]="trip.tripInstance.id"
-            [points]="points"
-          ></spt-points-list>
-        </div>
-      </div>
-    </ng-container>
-  </ng-container>
-
-  <ng-template #stepsLoadingBlock>
-    <spt-loader></spt-loader>
-  </ng-template>
-</ng-container> -->
-
 <ng-container *ngIf="(trip$ | async) as trip">
   <div class="d-flex flex-column h-100 w-100" *ngIf="(points$ | async) as points" >
     <div class="d-flex w-100 top-line" *ngIf="(steps$ | async) as steps">
       <div class="d-flex flex-column h-100 left-bar align-items-center">
         <spt-trip-preview
-        [trip]="trip.tripInstance"
+          [trip]="trip.tripInstance"
+          [optionsEnabled]="true"
         ></spt-trip-preview>
         <spt-steps-list class="steps-wrapper h-100 w-100" [tripId]="trip.tripInstance.id" [steps]="steps"></spt-steps-list>
       </div>
