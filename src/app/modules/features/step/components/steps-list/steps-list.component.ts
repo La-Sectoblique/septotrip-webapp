@@ -1,4 +1,4 @@
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
@@ -60,19 +60,9 @@ export class StepsListComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<FlattenedStep[]>): void {
-    // console.log('event', event);
-    // const testArray = [
-    //   ...this.steps,
-    // ];
-    // console.log('test Array before', testArray);
-    // moveItemInArray(testArray, 1, 0);
-    // console.log('test Array after', testArray);
-    console.log('event', event);
     this.store.dispatch(UpdateTripStepOrder({
       fromIdx: event.container.data.indexOf(event.item.data),
       toIdx: event.currentIndex,
-      // fromIdx: event.previousIndex,
-      // toIdx: event.currentIndex,
       tripId: this.tripId,
     }));
   }
