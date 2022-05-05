@@ -1,21 +1,21 @@
 /* tslint:disable:no-unused-variable */
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DayPreviewComponent } from './day-preview.component';
+import { DaysListComponent } from './days-list.component';
 
-describe('DayPreviewComponent', () => {
-  let component: DayPreviewComponent;
-  let fixture: ComponentFixture<DayPreviewComponent>;
+describe('DaysListComponent', () => {
+  let component: DaysListComponent;
+  let fixture: ComponentFixture<DaysListComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DayPreviewComponent ],
+      declarations: [ DaysListComponent ],
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DayPreviewComponent);
+    fixture = TestBed.createComponent(DaysListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

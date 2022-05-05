@@ -1,6 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
-import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
 import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
@@ -30,7 +29,6 @@ export class TripsMapComponent implements OnChanges, OnInit {
   mapZoom: [number] = [7];
 
   selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null = null;
-  cursorStyle = '';
 
   stepMarkerImageLoaded = false;
   pointMarkerImageLoaded = false;
@@ -61,6 +59,8 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   ngOnInit(): void {
     this.mapEditMode$ = this.store.select(selectMapEditMode());
+    this.mapCenter = [this.steps[0].stepInstance.localisation.coordinates[0],
+      this.steps[0].stepInstance.localisation.coordinates[1]];
   }
 
   ngOnChanges({ steps, points }: SimpleChanges): void {
@@ -107,33 +107,32 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
 
   onMapClick(evt: MapMouseEvent): void {
-    if (this.cursorStyle !== 'pointer') {
-      this.mapEditMode$.pipe(first()).subscribe((mapMode) => {
-        if (mapMode === MapEditMode.EDIT_STEPS) {
-          this.nbDialogService.open(CreateStepComponent, {
-            context: {
-              clickedCoordinates: evt.lngLat,
-              tripId: this.tripId,
-            },
-          });
-        }
+    this.mapEditMode$.pipe(first()).subscribe((mapMode) => {
+      if (mapMode === MapEditMode.EDIT_STEPS) {
+        this.nbDialogService.open(CreateStepComponent, {
+          context: {
+            clickedCoordinates: evt.lngLat,
+            tripId: this.tripId,
+          },
+        });
+      }
 
-        if (mapMode === MapEditMode.EDIT_POINTS) {
-          this.nbDialogService.open(CreatePointComponent, {
-            context: {
-              clickedCoordinates:  evt.lngLat,
-              tripId: this.tripId,
-            },
-          });
-        }
-      });
-    }
+      if (mapMode === MapEditMode.EDIT_POINTS) {
+        this.nbDialogService.open(CreatePointComponent, {
+          context: {
+            clickedCoordinates:  evt.lngLat,
+            tripId: this.tripId,
+          },
+        });
+      }
+    });
   }
 
-  centerMapTo(evt: MapMouseEvent): void {
-    this.mapCenter = (evt as any).features[0].geometry.coordinates;
+  centerMapTo(coordinates: number[]): void {
+    this.mapCenter = [coordinates[0], coordinates[1]];
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   updateStepAfterDrag(evt: any, updatedStep: FlattenedStep): void {
     console.log('evt', evt);
     this.store.dispatch(UpdateTripStep({
@@ -150,6 +149,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
     }));
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   updatePointAfterDrag(evt: any, updatePoint: PointOutput): void {
     this.store.dispatch(UpdateTripPoint({
       pointId: updatePoint.id,

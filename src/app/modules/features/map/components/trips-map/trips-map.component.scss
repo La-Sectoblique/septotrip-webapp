@@ -23,3 +23,7 @@ mgl-map{
 ::ng-deep mgl-map canvas {
     @include mixins.rounded-corner;
 }
+
+.marker {
+    transform: translateY(5px);
+}

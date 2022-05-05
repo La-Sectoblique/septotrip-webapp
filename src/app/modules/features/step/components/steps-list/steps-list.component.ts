@@ -9,7 +9,6 @@ import { UpdateMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.a
 import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
 import { DeleteTripStep } from 'src/app/store/trips-store/state/trips.actions';
 import { FlattenedStep } from '../../models/flattened-step';
-import { StepsService } from '../../services/steps.service';
 import { CreateStepComponent } from '../create-step/create-step.component';
 
 @Component({

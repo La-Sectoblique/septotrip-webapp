@@ -60,8 +60,13 @@
     }
 }
 
-.cursor-pointer {
-    cursor: pointer;
+.cursor {
+    &-pointer {
+        cursor: pointer;
+    }
+    &-grab {
+        cursor: grab;
+    }
 }
 
 .text-align-center {
