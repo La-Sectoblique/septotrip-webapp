@@ -7,7 +7,7 @@
       status="primary" 
       [outline]="editMode !== mapEditMode.EDIT_POINTS"
       [hero]="editMode === mapEditMode.EDIT_POINTS"
-      (click)="switchPointEditMode()"
+      (click)="switchPointEditMode(editMode)"
     >
       <nb-icon icon="edit-outline"></nb-icon>
       EDITION

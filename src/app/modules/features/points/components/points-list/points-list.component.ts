@@ -32,14 +32,12 @@ export class PointsListComponent implements OnInit {
     this.mapEditMode$ = this.store.select(selectMapEditMode());
   }
 
-  switchPointEditMode(): void {
-    this.mapEditMode$.pipe(first()).subscribe((editMode) => {
-      if (editMode !== MapEditMode.EDIT_POINTS) {
-        this.store.dispatch(UpdateMapEditMode({ mapMode: MapEditMode.EDIT_POINTS }));
-      } else {
-        this.store.dispatch(UpdateMapEditMode({ mapMode: MapEditMode.DEFAULT }));
-      }
-    });
+  switchPointEditMode(editMode: MapEditMode): void {
+    if (editMode !== MapEditMode.EDIT_POINTS) {
+      this.store.dispatch(UpdateMapEditMode({ mapMode: MapEditMode.EDIT_POINTS }));
+    } else {
+      this.store.dispatch(UpdateMapEditMode({ mapMode: MapEditMode.DEFAULT }));
+    }
   }
 
   deletePoint(pointId: number): void {

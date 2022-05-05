@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
@@ -15,6 +15,7 @@ import { FlattenedStep } from '../../../step/models/flattened-step';
   selector: 'spt-trips-map',
   templateUrl: './trips-map.component.html',
   styleUrls: ['./trips-map.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TripsMapComponent implements OnChanges, OnInit {
 
@@ -27,21 +28,6 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   mapCenter: LngLatLike = [7.750149, 48.581551];
   mapZoom: [number] = [7];
-
-  selectedPoint: GeoJSON.Feature<GeoJSON.Point> | null = null;
-
-  stepMarkerImageLoaded = false;
-  pointMarkerImageLoaded = false;
-
-  stepsMapPoints: GeoJSON.FeatureCollection<GeoJSON.Point> = {
-    type: 'FeatureCollection',
-    features: [],
-  };
-
-  pointsMapPoints: GeoJSON.FeatureCollection<GeoJSON.Point> = {
-    type: 'FeatureCollection',
-    features: [],
-  };
 
   line: any = {
     type: 'Feature',
@@ -59,50 +45,24 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   ngOnInit(): void {
     this.mapEditMode$ = this.store.select(selectMapEditMode());
-    this.mapCenter = [this.steps[0].stepInstance.localisation.coordinates[0],
-      this.steps[0].stepInstance.localisation.coordinates[1]];
+    this.mapCenter = [
+      this.steps[0].stepInstance.localisation.coordinates[0],
+      this.steps[0].stepInstance.localisation.coordinates[1],
+    ];
   }
 
-  ngOnChanges({ steps, points }: SimpleChanges): void {
-    if (steps) {
-      this.stepsMapPoints = {
-        ...this.stepsMapPoints,
-        features: steps.currentValue.map((step: FlattenedStep) => ({
-          type: 'Feature',
-          geometry: {
-            type: step.stepInstance.localisation.type,
-            coordinates: step.stepInstance.localisation.coordinates,
-          },
-          properties: {
-            title: step.stepInstance.name,
-          },
-        })),
-      };
-      this.line = {
-        ...this.line,
-        geometry: {
-          ...this.line.geometry,
-          coordinates: steps.currentValue.map((step: FlattenedStep) => step.stepInstance.localisation.coordinates),
-        },
-      };
+  ngOnChanges(/*{ steps }: SimpleChanges*/): void {
+    this.updateLineDrawing();
+  }
 
-    }
-
-    if (points) {
-      this.pointsMapPoints = {
-        ...this.pointsMapPoints,
-        features: points.currentValue.map((point: PointOutput) => ({
-          type: 'Feature',
-          geometry: {
-            type: point.localisation.type,
-            coordinates: point.localisation.coordinates,
-          },
-          properties: {
-            title: point.title,
-          },
-        })),
-      };
-    }
+  updateLineDrawing(): void {
+    this.line = {
+      ...this.line,
+      geometry: {
+        ...this.line.geometry,
+        coordinates: this.steps.map((step: FlattenedStep) => step.stepInstance.localisation.coordinates),
+      },
+    };
   }
 
 
@@ -163,6 +123,23 @@ export class TripsMapComponent implements OnChanges, OnInit {
         },
       },
     }));
+  }
+
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  updateLineLive(evt: any, updatedStepIdx: number): void {
+    this.line = {
+      ...this.line,
+      geometry: {
+        ...this.line.geometry,
+        coordinates: this.line.geometry.coordinates.map((coordinates: number[], idx: number) => {
+          if (updatedStepIdx === idx) {
+            // eslint-disable-next-line no-underscore-dangle
+            return [evt._lngLat.lng, evt._lngLat.lat];
+          }
+          return coordinates;
+        }),
+      },
+    };
   }
 
 }

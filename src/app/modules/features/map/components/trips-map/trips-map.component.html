@@ -7,12 +7,13 @@
         [dragRotate]="false"
     >
         <!-- STEPS MANAGEMENT -->
-        <ng-container *ngFor="let step of steps">
+        <ng-container *ngFor="let step of steps; let idx = index">
             <mgl-marker
                 [lngLat]="[step.stepInstance.localisation.coordinates[0], step.stepInstance.localisation.coordinates[1]]"
                 anchor="bottom"
                 [draggable]="(mapEditMode$ | async) === MapEditMode.EDIT_STEPS"
                 (markerDragEnd)="updateStepAfterDrag($event, step)"
+                (markerDrag)="updateLineLive($event, idx)"
             >
                 <div class="marker" (click)="centerMapTo(step.stepInstance.localisation.coordinates)">
                     <img class="cursor-pointer" src="./assets/steps_marker.png" alt="" width="30">

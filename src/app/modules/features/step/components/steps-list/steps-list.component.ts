@@ -3,11 +3,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
-import { first, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { UpdateMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.actions';
 import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
-import { DeleteTripStep } from 'src/app/store/trips-store/state/trips.actions';
+import { DeleteTripStep, UpdateTripStepOrder } from 'src/app/store/trips-store/state/trips.actions';
 import { FlattenedStep } from '../../models/flattened-step';
 import { CreateStepComponent } from '../create-step/create-step.component';
 
@@ -34,14 +34,12 @@ export class StepsListComponent implements OnInit {
     this.mapEditMode$ = this.store.select(selectMapEditMode());
   }
 
-  switchStepEditMode(): void {
-    this.mapEditMode$.pipe(first()).subscribe((editMode) => {
-      if (editMode !== MapEditMode.EDIT_STEPS) {
-        this.store.dispatch(UpdateMapEditMode({ mapMode: MapEditMode.EDIT_STEPS }));
-      } else {
-        this.store.dispatch(UpdateMapEditMode({ mapMode: MapEditMode.DEFAULT }));
-      }
-    });
+  switchStepEditMode(editMode: MapEditMode): void {
+    if (editMode !== MapEditMode.EDIT_STEPS) {
+      this.store.dispatch(UpdateMapEditMode({ mapMode: MapEditMode.EDIT_STEPS }));
+    } else {
+      this.store.dispatch(UpdateMapEditMode({ mapMode: MapEditMode.DEFAULT }));
+    }
   }
 
 
@@ -60,9 +58,21 @@ export class StepsListComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<FlattenedStep[]>): void {
+    // console.log('event', event);
+    // const testArray = [
+    //   ...this.steps,
+    // ];
+    // console.log('test Array before', testArray);
+    // moveItemInArray(testArray, 1, 0);
+    // console.log('test Array after', testArray);
     console.log('event', event);
-    moveItemInArray(this.steps, event.previousIndex, event.currentIndex);
+    this.store.dispatch(UpdateTripStepOrder({
+      fromIdx: event.container.data.indexOf(event.item.data),
+      toIdx: event.currentIndex,
+      // fromIdx: event.previousIndex,
+      // toIdx: event.currentIndex,
+      tripId: this.tripId,
+    }));
   }
-
 
 }
