@@ -41,4 +41,16 @@ export class TripComponent implements OnInit {
     });
   }
 
+  getDaysIds(steps: FlattenedStep[]): number[] {
+    const daysIds: number[] = [];
+
+    steps.forEach((step) => {
+      step.daysInstance?.forEach((day) => {
+        daysIds.push(day.id);
+      });
+    });
+
+    return daysIds;
+  }
+
 }

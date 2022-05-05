@@ -3,5 +3,8 @@
     <h6 class="word-break-all">{{point.title}}</h6>
     <p *ngIf="point.description">{{point.description}}</p>
   </div>
-  <ng-content></ng-content>
+  <div class="d-flex align-items-center justify-content-center">
+    <ng-content select="[handle]"></ng-content>
+    <ng-content></ng-content>
+  </div>
 </div>

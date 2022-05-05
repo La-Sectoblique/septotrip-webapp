@@ -78,7 +78,10 @@ export class TripsEffects {
       step.localisation,
     )
       .pipe(
-        map((newStep: StepOutput) => TripsActions.CreateTripStepSuccess({ step: newStep, tripId })),
+        switchMap((newStep: StepOutput) => [
+          TripsActions.CreateTripStepSuccess({ step: newStep, tripId }),
+          TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
+        ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
     ),
