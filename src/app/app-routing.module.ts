@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './modules/core/pages/home/home.component';
 import { LoginComponent } from './modules/features/authentification/pages/login/login.component';
+import { SigninComponent } from './modules/features/authentification/pages/signin/signin.component';
 import { CreateTripComponent } from './modules/features/trip/pages/create-trip/create-trip.component';
 import { TripsComponent } from './modules/features/trip/pages/trips/trips.component';
 
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'signIn',
+    component: SigninComponent,
   },
   {
     // Put protected routes under this

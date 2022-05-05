@@ -10,15 +10,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
-<<<<<<< HEAD
-import { AuthentificationModule } from './modules/features/authentification/authentification.module';
-=======
 import { DaysModule } from './modules/features/days/days.module';
 import { PointsModule } from './modules/features/points/points.module';
->>>>>>> 5dbfb959879ccfe207ac0d00d7b9504c7537040c
 import { StepModule } from './modules/features/step/step.module';
 import { TripModule } from './modules/features/trip/trip.module';
 import { FeaturesStoreModule } from './store/features-store.module';
+import { AuthentificationModule } from './modules/features/authentification/authentification.module';
 
 @NgModule({
   declarations: [
