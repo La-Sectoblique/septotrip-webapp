@@ -29,16 +29,13 @@
   <ng-container *ngIf="(steps$ | async) as steps">
     <ng-container *ngIf="(points$ | async) as points">
       <div class="page-wrapper h-100 w-100">
-        <div class="steps-wrapper">
-          <spt-steps-list
-            [tripId]="trip.tripInstance.id"
-            [steps]="steps"
-            [points]="points"
-          ></spt-steps-list>
-        </div>
-        <div class="map-wrapper">
-      
-        </div>
+        <spt-steps-list
+          [tripId]="trip.tripInstance.id"
+          [steps]="steps"
+          [points]="points"
+        ></spt-steps-list>
+        <spt-trips-map [steps]="steps" [points]="points" [tripId]="trip.tripInstance.id"></spt-trips-map>
+
         <div class="points-wrapper">
       
         </div>
