@@ -13,18 +13,9 @@
       EDITION
     </button>
     </div>
-    <!-- <spt-point-preview *ngFor="let point of points"
-      [point]="point"
-    >
-      <div class="d-flex">
-        <nb-icon class="cursor-pointer trash-icon" (click)="deletePoint(point.id)" icon="trash-2-outline"></nb-icon>
-        <nb-icon class="cursor-pointer" (click)="editPoint(point)" icon="edit-outline"></nb-icon>
-      </div>
-    </spt-point-preview> -->
-    <!--  -->
     <div 
       cdkDropList 
-      class="d-flex align-items-center"
+      class="d-flex align-items-center point-list-wrapper"
       [cdkDropListData]="points"
       [cdkDropListConnectedTo]="getLinkedDropListId()"
       cdkDropListOrientation="horizontal"
@@ -33,7 +24,6 @@
         <div
           cdkDrag
           [cdkDragData]="point"
-          cdk
         >
           <spt-point-preview [point]="point">
             <div class="d-flex">

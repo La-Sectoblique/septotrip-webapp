@@ -37,7 +37,11 @@
         <spt-trips-map [steps]="steps" [points]="points" [tripId]="trip.tripInstance.id"></spt-trips-map>
 
         <div class="points-wrapper">
-      
+          <spt-points-list
+            [tripId]="trip.tripInstance.id"
+            [points]="points"
+            [daysId]="getDaysIds(steps)"
+          ></spt-points-list>
         </div>
       </div>
     </ng-container>
