@@ -25,14 +25,24 @@
   </div>
 </ng-container> -->
 
-<div class="page-wrapper h-100 w-100">
-  <div class="steps-wrapper">
-
-  </div>
-  <div class="map-wrapper">
-
-  </div>
-  <div class="points-wrapper">
-
-  </div>
-</div>
+<ng-container *ngIf="(trip$ | async) as trip">
+  <ng-container *ngIf="(steps$ | async) as steps">
+    <ng-container *ngIf="(points$ | async) as points">
+      <div class="page-wrapper h-100 w-100">
+        <div class="steps-wrapper">
+          <spt-steps-list
+            [tripId]="trip.tripInstance.id"
+            [steps]="steps"
+            [points]="points"
+          ></spt-steps-list>
+        </div>
+        <div class="map-wrapper">
+      
+        </div>
+        <div class="points-wrapper">
+      
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</ng-container>

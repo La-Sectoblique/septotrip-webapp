@@ -9,15 +9,16 @@
 }
 
 .page-wrapper {
-    background-color: blueviolet;
-
     display: grid;
     grid-template-columns: [column-1] 40vw [column-2] auto [last-column];
     grid-template-rows: [line-1] 70vh [line-2] auto [last-line];
+
+    $grid-gaps: 10px;
+    column-gap: $grid-gaps;
+    row-gap: $grid-gaps;
 }
 
 .steps-wrapper {
-    background-color: bisque;
 }
 
 .map-wrapper {
