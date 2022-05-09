@@ -11,7 +11,7 @@
 .page-wrapper {
     display: grid;
     grid-template-columns: [column-1] 40vw [column-2] auto [last-column];
-    grid-template-rows: [line-1] 70vh [line-2] auto [last-line];
+    grid-template-rows: [line-1] 75vh [line-2] auto [last-line];
 
     $grid-gaps: 10px;
     column-gap: $grid-gaps;
@@ -19,7 +19,7 @@
 }
 
 .points-wrapper {
-    background-color: aquamarine;
+    // background-color: aquamarine;
 
     // start column-1 end last-column, same for rows :)
     grid-column: column-1 / last-column;

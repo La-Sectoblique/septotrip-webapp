@@ -1,39 +1,14 @@
-<!-- <ng-container *ngIf="(trip$ | async) as trip">
-  <div class="d-flex flex-column h-100 w-100" *ngIf="(points$ | async) as points" >
-    <ng-container *ngIf="(steps$ | async) as steps">
-      <div class="d-flex w-100 top-line">
-        <div class="d-flex flex-column h-100 left-bar align-items-center">
-          <spt-trip-preview
-            [trip]="trip.tripInstance"
-            [optionsEnabled]="true"
-          ></spt-trip-preview>
-          <spt-steps-list 
-            class="steps-wrapper h-100 w-100"
+<ng-container *ngIf="(trip$ | async) as trip">
+  <ng-container *ngIf="(steps$ | async) as steps">
+    <ng-container *ngIf="(points$ | async) as points">
+      <div class="page-wrapper h-100 w-100">
+        <div class="h-100">
+          <spt-steps-list
             [tripId]="trip.tripInstance.id"
             [steps]="steps"
             [points]="points"
           ></spt-steps-list>
         </div>
-        <spt-trips-map class="map-wrapper" [steps]="steps" [points]="points" [tripId]="trip.tripInstance.id"></spt-trips-map>
-      </div>
-      <spt-points-list
-        [tripId]="trip.tripInstance.id"
-        [points]="points"
-        [daysId]="getDaysIds(steps)"
-      ></spt-points-list>
-    </ng-container>
-  </div>
-</ng-container> -->
-
-<ng-container *ngIf="(trip$ | async) as trip">
-  <ng-container *ngIf="(steps$ | async) as steps">
-    <ng-container *ngIf="(points$ | async) as points">
-      <div class="page-wrapper h-100 w-100">
-        <spt-steps-list
-          [tripId]="trip.tripInstance.id"
-          [steps]="steps"
-          [points]="points"
-        ></spt-steps-list>
         <spt-trips-map [steps]="steps" [points]="points" [tripId]="trip.tripInstance.id"></spt-trips-map>
 
         <div class="points-wrapper">
