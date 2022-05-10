@@ -11,38 +11,16 @@
 .page-wrapper {
     display: grid;
 
-    // $first-column-width: 40vw;
     grid-template-columns: [column-1] 40vw [column-2] 58vw [last-column];
     grid-template-rows: [line-1] 74vh [line-2] auto [last-line];
 
     $grid-gaps: 10px;
     column-gap: $grid-gaps;
     row-gap: $grid-gaps;
-
-    // overflow: hidden;
 }
 
 .points-wrapper {
-    // background-color: aquamarine;
-
     // start column-1 end last-column, same for rows :)
     grid-column: column-1 / last-column;
     grid-row: line-2 / last-line;
 }
-
-// .top-line {
-//     height: 70vh;
-// }
-
-// .left-bar {
-//     width: 40vw;
-// }
-
-// .map-wrapper {
-//     width: 100%;
-//     height: 100%;
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
