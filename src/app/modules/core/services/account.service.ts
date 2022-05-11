@@ -10,14 +10,15 @@ import { UserAttributes } from '@la-sectoblique/septoblique-service/dist/types/m
 @Injectable({ providedIn: 'root' })
 export class AccountService{
 
-  private userSubject: BehaviorSubject<UserAttributes>;
+  private userSubject!: BehaviorSubject<UserAttributes>;
   private user: Observable<UserAttributes>;
 
   constructor(
     private router: Router,
     private http: HttpClient,
   ){
-    //this.userSubject = new BehaviorSubject<UserAttributes>(JSON.parse(localStorage.getItem('user')));
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    this.userSubject = new BehaviorSubject<UserAttributes>(JSON.parse(localStorage.getItem('user')!));
     this.user = this.userSubject.asObservable();
   }
 
@@ -25,7 +26,7 @@ export class AccountService{
     return this.userSubject.value;
   }
 
-  login(email: string, password: string){
+  login(email: string, password: string): Observable<UserAttributes>{
     return this.http.post<UserAttributes>(`${environment.baseURL}${`route`}`, { email, password })
       .pipe(map((user) => {
         localStorage.setItem('user', JSON.stringify(user));

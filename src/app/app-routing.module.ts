@@ -4,7 +4,9 @@ import { HomeComponent } from './modules/core/pages/home/home.component';
 import { LoginComponent } from './modules/features/authentification/pages/login/login.component';
 import { SigninComponent } from './modules/features/authentification/pages/signin/signin.component';
 import { CreateTripComponent } from './modules/features/trip/pages/create-trip/create-trip.component';
+import { TripComponent } from './modules/features/trip/pages/trip/trip.component';
 import { TripsComponent } from './modules/features/trip/pages/trips/trips.component';
+import { AuthGuard } from './modules/helpers/auth.guard';
 
 const routes: Routes = [
   {
@@ -27,7 +29,6 @@ const routes: Routes = [
   {
     // Put protected routes under this
     path: '',
-    // canActivate: @todo: set routeGuards here
     children: [
       {
         path: 'trips',
@@ -43,30 +44,9 @@ const routes: Routes = [
             pathMatch: 'full',
           },
           {
-            path: ':tripsId',
-            component: TripsComponent,
+            path: ':tripId',
+            component: TripComponent,
           },
-        ],
-      },
-    ],
-  },
-  {
-    // Put protected routes under this
-    path: '',
-    // canActivate: @todo: set routeGuards here
-    children: [
-      {
-        path: 'create-trips',
-        children: [
-          {
-            path: '',
-            component: CreateTripComponent,
-            pathMatch: 'full',
-          },
-          // { @example
-          //   path: ':tripsId',
-          //   component:,
-          // },
         ],
       },
     ],
