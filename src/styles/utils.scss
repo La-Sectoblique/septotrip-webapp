@@ -9,8 +9,12 @@
     @include mixins.card-shadow();
     border: 1px solid #C7C7C7;
     background-color: white;
-    padding: 1rem;
-    margin: .5rem;
+    padding: .75rem;
+    margin: .5rem 0;
+
+    &-horizontal {
+        margin: 0 .25rem;
+    }
 }
 
 .list-card {
@@ -18,7 +22,6 @@
     @include mixins.card-shadow();
     background-color: rgb(230, 230, 230);
     padding: .5rem;
-    margin: .25rem;
     // max-height: 100%;
     // overflow: auto;
 }

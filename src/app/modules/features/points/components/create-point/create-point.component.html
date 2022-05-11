@@ -2,9 +2,9 @@
   <h2>{{isEditMode ? 'Modification' : 'Création'}} d'un point d'intérêt</h2>
   <div class="input-wrapper d-flex flex-column">
     <label>Nom:</label>
-    <input nbInput [(ngModel)]="pointTitle" placeholder="Cathédrale ou autre">
+    <input nbInput [(ngModel)]="pointTitle" [maxlength]="64" placeholder="Cathédrale ou autre">
     <label>Description</label>
-    <input nbInput type="text" [(ngModel)]="pointDescription" >
+    <textarea nbInput type="text" [(ngModel)]="pointDescription" ></textarea>
   </div>
   <button nbButton status="success" (click)="createPoint()" [disabled]="!isCreationValid()">{{isEditMode ? 'Modifier' : 'Créer'}} l'étape</button>
 </div>
