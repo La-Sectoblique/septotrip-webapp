@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, Input, OnChanges, OnInit } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
-import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
+import { LngLatLike, Map, MapMouseEvent } from 'mapbox-gl';
 import { first, Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
@@ -15,7 +15,7 @@ import { FlattenedStep } from '../../../step/models/flattened-step';
   selector: 'spt-trips-map',
   templateUrl: './trips-map.component.html',
   styleUrls: ['./trips-map.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TripsMapComponent implements OnChanges, OnInit {
 
@@ -53,6 +53,10 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   ngOnChanges(/*{ steps }: SimpleChanges*/): void {
     this.updateLineDrawing();
+  }
+
+  onMapLoaded(map: Map): void {
+    map.resize();
   }
 
   updateLineDrawing(): void {
