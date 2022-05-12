@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
+import * as mapboxgl from 'mapbox-gl';
 import { LngLatLike, Map, MapMouseEvent } from 'mapbox-gl';
 import { first, Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
@@ -38,6 +39,8 @@ export class TripsMapComponent implements OnChanges, OnInit {
     },
   };
 
+  markersBounds = new mapboxgl.LngLatBounds();
+
   constructor(
     private nbDialogService: NbDialogService,
     private store: Store,
@@ -49,6 +52,15 @@ export class TripsMapComponent implements OnChanges, OnInit {
       this.steps[0].stepInstance.localisation.coordinates[0],
       this.steps[0].stepInstance.localisation.coordinates[1],
     ];
+
+
+    // Create bounding box for the map
+    [
+      ...this.steps.map((step) => step.stepInstance.localisation.coordinates),
+      ... this.points.map((point) => point.localisation.coordinates),
+    ].forEach((coordinates) => {
+      this.markersBounds.extend([coordinates[0], coordinates[1]]);
+    });
   }
 
   ngOnChanges(/*{ steps }: SimpleChanges*/): void {
@@ -57,6 +69,9 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   onMapLoaded(map: Map): void {
     map.resize();
+
+    // Apply the bouding box
+    if (this.steps.length + this.points.length > 1) {map.fitBounds(this.markersBounds, { padding: 75 });}
   }
 
   updateLineDrawing(): void {
