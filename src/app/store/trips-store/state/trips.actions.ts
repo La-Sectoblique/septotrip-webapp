@@ -136,6 +136,8 @@ export const DeleteTripPointSuccess = createAction(
   props<{ tripId: number; pointId: number }>(),
 );
 
+// POINTS DAYS MANAGEMENT
+
 export const RefreshPointsDayIds = createAction(
   '[Trip] Refresh Points Day Ids',
   props<{ tripId: number; dayId: number }>(),
@@ -144,6 +146,11 @@ export const RefreshPointsDayIds = createAction(
 export const RefreshPointsDayIdsSuccess = createAction(
   '[Trip] Refresh Points Day Ids Success',
   props<{ tripId: number; dayId: number; dayPoints: PointOutput[] }>(),
+);
+
+export const UpdatePointDays = createAction(
+  '[Trip] Update Point Days',
+  props<{ tripId: number; pointId: number; dayIds: number[] }>(),
 );
 
 

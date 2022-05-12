@@ -180,17 +180,12 @@ export class TripsEffects {
     ),
   ));
 
-  // this.pointsService.getPointsByDay(dayId)
-  //     .pipe(
-  //       map((dayPoints) => TripsActions.RefreshTripPointsDayIdsSuccess({ tripId, stepId, dayId, dayPoints })),
-  //     ),
+  // UpdatePointDays$ = createEffect(() => this.actions$.pipe(
+  //   ofType(TripsActions.UpdatePointDays),
+  //   mergeMap(({ tripId, pointId, dayIds }) =>
 
-  // merge(
-  //   ...days?.map((day) => this.pointsService.getPointsByDay(day.id)
-  //   .pipe(
-  //     map((daypoints) => TripsActions.RefreshTripPointsDayIdsSuccess({ tripId, stepId, dayId, dayPoints })),
   //   ),
-  // ),
+  // ));
 
   // TRAVELERS
 

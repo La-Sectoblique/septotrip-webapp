@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { addPoint, deletePoint, getPointsByDay, getTripPoints, updatePoint } from '@la-sectoblique/septoblique-service';
+import { addPoint,
+  deletePoint,
+  getPointsByDay,
+  getTripPoints,
+  updatePoint,
+  updatePointDays,
+} from '@la-sectoblique/septoblique-service';
 import { LocalisationPoint, PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { from, Observable } from 'rxjs';
 import { EditedPoint } from '../models/points-interfaces';
@@ -37,5 +43,9 @@ export class PointsService {
   getPointsByDay(dayId: number): Observable<PointOutput[]> {
     return from(getPointsByDay(dayId));
   }
+
+  // updatePointDays(pointId: number, dayIds: number[]): Observable<unknown> {
+  //   return from(updatePointDays());
+  // }
 
 }
