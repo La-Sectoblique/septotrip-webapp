@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { addPoint, deletePoint, getTripPoints, updatePoint } from '@la-sectoblique/septoblique-service';
 import { LocalisationPoint, PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { from, Observable } from 'rxjs';
-import { EditedPoint } from 'src/app/store/trips-store/state/trips.payload';
+import { EditedPoint } from '../models/points-interfaces';
 
 @Injectable({
   providedIn: 'root',

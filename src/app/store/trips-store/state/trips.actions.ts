@@ -136,6 +136,7 @@ export const DeleteTripPointSuccess = createAction(
   props<{ tripId: number; pointId: number }>(),
 );
 
+
 // Travelers
 
 export const GetTripTravelers = createAction(
