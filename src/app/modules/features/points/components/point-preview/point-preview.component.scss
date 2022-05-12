@@ -1,10 +1,14 @@
 .point-preview-wrapper {
     height: 100%;
-    max-width: 20rem;
-    .infos-wrapper {
-        h6 {
-            margin: 0,
-        }
-        overflow: auto;
+    width: 14rem;
+    h6 {
+        font-size: 1rem;
+    }
+    .ellips-informations {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
     }
 }

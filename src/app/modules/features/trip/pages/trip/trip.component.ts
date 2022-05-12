@@ -6,9 +6,7 @@ import { Observable } from 'rxjs';
 import { GetTrip, GetTripPoints, GetTripSteps } from 'src/app/store/trips-store/state/trips.actions';
 import { selectTripPoints, selectTripSteps, selectUserTrip } from 'src/app/store/trips-store/state/trips.selectors';
 import { FlattenedStep } from '../../../step/models/flattened-step';
-import { StepsService } from '../../../step/services/steps.service';
 import { FlattenedTrip } from '../../models/flattened-trip';
-import { TripsService } from '../../services/trips.service';
 
 @Component({
   selector: 'app-trip',

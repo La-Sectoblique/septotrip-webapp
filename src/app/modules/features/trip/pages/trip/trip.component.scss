@@ -8,19 +8,19 @@
     padding: 0;
 }
 
-.top-line {
-    height: 70vh;
+.page-wrapper {
+    display: grid;
+
+    grid-template-columns: [column-1] 40vw [column-2] 58vw [last-column];
+    grid-template-rows: [line-1] 74vh [line-2] auto [last-line];
+
+    $grid-gaps: 10px;
+    column-gap: $grid-gaps;
+    row-gap: $grid-gaps;
 }
 
-.left-bar {
-    width: 40vw;
-}
-
-.map-wrapper {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.points-wrapper {
+    // start column-1 end last-column, same for rows :)
+    grid-column: column-1 / last-column;
+    grid-row: line-2 / last-line;
 }
