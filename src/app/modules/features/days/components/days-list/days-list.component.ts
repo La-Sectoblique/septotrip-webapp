@@ -22,8 +22,6 @@ export class DaysListComponent  {
   ) {}
 
   itemDropped(event: CdkDragDrop<PointOutput>, dayId: number): void {
-    console.log('getted someting', event);
-
     // @TODO: do something to put this fucking point in this fucking day haha
     const eventData: PointOutput = event.item.data;
     this.store.dispatch(UpdateTripPoint({

@@ -94,7 +94,6 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   updateStepAfterDrag(evt: any, updatedStep: FlattenedStep): void {
-    console.log('evt', evt);
     this.store.dispatch(UpdateTripStep({
       stepId: updatedStep.stepInstance.id,
       tripId: this.tripId,
