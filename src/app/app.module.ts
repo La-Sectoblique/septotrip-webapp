@@ -13,6 +13,7 @@ import { CoreModule } from './modules/core/core.module';
 import { DaysModule } from './modules/features/days/days.module';
 import { PointsModule } from './modules/features/points/points.module';
 import { StepModule } from './modules/features/step/step.module';
+import { TravelersModule } from './modules/features/travelers/travelers.module';
 import { TripModule } from './modules/features/trip/trip.module';
 import { FeaturesStoreModule } from './store/features-store.module';
 
@@ -37,6 +38,7 @@ import { FeaturesStoreModule } from './store/features-store.module';
     StepModule,
     DaysModule,
     PointsModule,
+    TravelersModule,
     NbLayoutModule,
   ],
   providers: [],

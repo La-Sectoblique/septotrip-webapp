@@ -17,6 +17,7 @@ import { StepModule } from '../step/step.module';
 import { SharedModule } from '../../shared/shared.module';
 import { MapModule } from '../map/map.module';
 import { PointsModule } from '../points/points.module';
+import { TravelersModule } from '../travelers/travelers.module';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { PointsModule } from '../points/points.module';
     SharedModule,
     MapModule,
     PointsModule,
+    TravelersModule,
     NbPopoverModule,
     NbTabsetModule,
   ],
