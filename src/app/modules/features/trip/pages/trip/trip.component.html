@@ -27,11 +27,14 @@
           </nb-tab>
   
           <nb-tab tabTitle="Membres">
-            <p>Membres du voyage</p>
+            <h2>Membres du voyage</h2>
+            <ul>
+              <li *ngFor="let traveler of travelers$ | async">{{traveler.firstName}} {{traveler.lastName}}</li>
+            </ul>
           </nb-tab>
           <nb-tab tabTitle="Configuration">
             <h2>Configuration page</h2>
-            <button nbButton status="danger">SUPPRIMER</button>
+            <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance.id)">SUPPRIMER</button>
           </nb-tab>
   
         </nb-tabset>

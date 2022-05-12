@@ -1,11 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { GetTrip, GetTripPoints, GetTripSteps, GetTripTravelers } from 'src/app/store/trips-store/state/trips.actions';
-import { selectTripPoints, selectTripSteps, selectUserTrip } from 'src/app/store/trips-store/state/trips.selectors';
+import { DeleteTrip,
+  GetTrip,
+  GetTripPoints,
+  GetTripSteps,
+  GetTripTravelers,
+} from 'src/app/store/trips-store/state/trips.actions';
+import { selectTripPoints,
+  selectTripSteps,
+  selectTripTravelers,
+  selectUserTrip,
+} from 'src/app/store/trips-store/state/trips.selectors';
 import { FlattenedStep } from '../../../step/models/flattened-step';
 import { FlattenedTrip } from '../../models/flattened-trip';
 
@@ -24,6 +33,7 @@ export class TripComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private store: Store,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -40,7 +50,7 @@ export class TripComponent implements OnInit {
       this.points$ = this.store.select(selectTripPoints(tripId));
 
       this.store.dispatch(GetTripTravelers({ tripId }));
-      // this.travelers$
+      this.travelers$ = this.store.select(selectTripTravelers(tripId));
     });
   }
 
@@ -54,6 +64,11 @@ export class TripComponent implements OnInit {
     });
 
     return daysIds;
+  }
+
+  deleteTrip(tripId: number): void {
+    this.store.dispatch(DeleteTrip({ tripId }));
+    this.router.navigate(['/trips']);
   }
 
 }
