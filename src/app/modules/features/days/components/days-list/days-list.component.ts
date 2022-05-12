@@ -30,7 +30,7 @@ export class DaysListComponent  {
       editedPoint: {
         ...eventData,
         stepId: this.stepId,
-        dayId,
+        // dayId,
       },
     }));
   }
