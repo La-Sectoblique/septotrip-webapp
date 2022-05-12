@@ -15,6 +15,9 @@ import { PointsModule } from './modules/features/points/points.module';
 import { StepModule } from './modules/features/step/step.module';
 import { TripModule } from './modules/features/trip/trip.module';
 import { FeaturesStoreModule } from './store/features-store.module';
+import { AuthentificationModule } from './modules/features/authentification/authentification.module';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './modules/helpers/auth.guard';
 
 @NgModule({
   declarations: [
@@ -38,8 +41,10 @@ import { FeaturesStoreModule } from './store/features-store.module';
     DaysModule,
     PointsModule,
     NbLayoutModule,
+    AuthentificationModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

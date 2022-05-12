@@ -24,8 +24,8 @@ export class AppComponent implements OnInit {
       context: 'development',
     });
 
-    login({ email: 'jean', password: 'jean' })
-      .then((res: SuccessLoginResponse) => console.log('loginres', res));
+    /*login({ email: 'jean', password: 'jean' })
+      .then((res: SuccessLoginResponse) => console.log('loginres', res));*/
   }
 
 }
