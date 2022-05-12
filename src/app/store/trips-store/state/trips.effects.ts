@@ -5,14 +5,15 @@ import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/model
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import {  exhaustMap, map, merge, mergeMap, switchMap } from 'rxjs';
+import {  catchError, map, mergeMap, switchMap } from 'rxjs';
 import { DaysService } from 'src/app/modules/features/days/services/days.service';
 import { PointsService } from 'src/app/modules/features/points/services/points.service';
 import { StepsService } from 'src/app/modules/features/step/services/steps.service';
 import { TravelersService } from 'src/app/modules/features/travelers/services/travelers.service';
 import { TripsService } from 'src/app/modules/features/trip/services/trips.service';
 import * as TripsActions from './trips.actions';
-import { selectStepDays, selectTripSteps } from './trips.selectors';
+import * as UtilsActions from '../../utils-store/state/utils.actions';
+import { selectTripSteps } from './trips.selectors';
 
 @Injectable()
 export class TripsEffects {
@@ -43,7 +44,19 @@ export class TripsEffects {
     ofType(TripsActions.DeleteTrip),
     mergeMap(({ tripId }) => this.tripsService.deleteTrip(tripId)
       .pipe(
-        map(() => TripsActions.DeleteTripSuccess({ tripId })),
+        switchMap(() => [
+          TripsActions.DeleteTripSuccess({ tripId }),
+          // UtilsActions.NotifySuccess({
+          //   title: 'Supression réussie',
+          //   message: 'Le voyage a été supprimé',
+          // }),
+        ]),
+        // catchError(() =>  [
+        //   UtilsActions.NotifyError({
+        //     title: 'Echec de la supression',
+        //     message: 'le voyage n\'a pas été supprimé',
+        //   }),
+        // ]),
       ),
     ),
   ));
@@ -95,6 +108,10 @@ export class TripsEffects {
         switchMap((newStep) => [
           TripsActions.UpdateTripStepSuccess({ tripId, newStep }),
           TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
+          // UtilsActions.NotifySuccess({
+          //   title: 'Mise à jour effectuée',
+          //   message: 'L\'étape a bien été modifié',
+          // }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       )),

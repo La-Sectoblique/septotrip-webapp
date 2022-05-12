@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NbLayoutModule, NbThemeModule } from '@nebular/theme';
+import { NbLayoutModule, NbThemeModule, NbToastrModule } from '@nebular/theme';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -16,6 +16,7 @@ import { StepModule } from './modules/features/step/step.module';
 import { TravelersModule } from './modules/features/travelers/travelers.module';
 import { TripModule } from './modules/features/trip/trip.module';
 import { FeaturesStoreModule } from './store/features-store.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,11 @@ import { FeaturesStoreModule } from './store/features-store.module';
     PointsModule,
     TravelersModule,
     NbLayoutModule,
+    BrowserAnimationsModule,
+    NbToastrModule.forRoot({
+      duration: 3,
+      destroyByClick: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
