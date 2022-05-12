@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
