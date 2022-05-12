@@ -29,6 +29,7 @@ const routes: Routes = [
   {
     // Put protected routes under this
     path: '',
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'trips',

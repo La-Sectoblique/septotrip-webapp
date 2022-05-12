@@ -1,19 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthGuard } from 'src/app/modules/helpers/auth.guard';
+import { AccountService } from '../../services/account.service';
 
 @Component({
   selector: 'spt-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
 
-  constructor(private authGuard: AuthGuard, private router: Router){}
+  loggedIn: boolean;
+
+  constructor(private accountService: AccountService, private router: Router){}
+
+  ngOnInit(): void {
+    this.loggedIn = this.accountService.isLoggedIn;
+  }
 
   logout(): void{
-    this.authGuard.LoggedOutUser();
-    this.router.navigate(['home']);
+    this.accountService.logout();
   }
 
 }
