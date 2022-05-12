@@ -5,7 +5,7 @@
         [center]="mapCenter"
         (mapClick)="onMapClick($event)"
         [dragRotate]="false"
-        (load)="onMapLoaded($event)"
+        (mapLoad)="onMapLoaded($event)"
     >
         <!-- STEPS MANAGEMENT -->
         <ng-container *ngFor="let step of steps; let idx = index">

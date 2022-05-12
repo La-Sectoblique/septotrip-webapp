@@ -200,6 +200,23 @@ export const tripReducer = createReducer(
     },
   })),
 
+  // Travelers
+
+  on(TripsAction.GetTripTravelersSuccess, (state, { tripId, travelers }) => {
+    console.log('COUCOUUUUUUU');
+    console.log('travelers', travelers);
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          travelers,
+        },
+      },
+    };
+  }),
+
 
 
 );

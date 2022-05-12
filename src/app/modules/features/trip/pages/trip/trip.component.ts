@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
+import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { GetTrip, GetTripPoints, GetTripSteps } from 'src/app/store/trips-store/state/trips.actions';
+import { GetTrip, GetTripPoints, GetTripSteps, GetTripTravelers } from 'src/app/store/trips-store/state/trips.actions';
 import { selectTripPoints, selectTripSteps, selectUserTrip } from 'src/app/store/trips-store/state/trips.selectors';
 import { FlattenedStep } from '../../../step/models/flattened-step';
 import { FlattenedTrip } from '../../models/flattened-trip';
@@ -18,6 +19,7 @@ export class TripComponent implements OnInit {
   trip$: Observable<FlattenedTrip>;
   steps$: Observable<FlattenedStep[]>;
   points$: Observable<PointOutput[]>;
+  travelers$: Observable<UserOutput[]>;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,6 +38,9 @@ export class TripComponent implements OnInit {
 
       this.store.dispatch(GetTripPoints({ tripId }));
       this.points$ = this.store.select(selectTripPoints(tripId));
+
+      this.store.dispatch(GetTripTravelers({ tripId }));
+      // this.travelers$
     });
   }
 
