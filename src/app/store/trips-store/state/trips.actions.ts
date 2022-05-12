@@ -2,6 +2,7 @@ import { DayOutput } from '@la-sectoblique/septoblique-service/dist/types/models
 import { PointAttributes, PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { StepAttributes, StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
+import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
 import { createAction, props } from '@ngrx/store';
 import { UpdateTripPointPayload, UpdateTripStepPayload } from './trips.payload';
 
@@ -135,3 +136,14 @@ export const DeleteTripPointSuccess = createAction(
   props<{ tripId: number; pointId: number }>(),
 );
 
+// Travelers
+
+export const GetTripTravelers = createAction(
+  '[Trip] Get trip travelers',
+  props<{ tripId: number }>(),
+);
+
+export const GetTripTravelersSuccess = createAction(
+  '[Trip] Get trip travelers success',
+  props<{ tripId: number; travelers: UserOutput[] }>(),
+);
