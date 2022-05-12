@@ -21,7 +21,8 @@ export class LoginComponent{
   ) { }
 
   connection(): void{
-    this.accountService.loginUser(this.email, this.password);
+    login({ email: this.email, password: this.password })
+      .then((res: SuccessLoginResponse) => this.router.navigate(['trips']));
   }
 
 }
