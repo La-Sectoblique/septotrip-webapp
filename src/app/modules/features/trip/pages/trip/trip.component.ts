@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { first, Observable } from 'rxjs';
 import { DeleteTrip,
   GetTrip,
   GetTripPoints,
@@ -18,12 +20,13 @@ import { selectTripPoints,
 import { FlattenedStep } from '../../../step/models/flattened-step';
 import { FlattenedTrip } from '../../models/flattened-trip';
 
+@UntilDestroy()
 @Component({
   selector: 'app-trip',
   templateUrl: './trip.component.html',
   styleUrls: ['./trip.component.scss'],
 })
-export class TripComponent implements OnInit {
+export class TripComponent implements OnInit, OnDestroy {
 
   trip$: Observable<FlattenedTrip>;
   steps$: Observable<FlattenedStep[]>;
@@ -34,6 +37,7 @@ export class TripComponent implements OnInit {
     private route: ActivatedRoute,
     private store: Store,
     private router: Router,
+    private titleService: Title,
   ) { }
 
   ngOnInit() {
@@ -51,6 +55,10 @@ export class TripComponent implements OnInit {
 
       this.store.dispatch(GetTripTravelers({ tripId }));
       this.travelers$ = this.store.select(selectTripTravelers(tripId));
+
+      this.trip$.pipe(untilDestroyed(this)).subscribe((trip) => {
+        this.titleService.setTitle(trip.tripInstance.name);
+      });
     });
   }
 
@@ -69,6 +77,10 @@ export class TripComponent implements OnInit {
   deleteTrip(tripId: number): void {
     this.store.dispatch(DeleteTrip({ tripId }));
     this.router.navigate(['/trips']);
+  }
+
+  ngOnDestroy(): void {
+    this.titleService.setTitle('SeptoTrip');
   }
 
 }

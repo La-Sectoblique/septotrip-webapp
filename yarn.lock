@@ -1446,6 +1446,13 @@
   dependencies:
     tslib "^2.3.0"
 
+"@ngneat/until-destroy@^9.2.0":
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/@ngneat/until-destroy/-/until-destroy-9.2.0.tgz#970c1c7397f95b18c922c22765691539a61003e1"
+  integrity sha512-VbnDFsdAI0QTjz1aD+nsn/GK9j4N26YJUdQZSdL9De6zBIz/s+UtG/DXis0qY/J/kboM5wJNUZEEsTRyoyv+CQ==
+  dependencies:
+    tslib "^2.3.0"
+
 "@ngrx/effects@^13.1.0":
   version "13.1.0"
   resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-13.1.0.tgz#06d3fb04e7a37a3176f05054682ba353e8e6dce6"

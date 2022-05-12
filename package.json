@@ -25,6 +25,7 @@
     "@mapbox/mapbox-gl-geocoder": "^4.7.4",
     "@nebular/eva-icons": "^9.0.1",
     "@nebular/theme": "^9.0.1",
+    "@ngneat/until-destroy": "^9.2.0",
     "@ngrx/effects": "^13.1.0",
     "@ngrx/store": "^13.1.0",
     "@ngrx/store-devtools": "^13.1.0",
