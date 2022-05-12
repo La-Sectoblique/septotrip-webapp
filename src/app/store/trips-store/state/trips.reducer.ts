@@ -200,6 +200,35 @@ export const tripReducer = createReducer(
     },
   })),
 
+  on(TripsAction.RefreshPointsDayIdsSuccess, (state, { tripId, dayId, dayPoints }) => {
+    console.log('dayPoints', dayPoints);
+
+    const matchingPointsIds = dayPoints.map((point) => point.id);
+
+    const points = state.trips[tripId].points.map((point) => {
+      if (matchingPointsIds.includes(point.id)) {
+        return {
+          ...point,
+          daysIds: point.daysIds
+            ? [...point.daysIds, dayId]
+            : point.daysIds,
+        };
+      }
+      return point;
+    });
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          points,
+        },
+      },
+    };
+  }),
+
   // Travelers
 
   on(TripsAction.GetTripTravelersSuccess, (state, { tripId, travelers }) => {

@@ -136,6 +136,16 @@ export const DeleteTripPointSuccess = createAction(
   props<{ tripId: number; pointId: number }>(),
 );
 
+export const RefreshPointsDayIds = createAction(
+  '[Trip] Refresh Points Day Ids',
+  props<{ tripId: number; dayId: number }>(),
+);
+
+export const RefreshPointsDayIdsSuccess = createAction(
+  '[Trip] Refresh Points Day Ids Success',
+  props<{ tripId: number; dayId: number; dayPoints: PointOutput[] }>(),
+);
+
 
 // Travelers
 

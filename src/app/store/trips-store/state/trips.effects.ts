@@ -5,14 +5,14 @@ import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/model
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import {  map, mergeMap, switchMap } from 'rxjs';
+import {  exhaustMap, map, merge, mergeMap, switchMap } from 'rxjs';
 import { DaysService } from 'src/app/modules/features/days/services/days.service';
 import { PointsService } from 'src/app/modules/features/points/services/points.service';
 import { StepsService } from 'src/app/modules/features/step/services/steps.service';
 import { TravelersService } from 'src/app/modules/features/travelers/services/travelers.service';
 import { TripsService } from 'src/app/modules/features/trip/services/trips.service';
 import * as TripsActions from './trips.actions';
-import { selectTripSteps } from './trips.selectors';
+import { selectStepDays, selectTripSteps } from './trips.selectors';
 
 @Injectable()
 export class TripsEffects {
@@ -169,6 +169,28 @@ export class TripsEffects {
       ),
     ),
   ));
+
+  RefreshPointsDayIds$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.RefreshPointsDayIds),
+    mergeMap(({ tripId, dayId }) =>
+      this.pointsService.getPointsByDay(dayId)
+        .pipe(
+          map((dayPoints) => TripsActions.RefreshPointsDayIdsSuccess({ tripId, dayId, dayPoints })),
+        ),
+    ),
+  ));
+
+  // this.pointsService.getPointsByDay(dayId)
+  //     .pipe(
+  //       map((dayPoints) => TripsActions.RefreshTripPointsDayIdsSuccess({ tripId, stepId, dayId, dayPoints })),
+  //     ),
+
+  // merge(
+  //   ...days?.map((day) => this.pointsService.getPointsByDay(day.id)
+  //   .pipe(
+  //     map((daypoints) => TripsActions.RefreshTripPointsDayIdsSuccess({ tripId, stepId, dayId, dayPoints })),
+  //   ),
+  // ),
 
   // TRAVELERS
 
