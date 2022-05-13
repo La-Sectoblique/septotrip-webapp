@@ -22,7 +22,7 @@ export class LoginComponent {
 
   connection(): void {
     login({ email: this.email, password: this.password })
-      .then((res: SuccessLoginResponse) => this.router.navigate(['trips']));
+      .then(() => this.router.navigate(['trips']));
   }
 
 }
