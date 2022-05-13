@@ -13,7 +13,8 @@ import { TravelersService } from 'src/app/modules/features/travelers/services/tr
 import { TripsService } from 'src/app/modules/features/trip/services/trips.service';
 import * as TripsActions from './trips.actions';
 import * as MapsActions from '../../map-edit-store/state/map-edit.actions';
-import { selectTripSteps } from './trips.selectors';
+import { selectTripStepById, selectTripSteps } from './trips.selectors';
+import { TripsMapComponent } from 'src/app/modules/features/map/components/trips-map/trips-map.component';
 
 @Injectable()
 export class TripsEffects {
@@ -124,6 +125,15 @@ export class TripsEffects {
         map(() => TripsActions.DeleteTripStepSuccess({ stepId, tripId })),
         // @TODO: catchError(() => CALL ERROR ACTION),
       )),
+  ));
+
+  UpdateTripStepOrder$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.UpdateTripStepOrder),
+    mergeMap(({ toIdx, tripId, step }) => this.stepsService.updateTripStepOrder(step.stepInstance.id, toIdx + 1)
+      .pipe(
+        map((steps) => TripsActions.GetTripStepsSuccess({ steps, tripId })),
+      ),
+    ),
   ));
 
   // Days

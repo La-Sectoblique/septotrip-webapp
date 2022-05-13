@@ -35,6 +35,8 @@ export class StepsService {
   }
 
   updateTripStepOrder(stepId: number, newIdx: number): Observable<StepOutput[]> {
+    console.log('new Idx', newIdx);
+    console.log('move step id', stepId);
     return from(updateStepOrder(stepId, newIdx));
   }
 
