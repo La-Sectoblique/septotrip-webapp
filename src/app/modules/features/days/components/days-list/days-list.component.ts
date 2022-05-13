@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DayOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Day';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { Store } from '@ngrx/store';
-import { RefreshPointsDayIds, UpdatePointDays, UpdateTripPoint } from 'src/app/store/trips-store/state/trips.actions';
+import { RefreshPointsDayIds, UpdatePointDays } from 'src/app/store/trips-store/state/trips.actions';
 import { TripPoint } from '../../../points/models/points-interfaces';
 
 @Component({
@@ -30,17 +30,8 @@ export class DaysListComponent implements OnInit  {
   }
 
   itemDropped(event: CdkDragDrop<TripPoint>, dayId: number): void {
-    // @TODO: do something to put this fucking point in this fucking day haha
     const eventData: TripPoint = event.item.data;
-    // this.store.dispatch(UpdateTripPoint({
-    //   tripId: this.tripId,
-    //   pointId: eventData.id,
-    //   editedPoint: {
-    //     ...eventData,
-    //     stepId: this.stepId,
-    //     // dayId,
-    //   },
-    // }));
+
     this.store.dispatch(UpdatePointDays({
       tripId: this.tripId,
       pointId: eventData.id,
@@ -55,16 +46,13 @@ export class DaysListComponent implements OnInit  {
     }));
   }
 
-  unlinkPoint(point: PointOutput): void {
-    this.store.dispatch(UpdateTripPoint({
+  unlinkPoint(point: TripPoint, dayIdToRemove: number): void {
+    this.store.dispatch(UpdatePointDays({
       tripId: this.tripId,
       pointId: point.id,
-      editedPoint: {
-        ...point,
-        // @TODO: pass null here, but can't because type is only number | undefined
-        // dayId: null,
-        // stepId: null,
-      },
+      daysIds: point.daysIds
+        ? point.daysIds.filter((dayId) => dayId !== dayIdToRemove)
+        : [],
     }));
   }
 
