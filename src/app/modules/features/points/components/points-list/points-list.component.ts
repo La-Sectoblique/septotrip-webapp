@@ -21,9 +21,11 @@ export class PointsListComponent implements OnInit {
   @Input() daysId: number[];
 
   mapDisplayedPointIds$: Observable<number[]>;
+  isMapFilteringEnabled = true;
 
   mapEditMode$: Observable<MapEditMode>;
   mapEditMode = MapEditMode;
+
 
   constructor(
     private store: Store,
@@ -59,6 +61,10 @@ export class PointsListComponent implements OnInit {
 
   getLinkedDropListId(): string[] {
     return this.daysId.map((dayId) => `${dayId}-day-dropzone`);
+  }
+
+  toggleMapFiltering(): void {
+    this.isMapFilteringEnabled = !this.isMapFilteringEnabled;
   }
 
 
