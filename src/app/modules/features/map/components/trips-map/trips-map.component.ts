@@ -39,7 +39,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
     },
   };
 
-  markersBounds = new mapboxgl.LngLatBounds();
+  mapMarkersBounds = new mapboxgl.LngLatBounds();
 
   constructor(
     private nbDialogService: NbDialogService,
@@ -59,7 +59,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
       ...this.steps.map((step) => step.stepInstance.localisation.coordinates),
       ... this.points.map((point) => point.localisation.coordinates),
     ].forEach((coordinates) => {
-      this.markersBounds.extend([coordinates[0], coordinates[1]]);
+      this.mapMarkersBounds.extend([coordinates[0], coordinates[1]]);
     });
   }
 
@@ -70,8 +70,15 @@ export class TripsMapComponent implements OnChanges, OnInit {
   onMapLoaded(map: Map): void {
     map.resize();
 
+    map.on('drag', () => {
+      const displayedPoints = this.points.filter((point) =>
+        map.getBounds().contains({ lng: point.localisation.coordinates[0], lat: point.localisation.coordinates[1] }),
+      );
+      console.log('displayedPoints', displayedPoints);
+    });
+
     // Apply the bouding box
-    if (this.steps.length + this.points.length > 1) {map.fitBounds(this.markersBounds, { padding: 75 });}
+    if (this.steps.length + this.points.length > 1) {map.fitBounds(this.mapMarkersBounds, { padding: 75 });}
   }
 
   updateLineDrawing(): void {
