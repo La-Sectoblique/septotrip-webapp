@@ -86,7 +86,6 @@ export class TripsMapComponent implements OnChanges, OnInit {
     ).map((point) => point.id);
 
     this.store.dispatch(SetDisplayedMapPointIds({ pointIds }));
-    console.log('displayedPoints', pointIds);
   }
 
   updateLineDrawing(): void {

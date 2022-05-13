@@ -3,7 +3,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DayOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Day';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { Store } from '@ngrx/store';
-import { RefreshPointsDayIds, UpdateTripPoint } from 'src/app/store/trips-store/state/trips.actions';
+import { RefreshPointsDayIds, UpdatePointDays, UpdateTripPoint } from 'src/app/store/trips-store/state/trips.actions';
+import { TripPoint } from '../../../points/models/points-interfaces';
 
 @Component({
   selector: 'spt-days-list',
@@ -24,22 +25,33 @@ export class DaysListComponent implements OnInit  {
   ngOnInit(): void {
     // @HERE call points getStepPoints in store to update points stepsId and then the filter can work
     this.days.forEach((day) => {
-      console.log('day', day);
       this.store.dispatch(RefreshPointsDayIds({ tripId: this.tripId, dayId: day.id }));
     });
   }
 
-  itemDropped(event: CdkDragDrop<PointOutput>, dayId: number): void {
+  itemDropped(event: CdkDragDrop<TripPoint>, dayId: number): void {
     // @TODO: do something to put this fucking point in this fucking day haha
-    const eventData: PointOutput = event.item.data;
-    this.store.dispatch(UpdateTripPoint({
+    const eventData: TripPoint = event.item.data;
+    // this.store.dispatch(UpdateTripPoint({
+    //   tripId: this.tripId,
+    //   pointId: eventData.id,
+    //   editedPoint: {
+    //     ...eventData,
+    //     stepId: this.stepId,
+    //     // dayId,
+    //   },
+    // }));
+    this.store.dispatch(UpdatePointDays({
       tripId: this.tripId,
       pointId: eventData.id,
-      editedPoint: {
-        ...eventData,
-        stepId: this.stepId,
-        // dayId,
-      },
+      daysIds: eventData.daysIds
+        ? [
+          ...eventData.daysIds,
+          dayId,
+        ]
+        : [
+          dayId,
+        ],
     }));
   }
 

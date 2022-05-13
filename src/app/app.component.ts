@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { login, init, Platform } from '@la-sectoblique/septoblique-service';
-import { SuccessLoginResponse } from '@la-sectoblique/septoblique-service/dist/types/utils/Api';
+import { init, Platform } from '@la-sectoblique/septoblique-service';
 import { environment } from 'src/environments/environment';
 import { TokenStorageService } from './modules/core/services/token-storage.service';
 @Component({

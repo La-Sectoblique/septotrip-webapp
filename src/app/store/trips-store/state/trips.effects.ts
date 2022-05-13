@@ -5,14 +5,13 @@ import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/model
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import {  catchError, map, mergeMap, switchMap } from 'rxjs';
+import {  map, mergeMap, switchMap } from 'rxjs';
 import { DaysService } from 'src/app/modules/features/days/services/days.service';
 import { PointsService } from 'src/app/modules/features/points/services/points.service';
 import { StepsService } from 'src/app/modules/features/step/services/steps.service';
 import { TravelersService } from 'src/app/modules/features/travelers/services/travelers.service';
 import { TripsService } from 'src/app/modules/features/trip/services/trips.service';
 import * as TripsActions from './trips.actions';
-import * as UtilsActions from '../../utils-store/state/utils.actions';
 import * as MapsActions from '../../map-edit-store/state/map-edit.actions';
 import { selectTripSteps } from './trips.selectors';
 
@@ -201,12 +200,14 @@ export class TripsEffects {
     ),
   ));
 
-  // UpdatePointDays$ = createEffect(() => this.actions$.pipe(
-  //   ofType(TripsActions.UpdatePointDays),
-  //   mergeMap(({ tripId, pointId, dayIds }) =>
-
-  //   ),
-  // ));
+  UpdatePointDays$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.UpdatePointDays),
+    mergeMap(({ tripId, pointId, daysIds }) =>
+      this.pointsService.updatePointDays(pointId, daysIds).pipe(
+        map(() =>  TripsActions.UpdatePointDaysSuccess({ tripId, pointId, daysIds })),
+      ),
+    ),
+  ));
 
   // TRAVELERS
 
