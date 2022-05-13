@@ -45,6 +45,7 @@ import { AuthGuard } from './modules/helpers/auth.guard';
     NbLayoutModule,
     AuthentificationModule,
     HttpClientModule,
+    NbToastrModule.forRoot(),
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent],
