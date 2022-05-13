@@ -70,15 +70,19 @@ export class TripsMapComponent implements OnChanges, OnInit {
   onMapLoaded(map: Map): void {
     map.resize();
 
-    map.on('drag', () => {
-      const displayedPoints = this.points.filter((point) =>
-        map.getBounds().contains({ lng: point.localisation.coordinates[0], lat: point.localisation.coordinates[1] }),
-      );
-      console.log('displayedPoints', displayedPoints);
-    });
+    map
+      .on('dragend', () => {this.updateDisplayedPoints(map);})
+      .on('zoomend', () => {this.updateDisplayedPoints(map);});
 
     // Apply the bouding box
     if (this.steps.length + this.points.length > 1) {map.fitBounds(this.mapMarkersBounds, { padding: 75 });}
+  }
+
+  updateDisplayedPoints(map: Map): void {
+    const displayedPoints = this.points?.filter((point) =>
+      map.getBounds().contains({ lng: point.localisation.coordinates[0], lat: point.localisation.coordinates[1] }),
+    );
+    console.log('displayedPoints', displayedPoints);
   }
 
   updateLineDrawing(): void {
