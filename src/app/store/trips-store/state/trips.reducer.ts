@@ -202,9 +202,9 @@ export const tripReducer = createReducer(
 
   on(TripsAction.RefreshPointsDayIdsSuccess, (state, { tripId, dayId, dayPoints }) => {
 
-    console.log('dayPoints', dayPoints);
+    // console.log('dayPoints', dayPoints);
     const matchingPointsIds = dayPoints.map((point) => point.id);
-    console.log('matchingPOintsIds', matchingPointsIds);
+    // console.log('matchingPOintsIds', matchingPointsIds);
 
     const points = state.trips[tripId].points.map((point) => {
       if (matchingPointsIds.includes(point.id)) {
@@ -218,7 +218,7 @@ export const tripReducer = createReducer(
       return point;
     });
 
-    console.log('new points', points);
+    // console.log('new points', points);
 
     return {
       ...state,

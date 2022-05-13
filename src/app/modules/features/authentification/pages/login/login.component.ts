@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { login } from '@la-sectoblique/septoblique-service';
 import { SuccessLoginResponse } from '@la-sectoblique/septoblique-service/dist/types/utils/Api';
@@ -10,7 +10,7 @@ import { AccountService } from 'src/app/modules/core/services/account.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent{
+export class LoginComponent {
 
   email: string;
   password: string;
@@ -20,7 +20,7 @@ export class LoginComponent{
     private accountService: AccountService,
   ) { }
 
-  connection(): void{
+  connection(): void {
     login({ email: this.email, password: this.password })
       .then((res: SuccessLoginResponse) => this.router.navigate(['trips']));
   }

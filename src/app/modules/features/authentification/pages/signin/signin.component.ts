@@ -19,7 +19,7 @@ export class SigninComponent /*implements OnInit*/ {
   /*ngOnInit() {
   }*/
 
-  inscription(): void{
+  inscription(): void {
     register({ email: this.email, password: this.password, firstName: this.firstname, lastName: this.lastname })
       .then(() => this.router.navigate(['login']));
   }

@@ -6,7 +6,9 @@ import { TripPoint } from '../../features/points/models/points-interfaces';
 export class FilterPointsByStepIdPipe implements PipeTransform {
 
   transform(points: TripPoint[], stepId: number): TripPoint[] {
-    return points.filter((point) => point.stepId === stepId);
+    // @TODO Wait for Tanguy to update automatically the point stepId. for now, return everything haha
+    return points;
+    // return points.filter((point) => point.stepId === stepId);
   }
 
 }
