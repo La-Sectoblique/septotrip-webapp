@@ -13,6 +13,7 @@ import { TravelersService } from 'src/app/modules/features/travelers/services/tr
 import { TripsService } from 'src/app/modules/features/trip/services/trips.service';
 import * as TripsActions from './trips.actions';
 import * as UtilsActions from '../../utils-store/state/utils.actions';
+import * as MapsActions from '../../map-edit-store/state/map-edit.actions';
 import { selectTripSteps } from './trips.selectors';
 
 @Injectable()
@@ -161,7 +162,10 @@ export class TripsEffects {
       point.description,
     )
       .pipe(
-        map((newPoint: PointOutput) => TripsActions.CreateTripPointSuccess({ point: newPoint, tripId })),
+        switchMap((newPoint: PointOutput) => [
+          TripsActions.CreateTripPointSuccess({ point: newPoint, tripId }),
+          MapsActions.AddDisplayedMapPointIds({ pointIds: [newPoint.id] }),
+        ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
     ),

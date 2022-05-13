@@ -71,6 +71,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
   onMapLoaded(map: Map): void {
     map.resize();
 
+    this.updateDisplayedPoints(map);
     map
       .on('moveend', () => {this.updateDisplayedPoints(map);})
       .on('zoomend', () => {this.updateDisplayedPoints(map);});

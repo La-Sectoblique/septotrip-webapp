@@ -10,3 +10,8 @@ export const SetDisplayedMapPointIds = createAction(
   '[map-edit]: Set Displayed Map PointIds',
   props<{ pointIds: number[] }>(),
 );
+
+export const AddDisplayedMapPointIds = createAction(
+  '[map-edit]: Add Displayed Map PointIds',
+  props<{ pointIds: number[] }>(),
+);

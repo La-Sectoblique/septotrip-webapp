@@ -14,4 +14,14 @@ export const mapEditReducer = createReducer(
     ...state,
     displayedPointIds: pointIds,
   })),
+
+  on(MapEditActions.AddDisplayedMapPointIds, (state, { pointIds })=> ({
+    ...state,
+    displayedPointIds: state.displayedPointIds
+      ? [
+        ...state.displayedPointIds,
+        ...pointIds,
+      ]
+      : state.displayedPointIds,
+  })),
 );
