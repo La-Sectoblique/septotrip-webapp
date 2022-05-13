@@ -17,6 +17,9 @@ import { TravelersModule } from './modules/features/travelers/travelers.module';
 import { TripModule } from './modules/features/trip/trip.module';
 import { FeaturesStoreModule } from './store/features-store.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthentificationModule } from './modules/features/authentification/authentification.module';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './modules/helpers/auth.guard';
 
 @NgModule({
   declarations: [
@@ -46,8 +49,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       duration: 3,
       destroyByClick: true,
     }),
+    AuthentificationModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
