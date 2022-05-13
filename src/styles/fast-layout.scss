@@ -1,5 +1,5 @@
 .d-flex {
-    display: flex;
+    display: flex !important;
 }
 
 .justify-content {
@@ -74,6 +74,9 @@
         }
         &-2 {
             margin-right: .75rem;
+        }
+        &-1 {
+            margin-right: .5rem;
         }
     }
     &l {

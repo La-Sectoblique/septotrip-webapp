@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbButtonModule, NbIconModule, NbInputModule, NbPopoverModule, NbRadioModule } from '@nebular/theme';
+import {
+  NbButtonModule,
+  NbIconModule,
+  NbInputModule,
+  NbPopoverModule,
+  NbRadioModule,
+  NbTabsetModule } from '@nebular/theme';
 import { TripPreviewComponent } from './components/trip-preview/trip-preview.component';
 import { TripComponent } from './pages/trip/trip.component';
 import { TripsComponent } from './pages/trips/trips.component';
@@ -11,6 +17,8 @@ import { StepModule } from '../step/step.module';
 import { SharedModule } from '../../shared/shared.module';
 import { MapModule } from '../map/map.module';
 import { PointsModule } from '../points/points.module';
+import { TravelersModule } from '../travelers/travelers.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -25,7 +33,9 @@ import { PointsModule } from '../points/points.module';
     SharedModule,
     MapModule,
     PointsModule,
+    TravelersModule,
     NbPopoverModule,
+    NbTabsetModule,
   ],
   declarations: [
     TripPreviewComponent,

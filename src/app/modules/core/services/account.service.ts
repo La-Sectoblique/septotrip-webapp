@@ -6,11 +6,9 @@ import { map } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
 import { UserAttributes } from '@la-sectoblique/septoblique-service/dist/types/models/User';
-import { login } from '@la-sectoblique/septoblique-service';
-import { SuccessLoginResponse } from '@la-sectoblique/septoblique-service/dist/types/utils/Api';
 
 @Injectable({ providedIn: 'root' })
-export class AccountService{
+export class AccountService {
 
   isLoggedIn: boolean;
   private userSubject: BehaviorSubject<UserAttributes>;
@@ -19,7 +17,7 @@ export class AccountService{
   constructor(
     private router: Router,
     private http: HttpClient,
-  ){
+  ) {
     this.userSubject = new BehaviorSubject<UserAttributes>(JSON.parse(localStorage.getItem('user') || '{}'));
     this.user = this.userSubject.asObservable();
     this.isLoggedIn = false;
@@ -29,7 +27,7 @@ export class AccountService{
     return this.userSubject.value;
   }
 
-  loginUser(email: string, password: string): Observable<UserAttributes>{
+  loginUser(email: string, password: string): Observable<UserAttributes> {
     return this.http.post<UserAttributes>(`${environment.baseURL}${`route`}`, { email, password })
       .pipe(map((user) => {
         localStorage.setItem('user', JSON.stringify(user));
@@ -37,22 +35,9 @@ export class AccountService{
         return user;
       }));
   }
-  // return this.http.post<UserAttributes>(`${environment.baseURL}${`route`}`, { email, password })
-  //   .pipe(map((user) => {
-  //     localStorage.setItem('user', JSON.stringify(user));
-  //     this.userSubject.next(user);
-  //     this.isLoggedIn = true;
-  //     return user;
-  //   }));
-  // try {
-  //   const loginResult = await login({ email, password });
-  //   console.log('loginResult', loginResult);
-  //   return loginResult;
-  // } catch()
 
   logout(): void {
     localStorage.clear();
-    console.log(localStorage.getItem('user'));
     this.router.navigate(['home']);
     this.isLoggedIn = false;
   }

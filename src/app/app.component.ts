@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { login, init, Platform } from '@la-sectoblique/septoblique-service';
-import { SuccessLoginResponse } from '@la-sectoblique/septoblique-service/dist/types/utils/Api';
+import { Title } from '@angular/platform-browser';
+import { init, Platform } from '@la-sectoblique/septoblique-service';
 import { environment } from 'src/environments/environment';
 import { TokenStorageService } from './modules/core/services/token-storage.service';
 @Component({
@@ -12,9 +12,12 @@ export class AppComponent implements OnInit {
 
   constructor(
     private tokenStorageService: TokenStorageService,
+    private titleService: Title,
   ) {}
 
   ngOnInit(): void {
+
+    this.titleService.setTitle('SeptoTrip');
 
     init({
       getToken: (): string => this.tokenStorageService.getToken(),

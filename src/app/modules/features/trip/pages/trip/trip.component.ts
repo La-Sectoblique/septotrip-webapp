@@ -1,27 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
+import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { GetTrip, GetTripPoints, GetTripSteps } from 'src/app/store/trips-store/state/trips.actions';
-import { selectTripPoints, selectTripSteps, selectUserTrip } from 'src/app/store/trips-store/state/trips.selectors';
+import { first, Observable } from 'rxjs';
+import { DeleteTrip,
+  GetTrip,
+  GetTripPoints,
+  GetTripSteps,
+  GetTripTravelers,
+} from 'src/app/store/trips-store/state/trips.actions';
+import { selectTripPoints,
+  selectTripSteps,
+  selectTripTravelers,
+  selectUserTrip,
+} from 'src/app/store/trips-store/state/trips.selectors';
 import { FlattenedStep } from '../../../step/models/flattened-step';
 import { FlattenedTrip } from '../../models/flattened-trip';
 
+@UntilDestroy()
 @Component({
   selector: 'app-trip',
   templateUrl: './trip.component.html',
   styleUrls: ['./trip.component.scss'],
 })
-export class TripComponent implements OnInit {
+export class TripComponent implements OnInit, OnDestroy {
 
   trip$: Observable<FlattenedTrip>;
   steps$: Observable<FlattenedStep[]>;
   points$: Observable<PointOutput[]>;
+  travelers$: Observable<UserOutput[]>;
 
   constructor(
     private route: ActivatedRoute,
     private store: Store,
+    private router: Router,
+    private titleService: Title,
   ) { }
 
   ngOnInit() {
@@ -36,6 +52,13 @@ export class TripComponent implements OnInit {
 
       this.store.dispatch(GetTripPoints({ tripId }));
       this.points$ = this.store.select(selectTripPoints(tripId));
+
+      this.store.dispatch(GetTripTravelers({ tripId }));
+      this.travelers$ = this.store.select(selectTripTravelers(tripId));
+
+      this.trip$.pipe(untilDestroyed(this)).subscribe((trip) => {
+        this.titleService.setTitle(trip.tripInstance.name);
+      });
     });
   }
 
@@ -49,6 +72,15 @@ export class TripComponent implements OnInit {
     });
 
     return daysIds;
+  }
+
+  deleteTrip(tripId: number): void {
+    this.store.dispatch(DeleteTrip({ tripId }));
+    this.router.navigate(['/trips']);
+  }
+
+  ngOnDestroy(): void {
+    this.titleService.setTitle('SeptoTrip');
   }
 
 }

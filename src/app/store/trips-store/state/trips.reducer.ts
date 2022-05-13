@@ -123,7 +123,6 @@ export const tripReducer = createReducer(
   // DAYS
 
   on(TripsAction.GetStepDaysSuccess, (state, { days, tripId, stepId }) => {
-    console.log('new days', days);
     const steps = state.trips[tripId].steps.map((step) => {
       if (step.stepInstance.id === stepId) {
         return {
@@ -197,6 +196,76 @@ export const tripReducer = createReducer(
       [tripId]: {
         ...state.trips[tripId],
         points: state.trips[tripId]?.points?.filter((point) => point.id !== pointId),
+      },
+    },
+  })),
+
+  on(TripsAction.RefreshPointsDayIdsSuccess, (state, { tripId, dayId, dayPoints }) => {
+
+    // console.log('dayPoints', dayPoints);
+    const matchingPointsIds = dayPoints.map((point) => point.id);
+    // console.log('matchingPOintsIds', matchingPointsIds);
+
+    const points = state.trips[tripId].points.map((point) => {
+      if (matchingPointsIds.includes(point.id)) {
+        return {
+          ...point,
+          daysIds: point.daysIds
+            ? [...point.daysIds, dayId]
+            : [dayId],
+        };
+      }
+      return point;
+    });
+
+    // console.log('new points', points);
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          points,
+        },
+      },
+    };
+  }),
+
+  on(TripsAction.UpdatePointDaysSuccess, (state, { tripId, pointId, daysIds }) => {
+
+    const points = state.trips[tripId].points.map((point) => {
+      if (point.id === pointId) {
+        return {
+          ...point,
+          daysIds,
+        };
+      }
+
+      return point;
+    });
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          points,
+        },
+      },
+    };
+  }),
+
+  // Travelers
+
+  on(TripsAction.GetTripTravelersSuccess, (state, { tripId, travelers }) => ({
+    ...state,
+    trips: {
+      ...state.trips,
+      [tripId]: {
+        ...state.trips[tripId],
+        travelers,
       },
     },
   })),

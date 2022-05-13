@@ -27,3 +27,13 @@ export const selectTripPoints = (tripId: number) => createSelector(
   selectFeature,
   (state: TripState) => state.trips[tripId]?.points,
 );
+
+export const selectTripTravelers = (tripId: number) => createSelector(
+  selectFeature,
+  (state: TripState) =>  state.trips[tripId].travelers,
+);
+
+export const selectStepDays = (tripId: number, stepId: number) => createSelector(
+  selectFeature,
+  (state: TripState) => state.trips[tripId].steps[stepId].daysInstance,
+);

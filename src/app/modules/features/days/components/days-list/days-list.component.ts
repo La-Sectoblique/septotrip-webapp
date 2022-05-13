@@ -1,16 +1,17 @@
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DayOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Day';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { Store } from '@ngrx/store';
-import { UpdateTripPoint } from 'src/app/store/trips-store/state/trips.actions';
+import { RefreshPointsDayIds, UpdatePointDays } from 'src/app/store/trips-store/state/trips.actions';
+import { TripPoint } from '../../../points/models/points-interfaces';
 
 @Component({
   selector: 'spt-days-list',
   templateUrl: './days-list.component.html',
   styleUrls: ['./days-list.component.scss'],
 })
-export class DaysListComponent  {
+export class DaysListComponent implements OnInit  {
 
   @Input() days: DayOutput[];
   @Input() stepId: number;
@@ -21,32 +22,37 @@ export class DaysListComponent  {
     private store: Store,
   ) {}
 
-  itemDropped(event: CdkDragDrop<PointOutput>, dayId: number): void {
-    console.log('getted someting', event);
+  ngOnInit(): void {
+    // @HERE call points getStepPoints in store to update points stepsId and then the filter can work
+    this.days.forEach((day) => {
+      this.store.dispatch(RefreshPointsDayIds({ tripId: this.tripId, dayId: day.id }));
+    });
+  }
 
-    // @TODO: do something to put this fucking point in this fucking day haha
-    const eventData: PointOutput = event.item.data;
-    this.store.dispatch(UpdateTripPoint({
+  itemDropped(event: CdkDragDrop<TripPoint>, dayId: number): void {
+    const eventData: TripPoint = event.item.data;
+
+    this.store.dispatch(UpdatePointDays({
       tripId: this.tripId,
       pointId: eventData.id,
-      editedPoint: {
-        ...eventData,
-        stepId: this.stepId,
-        dayId,
-      },
+      daysIds: eventData.daysIds
+        ? [
+          ...eventData.daysIds,
+          dayId,
+        ]
+        : [
+          dayId,
+        ],
     }));
   }
 
-  unlinkPoint(point: PointOutput): void {
-    this.store.dispatch(UpdateTripPoint({
+  unlinkPoint(point: TripPoint, dayIdToRemove: number): void {
+    this.store.dispatch(UpdatePointDays({
       tripId: this.tripId,
       pointId: point.id,
-      editedPoint: {
-        ...point,
-        // @TODO: pass null here, but can't because type is only number | undefined
-        // dayId: null,
-        // stepId: null,
-      },
+      daysIds: point.daysIds
+        ? point.daysIds.filter((dayId) => dayId !== dayIdToRemove)
+        : [],
     }));
   }
 

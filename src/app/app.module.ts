@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NbLayoutModule, NbThemeModule } from '@nebular/theme';
+import { NbLayoutModule, NbThemeModule, NbToastrModule } from '@nebular/theme';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -13,8 +13,10 @@ import { CoreModule } from './modules/core/core.module';
 import { DaysModule } from './modules/features/days/days.module';
 import { PointsModule } from './modules/features/points/points.module';
 import { StepModule } from './modules/features/step/step.module';
+import { TravelersModule } from './modules/features/travelers/travelers.module';
 import { TripModule } from './modules/features/trip/trip.module';
 import { FeaturesStoreModule } from './store/features-store.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthentificationModule } from './modules/features/authentification/authentification.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './modules/helpers/auth.guard';
@@ -40,7 +42,13 @@ import { AuthGuard } from './modules/helpers/auth.guard';
     StepModule,
     DaysModule,
     PointsModule,
+    TravelersModule,
     NbLayoutModule,
+    BrowserAnimationsModule,
+    NbToastrModule.forRoot({
+      duration: 3,
+      destroyByClick: true,
+    }),
     AuthentificationModule,
     HttpClientModule,
   ],
