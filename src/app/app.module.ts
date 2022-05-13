@@ -16,7 +16,6 @@ import { StepModule } from './modules/features/step/step.module';
 import { TravelersModule } from './modules/features/travelers/travelers.module';
 import { TripModule } from './modules/features/trip/trip.module';
 import { FeaturesStoreModule } from './store/features-store.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthentificationModule } from './modules/features/authentification/authentification.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './modules/helpers/auth.guard';
@@ -44,13 +43,9 @@ import { AuthGuard } from './modules/helpers/auth.guard';
     PointsModule,
     TravelersModule,
     NbLayoutModule,
-    BrowserAnimationsModule,
-    NbToastrModule.forRoot({
-      duration: 3,
-      destroyByClick: true,
-    }),
     AuthentificationModule,
     HttpClientModule,
+    NbToastrModule.forRoot(),
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent],
