@@ -6,6 +6,22 @@ export const mapEditReducer = createReducer(
   initialMapEditState,
 
   on(MapEditActions.UpdateMapEditMode, (state, { mapMode }) => ({
+    ...state,
     mode: mapMode,
+  })),
+
+  on(MapEditActions.SetDisplayedMapPointIds, (state, { pointIds })=> ({
+    ...state,
+    displayedPointIds: pointIds,
+  })),
+
+  on(MapEditActions.AddDisplayedMapPointIds, (state, { pointIds })=> ({
+    ...state,
+    displayedPointIds: state.displayedPointIds
+      ? [
+        ...state.displayedPointIds,
+        ...pointIds,
+      ]
+      : state.displayedPointIds,
   })),
 );

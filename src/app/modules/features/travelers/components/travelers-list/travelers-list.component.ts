@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
 import { Store } from '@ngrx/store';
@@ -26,7 +26,6 @@ export class TravelersListComponent  {
   ) {}
 
   addTraveler(): void {
-    console.log('utilisateur ajouté', this.addTravelerForm.value.mailAddress);
     this.travelerService.addTraveler(this.tripId, this.addTravelerForm.value.mailAddress)
       .subscribe(() => {
         this.store.dispatch(GetTripTravelers({ tripId: this.tripId }));
@@ -34,16 +33,6 @@ export class TravelersListComponent  {
       });
   }
 
-
-  // addTraveler(event: any): void {
-  //   console.log('event', event);
-  //   event.preventDefault();
-  //   console.log('nouveau mail', this.newTravelerEmail);
-  //   this.travelerService.addTraveler(this.tripId, this.newTravelerEmail)
-  //     .subscribe(() => {
-  //       this.store.dispatch(GetTripTravelers({ tripId: this.tripId }));
-  //     });
-  // }
 
 
 }

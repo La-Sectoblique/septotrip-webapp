@@ -43,10 +43,6 @@ import { AuthGuard } from './modules/helpers/auth.guard';
     PointsModule,
     TravelersModule,
     NbLayoutModule,
-    NbToastrModule.forRoot({
-      duration: 3,
-      destroyByClick: true,
-    }),
     AuthentificationModule,
     HttpClientModule,
   ],

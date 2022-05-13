@@ -150,7 +150,12 @@ export const RefreshPointsDayIdsSuccess = createAction(
 
 export const UpdatePointDays = createAction(
   '[Trip] Update Point Days',
-  props<{ tripId: number; pointId: number; dayIds: number[] }>(),
+  props<{ tripId: number; pointId: number; daysIds: number[] }>(),
+);
+
+export const UpdatePointDaysSuccess = createAction(
+  '[Trip] Update Point Days Success',
+  props<{ tripId: number; pointId: number; daysIds: number[] }>(),
 );
 
 

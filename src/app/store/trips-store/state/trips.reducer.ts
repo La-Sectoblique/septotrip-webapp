@@ -201,9 +201,10 @@ export const tripReducer = createReducer(
   })),
 
   on(TripsAction.RefreshPointsDayIdsSuccess, (state, { tripId, dayId, dayPoints }) => {
-    console.log('dayPoints', dayPoints);
 
+    // console.log('dayPoints', dayPoints);
     const matchingPointsIds = dayPoints.map((point) => point.id);
+    // console.log('matchingPOintsIds', matchingPointsIds);
 
     const points = state.trips[tripId].points.map((point) => {
       if (matchingPointsIds.includes(point.id)) {
@@ -211,9 +212,36 @@ export const tripReducer = createReducer(
           ...point,
           daysIds: point.daysIds
             ? [...point.daysIds, dayId]
-            : point.daysIds,
+            : [dayId],
         };
       }
+      return point;
+    });
+
+    // console.log('new points', points);
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          points,
+        },
+      },
+    };
+  }),
+
+  on(TripsAction.UpdatePointDaysSuccess, (state, { tripId, pointId, daysIds }) => {
+
+    const points = state.trips[tripId].points.map((point) => {
+      if (point.id === pointId) {
+        return {
+          ...point,
+          daysIds,
+        };
+      }
+
       return point;
     });
 
@@ -231,20 +259,16 @@ export const tripReducer = createReducer(
 
   // Travelers
 
-  on(TripsAction.GetTripTravelersSuccess, (state, { tripId, travelers }) => {
-    console.log('COUCOUUUUUUU');
-    console.log('travelers', travelers);
-    return {
-      ...state,
-      trips: {
-        ...state.trips,
-        [tripId]: {
-          ...state.trips[tripId],
-          travelers,
-        },
+  on(TripsAction.GetTripTravelersSuccess, (state, { tripId, travelers }) => ({
+    ...state,
+    trips: {
+      ...state.trips,
+      [tripId]: {
+        ...state.trips[tripId],
+        travelers,
       },
-    };
-  }),
+    },
+  })),
 
 
 

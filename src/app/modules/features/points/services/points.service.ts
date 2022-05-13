@@ -4,8 +4,9 @@ import { addPoint,
   getPointsByDay,
   getTripPoints,
   updatePoint,
-  updatePointDays,
 } from '@la-sectoblique/septoblique-service';
+import { updatePointDays } from '@la-sectoblique/septoblique-service/dist/data/points/days';
+import { DayOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Day';
 import { LocalisationPoint, PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { from, Observable } from 'rxjs';
 import { EditedPoint } from '../models/points-interfaces';
@@ -44,8 +45,8 @@ export class PointsService {
     return from(getPointsByDay(dayId));
   }
 
-  // updatePointDays(pointId: number, dayIds: number[]): Observable<unknown> {
-  //   return from(updatePointDays());
-  // }
+  updatePointDays(pointId: number, dayIds: number[]): Observable<DayOutput[]> {
+    return from(updatePointDays(pointId, dayIds));
+  }
 
 }

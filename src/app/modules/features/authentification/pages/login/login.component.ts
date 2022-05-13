@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { login } from '@la-sectoblique/septoblique-service';
 import { SuccessLoginResponse } from '@la-sectoblique/septoblique-service/dist/types/utils/Api';
@@ -22,7 +22,7 @@ export class LoginComponent {
 
   connection(): void {
     login({ email: this.email, password: this.password })
-      .then((res: SuccessLoginResponse) => this.router.navigate(['trips']));
+      .then(() => this.router.navigate(['trips']));
   }
 
 }

@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { UpdateMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.actions';
-import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
+import { selectDisplayedMapPointIds, selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
 import { DeleteTripPoint } from 'src/app/store/trips-store/state/trips.actions';
 import { CreatePointComponent } from '../create-point/create-point.component';
 
@@ -17,12 +17,15 @@ import { CreatePointComponent } from '../create-point/create-point.component';
 export class PointsListComponent implements OnInit {
 
   @Input() tripId: number;
-
   @Input() points: PointOutput[] | null;
   @Input() daysId: number[];
 
+  mapDisplayedPointIds$: Observable<number[]>;
+  isMapFilteringEnabled = true;
+
   mapEditMode$: Observable<MapEditMode>;
   mapEditMode = MapEditMode;
+
 
   constructor(
     private store: Store,
@@ -31,6 +34,7 @@ export class PointsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.mapEditMode$ = this.store.select(selectMapEditMode());
+    this.mapDisplayedPointIds$ = this.store.select(selectDisplayedMapPointIds());
   }
 
   switchPointEditMode(editMode: MapEditMode): void {
@@ -57,6 +61,10 @@ export class PointsListComponent implements OnInit {
 
   getLinkedDropListId(): string[] {
     return this.daysId.map((dayId) => `${dayId}-day-dropzone`);
+  }
+
+  toggleMapFiltering(): void {
+    this.isMapFilteringEnabled = !this.isMapFilteringEnabled;
   }
 
 
