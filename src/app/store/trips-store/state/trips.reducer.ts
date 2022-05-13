@@ -172,7 +172,10 @@ export const tripReducer = createReducer(
   on(TripsAction.UpdateTripPointSuccess, (state, { tripId, newPoint }) => {
     const points = state.trips[tripId].points.map((point) => {
       if (point.id === newPoint.id) {
-        return newPoint;
+        return {
+          ...newPoint,
+          daysIds: point.daysIds,
+        };
       }
       return point;
     });
