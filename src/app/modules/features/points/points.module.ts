@@ -6,6 +6,7 @@ import { NbButtonModule, NbIconModule, NbInputModule } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
 import { CreatePointComponent } from './components/create-point/create-point.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     FormsModule,
     NbInputModule,
     DragDropModule,
+    SharedModule,
   ],
   declarations: [
     PointsListComponent,

@@ -6,6 +6,7 @@ import * as mapboxgl from 'mapbox-gl';
 import { LngLatLike, Map, MapMouseEvent } from 'mapbox-gl';
 import { first, Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
+import { SetDisplayedMapPointIds } from 'src/app/store/map-edit-store/state/map-edit.actions';
 import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
 import { UpdateTripPoint, UpdateTripStep } from 'src/app/store/trips-store/state/trips.actions';
 import { CreatePointComponent } from '../../../points/components/create-point/create-point.component';
@@ -71,7 +72,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
     map.resize();
 
     map
-      .on('dragend', () => {this.updateDisplayedPoints(map);})
+      .on('moveend', () => {this.updateDisplayedPoints(map);})
       .on('zoomend', () => {this.updateDisplayedPoints(map);});
 
     // Apply the bouding box
@@ -79,10 +80,12 @@ export class TripsMapComponent implements OnChanges, OnInit {
   }
 
   updateDisplayedPoints(map: Map): void {
-    const displayedPoints = this.points?.filter((point) =>
+    const pointIds = this.points?.filter((point) =>
       map.getBounds().contains({ lng: point.localisation.coordinates[0], lat: point.localisation.coordinates[1] }),
-    );
-    console.log('displayedPoints', displayedPoints);
+    ).map((point) => point.id);
+
+    this.store.dispatch(SetDisplayedMapPointIds({ pointIds }));
+    console.log('displayedPoints', pointIds);
   }
 
   updateLineDrawing(): void {

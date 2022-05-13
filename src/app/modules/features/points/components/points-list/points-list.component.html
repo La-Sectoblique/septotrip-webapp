@@ -20,7 +20,7 @@
       [cdkDropListConnectedTo]="getLinkedDropListId()"
       cdkDropListOrientation="horizontal"
     >
-      <ng-container *ngFor="let point of points">
+      <ng-container *ngFor="let point of (points | filterPointsByPointIds:(mapDisplayedPointIds$ | async))">
         <div
           cdkDrag
           [cdkDragData]="point"
