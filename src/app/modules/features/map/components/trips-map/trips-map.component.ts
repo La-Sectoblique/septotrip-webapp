@@ -1,10 +1,12 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
-import { LngLatLike, MapMouseEvent } from 'mapbox-gl';
+import * as mapboxgl from 'mapbox-gl';
+import { LngLatLike, Map, MapMouseEvent } from 'mapbox-gl';
 import { first, Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
+import { SetDisplayedMapPointIds } from 'src/app/store/map-edit-store/state/map-edit.actions';
 import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
 import { UpdateTripPoint, UpdateTripStep } from 'src/app/store/trips-store/state/trips.actions';
 import { CreatePointComponent } from '../../../points/components/create-point/create-point.component';
@@ -15,7 +17,7 @@ import { FlattenedStep } from '../../../step/models/flattened-step';
   selector: 'spt-trips-map',
   templateUrl: './trips-map.component.html',
   styleUrls: ['./trips-map.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TripsMapComponent implements OnChanges, OnInit {
 
@@ -38,6 +40,8 @@ export class TripsMapComponent implements OnChanges, OnInit {
     },
   };
 
+  mapMarkersBounds = new mapboxgl.LngLatBounds();
+
   constructor(
     private nbDialogService: NbDialogService,
     private store: Store,
@@ -49,10 +53,39 @@ export class TripsMapComponent implements OnChanges, OnInit {
       this.steps[0].stepInstance.localisation.coordinates[0],
       this.steps[0].stepInstance.localisation.coordinates[1],
     ];
+
+
+    // Create bounding box for the map
+    [
+      ...this.steps.map((step) => step.stepInstance.localisation.coordinates),
+      ... this.points.map((point) => point.localisation.coordinates),
+    ].forEach((coordinates) => {
+      this.mapMarkersBounds.extend([coordinates[0], coordinates[1]]);
+    });
   }
 
   ngOnChanges(/*{ steps }: SimpleChanges*/): void {
     this.updateLineDrawing();
+  }
+
+  onMapLoaded(map: Map): void {
+    map.resize();
+
+    this.updateDisplayedPoints(map);
+    map
+      .on('moveend', () => {this.updateDisplayedPoints(map);})
+      .on('zoomend', () => {this.updateDisplayedPoints(map);});
+
+    // Apply the bouding box
+    if (this.steps.length + this.points.length > 1) {map.fitBounds(this.mapMarkersBounds, { padding: 75 });}
+  }
+
+  updateDisplayedPoints(map: Map): void {
+    const pointIds = this.points?.filter((point) =>
+      map.getBounds().contains({ lng: point.localisation.coordinates[0], lat: point.localisation.coordinates[1] }),
+    ).map((point) => point.id);
+
+    this.store.dispatch(SetDisplayedMapPointIds({ pointIds }));
   }
 
   updateLineDrawing(): void {
@@ -94,7 +127,6 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   updateStepAfterDrag(evt: any, updatedStep: FlattenedStep): void {
-    console.log('evt', evt);
     this.store.dispatch(UpdateTripStep({
       stepId: updatedStep.stepInstance.id,
       tripId: this.tripId,

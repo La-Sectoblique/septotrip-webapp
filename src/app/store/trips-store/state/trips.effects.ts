@@ -9,8 +9,10 @@ import {  map, mergeMap, switchMap } from 'rxjs';
 import { DaysService } from 'src/app/modules/features/days/services/days.service';
 import { PointsService } from 'src/app/modules/features/points/services/points.service';
 import { StepsService } from 'src/app/modules/features/step/services/steps.service';
+import { TravelersService } from 'src/app/modules/features/travelers/services/travelers.service';
 import { TripsService } from 'src/app/modules/features/trip/services/trips.service';
 import * as TripsActions from './trips.actions';
+import * as MapsActions from '../../map-edit-store/state/map-edit.actions';
 import { selectTripSteps } from './trips.selectors';
 
 @Injectable()
@@ -42,7 +44,19 @@ export class TripsEffects {
     ofType(TripsActions.DeleteTrip),
     mergeMap(({ tripId }) => this.tripsService.deleteTrip(tripId)
       .pipe(
-        map(() => TripsActions.DeleteTripSuccess({ tripId })),
+        switchMap(() => [
+          TripsActions.DeleteTripSuccess({ tripId }),
+          // UtilsActions.NotifySuccess({
+          //   title: 'Supression réussie',
+          //   message: 'Le voyage a été supprimé',
+          // }),
+        ]),
+        // catchError(() =>  [
+        //   UtilsActions.NotifyError({
+        //     title: 'Echec de la supression',
+        //     message: 'le voyage n\'a pas été supprimé',
+        //   }),
+        // ]),
       ),
     ),
   ));
@@ -94,6 +108,10 @@ export class TripsEffects {
         switchMap((newStep) => [
           TripsActions.UpdateTripStepSuccess({ tripId, newStep }),
           TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
+          // UtilsActions.NotifySuccess({
+          //   title: 'Mise à jour effectuée',
+          //   message: 'L\'étape a bien été modifié',
+          // }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       )),
@@ -143,7 +161,10 @@ export class TripsEffects {
       point.description,
     )
       .pipe(
-        map((newPoint: PointOutput) => TripsActions.CreateTripPointSuccess({ point: newPoint, tripId })),
+        switchMap((newPoint: PointOutput) => [
+          TripsActions.CreateTripPointSuccess({ point: newPoint, tripId }),
+          MapsActions.AddDisplayedMapPointIds({ pointIds: [newPoint.id] }),
+        ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
     ),
@@ -169,6 +190,36 @@ export class TripsEffects {
     ),
   ));
 
+  RefreshPointsDayIds$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.RefreshPointsDayIds),
+    mergeMap(({ tripId, dayId }) =>
+      this.pointsService.getPointsByDay(dayId)
+        .pipe(
+          map((dayPoints) => TripsActions.RefreshPointsDayIdsSuccess({ tripId, dayId, dayPoints })),
+        ),
+    ),
+  ));
+
+  UpdatePointDays$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.UpdatePointDays),
+    mergeMap(({ tripId, pointId, daysIds }) =>
+      this.pointsService.updatePointDays(pointId, daysIds).pipe(
+        map(() =>  TripsActions.UpdatePointDaysSuccess({ tripId, pointId, daysIds })),
+      ),
+    ),
+  ));
+
+  // TRAVELERS
+
+  GetTripTravelers$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.GetTripTravelers),
+    mergeMap(({ tripId }) => this.travelersService.getTravelers(tripId)
+      .pipe(
+        map((travelers) => TripsActions.GetTripTravelersSuccess({ tripId, travelers })),
+      ),
+    ),
+  ));
+
 
 
   constructor(
@@ -177,6 +228,7 @@ export class TripsEffects {
     private stepsService: StepsService,
     private pointsService: PointsService,
     private daysService: DaysService,
+    private travelersService: TravelersService,
     private store: Store,
   ) {}
 

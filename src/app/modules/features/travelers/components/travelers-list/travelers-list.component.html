@@ -1,0 +1,12 @@
+<ul>
+  <li *ngFor="let traveler of travelers">{{traveler.firstName}} {{traveler.lastName}}</li>
+</ul>
+
+<h3>Ajouter un voyageur :</h3>
+<form [formGroup]="addTravelerForm" (ngSubmit)="addTraveler()">
+
+  <label for="mailAddress">Adresse email</label><br>
+  <input type="email" id="mailAddress" formControlName="mailAddress" nbInput>
+
+  <button type="submit" nbButton status="success">Ajouter</button>
+</form>

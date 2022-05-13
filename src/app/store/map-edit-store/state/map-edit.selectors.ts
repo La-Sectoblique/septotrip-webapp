@@ -12,3 +12,8 @@ export const selectMapEditMode = () => createSelector(
   selectFeature,
   (state: MapEditState) => state.mode,
 );
+
+export const selectDisplayedMapPointIds = () => createSelector(
+  selectFeature,
+  (state: MapEditState) => state.displayedPointIds,
+);

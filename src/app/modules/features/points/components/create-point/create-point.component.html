@@ -6,5 +6,5 @@
     <label>Description</label>
     <textarea nbInput type="text" [(ngModel)]="pointDescription" ></textarea>
   </div>
-  <button nbButton status="success" (click)="createPoint()" [disabled]="!isCreationValid()">{{isEditMode ? 'Modifier' : 'Créer'}} l'étape</button>
+  <button nbButton status="success" (click)="createPoint()" [disabled]="!isCreationValid()">{{isEditMode ? 'Modifier' : 'Créer'}} le point d'intérêt</button>
 </div>

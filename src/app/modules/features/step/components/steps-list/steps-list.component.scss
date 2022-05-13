@@ -1,9 +1,6 @@
 @use 'src/styles/mixins' as mixins;
 @import '/src/styles/variables.scss';
 
-.trash-icon-color {
-    color: $danger--color;
-}
 
 h4 {
     margin: 0;

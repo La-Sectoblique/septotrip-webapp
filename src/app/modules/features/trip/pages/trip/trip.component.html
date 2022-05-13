@@ -1,24 +1,49 @@
 <ng-container *ngIf="(trip$ | async) as trip">
   <ng-container *ngIf="(steps$ | async) as steps">
     <ng-container *ngIf="(points$ | async) as points">
-      <div class="page-wrapper h-100 w-100">
-        <div class="h-100">
-          <spt-steps-list
-            [tripId]="trip.tripInstance.id"
-            [steps]="steps"
-            [points]="points"
-          ></spt-steps-list>
-        </div>
-        <spt-trips-map [steps]="steps" [points]="points" [tripId]="trip.tripInstance.id"></spt-trips-map>
-
-        <div class="points-wrapper">
-          <spt-points-list
-            [tripId]="trip.tripInstance.id"
-            [points]="points"
-            [daysId]="getDaysIds(steps)"
-          ></spt-points-list>
-        </div>
+      <div class="h-100 w-100">
+        <nb-tabset class="h-100 w-100 d-flex flex-column">
+          <p>{{trip.tripInstance.name}}</p>
+          <nb-tab tabTitle="Planification" class="h-100 w-100">
+            <div class="page-wrapper h-100 w-100">
+              <div class="h-100">
+                <spt-steps-list
+                  [tripId]="trip.tripInstance.id"
+                  [steps]="steps"
+                  [points]="points"
+                ></spt-steps-list>
+              </div>
+  
+              <spt-trips-map class="" [steps]="steps" [points]="points" [tripId]="trip.tripInstance.id"></spt-trips-map>
+              
+              <div class="points-wrapper">
+                <spt-points-list
+                  [tripId]="trip.tripInstance.id"
+                  [points]="points"
+                  [daysId]="getDaysIds(steps)"
+                ></spt-points-list>
+              </div>
+            </div>
+          </nb-tab>
+  
+          <nb-tab tabTitle="Membres">
+            <ng-container *ngIf="travelers$ | async as travelers">
+              <h2>Membres du voyage</h2>
+              <spt-travelers-list
+                [travelers]="travelers"
+                [tripId]="trip.tripInstance.id"
+              ></spt-travelers-list>
+            </ng-container>
+          </nb-tab>
+          <nb-tab tabTitle="Paramètres">
+            <h2>Paramètres</h2>
+            <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance.id)">SUPPRIMER</button>
+          </nb-tab>
+  
+        </nb-tabset>
       </div>
+
+      
     </ng-container>
   </ng-container>
 </ng-container>
