@@ -5,7 +5,7 @@ import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/mode
 import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
-import { first, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { DeleteTrip,
   GetTrip,
   GetTripPoints,

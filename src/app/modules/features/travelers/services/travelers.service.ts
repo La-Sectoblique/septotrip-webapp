@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { addTravelerToTrip, getTravelers } from '@la-sectoblique/septoblique-service';
+import { addTravelerToTrip, getTravelers, removeTraveler } from '@la-sectoblique/septoblique-service';
 import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
 import { ApiResponse } from '@la-sectoblique/septoblique-service/dist/types/utils/Api';
 import { from, Observable } from 'rxjs';
@@ -17,6 +17,10 @@ export class TravelersService {
 
   addTraveler(tripId: number, email: string): Observable<ApiResponse> {
     return from(addTravelerToTrip(tripId, email));
+  }
+
+  removeTraveler(tripId: number, userId: number): Observable<ApiResponse> {
+    return from(removeTraveler(tripId, userId));
   }
 
 }

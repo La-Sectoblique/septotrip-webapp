@@ -176,3 +176,13 @@ export const GetTripTravelersSuccess = createAction(
   '[Trip] Get trip travelers success',
   props<{ tripId: number; travelers: UserOutput[] }>(),
 );
+
+export const RemoveTripTraveler = createAction(
+  '[Trip] Remove trip travelers',
+  props<{ tripId: number; userId: number }>(),
+);
+
+export const RemoveTripTravelerSuccess = createAction(
+  '[Trip] Remove trip travelers Success',
+  props<{ tripId: number; userId: number }>(),
+);

@@ -229,6 +229,15 @@ export class TripsEffects {
     ),
   ));
 
+  RemoveTripTraveler$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.RemoveTripTraveler),
+    mergeMap(({ tripId, userId }) => this.travelersService.removeTraveler(tripId, userId)
+      .pipe(
+        map(() => TripsActions.RemoveTripTravelerSuccess({ tripId, userId })),
+      ),
+    ),
+  ));
+
 
 
   constructor(

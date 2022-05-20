@@ -1,7 +1,11 @@
 <app-traveler-preview
   *ngFor="let traveler of travelers"
   [traveler]="traveler"
-></app-traveler-preview>
+>
+  <button nbButton ghost (click)="removeTraveler(traveler.id)">
+    <nb-icon icon="trash-2-outline" status="danger"></nb-icon>
+  </button>
+</app-traveler-preview>
 
 <h3>Ajouter un voyageur :</h3>
 <form [formGroup]="addTravelerForm" (ngSubmit)="addTraveler()">
