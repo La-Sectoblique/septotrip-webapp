@@ -127,15 +127,14 @@ export class TripsEffects {
       )),
   ));
 
-  // @WAITING: Waiting for api to fix reorder bug
-  // UpdateTripStepOrder$ = createEffect(() => this.actions$.pipe(
-  //   ofType(TripsActions.UpdateTripStepOrder),
-  //   mergeMap(({ toIdx, tripId, step }) => this.stepsService.updateTripStepOrder(step.stepInstance.id, toIdx + 1)
-  //     .pipe(
-  //       map((steps) => TripsActions.GetTripStepsSuccess({ steps, tripId })),
-  //     ),
-  //   ),
-  // ));
+  UpdateTripStepOrder$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.UpdateTripStepOrder),
+    mergeMap(({ toIdx, tripId, step }) => this.stepsService.updateTripStepOrder(step.stepInstance.id, toIdx + 1)
+      .pipe(
+        map((steps) => TripsActions.GetTripStepsSuccess({ steps, tripId })),
+      ),
+    ),
+  ));
 
   // Days
 
