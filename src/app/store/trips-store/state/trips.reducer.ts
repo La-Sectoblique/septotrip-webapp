@@ -7,8 +7,7 @@ import { initialTripState } from './trips.state';
 export const tripReducer = createReducer(
   initialTripState,
 
-  // TRIPS
-
+  // === TRIPS ===
   on(TripsAction.GetUserTripsSuccess, (state, { trips }) => {
     let newTrips = state.trips;
     trips.forEach((trip) => {
@@ -42,7 +41,7 @@ export const tripReducer = createReducer(
     trips: Object.values(state.trips).filter((trip) => trip.tripInstance.id !== tripId),
   })),
 
-  // STEPS
+  // === STEPS ===
 
   on(TripsAction.GetTripStepsSuccess, (state, { steps, tripId }) => ({
     ...state,
@@ -120,7 +119,7 @@ export const tripReducer = createReducer(
     };
   }),
 
-  // DAYS
+  // === DAYS ===
 
   on(TripsAction.GetStepDaysSuccess, (state, { days, tripId, stepId }) => {
     const steps = state.trips[tripId].steps.map((step) => {
@@ -142,7 +141,7 @@ export const tripReducer = createReducer(
       } };
   }),
 
-  // POINTS
+  // === POINTS ===
 
   on(TripsAction.GetTripPointsSuccess, (state, { points, tripId }) => ({
     ...state,
@@ -256,7 +255,7 @@ export const tripReducer = createReducer(
     };
   }),
 
-  // Travelers
+  // === TRAVELERS ===
 
   on(TripsAction.GetTripTravelersSuccess, (state, { tripId, travelers }) => ({
     ...state,
@@ -279,7 +278,4 @@ export const tripReducer = createReducer(
       },
     },
   })),
-
-
-
 );

@@ -18,7 +18,7 @@ import { selectTripSteps } from './trips.selectors';
 @Injectable()
 export class TripsEffects {
 
-  // Trips
+  // === TRIPS ===
 
   GetUserTrips$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.GetUserTrips),
@@ -63,7 +63,7 @@ export class TripsEffects {
 
 
 
-  // Steps
+  // === STEPS ===
 
   GetTripSteps$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.GetTripSteps),
@@ -135,7 +135,7 @@ export class TripsEffects {
     ),
   ));
 
-  // Days
+  // === DAYS ===
 
   GetStepDays$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.GetStepDays),
@@ -149,7 +149,7 @@ export class TripsEffects {
     ),
   ));
 
-  // Points
+  // === POINTS ===
 
   GetTripPoints$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.GetTripPoints),
@@ -218,7 +218,7 @@ export class TripsEffects {
     ),
   ));
 
-  // TRAVELERS
+  // === TRAVELERS ===
 
   GetTripTravelers$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.GetTripTravelers),
