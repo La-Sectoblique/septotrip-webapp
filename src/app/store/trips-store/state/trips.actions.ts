@@ -113,6 +113,15 @@ export const GetPathToStepSuccess = createAction(
   props<{ tripId: number; stepId: number; path: PathOutput }>(),
 );
 
+export const UpdatePath = createAction(
+  '[Trip] Update Path',
+  props<{ tripId: number; stepId: number; path: PathOutput }>(),
+);
+
+export const UpdatePathSuccess = createAction(
+  '[Trip] Update Path Success',
+  props<{ tripId: number; stepId: number; path: Partial<PathOutput> }>(),
+);
 
 
 // Point

@@ -12,7 +12,7 @@ export class PathsService {
     return from(getPathToStep(stepId));
   }
 
-  updatePath(pathId: number, newPath: Partial<PathAttributes>): Observable<PathOutput> {
+  updatePath(pathId: number, newPath: Partial<PathOutput>): Observable<PathOutput> {
     return from(updatePath(pathId, newPath));
   }
 
