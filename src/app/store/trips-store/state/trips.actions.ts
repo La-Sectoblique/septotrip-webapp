@@ -1,4 +1,5 @@
 import { DayOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Day';
+import { PathOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Path';
 import { PointAttributes, PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { StepAttributes, StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
@@ -92,13 +93,27 @@ export const UpdateTripStepOrderSuccess = createAction(
 
 export const GetStepDays = createAction(
   '[Trip] Get Step Days',
-  props<{ stepId: number; tripId: number }>(),
+  props<{ tripId: number; stepId: number }>(),
 );
 
 export const GetStepDaysSuccess = createAction(
   '[Trip] Get Step Days Success',
   props<{ days: DayOutput[]; stepId: number; tripId: number }>(),
 );
+
+// Path
+
+export const GetPathToStep = createAction(
+  '[Trip] Get Path To Step',
+  props<{ tripId: number; stepId: number }>(),
+);
+
+export const GetPathToStepSuccess = createAction(
+  '[Trip] Get Path To Step Success',
+  props<{ tripId: number; stepId: number; path: PathOutput }>(),
+);
+
+
 
 // Point
 
