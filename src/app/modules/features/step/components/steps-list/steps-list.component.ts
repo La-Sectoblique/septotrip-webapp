@@ -67,6 +67,7 @@ export class StepsListComponent implements OnInit {
       fromIdx: event.container.data.indexOf(event.item.data),
       toIdx: event.currentIndex,
       tripId: this.tripId,
+      step: event.item.data,
     }));
   }
 

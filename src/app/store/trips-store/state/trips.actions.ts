@@ -4,6 +4,7 @@ import { StepAttributes, StepOutput } from '@la-sectoblique/septoblique-service/
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
 import { createAction, props } from '@ngrx/store';
+import { FlattenedStep } from 'src/app/modules/features/step/models/flattened-step';
 import { UpdateTripPointPayload, UpdateTripStepPayload } from './trips.payload';
 
 // Trip
@@ -79,7 +80,12 @@ export const DeleteTripStepSuccess = createAction(
 
 export const UpdateTripStepOrder = createAction(
   '[Trip] Update Trip Step Order',
-  props<{ fromIdx: number; toIdx: number; tripId: number }>(),
+  props<{ fromIdx: number; toIdx: number; tripId: number; step: FlattenedStep }>(),
+);
+
+export const UpdateTripStepOrderSuccess = createAction(
+  '[Trip] Update Trip Step Order Success',
+  props<{ steps: StepOutput[] }>(),
 );
 
 // Days
