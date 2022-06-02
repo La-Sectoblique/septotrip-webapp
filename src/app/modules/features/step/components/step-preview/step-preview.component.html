@@ -1,3 +1,8 @@
+<div *ngIf="step.pathToStep"
+  class="d-flex justify-content-center"
+>
+  <p>Desc: {{step.pathToStep.description}}</p>
+</div>
 <div class="d-flex flex-column card w-100 wrapper">
   <div class="d-flex align-items-center justify-content-between w-100">
     <ng-content select="[handle]"></ng-content>
@@ -18,7 +23,6 @@
     </div>
   </div>
   <div *ngIf="isDetailedModeEnabled">
-    <!-- <p *ngFor="let day of step.daysInstance">Jour {{day.number}}</p> -->
     <spt-days-list *ngIf="step.daysInstance"
       [days]="step.daysInstance"
       [stepId]="step.stepInstance.id"

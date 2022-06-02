@@ -6,6 +6,7 @@ import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/model
 import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
 import { createAction, props } from '@ngrx/store';
 import { FlattenedStep } from 'src/app/modules/features/step/models/flattened-step';
+import { PartialBy } from 'src/app/utils';
 import { UpdateTripPointPayload, UpdateTripStepPayload } from './trips.payload';
 
 // Trip
@@ -115,12 +116,16 @@ export const GetPathToStepSuccess = createAction(
 
 export const UpdatePath = createAction(
   '[Trip] Update Path',
-  props<{ tripId: number; stepId: number; path: PathOutput }>(),
+  props<{
+    tripId: number;
+    stepId: number;
+    path: PartialBy<PathOutput, 'createdAt' | 'description' | 'destinationId' | 'updatedAt'>;
+  }>(),
 );
 
 export const UpdatePathSuccess = createAction(
   '[Trip] Update Path Success',
-  props<{ tripId: number; stepId: number; path: Partial<PathOutput> }>(),
+  props<{ tripId: number; stepId: number; path: PathOutput }>(),
 );
 
 

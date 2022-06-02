@@ -168,6 +168,30 @@ export const tripReducer = createReducer(
     };
   }),
 
+  on(TripsAction.UpdatePathSuccess, (state, { tripId, stepId, path }) => {
+    console.log('coucou');
+    const steps = state.trips[tripId].steps.map((step) => {
+      if (step.stepInstance.id === stepId) {
+        return {
+          ...step,
+          pathToStep: path,
+        };
+      }
+      return step;
+    });
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          steps,
+        },
+      },
+    };
+  }),
+
   // === POINTS ===
 
   on(TripsAction.GetTripPointsSuccess, (state, { points, tripId }) => ({
