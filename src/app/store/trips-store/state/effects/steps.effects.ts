@@ -21,7 +21,7 @@ export class StepsEffects {
           ...(steps.map((step) =>
             TripsActions.GetStepDays({ stepId: step.id, tripId }),
           )),
-          ...(steps.map((step) =>
+          ...(steps.filter((step, idx) => idx !== 0 ).map((step) =>
             TripsActions.GetPathToStep({ tripId, stepId: step.id }),
           )),
         ],
