@@ -18,9 +18,9 @@ export class StepsEffects {
       .pipe(
         switchMap((steps: StepOutput[]) => [
           TripsActions.GetTripStepsSuccess({ steps, tripId }),
-          // ...(steps.map((step) =>
-          //   TripsActions.GetStepDays({ stepId: step.id, tripId }),
-          // )),
+          ...(steps.map((step) =>
+            TripsActions.GetStepDays({ stepId: step.id, tripId }),
+          )),
           ...(steps.map((step) =>
             TripsActions.GetPathToStep({ tripId, stepId: step.id }),
           )),

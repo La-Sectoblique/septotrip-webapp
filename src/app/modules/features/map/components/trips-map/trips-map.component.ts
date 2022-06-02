@@ -49,10 +49,12 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   ngOnInit(): void {
     this.mapEditMode$ = this.store.select(selectMapEditMode());
-    this.mapCenter = [
-      this.steps[0].stepInstance.localisation.coordinates[0],
-      this.steps[0].stepInstance.localisation.coordinates[1],
-    ];
+    if (this.steps[0]) {
+      this.mapCenter = [
+        this.steps[0].stepInstance.localisation.coordinates[0],
+        this.steps[0].stepInstance.localisation.coordinates[1],
+      ];
+    }
 
 
     // Create bounding box for the map
