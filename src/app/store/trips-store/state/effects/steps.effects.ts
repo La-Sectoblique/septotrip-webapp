@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import {  map, mergeMap, switchMap } from 'rxjs';
 import { StepsService } from 'src/app/modules/features/step/services/steps.service';
 import * as TripsActions from '../trips.actions';
+import * as UtilsActions from '../../../utils-store/state/utils.actions';
 import { selectTripSteps } from '../trips.selectors';
 
 @Injectable()
@@ -65,10 +66,10 @@ export class StepsEffects {
         switchMap((newStep) => [
           TripsActions.UpdateTripStepSuccess({ tripId, newStep }),
           TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
-          // UtilsActions.NotifySuccess({
-          //   title: 'Mise à jour effectuée',
-          //   message: 'L\'étape a bien été modifié',
-          // }),
+          UtilsActions.NotifySuccess({
+            title: 'Mise à jour effectuée',
+            message: 'L\'étape a bien été modifié',
+          }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       )),

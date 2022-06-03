@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ToastrPayload } from './utils.payloads';
+import { NotifyPayload, ToastrPayload } from './utils.payloads';
 
 export const NotifySuccess = createAction(
   '[Utils] Notify Success',
@@ -9,4 +9,9 @@ export const NotifySuccess = createAction(
 export const NotifyError = createAction(
   '[Utils] Notify Error',
   props<ToastrPayload>(),
+);
+
+export const Notify = createAction(
+  '[Utils] Notify Error',
+  props<NotifyPayload>(),
 );

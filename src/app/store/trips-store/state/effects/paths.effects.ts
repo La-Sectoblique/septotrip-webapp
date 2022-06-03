@@ -23,7 +23,7 @@ export class PathsEffects {
     ),
   ));
 
-  UpdatePath = createEffect(() => this.actions$.pipe(
+  UpdatePath$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.UpdatePath),
     mergeMap(({ tripId, stepId, path }) => this.pathsService.updatePath(path.id, path)
       .pipe(
