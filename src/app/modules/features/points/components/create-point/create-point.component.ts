@@ -1,4 +1,5 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { NbDialogRef } from '@nebular/theme';
 import { Store } from '@ngrx/store';
@@ -18,37 +19,38 @@ export class CreatePointComponent  implements OnInit {
   @Input() isEditMode = false;
   @Input() editedPoint: PointOutput;
 
-  pointTitle = '';
-  pointDescription = '';
+  pointForm = this.formBuilder.group({
+    title: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+    ]),
+    description: '',
+  });
 
   constructor(
     private dialogRef: NbDialogRef<CreatePointComponent>,
     private store: Store,
+    private formBuilder: FormBuilder,
   ) {}
-
-  @HostListener('document:keypress', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent): void {
-    if (event.key === 'Enter') {
-      this.createPoint();
-    }
-  }
 
   ngOnInit(): void {
     if (this.isEditMode) {
-      this.pointTitle = this.editedPoint.title;
-      this.pointDescription = this.editedPoint.description || '';
+      this.pointForm.patchValue({
+        title: this.editedPoint.title,
+        description: this.editedPoint.description,
+      });
     }
   }
 
-  createPoint(): void {
-    if (!this.isCreationValid()) {
+  create(): void {
+    if (!this.isFormValid()) {
       return;
     }
 
     if (!this.isEditMode) {
       this.store.dispatch(CreateTripPoint({ tripId: this.tripId, point: {
-        title: this.pointTitle,
-        description: this.pointDescription,
+        title: this.pointForm.value.title,
+        description: this.pointForm.value.description,
         localisation: {
           coordinates: [this.clickedCoordinates.lng, this.clickedCoordinates.lat],
           type: 'Point',
@@ -59,16 +61,16 @@ export class CreatePointComponent  implements OnInit {
         tripId: this.tripId,
         pointId: this.editedPoint.id,
         editedPoint: {
-          title: this.pointTitle,
-          description: this.pointDescription,
+          title: this.pointForm.value.title,
+          description: this.pointForm.value.description,
         },
       }));
     }
     this.dialogRef.close();
   }
 
-  isCreationValid(): boolean {
-    return this.pointTitle.length > 0;
+  isFormValid(): boolean {
+    return this.pointForm.valid;
   }
 
 }
