@@ -4,6 +4,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {  map, mergeMap, switchMap } from 'rxjs';
 import { TripsService } from 'src/app/modules/features/trip/services/trips.service';
 import * as TripsActions from '../trips.actions';
+import * as UtilsActions from '../../../utils-store/state/utils.actions';
 
 @Injectable()
 export class TripsEffects {
@@ -36,10 +37,10 @@ export class TripsEffects {
       .pipe(
         switchMap(() => [
           TripsActions.DeleteTripSuccess({ tripId }),
-          // UtilsActions.NotifySuccess({
-          //   title: 'Supression réussie',
-          //   message: 'Le voyage a été supprimé',
-          // }),
+          UtilsActions.NotifySuccess({
+            title: 'Supression réussie',
+            message: 'Le voyage a été supprimé',
+          }),
         ]),
         // catchError(() =>  [
         //   UtilsActions.NotifyError({

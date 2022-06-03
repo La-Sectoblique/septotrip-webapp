@@ -5,6 +5,7 @@ import {  map, mergeMap, switchMap } from 'rxjs';
 import { PointsService } from 'src/app/modules/features/points/services/points.service';
 import * as TripsActions from '../trips.actions';
 import * as MapsActions from '../../../map-edit-store/state/map-edit.actions';
+import * as UtilsActions from '../../../utils-store/state/utils.actions';
 
 @Injectable()
 export class PointsEffects {
@@ -34,6 +35,10 @@ export class PointsEffects {
         switchMap((newPoint: PointOutput) => [
           TripsActions.CreateTripPointSuccess({ point: newPoint, tripId }),
           MapsActions.AddDisplayedMapPointIds({ pointIds: [newPoint.id] }),
+          UtilsActions.NotifySuccess({
+            title: 'Création effectuée',
+            message: 'Le point d\'intérêt a bien été créé',
+          }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
@@ -45,7 +50,13 @@ export class PointsEffects {
     mergeMap(({ tripId, pointId, editedPoint }) => this.pointsService.updatePoint(
       pointId, editedPoint,
     ).pipe(
-      map((newPoint: PointOutput) => TripsActions.UpdateTripPointSuccess({ tripId, newPoint })),
+      switchMap((newPoint: PointOutput) => [
+        TripsActions.UpdateTripPointSuccess({ tripId, newPoint }),
+        UtilsActions.NotifySuccess({
+          title: 'Mise à jour effectuée',
+          message: 'Le point d\'intérêt a bien été modifié',
+        }),
+      ]),
       // @TODO: catchError(() => CALL ERROR ACTION),
     )),
   ));
@@ -54,7 +65,13 @@ export class PointsEffects {
     ofType(TripsActions.DeleteTripPoint),
     mergeMap(({ tripId, pointId }) => this.pointsService.deletePoint(pointId)
       .pipe(
-        map(() => TripsActions.DeleteTripPointSuccess({ pointId, tripId })),
+        switchMap(() => [
+          TripsActions.DeleteTripPointSuccess({ pointId, tripId }),
+          UtilsActions.NotifySuccess({
+            title: 'Suppression  effectuée',
+            message: 'Le point d\'intérêt a bien été supprimé',
+          }),
+        ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
     ),

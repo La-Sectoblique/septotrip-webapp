@@ -53,6 +53,10 @@ export class StepsEffects {
           TripsActions.CreateTripStepSuccess({ step: newStep, tripId }),
           TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
           TripsActions.GetPathToStep({ stepId: newStep.id, tripId }),
+          UtilsActions.NotifySuccess({
+            title: 'Création effectuée',
+            message: 'L\'étape a bien été créée',
+          }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
@@ -68,7 +72,7 @@ export class StepsEffects {
           TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
           UtilsActions.NotifySuccess({
             title: 'Mise à jour effectuée',
-            message: 'L\'étape a bien été modifié',
+            message: 'L\'étape a bien été modifiée',
           }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
@@ -79,7 +83,13 @@ export class StepsEffects {
     ofType(TripsActions.DeleteTripStep),
     mergeMap(({ stepId, tripId }) => this.stepsService.deleteStep(stepId)
       .pipe(
-        map(() => TripsActions.DeleteTripStepSuccess({ stepId, tripId })),
+        switchMap(() => [
+          TripsActions.DeleteTripStepSuccess({ stepId, tripId }),
+          UtilsActions.NotifySuccess({
+            title: 'Suppression effectuée',
+            message: 'L\'étape a bien été supprimée',
+          }),
+        ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       )),
   ));
