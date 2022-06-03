@@ -1,6 +1,17 @@
 {
   "name": "septotrip-webapp",
   "version": "0.0.0",
+  "contributors": [
+    {
+      "name": "Raffael Di Pietro"
+    },
+    {
+      "name": "Tanguy Gimenez"
+    },
+    {
+      "name": "Thibaut Herr"
+    }
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
