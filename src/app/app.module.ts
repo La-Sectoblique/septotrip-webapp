@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbLayoutModule, NbThemeModule, NbToastrModule } from '@nebular/theme';
 import { EffectsModule } from '@ngrx/effects';
@@ -19,6 +20,7 @@ import { FeaturesStoreModule } from './store/features-store.module';
 import { AuthentificationModule } from './modules/features/authentification/authentification.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './modules/helpers/auth.guard';
+import { PathsModule } from './modules/features/paths/paths.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { AuthGuard } from './modules/helpers/auth.guard';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     // Store imports
     StoreModule.forRoot({}),
@@ -46,6 +49,7 @@ import { AuthGuard } from './modules/helpers/auth.guard';
     AuthentificationModule,
     HttpClientModule,
     NbToastrModule.forRoot(),
+    PathsModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent],

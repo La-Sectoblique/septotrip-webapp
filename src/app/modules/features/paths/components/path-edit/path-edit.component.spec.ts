@@ -1,21 +1,23 @@
 /* tslint:disable:no-unused-variable */
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 
-import { SigninComponent } from './signin.component';
+import { PathEditComponent } from './path-edit.component';
 
-describe('SigninComponent', () => {
-  let component: SigninComponent;
-  let fixture: ComponentFixture<SigninComponent>;
+describe('PathEditComponent', () => {
+  let component: PathEditComponent;
+  let fixture: ComponentFixture<PathEditComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SigninComponent ],
+      declarations: [ PathEditComponent ],
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SigninComponent);
+    fixture = TestBed.createComponent(PathEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

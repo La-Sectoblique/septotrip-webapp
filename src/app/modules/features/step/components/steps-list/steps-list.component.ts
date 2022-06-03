@@ -9,7 +9,6 @@ import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { UpdateMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.actions';
 import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
 import { DeleteTripStep,
-  RefreshPointsDayIds,
   UpdateTripStepOrder,
 } from 'src/app/store/trips-store/state/trips.actions';
 import { FlattenedStep } from '../../models/flattened-step';
