@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PathOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Path';
+import { NbDialogService } from '@nebular/theme';
+import { PathEditComponent } from '../path-edit/path-edit.component';
 
 @Component({
   selector: 'spt-path-preview',
@@ -9,7 +11,21 @@ import { PathOutput } from '@la-sectoblique/septoblique-service/dist/types/model
 export class PathPreviewComponent  {
 
   @Input() path: PathOutput;
+  @Input() stepId: number;
+  @Input() tripId: number;
 
-  // constructor() { }
+  constructor(
+    private nbDialogService: NbDialogService,
+  ) { }
+
+  openPathEdition(): void {
+    this.nbDialogService.open(PathEditComponent, {
+      context: {
+        path: this.path,
+        stepId: this.stepId,
+        tripId: this.tripId,
+      },
+    });
+  }
 
 }

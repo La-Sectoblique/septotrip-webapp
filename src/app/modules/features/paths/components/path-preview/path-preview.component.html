@@ -1,15 +1,13 @@
 <button
   nbButton
   ghost
-  class="p-0 px-3"
+  (click)="openPathEdition()"
+  [nbTooltip]="path.description ?? 'Aucune information'"
+  nbTooltipPlacement="right"
+  class="d-flex flex-column align-items-center shape p-0 px-3"
 >
-  <div class="d-flex flex-column align-items-center shape" 
-    [nbTooltip]="path.description ?? 'Aucune description'"
-    nbTooltipPlacement="right"
-  >
-    <span class="color circle"></span>
-    <span class="color line"></span>
-  </div>
+  <span class="color circle"></span>
+  <span class="color line"></span>
 </button>
 
 

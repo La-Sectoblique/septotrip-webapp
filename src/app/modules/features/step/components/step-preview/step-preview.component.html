@@ -1,6 +1,8 @@
 <div [class.m-3]="!step.pathToStep">
   <spt-path-preview *ngIf="step.pathToStep" class="d-flex justify-content-center"
     [path]="step.pathToStep"
+    [stepId]="step.stepInstance.id"
+    [tripId]="step.stepInstance.tripId"
   ></spt-path-preview>
   <div class="d-flex flex-column card m-0 w-100 wrapper">
     <div class="d-flex align-items-center justify-content-between w-100">
