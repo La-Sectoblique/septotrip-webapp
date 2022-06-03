@@ -49,7 +49,7 @@ export const tripReducer = createReducer(
       ...state.trips,
       [tripId]: {
         ...state.trips[tripId],
-        steps: steps.map((step) => ({ stepInstance: step })),
+        steps: steps.map((step) => ({ ...step, stepInstance: step })),
       },
     },
   })),
@@ -155,7 +155,7 @@ export const tripReducer = createReducer(
       return step;
     });
 
-    console.log('new steps with path', steps);
+    // console.log('new steps with path', steps);
 
     return { ...state,
       trips: {
@@ -169,7 +169,7 @@ export const tripReducer = createReducer(
   }),
 
   on(TripsAction.UpdatePathSuccess, (state, { tripId, stepId, path }) => {
-    console.log('coucou');
+    // console.log('coucou');
     const steps = state.trips[tripId].steps.map((step) => {
       if (step.stepInstance.id === stepId) {
         return {

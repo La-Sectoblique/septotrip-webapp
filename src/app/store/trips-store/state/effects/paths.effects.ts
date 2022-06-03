@@ -13,10 +13,10 @@ export class PathsEffects {
     ofType(TripsActions.GetPathToStep),
     mergeMap(({ stepId, tripId }) => this.pathsService.getPathToStep(stepId)
       .pipe(
-        map((path: PathOutput) => {
-          console.log('new Path', path);
-          return TripsActions.GetPathToStepSuccess({ tripId, stepId, path });
-        },
+        map((path: PathOutput) =>
+          // console.log('new Path', path);
+          TripsActions.GetPathToStepSuccess({ tripId, stepId, path })
+          ,
         ),
         // @TODO: catchError(()) => CALL ERROR ACTION),
       ),
