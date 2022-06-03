@@ -28,11 +28,13 @@
   
           <nb-tab tabTitle="Membres">
             <ng-container *ngIf="travelers$ | async as travelers">
-              <h2>Membres du voyage</h2>
-              <spt-travelers-list
-                [travelers]="travelers"
-                [tripId]="trip.tripInstance.id"
-              ></spt-travelers-list>
+              <div class="w-50">
+                <h2>Membres du voyage</h2>
+                <spt-travelers-list
+                  [travelers]="travelers"
+                  [tripId]="trip.tripInstance.id"
+                ></spt-travelers-list>
+              </div>
             </ng-container>
           </nb-tab>
           <nb-tab tabTitle="Paramètres">

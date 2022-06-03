@@ -269,6 +269,17 @@ export const tripReducer = createReducer(
     },
   })),
 
+  on(TripsAction.RemoveTripTravelerSuccess, (state, { tripId, userId }) => ({
+    ...state,
+    trips: {
+      ...state.trips,
+      [tripId]: {
+        ...state.trips[tripId],
+        travelers: state.trips[tripId].travelers.filter((traveler) => traveler.id !== userId),
+      },
+    },
+  })),
+
 
 
 );

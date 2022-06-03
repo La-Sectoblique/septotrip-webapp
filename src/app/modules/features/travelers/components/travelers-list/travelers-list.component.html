@@ -1,6 +1,11 @@
-<ul>
-  <li *ngFor="let traveler of travelers">{{traveler.firstName}} {{traveler.lastName}}</li>
-</ul>
+<app-traveler-preview
+  *ngFor="let traveler of travelers"
+  [traveler]="traveler"
+>
+  <button nbButton ghost (click)="removeTraveler(traveler.id)">
+    <nb-icon icon="trash-2-outline" status="danger"></nb-icon>
+  </button>
+</app-traveler-preview>
 
 <h3>Ajouter un voyageur :</h3>
 <form [formGroup]="addTravelerForm" (ngSubmit)="addTraveler()">
