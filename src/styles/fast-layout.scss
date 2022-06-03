@@ -72,7 +72,13 @@
 
 .m {
     &-0 {
-        margin: 0;
+        margin: 0!important;
+    }
+    &-3 {
+        margin: 1.25rem;
+    }
+    &-4 {
+        margin: 1.5rem;
     }
     &r {
         &-4 {
@@ -103,8 +109,16 @@
 }
 
 .p {
+    &-0 {
+        padding: 0!important;
+    }
     &-2 {
         padding: .75rem;
+    }
+    &x {
+        &-3 {
+            padding: 0 1.25rem!important;
+        }
     }
 }
 
