@@ -2,13 +2,13 @@
   <nav class="w-100">
     <div class="d-flex justify-content-between w-100">
       <ul>
-        <li><a routerLink="/home" routerLinkActive="active">Accueil</a></li>
-        <li><a routerLink="/trips" routerLinkActive="active">Voyages</a></li>
+        <li><a routerLink="/home" routerLinkActive="active">{{'HomeNavLabel' | translate}}</a></li>
+        <li><a routerLink="/trips" routerLinkActive="active">{{'TripNavLabel' | translate}}</a></li>
       </ul>
       <ul>
-        <li><a routerLink="/login" routerLinkActive="active">Connexion</a></li>
-        <li><a routerLink="/signIn" routerLinkActive="active">S'inscrire</a></li>
-        <li><a routerLink="" (click)="logout()">Se deconnecter</a></li>
+        <li><a routerLink="/login" routerLinkActive="active">{{'LoginButtonLabel' | translate}}</a></li>
+        <li><a routerLink="/signIn" routerLinkActive="active">{{'RegisterButtonLabel' | translate}}</a></li>
+        <li><a routerLink="" (click)="logout()">{{'DisconnectButtonLabel' | translate}}</a></li>
       </ul>
     </div>
   </nav>

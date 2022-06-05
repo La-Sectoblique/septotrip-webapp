@@ -33,6 +33,10 @@
 
     "LoginButtonLabel": "Se connecter",
     "RegisterButtonLabel": "S'inscrire",
+    "DisconnectButtonLabel": "Se déconnecter",
+
+    "HomeNavLabel": "Accueil",
+    "TripNavLabel": "Voyages",
     
     "Parameters": "Paramètres",
     "PlanificationTabTitle": "Planification",
