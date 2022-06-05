@@ -6,9 +6,9 @@
     [formGroup]="pointForm"
     (ngSubmit)="create()"
   >
-    <label for="title">{{'NameInputLabel' | translate}}</label>
+    <label for="title">{{'NameInputLabel' | translate}} :</label>
     <input type="text" id="title" formControlName="title" required nbInput>
-    <label for="duration">{{'DescriptionInputLabel' | translate}}</label>
+    <label for="duration">{{'DescriptionInputLabel' | translate}} :</label>
     <textarea id="description" formControlName="description" nbInput></textarea>
 
     <button 

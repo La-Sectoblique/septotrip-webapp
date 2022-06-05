@@ -55,8 +55,8 @@
 
     "PointCreation": "Création d'un point d'intérêt",
     "PointUpdate": "Modification d'un point d'intérêt",
-    "PointCreationValidation": "Modifier le point d'intérêt",
-    "PointUpdateValidation": "Créer le point d'intérêt",
+    "PointUpdateValidation": "Modifier le point d'intérêt",
+    "PointCreationValidation": "Créer le point d'intérêt",
     "PointEditMode": "Edition des points d'intérêt",
 
     "PathUpdate": "Modification du trajet",
