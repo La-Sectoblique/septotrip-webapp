@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { PathOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Path';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import {  map, mergeMap } from 'rxjs';
+import {  map, mergeMap, switchMap } from 'rxjs';
 import { PathsService } from 'src/app/modules/features/paths/services/paths.service';
 import * as TripsActions from '../trips.actions';
+import * as UtilsActions from '../../../utils-store/state/utils.actions';
 @Injectable()
 export class PathsEffects {
 
@@ -23,11 +24,17 @@ export class PathsEffects {
     ),
   ));
 
-  UpdatePath = createEffect(() => this.actions$.pipe(
+  UpdatePath$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.UpdatePath),
     mergeMap(({ tripId, stepId, path }) => this.pathsService.updatePath(path.id, path)
       .pipe(
-        map((newPath: PathOutput) => TripsActions.UpdatePathSuccess({ tripId, stepId, path: newPath })),
+        switchMap((newPath: PathOutput) => [
+          TripsActions.UpdatePathSuccess({ tripId, stepId, path: newPath }),
+          UtilsActions.NotifySuccess({
+            title: 'Mise à jour effectuée',
+            message: 'Le trajet a bien été modifié',
+          }),
+        ]),
       )),
   ));
 

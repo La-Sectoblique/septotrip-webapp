@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import {  map, mergeMap, switchMap } from 'rxjs';
 import { StepsService } from 'src/app/modules/features/step/services/steps.service';
 import * as TripsActions from '../trips.actions';
+import * as UtilsActions from '../../../utils-store/state/utils.actions';
 import { selectTripSteps } from '../trips.selectors';
 
 @Injectable()
@@ -52,6 +53,10 @@ export class StepsEffects {
           TripsActions.CreateTripStepSuccess({ step: newStep, tripId }),
           TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
           TripsActions.GetPathToStep({ stepId: newStep.id, tripId }),
+          UtilsActions.NotifySuccess({
+            title: 'Création effectuée',
+            message: 'L\'étape a bien été créée',
+          }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
@@ -65,10 +70,10 @@ export class StepsEffects {
         switchMap((newStep) => [
           TripsActions.UpdateTripStepSuccess({ tripId, newStep }),
           TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
-          // UtilsActions.NotifySuccess({
-          //   title: 'Mise à jour effectuée',
-          //   message: 'L\'étape a bien été modifié',
-          // }),
+          UtilsActions.NotifySuccess({
+            title: 'Mise à jour effectuée',
+            message: 'L\'étape a bien été modifiée',
+          }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       )),
@@ -78,7 +83,13 @@ export class StepsEffects {
     ofType(TripsActions.DeleteTripStep),
     mergeMap(({ stepId, tripId }) => this.stepsService.deleteStep(stepId)
       .pipe(
-        map(() => TripsActions.DeleteTripStepSuccess({ stepId, tripId })),
+        switchMap(() => [
+          TripsActions.DeleteTripStepSuccess({ stepId, tripId }),
+          UtilsActions.NotifySuccess({
+            title: 'Suppression effectuée',
+            message: 'L\'étape a bien été supprimée',
+          }),
+        ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       )),
   ));
