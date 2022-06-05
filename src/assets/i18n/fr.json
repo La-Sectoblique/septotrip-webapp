@@ -1,0 +1,17 @@
+{
+    "CreateTripTitle": "Création de voyage",
+    "CreateTripValidation": "Créer le voyage",
+    "NoTripEmptyStateMessage": "Vous n'avez aucun voyage.",
+    
+    "TripMemberTitle": "Membres du voyage",
+    
+    "NameInputLabel": "Nom",
+    "Delete": "Supprimer",
+    
+    "Parameters": "Paramètres",
+    "PlanificationTabTitle": "Planification",
+    "MemberTabTitle": "Membres",
+    
+    "MyTripsTitle": "Mes voyages",
+    "VoyageInFrancePlaceholder": "Voyage en France"
+}

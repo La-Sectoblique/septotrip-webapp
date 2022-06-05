@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { init, Platform } from '@la-sectoblique/septoblique-service';
+import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
 import { TokenStorageService } from './modules/core/services/token-storage.service';
 @Component({
@@ -13,7 +14,11 @@ export class AppComponent implements OnInit {
   constructor(
     private tokenStorageService: TokenStorageService,
     private titleService: Title,
-  ) {}
+    private translate: TranslateService,
+  ) {
+    translate.addLangs(['fr', 'en']);
+    translate.setDefaultLang('fr');
+  }
 
   ngOnInit(): void {
 
