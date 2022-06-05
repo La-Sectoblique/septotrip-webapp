@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { TripsMapComponent } from './components/trips-map/trips-map.component';
 import { NbButtonModule, NbDialogModule, NbIconModule } from '@nebular/theme';
 import { MapEditModePreviewComponent } from './components/map-edit-mode-preview/map-edit-mode-preview.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { MapEditModePreviewComponent } from './components/map-edit-mode-preview/
     NbDialogModule.forChild(),
     NbButtonModule,
     NbIconModule,
+    TranslateModule,
   ],
   declarations: [
     TripsMapComponent,
