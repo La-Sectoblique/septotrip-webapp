@@ -1,10 +1,17 @@
 {
-    "NameInputLabel": "Name:",
-    "CreateTripTitle": "Trip creation",
+    "CreateTripTitle": "Trip Creation",
     "CreateTripValidation": "Create trip",
+    "NoTripEmptyStateMessage": "You don't have any trip",
     
     "TripMemberTitle": "Trip members",
-
+    
+    "NameInputLabel": "Name",
+    "Delete": "Delete",
+    
     "Parameters": "Parameters",
-    "Delete": "Delete"
+    "PlanificationTabTitle": "Planification",
+    "MemberTabTitle": "Members",
+    
+    "MyTripsTitle": "My trips",
+    "VoyageInFrancePlaceholder": "Trip in France"
 }
