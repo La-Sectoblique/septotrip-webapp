@@ -13,5 +13,20 @@
     "MemberTabTitle": "Membres",
     
     "MyTripsTitle": "Mes voyages",
-    "VoyageInFrancePlaceholder": "Voyage en France"
+    "VoyageInFrancePlaceholder": "Voyage en France",
+
+    "UpdateDone": "Mise à jour effectuée",
+    "CreationDone": "Création effectuée",
+    "DeletionDone": "Suppression  effectuée",
+
+    "PathUpdated": "Le trajet a bien été modifié",
+    "PointUpdated": "Le point d'intérêt a bien été modifié",
+    "StepUpdated": "L'étape a bien été modifiée",
+    
+    "PointCreated": "Le point d'intérêt a bien été créé",
+    "StepCreated": "'L'étape a bien été créée",
+
+    "PointDeleted": "Le point d'intérêt a bien été supprimé",
+    "StepDeleted": "L'étape a bien été supprimée",
+    "TripDeleted": "'Le voyage a été supprimé'"
 }

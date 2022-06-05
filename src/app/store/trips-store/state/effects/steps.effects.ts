@@ -7,6 +7,7 @@ import { StepsService } from 'src/app/modules/features/step/services/steps.servi
 import * as TripsActions from '../trips.actions';
 import * as UtilsActions from '../../../utils-store/state/utils.actions';
 import { selectTripSteps } from '../trips.selectors';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class StepsEffects {
@@ -54,8 +55,8 @@ export class StepsEffects {
           TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
           TripsActions.GetPathToStep({ stepId: newStep.id, tripId }),
           UtilsActions.NotifySuccess({
-            title: 'Création effectuée',
-            message: 'L\'étape a bien été créée',
+            title: this.translate.instant('CreationDone'),
+            message: this.translate.instant('StepCreated'),
           }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
@@ -71,8 +72,8 @@ export class StepsEffects {
           TripsActions.UpdateTripStepSuccess({ tripId, newStep }),
           TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
           UtilsActions.NotifySuccess({
-            title: 'Mise à jour effectuée',
-            message: 'L\'étape a bien été modifiée',
+            title: this.translate.instant('UpdateDone'),
+            message: this.translate.instant('StepUpdated'),
           }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
@@ -86,8 +87,8 @@ export class StepsEffects {
         switchMap(() => [
           TripsActions.DeleteTripStepSuccess({ stepId, tripId }),
           UtilsActions.NotifySuccess({
-            title: 'Suppression effectuée',
-            message: 'L\'étape a bien été supprimée',
+            title: this.translate.instant('DeletionDone'),
+            message: this.translate.instant('StepDeleted'),
           }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
@@ -109,6 +110,7 @@ export class StepsEffects {
     private actions$: Actions,
     private stepsService: StepsService,
     private store: Store,
+    private translate: TranslateService,
   ) {}
 
 }

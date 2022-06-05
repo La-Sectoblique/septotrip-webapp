@@ -5,6 +5,7 @@ import {  map, mergeMap, switchMap } from 'rxjs';
 import { PathsService } from 'src/app/modules/features/paths/services/paths.service';
 import * as TripsActions from '../trips.actions';
 import * as UtilsActions from '../../../utils-store/state/utils.actions';
+import { TranslateService } from '@ngx-translate/core';
 @Injectable()
 export class PathsEffects {
 
@@ -15,7 +16,6 @@ export class PathsEffects {
     mergeMap(({ stepId, tripId }) => this.pathsService.getPathToStep(stepId)
       .pipe(
         map((path: PathOutput) =>
-          // console.log('new Path', path);
           TripsActions.GetPathToStepSuccess({ tripId, stepId, path })
           ,
         ),
@@ -30,9 +30,10 @@ export class PathsEffects {
       .pipe(
         switchMap((newPath: PathOutput) => [
           TripsActions.UpdatePathSuccess({ tripId, stepId, path: newPath }),
+
           UtilsActions.NotifySuccess({
-            title: 'Mise à jour effectuée',
-            message: 'Le trajet a bien été modifié',
+            title: this.translate.instant('UpdateDone'),
+            message: this.translate.instant('PathUpdated'),
           }),
         ]),
       )),
@@ -43,6 +44,7 @@ export class PathsEffects {
   constructor(
     private actions$: Actions,
     private pathsService: PathsService,
+    private translate: TranslateService,
   ) {}
 
 }

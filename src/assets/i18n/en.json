@@ -13,5 +13,20 @@
     "MemberTabTitle": "Members",
     
     "MyTripsTitle": "My trips",
-    "VoyageInFrancePlaceholder": "Trip in France"
+    "VoyageInFrancePlaceholder": "Trip in France",
+
+    "UpdateDone": "Update done",
+    "CreationDone": "Creation done",
+    "DeletionDone": "Deletion done",
+
+    "PathUpdated": "The path has been updated",
+    "PointUpdated": "The intereset point has been updated",
+    "StepUpdated": "The step has been updated",
+    
+    "PointCreated": "The intereset point has been created",
+    "StepCreated": "The step has been created",
+
+    "PointDeleted": "The intereset point has been deleted",
+    "StepDeleted": "The step has been deleted",
+    "TripDeleted": "The trip has been deleted"
 }
