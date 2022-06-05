@@ -3,13 +3,22 @@
     "CreateTripValidation": "Créer le voyage",
     "NoTripEmptyStateMessage": "Vous n'avez aucun voyage.",
     
+    "NoStepEmptyStateMessage": "Il n'y a aucune étape.",
+
+    "ClickMapToBegin": "Cliquez sur la carte pour commencer !",
+    
     "TripMemberTitle": "Membres du voyage",
     
     "NameInputLabel": "Nom",
     "MailAddressInputLabel": "Adresse email",
+    "DurationInputLabel": "Durée",
     
     "Delete": "Supprimer",
     "Add": "Ajouter",
+    "Edition": "Edition",
+
+    "Days": "Jours",
+    "Steps": "Etapes",
     
     "Parameters": "Paramètres",
     "PlanificationTabTitle": "Planification",
@@ -19,6 +28,12 @@
     "VoyageInFrancePlaceholder": "Voyage en France",
 
     "AddTravelerTitle": "Ajouter un voyageur",
+
+    "StepCreation": "Création d'une étape",
+    "StepUpdate": "Modification d'une étape",
+
+    "StepCreationValidation": "Créer l'étape",
+    "StepUpdateValidation": "Modifier l'étape",
 
     "UpdateDone": "Mise à jour effectuée",
     "CreationDone": "Création effectuée",
