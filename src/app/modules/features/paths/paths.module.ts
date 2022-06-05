@@ -4,6 +4,7 @@ import { PathPreviewComponent } from './components/path-preview/path-preview.com
 import { NbButtonModule, NbInputModule, NbTooltipModule } from '@nebular/theme';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PathEditComponent } from './components/path-edit/path-edit.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { PathEditComponent } from './components/path-edit/path-edit.component';
     FormsModule,
     ReactiveFormsModule,
     NbInputModule,
+    TranslateModule,
   ],
   declarations: [
     PathPreviewComponent,

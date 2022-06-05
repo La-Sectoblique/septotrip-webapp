@@ -6,6 +6,8 @@
     "NoStepEmptyStateMessage": "Il n'y a aucune étape.",
 
     "NoPointEmptyStateMessage": "Il n'y a aucun point d'intérêt",
+    
+    "NoInformationEmptyStateMessage": "Aucune information",
 
     "ClickMapToBegin": "Cliquez sur la carte pour commencer !",
     
@@ -15,6 +17,7 @@
     "MailAddressInputLabel": "Adresse email",
     "DurationInputLabel": "Durée",
     "DescriptionInputLabel": "Description",
+    "InformationInputLabel": "Information",
     
     "Delete": "Supprimer",
     "Add": "Ajouter",
@@ -42,6 +45,9 @@
     "PointUpdate": "Modification d'un point d'intérêt",
     "PointCreationValidation": "Modifier le point d'intérêt",
     "PointUpdateValidation": "Créer le point d'intérêt",
+
+    "PathUpdate": "Modification du trajet",
+    "PathUpdateValidation": "Modifier le trajet",
 
     "FilteredPointsTooltipButton": "Seuls les points affiché sur la carte apparaissent dans la liste.",
     "NotFilteredPointsTooltipButton": "Tout les ponints de la carte apparaissent dans la liste.",
