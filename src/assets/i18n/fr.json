@@ -6,7 +6,10 @@
     "TripMemberTitle": "Membres du voyage",
     
     "NameInputLabel": "Nom",
+    "MailAddressInputLabel": "Adresse email",
+    
     "Delete": "Supprimer",
+    "Add": "Ajouter",
     
     "Parameters": "Paramètres",
     "PlanificationTabTitle": "Planification",
@@ -14,6 +17,8 @@
     
     "MyTripsTitle": "Mes voyages",
     "VoyageInFrancePlaceholder": "Voyage en France",
+
+    "AddTravelerTitle": "Ajouter un voyageur",
 
     "UpdateDone": "Mise à jour effectuée",
     "CreationDone": "Création effectuée",
@@ -24,9 +29,9 @@
     "StepUpdated": "L'étape a bien été modifiée",
     
     "PointCreated": "Le point d'intérêt a bien été créé",
-    "StepCreated": "'L'étape a bien été créée",
+    "StepCreated": "L'étape a bien été créée",
 
     "PointDeleted": "Le point d'intérêt a bien été supprimé",
     "StepDeleted": "L'étape a bien été supprimée",
-    "TripDeleted": "'Le voyage a été supprimé'"
+    "TripDeleted": "Le voyage a été supprimé"
 }
