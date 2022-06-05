@@ -1,6 +1,6 @@
 <div class="d-flex flex-column">
     <div class="d-flex flex-column" *ngFor="let day of days">
-        <p>Jour {{day.number}}</p>
+        <p>{{'Day' | translate}} {{day.number}}</p>
         <!-- here are going the points preview for this day ! -->
         <div class="d-flex flex-wrap align-items-center">
             <ng-container *ngFor="let point of (points | filterPointsByDayId:day.id)">
