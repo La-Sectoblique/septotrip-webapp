@@ -14,10 +14,12 @@
     "TripMemberTitle": "Membres du voyage",
     
     "NameInputLabel": "Nom",
+    "FirstnameInputLabel": "Prénom",
     "MailAddressInputLabel": "Adresse email",
     "DurationInputLabel": "Durée",
     "DescriptionInputLabel": "Description",
     "InformationInputLabel": "Information",
+    "PasswordInputLabel": "Mot de passe",
     
     "Delete": "Supprimer",
     "Add": "Ajouter",
@@ -28,6 +30,9 @@
     "Day": "Jour",
     "Steps": "Etapes",
     "Points": "Points d'intérêt",
+
+    "LoginButtonLabel": "Se connecter",
+    "RegisterButtonLabel": "S'inscrire",
     
     "Parameters": "Paramètres",
     "PlanificationTabTitle": "Planification",
