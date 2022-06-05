@@ -5,6 +5,8 @@
     
     "NoStepEmptyStateMessage": "Il n'y a aucune étape.",
 
+    "NoPointEmptyStateMessage": "Il n'y a aucun point d'intérêt",
+
     "ClickMapToBegin": "Cliquez sur la carte pour commencer !",
     
     "TripMemberTitle": "Membres du voyage",
@@ -12,6 +14,7 @@
     "NameInputLabel": "Nom",
     "MailAddressInputLabel": "Adresse email",
     "DurationInputLabel": "Durée",
+    "DescriptionInputLabel": "Description",
     
     "Delete": "Supprimer",
     "Add": "Ajouter",
@@ -19,6 +22,7 @@
 
     "Days": "Jours",
     "Steps": "Etapes",
+    "Points": "Points d'intérêt",
     
     "Parameters": "Paramètres",
     "PlanificationTabTitle": "Planification",
@@ -31,9 +35,16 @@
 
     "StepCreation": "Création d'une étape",
     "StepUpdate": "Modification d'une étape",
-
     "StepCreationValidation": "Créer l'étape",
     "StepUpdateValidation": "Modifier l'étape",
+
+    "PointCreation": "Création d'un point d'intérêt",
+    "PointUpdate": "Modification d'un point d'intérêt",
+    "PointCreationValidation": "Modifier le point d'intérêt",
+    "PointUpdateValidation": "Créer le point d'intérêt",
+
+    "FilteredPointsTooltipButton": "Seuls les points affiché sur la carte apparaissent dans la liste.",
+    "NotFilteredPointsTooltipButton": "Tout les ponints de la carte apparaissent dans la liste.",
 
     "UpdateDone": "Mise à jour effectuée",
     "CreationDone": "Création effectuée",
