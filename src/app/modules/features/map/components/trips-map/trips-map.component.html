@@ -21,7 +21,9 @@
                     (mouseleave)="unHighlight()"
                     (click)="centerMapTo(step.stepInstance.localisation.coordinates)"
                     >
-                    <img class="cursor-pointer" src="./assets/steps_marker.png" alt="" width="30">
+                    <img class="cursor-pointer" src="./assets/steps_marker.png" alt="" 
+                        [width]="(highlightedStepId$ | async) === step.stepInstance.id ? 40 : 30"
+                    >
                 </div>
             </mgl-marker>
         </ng-container>
@@ -39,7 +41,9 @@
                     (mouseleave)="unHighlight()"
                     (click)="centerMapTo(point.localisation.coordinates)"
                 >
-                    <img class="cursor-pointer" src="./assets/points_marker.png" alt="" width="25">
+                    <img class="cursor-pointer" src="./assets/points_marker.png" alt="" width="25"
+                        [width]="(highlightedPointId$ | async) === point.id ? 35 : 25"    
+                    >
                 </div>
             </mgl-marker>
         </ng-container>
