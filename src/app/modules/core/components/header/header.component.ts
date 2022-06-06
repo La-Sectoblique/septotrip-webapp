@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { AccountService } from '../../services/account.service';
 
 @Component({
@@ -11,7 +12,13 @@ export class HeaderComponent implements OnInit {
 
   loggedIn: boolean;
 
-  constructor(private accountService: AccountService, private router: Router) {}
+  selectedLanguage = 'fr';
+
+  constructor(
+    private accountService: AccountService,
+    private router: Router,
+    private transalte: TranslateService,
+  ) {}
 
   ngOnInit(): void {
     this.loggedIn = this.accountService.isLoggedIn;
@@ -19,6 +26,11 @@ export class HeaderComponent implements OnInit {
 
   logout(): void {
     this.accountService.logout();
+  }
+
+  updateTranslation(language: string): void {
+    console.log('update languagae', language);
+    this.transalte.use(language);
   }
 
 }

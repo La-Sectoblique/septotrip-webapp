@@ -5,11 +5,17 @@
         <li><a routerLink="/home" routerLinkActive="active">{{'HomeNavLabel' | translate}}</a></li>
         <li><a routerLink="/trips" routerLinkActive="active">{{'TripNavLabel' | translate}}</a></li>
       </ul>
-      <ul>
-        <li><a routerLink="/login" routerLinkActive="active">{{'LoginButtonLabel' | translate}}</a></li>
-        <li><a routerLink="/signIn" routerLinkActive="active">{{'RegisterButtonLabel' | translate}}</a></li>
-        <li><a routerLink="" (click)="logout()">{{'DisconnectButtonLabel' | translate}}</a></li>
-      </ul>
+      <div class="d-flex">
+        <ul>
+          <li><a routerLink="/login" routerLinkActive="active">{{'LoginButtonLabel' | translate}}</a></li>
+          <li><a routerLink="/signIn" routerLinkActive="active">{{'RegisterButtonLabel' | translate}}</a></li>
+          <li><a routerLink="" (click)="logout()">{{'DisconnectButtonLabel' | translate}}</a></li>
+        </ul>
+        <nb-select shape="semi-round" size="tiny" [selected]="selectedLanguage" (selectedChange)="updateTranslation($event)">
+          <nb-option value="fr">🇫🇷</nb-option>
+          <nb-option value="en">🇬🇧</nb-option>
+        </nb-select>
+      </div>
     </div>
   </nav>
 </div>
