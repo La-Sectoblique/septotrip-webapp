@@ -18,9 +18,9 @@ export const AddDisplayedMapPointIds = createAction(
 
 export const SetHighlightedStep = createAction(
   '[map-edit]: Set Highlighted Step',
-  props<{ stepId: number }>(),
+  props<{ stepId: number | null }>(),
 );
 export const SetHighlightedPoint = createAction(
   '[map-edit]: Set Highlighted Point',
-  props<{ pointId: number }>(),
+  props<{ pointId: number | null }>(),
 );

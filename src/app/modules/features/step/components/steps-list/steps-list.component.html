@@ -24,6 +24,8 @@
           cdkDrag
           [cdkDragData]="step"
           cdk
+          (mouseenter)="highlightStep(step.stepInstance.id)"
+          (mouseleave)="unHighlight()"
         >
           <spt-step-preview [step]="step" [stepPoints]="points | filterPointsByStepId:step.stepInstance.id">
             <div>

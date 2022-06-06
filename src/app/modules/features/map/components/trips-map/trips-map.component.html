@@ -16,21 +16,29 @@
                 (markerDragEnd)="updateStepAfterDrag($event, step)"
                 (markerDrag)="updateLineLive($event, idx)"
             >
-                <div class="marker" (click)="centerMapTo(step.stepInstance.localisation.coordinates)">
+                <div class="marker" 
+                    (mouseenter)="hightlightStep(step.stepInstance.id)"
+                    (mouseleave)="unHighlight()"
+                    (click)="centerMapTo(step.stepInstance.localisation.coordinates)"
+                    >
                     <img class="cursor-pointer" src="./assets/steps_marker.png" alt="" width="30">
                 </div>
             </mgl-marker>
         </ng-container>
-    
+        
         <!-- POINTS MANAGEMENT -->
         <ng-container *ngFor="let point of points">
             <mgl-marker
-                [lngLat]="[point.localisation.coordinates[0], point.localisation.coordinates[1]]"
-                anchor="bottom"
-                [draggable]="(mapEditMode$ | async) === MapEditMode.EDIT_POINTS"
-                (markerDragEnd)="updatePointAfterDrag($event, point)"
+            [lngLat]="[point.localisation.coordinates[0], point.localisation.coordinates[1]]"
+            anchor="bottom"
+            [draggable]="(mapEditMode$ | async) === MapEditMode.EDIT_POINTS"
+            (markerDragEnd)="updatePointAfterDrag($event, point)"
             >
-                <div class="marker" (click)="centerMapTo(point.localisation.coordinates)">
+                <div class="marker"
+                    (mouseenter)="highlightPoint(point.id)"
+                    (mouseleave)="unHighlight()"
+                    (click)="centerMapTo(point.localisation.coordinates)"
+                >
                     <img class="cursor-pointer" src="./assets/points_marker.png" alt="" width="25">
                 </div>
             </mgl-marker>

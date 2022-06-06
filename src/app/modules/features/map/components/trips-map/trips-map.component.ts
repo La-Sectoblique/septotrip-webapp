@@ -12,6 +12,7 @@ import { UpdateTripPoint, UpdateTripStep } from 'src/app/store/trips-store/state
 import { CreatePointComponent } from '../../../points/components/create-point/create-point.component';
 import { CreateStepComponent } from '../../../step/components/create-step/create-step.component';
 import { FlattenedStep } from '../../../step/models/flattened-step';
+import { HighlightMapMarkersService } from '../../services/highlight-map-markers.service';
 
 @Component({
   selector: 'spt-trips-map',
@@ -45,6 +46,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
   constructor(
     private nbDialogService: NbDialogService,
     private store: Store,
+    private highlightMapMarkersService: HighlightMapMarkersService,
   ) {}
 
   ngOnInit(): void {
@@ -175,6 +177,18 @@ export class TripsMapComponent implements OnChanges, OnInit {
         }),
       },
     };
+  }
+
+  highlightPoint(pointId: number): void {
+    this.highlightMapMarkersService.highlightPoint(pointId);
+  }
+
+  hightlightStep(stepId: number): void {
+    this.highlightMapMarkersService.highlightStep(stepId);
+  }
+
+  unHighlight(): void {
+    this.highlightMapMarkersService.unHighlight();
   }
 
 }
