@@ -29,7 +29,6 @@ export class HeaderComponent implements OnInit {
   }
 
   updateTranslation(language: string): void {
-    console.log('update languagae', language);
     this.transalte.use(language);
   }
 

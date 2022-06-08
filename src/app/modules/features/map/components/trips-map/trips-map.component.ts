@@ -19,6 +19,7 @@ import { FlattenedStep } from '../../../step/models/flattened-step';
 import { HighlightMapMarkersService } from '../../services/highlight-map-markers.service';
 import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { environment } from 'src/environments/environment';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'spt-trips-map',
@@ -56,6 +57,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
     private nbDialogService: NbDialogService,
     private store: Store,
     private highlightMapMarkersService: HighlightMapMarkersService,
+    private translateService: TranslateService,
   ) {}
 
   ngOnInit(): void {
@@ -90,13 +92,22 @@ export class TripsMapComponent implements OnChanges, OnInit {
     map.resize();
 
     // Search bar
+
+    const mapboxGeocoder = new MapboxGeocoder({
+      accessToken: environment.mapBoxToken,
+      mapboxgl: mapboxgl as unknown as Map, // You can cry but I don't care.
+      language: this.translateService.currentLang,
+    });
     map.addControl(
-      new MapboxGeocoder({
-        accessToken: environment.mapBoxToken,
-        mapboxgl: mapboxgl as unknown as Map, // You can cry but I don't care.
-      }),
+      mapboxGeocoder,
     );
 
+    // Update search bar language
+    this.translateService.onLangChange.subscribe((newLanguage) => {
+      mapboxGeocoder.setLanguage(newLanguage.lang);
+      map.removeControl(mapboxGeocoder);
+      map.addControl(mapboxGeocoder);
+    });
 
     // Displayed point management
     this.updateDisplayedPoints(map);
