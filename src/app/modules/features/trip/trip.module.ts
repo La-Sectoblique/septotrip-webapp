@@ -18,7 +18,6 @@ import { SharedModule } from '../../shared/shared.module';
 import { MapModule } from '../map/map.module';
 import { PointsModule } from '../points/points.module';
 import { TravelersModule } from '../travelers/travelers.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [

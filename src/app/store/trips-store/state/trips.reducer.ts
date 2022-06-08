@@ -7,8 +7,7 @@ import { initialTripState } from './trips.state';
 export const tripReducer = createReducer(
   initialTripState,
 
-  // TRIPS
-
+  // === TRIPS ===
   on(TripsAction.GetUserTripsSuccess, (state, { trips }) => {
     let newTrips = state.trips;
     trips.forEach((trip) => {
@@ -42,7 +41,7 @@ export const tripReducer = createReducer(
     trips: Object.values(state.trips).filter((trip) => trip.tripInstance.id !== tripId),
   })),
 
-  // STEPS
+  // === STEPS ===
 
   on(TripsAction.GetTripStepsSuccess, (state, { steps, tripId }) => ({
     ...state,
@@ -50,7 +49,7 @@ export const tripReducer = createReducer(
       ...state.trips,
       [tripId]: {
         ...state.trips[tripId],
-        steps: steps.map((step) => ({ stepInstance: step })),
+        steps: steps.map((step) => ({ ...step, stepInstance: step })),
       },
     },
   })),
@@ -120,7 +119,7 @@ export const tripReducer = createReducer(
     };
   }),
 
-  // DAYS
+  // === DAYS ===
 
   on(TripsAction.GetStepDaysSuccess, (state, { days, tripId, stepId }) => {
     const steps = state.trips[tripId].steps.map((step) => {
@@ -132,6 +131,7 @@ export const tripReducer = createReducer(
       }
       return step;
     });
+
     return { ...state,
       trips: {
         ...state.trips,
@@ -142,7 +142,57 @@ export const tripReducer = createReducer(
       } };
   }),
 
-  // POINTS
+  // === PATHS ===
+
+  on(TripsAction.GetPathToStepSuccess, (state, { path, tripId, stepId }) => {
+    const steps = state.trips[tripId].steps.map((step) => {
+      if (step.stepInstance.id === stepId) {
+        return {
+          ...step,
+          pathToStep: path,
+        };
+      }
+      return step;
+    });
+
+    // console.log('new steps with path', steps);
+
+    return { ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          steps,
+        },
+      },
+    };
+  }),
+
+  on(TripsAction.UpdatePathSuccess, (state, { tripId, stepId, path }) => {
+    // console.log('coucou');
+    const steps = state.trips[tripId].steps.map((step) => {
+      if (step.stepInstance.id === stepId) {
+        return {
+          ...step,
+          pathToStep: path,
+        };
+      }
+      return step;
+    });
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          steps,
+        },
+      },
+    };
+  }),
+
+  // === POINTS ===
 
   on(TripsAction.GetTripPointsSuccess, (state, { points, tripId }) => ({
     ...state,
@@ -205,9 +255,7 @@ export const tripReducer = createReducer(
 
   on(TripsAction.RefreshPointsDayIdsSuccess, (state, { tripId, dayId, dayPoints }) => {
 
-    // console.log('dayPoints', dayPoints);
     const matchingPointsIds = dayPoints.map((point) => point.id);
-    // console.log('matchingPOintsIds', matchingPointsIds);
 
     const points = state.trips[tripId].points.map((point) => {
       if (matchingPointsIds.includes(point.id)) {
@@ -220,8 +268,6 @@ export const tripReducer = createReducer(
       }
       return point;
     });
-
-    // console.log('new points', points);
 
     return {
       ...state,
@@ -260,7 +306,7 @@ export const tripReducer = createReducer(
     };
   }),
 
-  // Travelers
+  // === TRAVELERS ===
 
   on(TripsAction.GetTripTravelersSuccess, (state, { tripId, travelers }) => ({
     ...state,
@@ -273,6 +319,14 @@ export const tripReducer = createReducer(
     },
   })),
 
-
-
+  on(TripsAction.RemoveTripTravelerSuccess, (state, { tripId, userId }) => ({
+    ...state,
+    trips: {
+      ...state.trips,
+      [tripId]: {
+        ...state.trips[tripId],
+        travelers: state.trips[tripId].travelers.filter((traveler) => traveler.id !== userId),
+      },
+    },
+  })),
 );

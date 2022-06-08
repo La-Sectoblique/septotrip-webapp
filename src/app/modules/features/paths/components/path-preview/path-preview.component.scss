@@ -1,0 +1,38 @@
+
+
+$arrow--color: #3366ff;
+$arrow-hover--color: #102694;
+
+.line {
+    width: 2px;
+    height: 2rem;
+}
+
+.circle {
+    $diamteter: .6rem;
+    border-radius: 50%;
+    width: $diamteter;
+    height: $diamteter;
+}
+
+.shape {
+    .color {
+        background-color: $arrow--color;
+    }
+    &:hover {
+        .color {
+            background-color: $arrow-hover--color;
+        }
+    }
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+}

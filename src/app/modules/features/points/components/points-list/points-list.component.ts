@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
-import { NbDialogService } from '@nebular/theme';
+import { NbDialogService, NbToastrService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
@@ -30,6 +30,7 @@ export class PointsListComponent implements OnInit {
   constructor(
     private store: Store,
     private nbDialogService: NbDialogService,
+    private toastrService: NbToastrService,
   ) {}
 
   ngOnInit(): void {

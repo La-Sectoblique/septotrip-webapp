@@ -1,4 +1,5 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { NbDialogRef } from '@nebular/theme';
 import { Store } from '@ngrx/store';
@@ -18,43 +19,48 @@ export class CreateStepComponent implements OnInit {
   @Input() isEditMode = false;
   @Input() editedStep: StepOutput;
 
-  stepName = '';
-  stepDuration = 1;
+  stepForm = this.formBuilder.group({
+    name: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+    ]),
+    duration: new FormControl(1, [
+      Validators.required,
+      Validators.min(1),
+      Validators.max(100),
+    ]),
+  });
 
   constructor(
     private dialogRef: NbDialogRef<CreateStepComponent>,
     private store: Store,
+    private formBuilder: FormBuilder,
   ) {}
-
-  @HostListener('document:keypress', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent): void {
-    if (event.key === 'Enter') {
-      this.create();
-    }
-  }
 
   ngOnInit(): void {
     if (this.isEditMode) {
-      this.stepName = this.editedStep.name;
-      this.stepDuration = this.editedStep.duration;
+      this.stepForm.patchValue({
+        name: this.editedStep.name,
+        duration: this.editedStep.duration,
+      });
     }
   }
 
 
 
   create(): void {
-    if (!this.isCreationValid()) {
+    if (!this.isFormValid()) {
       return;
     }
 
     if (!this.isEditMode) {
       this.store.dispatch(CreateTripStep({ tripId: this.tripId,
         step: {
-          name: this.stepName,
+          name: this.stepForm.value.name,
           localisation: {
             coordinates: [this.clickedCoordinates.lng, this.clickedCoordinates.lat], type: 'Point',
           },
-          duration: this.stepDuration,
+          duration: this.stepForm.value.duration,
         },
       }));
     } else {
@@ -62,16 +68,16 @@ export class CreateStepComponent implements OnInit {
         tripId: this.tripId,
         stepId: this.editedStep.id,
         editedStep: {
-          name: this.stepName,
-          duration: this.stepDuration,
+          name: this.stepForm.value.name,
+          duration: this.stepForm.value.duration,
         },
       }));
     }
     this.dialogRef.close();
   }
 
-  isCreationValid(): boolean {
-    return this.stepName.length > 0;
+  isFormValid(): boolean {
+    return this.stepForm.valid;
   }
 
 }

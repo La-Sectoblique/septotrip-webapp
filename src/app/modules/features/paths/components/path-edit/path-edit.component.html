@@ -1,0 +1,21 @@
+<div class="d-flex flex-column align-items-center path-creation-wrapper">
+  <h2>Modification du trajet</h2>
+
+  <form 
+    class="d-flex flex-column"
+    [formGroup]="pathForm"
+    (ngSubmit)="create()"
+  >
+    <label for="description">Information:</label>
+    <input type="text" id="description" formControlName="description" required nbInput>
+
+    <button 
+      type="submit" 
+      status="success"
+      nbButton
+      [disabled]="!isFormValid()"
+    >
+      Modifier le trajet
+    </button>
+  </form>
+</div>

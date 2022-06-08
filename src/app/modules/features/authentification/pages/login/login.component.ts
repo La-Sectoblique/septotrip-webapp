@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { login } from '@la-sectoblique/septoblique-service';
-import { SuccessLoginResponse } from '@la-sectoblique/septoblique-service/dist/types/utils/Api';
 import { AccountService } from 'src/app/modules/core/services/account.service';
 
 

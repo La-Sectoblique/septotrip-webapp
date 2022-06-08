@@ -26,9 +26,6 @@ export class AppComponent implements OnInit {
       platform: Platform.BROWSER,
       context: 'development',
     });
-
-    /*login({ email: 'jean', password: 'jean' })
-      .then((res: SuccessLoginResponse) => console.log('loginres', res));*/
   }
 
 }

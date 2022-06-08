@@ -9,7 +9,6 @@ import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { UpdateMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.actions';
 import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
 import { DeleteTripStep,
-  RefreshPointsDayIds,
   UpdateTripStepOrder,
 } from 'src/app/store/trips-store/state/trips.actions';
 import { FlattenedStep } from '../../models/flattened-step';
@@ -67,6 +66,7 @@ export class StepsListComponent implements OnInit {
       fromIdx: event.container.data.indexOf(event.item.data),
       toIdx: event.currentIndex,
       tripId: this.tripId,
+      step: event.item.data,
     }));
   }
 
