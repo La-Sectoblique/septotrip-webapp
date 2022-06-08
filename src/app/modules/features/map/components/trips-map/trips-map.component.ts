@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
@@ -17,6 +17,8 @@ import { CreatePointComponent } from '../../../points/components/create-point/cr
 import { CreateStepComponent } from '../../../step/components/create-step/create-step.component';
 import { FlattenedStep } from '../../../step/models/flattened-step';
 import { HighlightMapMarkersService } from '../../services/highlight-map-markers.service';
+import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'spt-trips-map',
@@ -78,15 +80,26 @@ export class TripsMapComponent implements OnChanges, OnInit {
     this.highlightedStepId$ = this.store.select(selectHighlightedStepId());
   }
 
-  ngOnChanges(/*{ steps }: SimpleChanges*/): void {
-    this.updateLineDrawing();
+  ngOnChanges({ steps }: SimpleChanges): void {
+    if (steps.currentValue) {
+      this.updateLineDrawing();
+    }
   }
 
   onMapLoaded(map: Map): void {
     map.resize();
 
-    this.updateDisplayedPoints(map);
+    // Search bar
+    map.addControl(
+      new MapboxGeocoder({
+        accessToken: environment.mapBoxToken,
+        mapboxgl: mapboxgl as unknown as Map, // You can cry but I don't care.
+      }),
+    );
 
+
+    // Displayed point management
+    this.updateDisplayedPoints(map);
     map
       .on('moveend', () => {this.updateDisplayedPoints(map);})
       .on('zoomend', () => {this.updateDisplayedPoints(map);});
