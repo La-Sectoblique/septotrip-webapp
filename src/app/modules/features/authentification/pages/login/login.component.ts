@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { login } from '@la-sectoblique/septoblique-service';
-import { AccountService } from 'src/app/modules/core/services/account.service';
 
 
 @Component({
@@ -11,16 +11,27 @@ import { AccountService } from 'src/app/modules/core/services/account.service';
 })
 export class LoginComponent {
 
-  email: string;
-  password: string;
+  loginForm = this.formBuilder.group({
+    email: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+    ]),
+  });
 
   constructor(
     private router: Router,
-    private accountService: AccountService,
+    private formBuilder: FormBuilder,
   ) { }
 
-  connection(): void {
-    login({ email: this.email, password: this.password })
+  login(): void {
+    login({
+      email: this.loginForm.value.email,
+      password:  this.loginForm.value.password,
+    })
       .then(() => this.router.navigate(['trips']));
   }
 
