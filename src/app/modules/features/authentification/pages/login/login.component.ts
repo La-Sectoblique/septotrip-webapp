@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { login } from '@la-sectoblique/septoblique-service';
+import { AuthenticationService } from '../../services/authentication.service';
 
 
 @Component({
@@ -23,16 +22,12 @@ export class LoginComponent {
   });
 
   constructor(
-    private router: Router,
+    private authenticationService: AuthenticationService,
     private formBuilder: FormBuilder,
   ) { }
 
   login(): void {
-    login({
-      email: this.loginForm.value.email,
-      password:  this.loginForm.value.password,
-    })
-      .then(() => this.router.navigate(['trips']));
+    this.authenticationService.login(this.loginForm.value.email, this.loginForm.value.password);
   }
 
 }
