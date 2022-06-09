@@ -31,9 +31,9 @@
     "Steps": "Etapes",
     "Points": "Points d'intérêt",
 
-    "LoginButtonLabel": "Se connecter",
-    "RegisterButtonLabel": "S'inscrire",
-    "DisconnectButtonLabel": "Se déconnecter",
+    "LoginButtonLabel": "Connexion",
+    "RegisterButtonLabel": "Inscription",
+    "DisconnectButtonLabel": "Déconnexion",
 
     "HomeNavLabel": "Accueil",
     "TripNavLabel": "Voyages",
