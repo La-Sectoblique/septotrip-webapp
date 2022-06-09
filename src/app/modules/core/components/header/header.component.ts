@@ -12,8 +12,6 @@ export class HeaderComponent implements OnInit {
 
   loggedIn: boolean;
 
-  selectedLanguage = 'fr';
-
   constructor(
     private accountService: AccountService,
     private router: Router,
@@ -26,10 +24,6 @@ export class HeaderComponent implements OnInit {
 
   logout(): void {
     this.accountService.logout();
-  }
-
-  updateTranslation(language: string): void {
-    this.transalte.use(language);
   }
 
 }

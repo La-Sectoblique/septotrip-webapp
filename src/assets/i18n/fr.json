@@ -25,15 +25,17 @@
     "Add": "Ajouter",
     "Edition": "Edition",
     "Stop": "Arrêter",
+    "Public": "Public",
+    "Private": "Privée",
 
     "Days": "Jours",
     "Day": "Jour",
     "Steps": "Etapes",
     "Points": "Points d'intérêt",
 
-    "LoginButtonLabel": "Se connecter",
-    "RegisterButtonLabel": "S'inscrire",
-    "DisconnectButtonLabel": "Se déconnecter",
+    "LoginButtonLabel": "Connexion",
+    "RegisterButtonLabel": "Inscription",
+    "DisconnectButtonLabel": "Déconnexion",
 
     "HomeNavLabel": "Accueil",
     "TripNavLabel": "Voyages",

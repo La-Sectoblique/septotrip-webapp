@@ -20,7 +20,7 @@
                     (mouseenter)="hightlightStep(step.stepInstance.id)"
                     (mouseleave)="unHighlight()"
                     (click)="centerMapTo(step.stepInstance.localisation.coordinates)"
-                    >
+                >
                     <img class="cursor-pointer" src="./assets/steps_marker.png" alt="" 
                         [width]="(highlightedStepId$ | async) === step.stepInstance.id ? 40 : 30"
                     >
@@ -31,10 +31,10 @@
         <!-- POINTS MANAGEMENT -->
         <ng-container *ngFor="let point of points">
             <mgl-marker
-            [lngLat]="[point.localisation.coordinates[0], point.localisation.coordinates[1]]"
-            anchor="bottom"
-            [draggable]="(mapEditMode$ | async) === MapEditMode.EDIT_POINTS"
-            (markerDragEnd)="updatePointAfterDrag($event, point)"
+                [lngLat]="[point.localisation.coordinates[0], point.localisation.coordinates[1]]"
+                anchor="bottom"
+                [draggable]="(mapEditMode$ | async) === MapEditMode.EDIT_POINTS"
+                (markerDragEnd)="updatePointAfterDrag($event, point)"
             >
                 <div class="marker"
                     (mouseenter)="highlightPoint(point.id)"

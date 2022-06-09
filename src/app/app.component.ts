@@ -4,6 +4,7 @@ import { init, Platform } from '@la-sectoblique/septoblique-service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
 import { TokenStorageService } from './modules/core/services/token-storage.service';
+import { UserLanguageService } from './modules/shared/services/user-language.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,9 +16,10 @@ export class AppComponent implements OnInit {
     private tokenStorageService: TokenStorageService,
     private titleService: Title,
     private translate: TranslateService,
+    private userLanguageService: UserLanguageService,
   ) {
     translate.addLangs(['fr', 'en']);
-    translate.setDefaultLang('fr');
+    translate.setDefaultLang(this.userLanguageService.getLanguage() ?? 'fr');
   }
 
   ngOnInit(): void {
