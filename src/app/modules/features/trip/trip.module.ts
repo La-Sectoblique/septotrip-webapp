@@ -19,6 +19,7 @@ import { MapModule } from '../map/map.module';
 import { PointsModule } from '../points/points.module';
 import { TravelersModule } from '../travelers/travelers.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToDoListModule } from '../toDoList/toDoList.module';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TravelersModule,
     NbPopoverModule,
     NbTabsetModule,
+    ToDoListModule,
   ],
   declarations: [
     TripPreviewComponent,

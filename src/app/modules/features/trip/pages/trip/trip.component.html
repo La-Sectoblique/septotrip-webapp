@@ -25,7 +25,7 @@
               </div>
             </div>
           </nb-tab>
-  
+
           <nb-tab tabTitle="Membres">
             <ng-container *ngIf="travelers$ | async as travelers">
               <div class="w-50">
@@ -41,7 +41,10 @@
             <h2>Paramètres</h2>
             <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance.id)">SUPPRIMER</button>
           </nb-tab>
-  
+          <nb-tab tabTitle="Liste des tâches">
+            <h2>Liste des tâches</h2>
+            <spt-todolist></spt-todolist>
+          </nb-tab>
         </nb-tabset>
       </div>
 
