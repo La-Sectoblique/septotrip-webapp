@@ -10,7 +10,7 @@ import { AuthenticationService } from 'src/app/modules/features/authentification
 export class HeaderComponent {
 
   constructor(
-    private authenticationService: AuthenticationService,
+    readonly authenticationService: AuthenticationService,
   ) {}
 
   logout(): void {
