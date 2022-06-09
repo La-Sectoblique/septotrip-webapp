@@ -18,6 +18,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { MapModule } from '../map/map.module';
 import { PointsModule } from '../points/points.module';
 import { TravelersModule } from '../travelers/travelers.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { TravelersModule } from '../travelers/travelers.module';
     TravelersModule,
     NbPopoverModule,
     NbTabsetModule,
+    TranslateModule,
   ],
   declarations: [
     TripPreviewComponent,

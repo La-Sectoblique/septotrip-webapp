@@ -6,6 +6,7 @@ import { PointsService } from 'src/app/modules/features/points/services/points.s
 import * as TripsActions from '../trips.actions';
 import * as MapsActions from '../../../map-edit-store/state/map-edit.actions';
 import * as UtilsActions from '../../../utils-store/state/utils.actions';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class PointsEffects {
@@ -36,8 +37,8 @@ export class PointsEffects {
           TripsActions.CreateTripPointSuccess({ point: newPoint, tripId }),
           MapsActions.AddDisplayedMapPointIds({ pointIds: [newPoint.id] }),
           UtilsActions.NotifySuccess({
-            title: 'Création effectuée',
-            message: 'Le point d\'intérêt a bien été créé',
+            title: this.translate.instant('PathUpdated'),
+            message: this.translate.instant('PointCreated'),
           }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
@@ -53,8 +54,8 @@ export class PointsEffects {
       switchMap((newPoint: PointOutput) => [
         TripsActions.UpdateTripPointSuccess({ tripId, newPoint }),
         UtilsActions.NotifySuccess({
-          title: 'Mise à jour effectuée',
-          message: 'Le point d\'intérêt a bien été modifié',
+          title: this.translate.instant('UpdateDone'),
+          message: this.translate.instant('PointUpdated'),
         }),
       ]),
       // @TODO: catchError(() => CALL ERROR ACTION),
@@ -68,8 +69,8 @@ export class PointsEffects {
         switchMap(() => [
           TripsActions.DeleteTripPointSuccess({ pointId, tripId }),
           UtilsActions.NotifySuccess({
-            title: 'Suppression  effectuée',
-            message: 'Le point d\'intérêt a bien été supprimé',
+            title: this.translate.instant('DeletionDone'),
+            message: this.translate.instant('PointDeleted'),
           }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
@@ -101,6 +102,7 @@ export class PointsEffects {
   constructor(
     private actions$: Actions,
     private pointsService: PointsService,
+    private translate: TranslateService,
   ) {}
 
 }

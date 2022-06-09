@@ -4,7 +4,7 @@
       <div class="h-100 w-100">
         <nb-tabset class="h-100 w-100 d-flex flex-column">
           <p>{{trip.tripInstance.name}}</p>
-          <nb-tab tabTitle="Planification" class="h-100 w-100">
+          <nb-tab [tabTitle]="'PlanificationTabTitle' | translate" class="h-100 w-100">
             <div class="page-wrapper h-100 w-100">
               <div class="h-100">
                 <spt-steps-list
@@ -26,10 +26,10 @@
             </div>
           </nb-tab>
   
-          <nb-tab tabTitle="Membres">
+          <nb-tab [tabTitle]="'MemberTabTitle' | translate">
             <ng-container *ngIf="travelers$ | async as travelers">
               <div class="w-50">
-                <h2>Membres du voyage</h2>
+                <h2>{{'TripMemberTitle' | translate}}</h2>
                 <spt-travelers-list
                   [travelers]="travelers"
                   [tripId]="trip.tripInstance.id"
@@ -37,9 +37,9 @@
               </div>
             </ng-container>
           </nb-tab>
-          <nb-tab tabTitle="Paramètres">
-            <h2>Paramètres</h2>
-            <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance.id)">SUPPRIMER</button>
+          <nb-tab [tabTitle]="'Parameters' | translate">
+            <h2>{{'Parameters' | translate}}</h2>
+            <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance.id)">{{'Delete' | translate}}</button>
           </nb-tab>
   
         </nb-tabset>

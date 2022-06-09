@@ -9,7 +9,7 @@
       <ng-content select="[handle]"></ng-content>
       <p class="step-name word-break-all" >{{step.stepInstance.name}}</p>
     
-      <p>Durée: {{step.daysInstance?.length || step.stepInstance.duration}} jours</p>
+      <p>{{'DurationInputLabel' | translate}}: {{step.daysInstance?.length || step.stepInstance.duration}} {{'Days' | translate | lowercase}}</p>
       
       <div class="d-flex align-items-center">
         <button

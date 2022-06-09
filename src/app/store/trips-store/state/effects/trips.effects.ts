@@ -5,6 +5,7 @@ import {  map, mergeMap, switchMap } from 'rxjs';
 import { TripsService } from 'src/app/modules/features/trip/services/trips.service';
 import * as TripsActions from '../trips.actions';
 import * as UtilsActions from '../../../utils-store/state/utils.actions';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class TripsEffects {
@@ -38,8 +39,8 @@ export class TripsEffects {
         switchMap(() => [
           TripsActions.DeleteTripSuccess({ tripId }),
           UtilsActions.NotifySuccess({
-            title: 'Supression réussie',
-            message: 'Le voyage a été supprimé',
+            title: this.translate.instant('DeletionDone'),
+            message: this.translate.instant('TripDeleted'),
           }),
         ]),
         // catchError(() =>  [
@@ -57,6 +58,7 @@ export class TripsEffects {
   constructor(
     private actions$: Actions,
     private tripsService: TripsService,
+    private translate: TranslateService,
   ) {}
 
 }

@@ -4,6 +4,7 @@ import { TravelersListComponent } from './components/travelers-list/travelers-li
 import { NbButtonModule, NbIconModule, NbInputModule } from '@nebular/theme';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TravelerPreviewComponent } from './components/traveler-preview/traveler-preview.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { TravelerPreviewComponent } from './components/traveler-preview/traveler
     ReactiveFormsModule,
     NbButtonModule,
     NbIconModule,
+    TranslateModule,
   ],
   declarations: [
     TravelersListComponent,

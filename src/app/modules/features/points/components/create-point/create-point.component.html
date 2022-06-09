@@ -1,14 +1,14 @@
 <div class="d-flex flex-column align-items-center point-creation-wrapper">
-  <h2>{{isEditMode ? 'Modification' : 'Création'}} d'un point d'intérêt</h2>
+  <h2>{{isEditMode ? ('PointUpdate' | translate) : ('PointCreation' | translate)}}</h2>
 
   <form 
     class="d-flex flex-column"
     [formGroup]="pointForm"
     (ngSubmit)="create()"
   >
-    <label for="title">Nom:</label>
+    <label for="title">{{'NameInputLabel' | translate}} :</label>
     <input type="text" id="title" formControlName="title" required nbInput>
-    <label for="duration">Description:</label>
+    <label for="duration">{{'DescriptionInputLabel' | translate}} :</label>
     <textarea id="description" formControlName="description" nbInput></textarea>
 
     <button 
@@ -17,7 +17,7 @@
       nbButton
       [disabled]="!isFormValid()"
     >
-      {{isEditMode ? 'Modifier' : 'Créer'}} le point d'intérêt
+      {{isEditMode ? ('PointUpdateValidation' | translate) : ('PointCreationValidation' | translate)}}
     </button>
   </form>
 </div>
