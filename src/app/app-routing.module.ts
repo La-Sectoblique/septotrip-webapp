@@ -28,14 +28,14 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
+    path: 'settings',
+    component: UserSettingsComponent,
+  },
+  {
     // Put protected routes under this
     path: '',
     canActivate: [AuthGuard],
     children: [
-      {
-        path: 'settings',
-        component: UserSettingsComponent,
-      },
       {
         path: 'trips',
         children: [
