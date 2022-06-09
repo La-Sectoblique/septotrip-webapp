@@ -1,4 +1,7 @@
-<nb-select shape="semi-round" size="tiny" [selected]="selectedLanguage" (selectedChange)="updateTranslation($event)">
-  <nb-option value="fr">fr</nb-option>
-  <nb-option value="en">en</nb-option>
-</nb-select>
+<div class="d-flex justify-content-center align-items-center">
+  <p class="mr-2">Langue : </p>
+  <nb-select shape="semi-round" size="small" [selected]="selectedLanguage" (selectedChange)="updateTranslation($event)">
+    <nb-option value="fr">Français</nb-option>
+    <nb-option value="en">English</nb-option>
+  </nb-select>
+</div>
