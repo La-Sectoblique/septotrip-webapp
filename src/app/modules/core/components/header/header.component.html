@@ -10,11 +10,8 @@
           <li><a routerLink="/login" routerLinkActive="active">{{'LoginButtonLabel' | translate}}</a></li>
           <li><a routerLink="/signIn" routerLinkActive="active">{{'RegisterButtonLabel' | translate}}</a></li>
           <li><a routerLink="" (click)="logout()">{{'DisconnectButtonLabel' | translate}}</a></li>
+          <li><a routerLink="/settings" routerLinkActive="active">⚙️</a></li>
         </ul>
-        <nb-select shape="semi-round" size="tiny" [selected]="selectedLanguage" (selectedChange)="updateTranslation($event)">
-          <nb-option value="fr">🇫🇷</nb-option>
-          <nb-option value="en">🇬🇧</nb-option>
-        </nb-select>
       </div>
     </div>
   </nav>
