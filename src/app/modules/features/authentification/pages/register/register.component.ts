@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { register } from '@la-sectoblique/septoblique-service';
 
@@ -9,18 +10,37 @@ import { register } from '@la-sectoblique/septoblique-service';
 })
 export class RegisterComponent /*implements OnInit*/ {
 
-  firstname: string;
-  lastname: string;
-  email: string;
-  password: string;
+  registerForm = this.formBuilder.group({
+    firstname: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+    ]),
+    lastname: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+    ]),
+  });
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+  ) { }
 
-  /*ngOnInit() {
-  }*/
-
-  inscription(): void {
-    register({ email: this.email, password: this.password, firstName: this.firstname, lastName: this.lastname })
+  register(): void {
+    register({
+      firstName: this.registerForm.value.firstname,
+      lastName: this.registerForm.value.lastname,
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.password,
+    })
       .then(() => this.router.navigate(['login']));
   }
 
