@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { AccountService } from '../../services/account.service';
 
 @Component({
@@ -14,8 +12,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
-    private router: Router,
-    private transalte: TranslateService,
   ) {}
 
   ngOnInit(): void {
