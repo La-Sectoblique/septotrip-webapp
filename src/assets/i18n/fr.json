@@ -80,5 +80,8 @@
 
     "PointDeleted": "Le point d'intérêt a bien été supprimé",
     "StepDeleted": "L'étape a bien été supprimée",
-    "TripDeleted": "Le voyage a été supprimé"
+    "TripDeleted": "Le voyage a été supprimé",
+
+    "LoginNeeded": "Connexion nécessaire",
+    "LoginNeededMessage": "Veuillez vous connecter pour accéder à la page."
 }
