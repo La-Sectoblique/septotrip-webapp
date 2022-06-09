@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { register } from '@la-sectoblique/septoblique-service';
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss'],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss'],
 })
-export class SigninComponent /*implements OnInit*/ {
+export class RegisterComponent /*implements OnInit*/ {
 
   firstname: string;
   lastname: string;

@@ -7,7 +7,6 @@ import { NbLayoutModule, NbThemeModule, NbToastrModule } from '@nebular/theme';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
@@ -20,9 +19,9 @@ import { FeaturesStoreModule } from './store/features-store.module';
 import { AuthentificationModule } from './modules/features/authentification/authentification.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './modules/helpers/auth.guard';
-import { PathsModule } from './modules/features/paths/paths.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { PathsModule } from './modules/features/paths/paths.module';
 
 
 export const httpTranslateLoader = (http: HttpClient): TranslateHttpLoader =>
