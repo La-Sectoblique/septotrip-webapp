@@ -15,7 +15,7 @@ export class UserSettingsComponent {
     private transalte: TranslateService,
     private userLanguageService: UserLanguageService,
   ) {
-    this.selectedLanguage = this.transalte.getDefaultLang();
+    this.selectedLanguage = this.userLanguageService.getLanguage() ?? this.transalte.getDefaultLang();
   }
 
   updateTranslation(language: string): void {
