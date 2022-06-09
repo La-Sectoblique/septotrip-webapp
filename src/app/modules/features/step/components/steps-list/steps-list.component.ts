@@ -7,10 +7,11 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { UpdateMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.actions';
-import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
+import { selectHighlightedStepId, selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
 import { DeleteTripStep,
   UpdateTripStepOrder,
 } from 'src/app/store/trips-store/state/trips.actions';
+import { HighlightMapMarkersService } from '../../../map/services/highlight-map-markers.service';
 import { FlattenedStep } from '../../models/flattened-step';
 import { CreateStepComponent } from '../create-step/create-step.component';
 
@@ -28,14 +29,17 @@ export class StepsListComponent implements OnInit {
   mapEditMode$: Observable<MapEditMode>;
   mapEditMode = MapEditMode;
 
+  highlithedStepId$: Observable<number | null>;
 
   constructor(
     private store: Store,
     private nbDialogService: NbDialogService,
+    private highlightMapMarkersService: HighlightMapMarkersService,
   ) {}
 
   ngOnInit(): void {
     this.mapEditMode$ = this.store.select(selectMapEditMode());
+    this.highlithedStepId$ = this.store.select(selectHighlightedStepId());
   }
 
   switchStepEditMode(editMode: MapEditMode): void {
@@ -68,6 +72,14 @@ export class StepsListComponent implements OnInit {
       tripId: this.tripId,
       step: event.item.data,
     }));
+  }
+
+  highlightStep(stepId: number): void {
+    this.highlightMapMarkersService.highlightStep(stepId);
+  }
+
+  unHighlight(): void {
+    this.highlightMapMarkersService.unHighlight();
   }
 
 }

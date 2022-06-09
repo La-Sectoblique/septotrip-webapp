@@ -7,11 +7,16 @@ import { LngLatLike, Map, MapMouseEvent } from 'mapbox-gl';
 import { first, Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { SetDisplayedMapPointIds } from 'src/app/store/map-edit-store/state/map-edit.actions';
-import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
+import {
+  selectHighlightedPointId,
+  selectHighlightedStepId,
+  selectMapEditMode,
+} from 'src/app/store/map-edit-store/state/map-edit.selectors';
 import { UpdateTripPoint, UpdateTripStep } from 'src/app/store/trips-store/state/trips.actions';
 import { CreatePointComponent } from '../../../points/components/create-point/create-point.component';
 import { CreateStepComponent } from '../../../step/components/create-step/create-step.component';
 import { FlattenedStep } from '../../../step/models/flattened-step';
+import { HighlightMapMarkersService } from '../../services/highlight-map-markers.service';
 
 @Component({
   selector: 'spt-trips-map',
@@ -27,6 +32,9 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   mapEditMode$: Observable<MapEditMode>;
   MapEditMode = MapEditMode;
+
+  highlightedPointId$: Observable<number | null>;
+  highlightedStepId$: Observable<number | null>;
 
   mapCenter: LngLatLike = [7.750149, 48.581551];
   mapZoom: [number] = [7];
@@ -45,6 +53,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
   constructor(
     private nbDialogService: NbDialogService,
     private store: Store,
+    private highlightMapMarkersService: HighlightMapMarkersService,
   ) {}
 
   ngOnInit(): void {
@@ -64,6 +73,9 @@ export class TripsMapComponent implements OnChanges, OnInit {
     ].forEach((coordinates) => {
       this.mapMarkersBounds.extend([coordinates[0], coordinates[1]]);
     });
+
+    this.highlightedPointId$ = this.store.select(selectHighlightedPointId());
+    this.highlightedStepId$ = this.store.select(selectHighlightedStepId());
   }
 
   ngOnChanges(/*{ steps }: SimpleChanges*/): void {
@@ -175,6 +187,18 @@ export class TripsMapComponent implements OnChanges, OnInit {
         }),
       },
     };
+  }
+
+  highlightPoint(pointId: number): void {
+    this.highlightMapMarkersService.highlightPoint(pointId);
+  }
+
+  hightlightStep(stepId: number): void {
+    this.highlightMapMarkersService.highlightStep(stepId);
+  }
+
+  unHighlight(): void {
+    this.highlightMapMarkersService.unHighlight();
   }
 
 }

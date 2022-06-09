@@ -24,4 +24,13 @@ export const mapEditReducer = createReducer(
       ]
       : state.displayedPointIds,
   })),
+
+  on(MapEditActions.SetHighlightedStep, (state, { stepId }) => ({
+    ...state,
+    highlightedStepId: stepId,
+  })),
+  on(MapEditActions.SetHighlightedPoint, (state, { pointId }) => ({
+    ...state,
+    highlightedPointId: pointId,
+  })),
 );
