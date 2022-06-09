@@ -27,7 +27,11 @@
           (mouseenter)="highlightStep(step.stepInstance.id)"
           (mouseleave)="unHighlight()"
         >
-          <spt-step-preview [step]="step" [stepPoints]="points | filterPointsByStepId:step.stepInstance.id">
+          <spt-step-preview 
+            [step]="step"
+            [stepPoints]="points | filterPointsByStepId:step.stepInstance.id"
+            [isHighlighted]="(highlithedStepId$ | async) === step.stepInstance.id"
+          >
             <div>
               <button nbButton ghost (click)="editStep(step.stepInstance)">
                 <nb-icon class="cursor-pointer"  icon="edit-outline" status="primary"></nb-icon>

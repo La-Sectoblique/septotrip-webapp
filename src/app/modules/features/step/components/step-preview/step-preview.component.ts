@@ -12,6 +12,7 @@ export class StepPreviewComponent {
   @Input() step: FlattenedStep;
   @Input() stepPoints: PointOutput[];
   @Input() isDetailedModeEnabled = false;
+  @Input() isHighlighted = false;
 
   switchMode(): void {
     this.isDetailedModeEnabled = !this.isDetailedModeEnabled;
