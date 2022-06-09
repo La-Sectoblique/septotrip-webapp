@@ -83,5 +83,8 @@
     "TripDeleted": "Le voyage a été supprimé",
 
     "LoginNeeded": "Connexion nécessaire",
-    "LoginNeededMessage": "Veuillez vous connecter pour accéder à la page."
+    "LoginNeededMessage": "Veuillez vous connecter pour accéder à la page.",
+
+    "SessionExpired": "Session expirée",
+    "SessionExpiredMessage": "Vous avez été déconnecté."
 }

@@ -17,11 +17,12 @@ import { TravelersModule } from './modules/features/travelers/travelers.module';
 import { TripModule } from './modules/features/trip/trip.module';
 import { FeaturesStoreModule } from './store/features-store.module';
 import { AuthentificationModule } from './modules/features/authentification/authentification.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './modules/helpers/auth.guard';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { PathsModule } from './modules/features/paths/paths.module';
+import { UnothorizedInterceptor } from './modules/shared/interceptors/unothorized.interceptor';
 
 
 export const httpTranslateLoader = (http: HttpClient): TranslateHttpLoader =>
@@ -64,7 +65,14 @@ export const httpTranslateLoader = (http: HttpClient): TranslateHttpLoader =>
     NbToastrModule.forRoot(),
     PathsModule,
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UnothorizedInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
