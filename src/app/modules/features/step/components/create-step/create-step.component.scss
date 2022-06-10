@@ -4,8 +4,4 @@
     background-color: white;
     padding: 1.5rem;
     @include mixins.rounded-corner;
-
-    input {
-        margin-bottom: 2rem;
-    }
 }
