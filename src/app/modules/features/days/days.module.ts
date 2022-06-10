@@ -5,6 +5,7 @@ import { NbButtonModule, NbIconModule } from '@nebular/theme';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { PointsModule } from '../points/points.module';
 import { SharedModule } from '../../shared/shared.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { SharedModule } from '../../shared/shared.module';
     PointsModule,
     SharedModule,
     NbButtonModule,
+    TranslateModule,
   ],
   declarations: [
     DaysListComponent,

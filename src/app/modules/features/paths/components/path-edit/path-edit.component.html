@@ -1,12 +1,12 @@
 <div class="d-flex flex-column align-items-center path-creation-wrapper">
-  <h2>Modification du trajet</h2>
+  <h2>{{'PathUpdate' | translate}}</h2>
 
   <form 
     class="d-flex flex-column"
     [formGroup]="pathForm"
     (ngSubmit)="create()"
   >
-    <label for="description">Information:</label>
+    <label for="description">{{'InformationInputLabel' | translate}}:</label>
     <input type="text" id="description" formControlName="description" required nbInput>
 
     <button 
@@ -15,7 +15,7 @@
       nbButton
       [disabled]="!isFormValid()"
     >
-      Modifier le trajet
+      {{'PathUpdateValidation' | translate}}
     </button>
   </form>
 </div>

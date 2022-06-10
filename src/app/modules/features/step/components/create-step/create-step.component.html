@@ -1,14 +1,14 @@
 <div class="d-flex flex-column align-items-center step-creation-wrapper">
-  <h2>{{isEditMode ? 'Modification' : 'Création'}} d'une étape</h2>
+  <h2>{{isEditMode ? ('StepUpdate' | translate) : ('StepCreation' | translate)}}</h2>
 
   <form 
-    class="d-flex flex-column"
+    class="d-flex flex-column form-input-gap"
     [formGroup]="stepForm"
     (ngSubmit)="create()"
   >
-    <label for="name">Nom:</label>
+    <label for="name">{{'NameInputLabel' | translate}} :</label>
     <input type="text" id="name" formControlName="name" required nbInput>
-    <label for="duration">Durée:</label>
+    <label for="duration">{{'DurationInputLabel' | translate}} :</label>
     <input type="number" id="duration" formControlName="duration" min="1" max="100" required nbInput>
 
     <button 
@@ -17,7 +17,7 @@
       nbButton
       [disabled]="!isFormValid()"
     >
-      {{isEditMode ? 'Modifier' : 'Créer'}} l'étape
+      {{isEditMode ? ('StepUpdateValidation' | translate) : ('StepCreationValidation' | translate)}}
     </button>
   </form>
 </div>

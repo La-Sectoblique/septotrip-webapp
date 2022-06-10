@@ -1,9 +1,9 @@
-<div class="card d-flex flex-column justify-content-center align-items-center" *ngIf="mapMode !== MapEditMode.DEFAULT">
+<div class="card ml-1 d-flex flex-column justify-content-center align-items-center" *ngIf="mapMode !== MapEditMode.DEFAULT">
   <ng-container *ngIf="mapMode === MapEditMode.EDIT_POINTS">
-    <p class="m-0 label-mode">Edition des points d'intérêt</p>
+    <p class="m-0 label-mode">{{'PointEditMode' | translate}}</p>
   </ng-container>
   <ng-container *ngIf="mapMode === MapEditMode.EDIT_STEPS">
-    <p class="m-0 label-mode">Edition des étapes</p>
+    <p class="m-0 label-mode">{{'StepEditMode' | translate}}</p>
   </ng-container>
-  <button class="mt-2" nbButton status="danger" (click)="abortEditing()">Arrêter</button>
+  <button class="mt-2" nbButton status="danger" (click)="abortEditing()">{{'Stop' | translate}}</button>
 </div>

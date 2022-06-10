@@ -1,0 +1,95 @@
+{
+    "CreateTripTitle": "Trip Creation",
+    "CreateTripValidation": "Create trip",
+    "NoTripEmptyStateMessage": "You don't have any trip",
+    
+    "NoStepEmptyStateMessage": "There are no steps.",
+
+    "NoPointEmptyStateMessage": "There are no points of interest.",
+    
+    "NoInformationEmptyStateMessage": "No information",
+
+    "ClickMapToBegin": "Click on the map to begin !",
+    
+    "TripMemberTitle": "Trip members",
+    
+    "NameInputLabel": "Name",
+    "FirstnameInputLabel": "Firstname",
+    "MailAddressInputLabel": "Email address",
+    "DurationInputLabel": "Duration",
+    "DescriptionInputLabel": "Description",
+    "InformationInputLabel": "Information",
+    "PasswordInputLabel": "Password",
+    
+    "Delete": "Delete",
+    "Add": "Add",
+    "Edition": "Edition",
+    "Stop": "Stop",
+    "Public": "Public",
+    "Private": "Private",
+
+    "Days": "Days",
+    "Day": "Day",
+    "Steps": "Steps",
+    "Points": "Points of interest",
+
+    "LoginButtonLabel": "Login",
+    "RegisterButtonLabel": "Register",
+    "DisconnectButtonLabel": "Disconnect",
+
+    "HomeNavLabel": "Home",
+    "TripNavLabel": "Trips",
+    
+    "Parameters": "Parameters",
+    "PlanificationTabTitle": "Planification",
+    "MemberTabTitle": "Members",
+    
+    "MyTripsTitle": "My trips",
+    "VoyageInFrancePlaceholder": "Trip in France",
+
+    "AddTravelerTitle": "Add traveler",
+
+    "StepCreation": "Step creation",
+    "StepUpdate": "Step update",
+    "StepCreationValidation": "Create step",
+    "StepUpdateValidation": "Update step",
+    "StepEditMode": "Steps edition",
+
+    "PointCreation": "Point creation",
+    "PointUpdate": "Point update",
+    "PointUpdateValidation": "Update point",
+    "PointCreationValidation": "Create point",
+    "PointEditMode": "Points edition",
+
+    "PathUpdate": "Path update",
+    "PathUpdateValidation": "Update path",
+
+    "FilteredPointsTooltipButton": "Only the points displayed on the map appear in the list.",
+    "NotFilteredPointsTooltipButton": "All the ponints on the map appear in the list.",
+
+    "UpdateDone": "Update done",
+    "CreationDone": "Creation done",
+    "DeletionDone": "Deletion done",
+
+    "PathUpdated": "The path has been updated",
+    "PointUpdated": "The intereset point has been updated",
+    "StepUpdated": "The step has been updated",
+    
+    "PointCreated": "The intereset point has been created",
+    "StepCreated": "The step has been created",
+
+    "PointDeleted": "The intereset point has been deleted",
+    "StepDeleted": "The step has been deleted",
+    "TripDeleted": "The trip has been deleted",
+
+    "Language": "Language",
+
+    "LoginNeeded": "Login needed",
+    "LoginNeededMessage": "Please login to access this page.",
+    
+    "SessionExpired": "Session expired",
+    "SessionExpiredMessage": "You have been disconnected.",
+    
+    "LoginError": "Authentication error",
+    "LoginErrorMessage": "The credentials are not correct or the account does not exist."
+}

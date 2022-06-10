@@ -1,0 +1,95 @@
+{
+    "CreateTripTitle": "Création de voyage",
+    "CreateTripValidation": "Créer le voyage",
+    "NoTripEmptyStateMessage": "Vous n'avez aucun voyage.",
+    
+    "NoStepEmptyStateMessage": "Il n'y a aucune étape.",
+
+    "NoPointEmptyStateMessage": "Il n'y a aucun point d'intérêt",
+    
+    "NoInformationEmptyStateMessage": "Aucune information",
+
+    "ClickMapToBegin": "Cliquez sur la carte pour commencer !",
+    
+    "TripMemberTitle": "Membres du voyage",
+    
+    "NameInputLabel": "Nom",
+    "FirstnameInputLabel": "Prénom",
+    "MailAddressInputLabel": "Adresse email",
+    "DurationInputLabel": "Durée",
+    "DescriptionInputLabel": "Description",
+    "InformationInputLabel": "Information",
+    "PasswordInputLabel": "Mot de passe",
+    
+    "Delete": "Supprimer",
+    "Add": "Ajouter",
+    "Edition": "Edition",
+    "Stop": "Arrêter",
+    "Public": "Public",
+    "Private": "Privée",
+
+    "Days": "Jours",
+    "Day": "Jour",
+    "Steps": "Etapes",
+    "Points": "Points d'intérêt",
+
+    "LoginButtonLabel": "Connexion",
+    "RegisterButtonLabel": "Inscription",
+    "DisconnectButtonLabel": "Déconnexion",
+
+    "HomeNavLabel": "Accueil",
+    "TripNavLabel": "Voyages",
+    
+    "Parameters": "Paramètres",
+    "PlanificationTabTitle": "Planification",
+    "MemberTabTitle": "Membres",
+    
+    "MyTripsTitle": "Mes voyages",
+    "VoyageInFrancePlaceholder": "Voyage en France",
+
+    "AddTravelerTitle": "Ajouter un voyageur",
+
+    "StepCreation": "Création d'une étape",
+    "StepUpdate": "Modification d'une étape",
+    "StepCreationValidation": "Créer l'étape",
+    "StepUpdateValidation": "Modifier l'étape",
+    "StepEditMode": "Edition des étapes",
+
+    "PointCreation": "Création d'un point d'intérêt",
+    "PointUpdate": "Modification d'un point d'intérêt",
+    "PointUpdateValidation": "Modifier le point d'intérêt",
+    "PointCreationValidation": "Créer le point d'intérêt",
+    "PointEditMode": "Edition des points d'intérêt",
+
+    "PathUpdate": "Modification du trajet",
+    "PathUpdateValidation": "Modifier le trajet",
+
+    "FilteredPointsTooltipButton": "Seuls les points affiché sur la carte apparaissent dans la liste.",
+    "NotFilteredPointsTooltipButton": "Tout les ponints de la carte apparaissent dans la liste.",
+
+    "UpdateDone": "Mise à jour effectuée",
+    "CreationDone": "Création effectuée",
+    "DeletionDone": "Suppression  effectuée",
+
+    "PathUpdated": "Le trajet a bien été modifié",
+    "PointUpdated": "Le point d'intérêt a bien été modifié",
+    "StepUpdated": "L'étape a bien été modifiée",
+    
+    "PointCreated": "Le point d'intérêt a bien été créé",
+    "StepCreated": "L'étape a bien été créée",
+
+    "PointDeleted": "Le point d'intérêt a bien été supprimé",
+    "StepDeleted": "L'étape a bien été supprimée",
+    "TripDeleted": "Le voyage a été supprimé",
+
+    "Language": "Langue",
+    
+    "LoginNeeded": "Connexion nécessaire",
+    "LoginNeededMessage": "Veuillez vous connecter pour accéder à la page.",
+
+    "SessionExpired": "Session expirée",
+    "SessionExpiredMessage": "Vous avez été déconnecté.",
+
+    "LoginError": "Erreur lors de l'authentification",
+    "LoginErrorMessage": "Les identifiants sont incorect ou le compte n'existe pas."
+}

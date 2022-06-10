@@ -4,12 +4,12 @@
     [stepId]="step.stepInstance.id"
     [tripId]="step.stepInstance.tripId"
   ></spt-path-preview>
-  <div class="d-flex flex-column card m-0 w-100 wrapper">
+  <div class="d-flex flex-column card m-0 w-100 wrapper" [class.highlighted]="isHighlighted">
     <div class="d-flex align-items-center justify-content-between w-100">
       <ng-content select="[handle]"></ng-content>
       <p class="step-name word-break-all" >{{step.stepInstance.name}}</p>
     
-      <p>Durée: {{step.daysInstance?.length || step.stepInstance.duration}} jours</p>
+      <p>{{'DurationInputLabel' | translate}}: {{step.daysInstance?.length || step.stepInstance.duration}} {{'Days' | translate | lowercase}}</p>
       
       <div class="d-flex align-items-center">
         <button

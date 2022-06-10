@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreatePointComponent } from './components/create-point/create-point.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SharedModule } from '../../shared/shared.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { SharedModule } from '../../shared/shared.module';
     DragDropModule,
     SharedModule,
     NbTooltipModule,
+    TranslateModule,
   ],
   declarations: [
     PointsListComponent,

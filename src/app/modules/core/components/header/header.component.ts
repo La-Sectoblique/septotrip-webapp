@@ -1,24 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AccountService } from '../../services/account.service';
+import { Component } from '@angular/core';
+import { AuthenticationService } from 'src/app/modules/features/authentification/services/authentication.service';
+// import { AccountService } from '../../services/account.service';
 
 @Component({
   selector: 'spt-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  loggedIn: boolean;
-
-  constructor(private accountService: AccountService, private router: Router) {}
-
-  ngOnInit(): void {
-    this.loggedIn = this.accountService.isLoggedIn;
-  }
+  constructor(
+    readonly authenticationService: AuthenticationService,
+  ) {}
 
   logout(): void {
-    this.accountService.logout();
+    this.authenticationService.logout();
   }
 
 }
