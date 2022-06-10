@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     private translate: TranslateService,
     private userLanguageService: UserLanguageService,
   ) {
-    translate.addLangs(['fr', 'en']);
+    translate.addLangs(['fr', 'en', 'cn', 'es', 'it', 'ru', 'de', 'fi', 'gr', 'pt']);
     translate.setDefaultLang(this.userLanguageService.getLanguage() ?? 'fr');
   }
 

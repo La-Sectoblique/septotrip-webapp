@@ -1,7 +1,14 @@
 <div class="d-flex justify-content-center align-items-center">
-  <p class="mr-2">Langue : </p>
+  <p class="mr-2">{{'Language' | translate}} : </p>
   <nb-select shape="semi-round" size="small" [selected]="selectedLanguage" (selectedChange)="updateTranslation($event)">
     <nb-option value="fr">Français</nb-option>
     <nb-option value="en">English</nb-option>
+    <nb-option value="de">Deutsch</nb-option>
+    <nb-option value="es">Español</nb-option>
+    <nb-option value="it">Italiano</nb-option>
+    <nb-option value="pt">Português</nb-option>
+    <nb-option value="fi">Suomalainen</nb-option>
+    <nb-option value="ru">Русский</nb-option>
+    <nb-option value="gr">Ελληνικά</nb-option>
   </nb-select>
 </div>
