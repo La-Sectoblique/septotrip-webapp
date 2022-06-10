@@ -41,7 +41,7 @@
           (mouseenter)="highlightPoint(point.id)"
           (mouseleave)="unHighlight()"
         >
-          <spt-point-preview [point]="point">
+          <spt-point-preview [point]="point" [isHighlighted]="(highlightedPointId$ | async) === point.id">
             <div class="d-flex">
               <button nbButton ghost (click)="editPoint(point)">
                 <nb-icon class="cursor-pointer" icon="edit-outline" status="primary"></nb-icon>
