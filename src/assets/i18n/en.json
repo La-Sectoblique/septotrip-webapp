@@ -82,6 +82,8 @@
     "StepDeleted": "The step has been deleted",
     "TripDeleted": "The trip has been deleted",
 
+    "Language": "Language",
+
     "LoginNeeded": "Login needed",
     "LoginNeededMessage": "Please login to access this page.",
     

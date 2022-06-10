@@ -1,0 +1,89 @@
+{
+    "CreateTripTitle": "创建行程",
+    "CreateTripValidation": "创建行程",
+    "NoTripEmptyStateMessage": "你没有旅行",
+    
+    "NoStepEmptyStateMessage":"没有任何步骤。",
+
+    "NoPointEmptyStateMessage": "没有兴趣点",
+    
+    "NoInformationEmptyStateMessage":"没有信息",
+
+    "ClickMapToBegin": "点击地图，开始！",
+    
+    "TripMemberTitle": "旅程成员",
+    
+    "NameInputLabel": "名称",
+    "FirstnameInputLabel": "名字",
+    "MailAddressInputLabel": "电子邮件地址",
+    "DurationInputLabel":"期限",
+    "DescriptionInputLabel": "描述",
+    "InformationInputLabel": "信息",
+    "PasswordInputLabel": "密码",
+    
+    "Delete":"删除",
+    "Add":"添加",
+    "Edition":"编辑",
+    "Stop":"停止",
+    "Public":"公共",
+    "Private":"私人",
+
+    "Days":"天",
+    "Day":"日",
+    "Step":"阶梯",
+    "Points":"兴趣点",
+
+    "LoginButtonLabel": "登录",
+    "RegisterButtonLabel": "注册",
+    "DisconnectButtonLabel": "断开连接",
+
+    "HomeNavLabel": "首页",
+    "TripNavLabel": "旅游",
+    
+    "Parameters":"设置",
+    "PlanificationTabTitle":"规划",
+    "MemberTabTitle": "成员",
+    
+    "MyTripsTitle": "我的旅行",
+    "VoyageInFrancePlaceholder": "法国旅游",
+
+    "AddTravelerTitle": "添加一个旅行者",
+
+    "StepCreation": "创建一个步骤",
+    "StepUpdate": "修改一个步骤",
+    "StepCreationValidation": "创建步骤",
+    "StepUpdateValidation": "修改步骤",
+    "StepEditMode":"编辑步骤",
+
+    "PointCreation": "创建一个兴趣点",
+    "PointUpdate": "对一个兴趣点的修改",
+    "PointUpdateValidation": "修改兴趣点",
+    "PointCreationValidation": "创建兴趣点",
+    "PointEditMode":"兴趣点编辑",
+
+    "PathUpdate": "路径修改",
+    "PathUpdateValidation": "修改路径",
+
+    "FilteredPointsTooltipButton": "只有地图上显示的点出现在列表中",
+    "NotFilteredPointsTooltipButton": "地图上的所有点都出现在列表中",
+
+    "UpdateDone":"更新完成",
+    "CreationDone": "创作完成",
+    "DeletionDone": "删除完毕",
+
+    "PathUpdated": "路径已被修改",
+    "PointUpdated": "兴趣点已被修改",
+    "StepUpdated":"步骤已被修改",
+    
+    "PointCreated": "该兴趣点已被创建",
+    "StepCreated": "该步骤已被创建",
+
+    "PointDeleted": "该兴趣点已被删除",
+    "StepDeleted": "该步骤已被删除",
+    "TripDeleted": "行程已被删除",
+
+    "Language": "语",
+    
+    "LoginError": "授权错误",
+    "LoginErrorMessage": "凭据不正确或帐户不存在"
+}

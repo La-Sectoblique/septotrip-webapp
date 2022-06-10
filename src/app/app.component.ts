@@ -20,11 +20,12 @@ export class AppComponent implements OnInit {
     private userLanguageService: UserLanguageService,
     private authenticationService: AuthenticationService,
   ) {
-    translate.addLangs(['fr', 'en']);
+    translate.addLangs(['fr', 'en', 'cn', 'es', 'it', 'ru', 'de', 'fi', 'gr', 'pt']);
     translate.setDefaultLang(this.userLanguageService.getLanguage() ?? 'fr');
   }
 
   ngOnInit(): void {
+    this.translate.use(this.userLanguageService.getLanguage() ?? 'fr');
 
     this.titleService.setTitle('SeptoTrip');
 
