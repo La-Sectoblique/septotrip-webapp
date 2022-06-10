@@ -15,6 +15,10 @@
     &-horizontal {
         margin: 0 .25rem;
     }
+
+    &.highlighted {
+        border: 1px solid #3366ff;
+    }
 }
 
 .list-card {
