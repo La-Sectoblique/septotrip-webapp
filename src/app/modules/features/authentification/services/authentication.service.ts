@@ -5,7 +5,7 @@ import { login } from '@la-sectoblique/septoblique-service';
 import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
 import { NbToastrService } from '@nebular/theme';
 import { TranslateService } from '@ngx-translate/core';
-import { catchError, lastValueFrom, tap } from 'rxjs';
+import { lastValueFrom } from 'rxjs';
 import { TokenStorageService } from 'src/app/modules/core/services/token-storage.service';
 import { environment } from 'src/environments/environment';
 
