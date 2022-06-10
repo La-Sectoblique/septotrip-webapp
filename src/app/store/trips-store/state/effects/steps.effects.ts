@@ -5,7 +5,9 @@ import { Store } from '@ngrx/store';
 import {  map, mergeMap, switchMap } from 'rxjs';
 import { StepsService } from 'src/app/modules/features/step/services/steps.service';
 import * as TripsActions from '../trips.actions';
+import * as UtilsActions from '../../../utils-store/state/utils.actions';
 import { selectTripSteps } from '../trips.selectors';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class StepsEffects {
@@ -18,14 +20,23 @@ export class StepsEffects {
       .pipe(
         switchMap((steps: StepOutput[]) => [
           TripsActions.GetTripStepsSuccess({ steps, tripId }),
-          ...(steps.map((step) =>
-            TripsActions.GetStepDays({ stepId: step.id, tripId }),
-          )),
         ],
         ),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
     ),
+  ));
+
+  GetTripStepsSuccess$ = createEffect(() =>  this.actions$.pipe(
+    ofType(TripsActions.GetTripStepsSuccess),
+    switchMap(({ steps, tripId }) => [
+      ...(steps.map((step) =>
+        TripsActions.GetStepDays({ stepId: step.id, tripId }),
+      )),
+      ...(steps.map((step) =>
+        TripsActions.GetPathToStep({ tripId, stepId: step.id }),
+      )),
+    ]),
   ));
 
   CreateTripStep$ = createEffect(() => this.actions$.pipe(
@@ -42,6 +53,11 @@ export class StepsEffects {
         switchMap((newStep: StepOutput) => [
           TripsActions.CreateTripStepSuccess({ step: newStep, tripId }),
           TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
+          TripsActions.GetPathToStep({ stepId: newStep.id, tripId }),
+          UtilsActions.NotifySuccess({
+            title: this.translate.instant('CreationDone'),
+            message: this.translate.instant('StepCreated'),
+          }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
@@ -55,10 +71,10 @@ export class StepsEffects {
         switchMap((newStep) => [
           TripsActions.UpdateTripStepSuccess({ tripId, newStep }),
           TripsActions.GetStepDays({ stepId: newStep.id, tripId }),
-          // UtilsActions.NotifySuccess({
-          //   title: 'Mise à jour effectuée',
-          //   message: 'L\'étape a bien été modifié',
-          // }),
+          UtilsActions.NotifySuccess({
+            title: this.translate.instant('UpdateDone'),
+            message: this.translate.instant('StepUpdated'),
+          }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       )),
@@ -68,7 +84,13 @@ export class StepsEffects {
     ofType(TripsActions.DeleteTripStep),
     mergeMap(({ stepId, tripId }) => this.stepsService.deleteStep(stepId)
       .pipe(
-        map(() => TripsActions.DeleteTripStepSuccess({ stepId, tripId })),
+        switchMap(() => [
+          TripsActions.DeleteTripStepSuccess({ stepId, tripId }),
+          UtilsActions.NotifySuccess({
+            title: this.translate.instant('DeletionDone'),
+            message: this.translate.instant('StepDeleted'),
+          }),
+        ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       )),
   ));
@@ -88,6 +110,7 @@ export class StepsEffects {
     private actions$: Actions,
     private stepsService: StepsService,
     private store: Store,
+    private translate: TranslateService,
   ) {}
 
 }

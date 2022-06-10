@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbLayoutModule, NbThemeModule, NbToastrModule } from '@nebular/theme';
 import { EffectsModule } from '@ngrx/effects';
@@ -17,8 +18,15 @@ import { TravelersModule } from './modules/features/travelers/travelers.module';
 import { TripModule } from './modules/features/trip/trip.module';
 import { FeaturesStoreModule } from './store/features-store.module';
 import { AuthentificationModule } from './modules/features/authentification/authentification.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './modules/helpers/auth.guard';
+import { PathsModule } from './modules/features/paths/paths.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+
+export const httpTranslateLoader = (http: HttpClient): TranslateHttpLoader =>
+  new TranslateHttpLoader(http);
 
 @NgModule({
   declarations: [
@@ -26,12 +34,21 @@ import { AuthGuard } from './modules/helpers/auth.guard';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     // Store imports
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({}),
     FeaturesStoreModule,
+    // i18n
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
     //
     NbThemeModule.forRoot(),
     NbEvaIconsModule,
@@ -46,8 +63,10 @@ import { AuthGuard } from './modules/helpers/auth.guard';
     AuthentificationModule,
     HttpClientModule,
     NbToastrModule.forRoot(),
+    PathsModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
+

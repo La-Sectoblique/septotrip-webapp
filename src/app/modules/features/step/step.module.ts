@@ -9,6 +9,8 @@ import { SharedModule } from '../../shared/shared.module';
 import { CreateStepComponent } from './components/create-step/create-step.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DaysModule } from '../days/days.module';
+import { PathsModule } from '../paths/paths.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -24,6 +26,8 @@ import { DaysModule } from '../days/days.module';
     NbInputModule,
     DragDropModule,
     DaysModule,
+    PathsModule,
+    TranslateModule,
   ],
   declarations: [
     StepPreviewComponent,

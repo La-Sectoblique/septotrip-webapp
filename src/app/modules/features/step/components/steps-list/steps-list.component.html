@@ -1,7 +1,7 @@
 <ng-container *ngIf="steps; else emptyBlock">
   <div class="list-card d-flex flex-column h-100">
     <div class="d-flex flex-column align-items-center">
-      <h4>Etapes</h4>
+      <h4>{{'Steps' | translate}}</h4>
       <button nbButton
         *ngIf="(mapEditMode$ | async) as editMode"
         status="primary" 
@@ -10,7 +10,7 @@
         (click)="switchStepEditMode(editMode)"
       >
         <nb-icon icon="edit-outline"></nb-icon>
-        EDITION
+        {{'Edition' | translate}}
       </button>
     </div>
     <div 
@@ -24,14 +24,20 @@
           cdkDrag
           [cdkDragData]="step"
           cdk
+          (mouseenter)="highlightStep(step.stepInstance.id)"
+          (mouseleave)="unHighlight()"
         >
-          <spt-step-preview [step]="step" [stepPoints]="points | filterPointsByStepId:step.stepInstance.id">
+          <spt-step-preview 
+            [step]="step"
+            [stepPoints]="points | filterPointsByStepId:step.stepInstance.id"
+            [isHighlighted]="(highlithedStepId$ | async) === step.stepInstance.id"
+          >
             <div>
-              <button nbButton ghost (click)="deleteStep(step.stepInstance.id)">
-                <nb-icon class="cursor-pointer trash-icon-color" icon="trash-2-outline" status="danger"></nb-icon>
-              </button>
               <button nbButton ghost (click)="editStep(step.stepInstance)">
                 <nb-icon class="cursor-pointer"  icon="edit-outline" status="primary"></nb-icon>
+              </button>
+              <button nbButton ghost (click)="deleteStep(step.stepInstance.id)">
+                <nb-icon class="cursor-pointer trash-icon-color" icon="trash-2-outline" status="danger"></nb-icon>
               </button>
             </div>
             <nb-icon cdkDragHandle handle icon="menu-outline" class="cursor-grab"></nb-icon>
@@ -44,7 +50,7 @@
 
 <ng-template #emptyBlock>
   <div class="d-flex flex-column align-items-center">
-    <h5>Il n'y a aucune étape.</h5>
-    <h6>Cliquez sur la carte pour commencer !</h6>
+    <h5>{{'NoStepEmptyStateMessage' | translate}}</h5>
+    <h6>{{'ClickMapToBegin' | translate}}</h6>
   </div>
 </ng-template>

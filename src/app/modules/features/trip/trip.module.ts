@@ -20,6 +20,7 @@ import { PointsModule } from '../points/points.module';
 import { TravelersModule } from '../travelers/travelers.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToDoListModule } from '../toDoList/toDoList.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { ToDoListModule } from '../toDoList/toDoList.module';
     NbPopoverModule,
     NbTabsetModule,
     ToDoListModule,
+    TranslateModule,
   ],
   declarations: [
     TripPreviewComponent,

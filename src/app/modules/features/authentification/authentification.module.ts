@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { NbButtonModule, NbInputModule } from '@nebular/theme';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import { NbButtonModule, NbInputModule } from '@nebular/theme';
     FormsModule,
     NbButtonModule,
     NbInputModule,
+    TranslateModule,
   ],
   declarations: [LoginComponent, SigninComponent],
 })

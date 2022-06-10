@@ -1,14 +1,14 @@
 <div class="d-flex flex-column align-items-center">
-  <h2>Créer un compte</h2>
+  <h2>{{'RegisterButtonLabel' | translate}}</h2>
   <div class="d-flex flex-column input-wrapper">
-    <label>Prénom : </label>
+    <label>{{'FirstnameInputLabel' | translate}} : </label>
     <input nbInput [(ngModel)]="firstname" placeholder="Maurice">
-    <label>Nom de famille : </label>
+    <label>{{'NameInputLabel' | translate}} : </label>
     <input nbInput [(ngModel)]="lastname" placeholder="Blanc">
-    <label>E-mail : </label>
+    <label>{{'MailAddressInputLabel' | translate}} : </label>
     <input nbInput [(ngModel)]="email" placeholder="maurice.blanc@bo.com">
-    <label>Mot de passe :</label>
+    <label>{{'PasswordInputLabel' | translate}} :</label>
     <input nbInput type="password" [(ngModel)]="password" placeholder="**********">
   </div> 
-  <button nbButton status="success" (click)="inscription()">S'inscrire</button>
+  <button nbButton status="success" (click)="inscription()">{{'RegisterButtonLabel' | translate}}</button>
 </div>

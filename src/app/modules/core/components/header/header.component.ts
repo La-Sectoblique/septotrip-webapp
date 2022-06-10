@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AccountService } from '../../services/account.service';
 
 @Component({
@@ -11,7 +10,9 @@ export class HeaderComponent implements OnInit {
 
   loggedIn: boolean;
 
-  constructor(private accountService: AccountService, private router: Router) {}
+  constructor(
+    private accountService: AccountService,
+  ) {}
 
   ngOnInit(): void {
     this.loggedIn = this.accountService.isLoggedIn;

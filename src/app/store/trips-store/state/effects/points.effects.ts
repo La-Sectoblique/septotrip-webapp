@@ -5,6 +5,8 @@ import {  map, mergeMap, switchMap } from 'rxjs';
 import { PointsService } from 'src/app/modules/features/points/services/points.service';
 import * as TripsActions from '../trips.actions';
 import * as MapsActions from '../../../map-edit-store/state/map-edit.actions';
+import * as UtilsActions from '../../../utils-store/state/utils.actions';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class PointsEffects {
@@ -34,6 +36,10 @@ export class PointsEffects {
         switchMap((newPoint: PointOutput) => [
           TripsActions.CreateTripPointSuccess({ point: newPoint, tripId }),
           MapsActions.AddDisplayedMapPointIds({ pointIds: [newPoint.id] }),
+          UtilsActions.NotifySuccess({
+            title: this.translate.instant('PathUpdated'),
+            message: this.translate.instant('PointCreated'),
+          }),
         ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
@@ -45,7 +51,13 @@ export class PointsEffects {
     mergeMap(({ tripId, pointId, editedPoint }) => this.pointsService.updatePoint(
       pointId, editedPoint,
     ).pipe(
-      map((newPoint: PointOutput) => TripsActions.UpdateTripPointSuccess({ tripId, newPoint })),
+      switchMap((newPoint: PointOutput) => [
+        TripsActions.UpdateTripPointSuccess({ tripId, newPoint }),
+        UtilsActions.NotifySuccess({
+          title: this.translate.instant('UpdateDone'),
+          message: this.translate.instant('PointUpdated'),
+        }),
+      ]),
       // @TODO: catchError(() => CALL ERROR ACTION),
     )),
   ));
@@ -54,7 +66,13 @@ export class PointsEffects {
     ofType(TripsActions.DeleteTripPoint),
     mergeMap(({ tripId, pointId }) => this.pointsService.deletePoint(pointId)
       .pipe(
-        map(() => TripsActions.DeleteTripPointSuccess({ pointId, tripId })),
+        switchMap(() => [
+          TripsActions.DeleteTripPointSuccess({ pointId, tripId }),
+          UtilsActions.NotifySuccess({
+            title: this.translate.instant('DeletionDone'),
+            message: this.translate.instant('PointDeleted'),
+          }),
+        ]),
         // @TODO: catchError(() => CALL ERROR ACTION),
       ),
     ),
@@ -84,6 +102,7 @@ export class PointsEffects {
   constructor(
     private actions$: Actions,
     private pointsService: PointsService,
+    private translate: TranslateService,
   ) {}
 
 }

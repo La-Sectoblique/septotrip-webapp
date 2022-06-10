@@ -1,9 +1,9 @@
 <div class="d-flex flex-column align-items-center vw-25">
-    <h2>Mes voyages</h2>
+    <h2>{{'MyTripsTitle' | translate}}</h2>
     <div class="w-100 d-flex justify-content-center">
         <button nbButton status="primary"
             routerLink="/trips/create"
-        ><nb-icon icon="plus-square-outline"></nb-icon>Créer un voyage</button>
+        ><nb-icon icon="plus-square-outline"></nb-icon>{{'CreateTripValidation' | translate}}</button>
     </div>
     <ng-container *ngIf="(trips$ | async) as trips; else loadingBlock">
         <ng-container *ngIf="trips.length > 0; else emptyBlock">
@@ -17,7 +17,7 @@
         </ng-container>
         <ng-template #emptyBlock>
             <div class="d-flex justify-content-center">
-                Vous n'avez aucun voyage.
+               {{'NoTripEmptyStateMessage' | translate}}
             </div>
         </ng-template>
     </ng-container>

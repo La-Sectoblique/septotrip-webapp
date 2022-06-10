@@ -49,7 +49,7 @@ export const tripReducer = createReducer(
       ...state.trips,
       [tripId]: {
         ...state.trips[tripId],
-        steps: steps.map((step) => ({ stepInstance: step })),
+        steps: steps.map((step) => ({ ...step, stepInstance: step })),
       },
     },
   })),
@@ -131,6 +131,7 @@ export const tripReducer = createReducer(
       }
       return step;
     });
+
     return { ...state,
       trips: {
         ...state.trips,
@@ -139,6 +140,53 @@ export const tripReducer = createReducer(
           steps,
         },
       } };
+  }),
+
+  // === PATHS ===
+
+  on(TripsAction.GetPathToStepSuccess, (state, { path, tripId, stepId }) => {
+    const steps = state.trips[tripId].steps.map((step) => {
+      if (step.stepInstance.id === stepId) {
+        return {
+          ...step,
+          pathToStep: path,
+        };
+      }
+      return step;
+    });
+
+    return { ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          steps,
+        },
+      },
+    };
+  }),
+
+  on(TripsAction.UpdatePathSuccess, (state, { tripId, stepId, path }) => {
+    const steps = state.trips[tripId].steps.map((step) => {
+      if (step.stepInstance.id === stepId) {
+        return {
+          ...step,
+          pathToStep: path,
+        };
+      }
+      return step;
+    });
+
+    return {
+      ...state,
+      trips: {
+        ...state.trips,
+        [tripId]: {
+          ...state.trips[tripId],
+          steps,
+        },
+      },
+    };
   }),
 
   // === POINTS ===

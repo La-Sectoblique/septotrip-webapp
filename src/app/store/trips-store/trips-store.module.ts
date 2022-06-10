@@ -9,6 +9,7 @@ import { TravelersEffects } from './state/effects/travelers.effects';
 import { StepsEffects } from './state/effects/steps.effects';
 import { PointsEffects } from './state/effects/points.effects';
 import { DaysEffects } from './state/effects/days.effects';
+import { PathsEffects } from './state/effects/paths.effects';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { DaysEffects } from './state/effects/days.effects';
       StepsEffects,
       PointsEffects,
       DaysEffects,
+      PathsEffects,
     ]),
   ],
   declarations: [],

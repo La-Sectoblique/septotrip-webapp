@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
@@ -7,11 +7,19 @@ import { LngLatLike, Map, MapMouseEvent } from 'mapbox-gl';
 import { first, Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { SetDisplayedMapPointIds } from 'src/app/store/map-edit-store/state/map-edit.actions';
-import { selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
+import {
+  selectHighlightedPointId,
+  selectHighlightedStepId,
+  selectMapEditMode,
+} from 'src/app/store/map-edit-store/state/map-edit.selectors';
 import { UpdateTripPoint, UpdateTripStep } from 'src/app/store/trips-store/state/trips.actions';
 import { CreatePointComponent } from '../../../points/components/create-point/create-point.component';
 import { CreateStepComponent } from '../../../step/components/create-step/create-step.component';
 import { FlattenedStep } from '../../../step/models/flattened-step';
+import { HighlightMapMarkersService } from '../../services/highlight-map-markers.service';
+import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import { environment } from 'src/environments/environment';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'spt-trips-map',
@@ -27,6 +35,9 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   mapEditMode$: Observable<MapEditMode>;
   MapEditMode = MapEditMode;
+
+  highlightedPointId$: Observable<number | null>;
+  highlightedStepId$: Observable<number | null>;
 
   mapCenter: LngLatLike = [7.750149, 48.581551];
   mapZoom: [number] = [7];
@@ -45,14 +56,18 @@ export class TripsMapComponent implements OnChanges, OnInit {
   constructor(
     private nbDialogService: NbDialogService,
     private store: Store,
+    private highlightMapMarkersService: HighlightMapMarkersService,
+    private translateService: TranslateService,
   ) {}
 
   ngOnInit(): void {
     this.mapEditMode$ = this.store.select(selectMapEditMode());
-    this.mapCenter = [
-      this.steps[0].stepInstance.localisation.coordinates[0],
-      this.steps[0].stepInstance.localisation.coordinates[1],
-    ];
+    if (this.steps[0]) {
+      this.mapCenter = [
+        this.steps[0].stepInstance.localisation.coordinates[0],
+        this.steps[0].stepInstance.localisation.coordinates[1],
+      ];
+    }
 
 
     // Create bounding box for the map
@@ -62,15 +77,39 @@ export class TripsMapComponent implements OnChanges, OnInit {
     ].forEach((coordinates) => {
       this.mapMarkersBounds.extend([coordinates[0], coordinates[1]]);
     });
+
+    this.highlightedPointId$ = this.store.select(selectHighlightedPointId());
+    this.highlightedStepId$ = this.store.select(selectHighlightedStepId());
   }
 
-  ngOnChanges(/*{ steps }: SimpleChanges*/): void {
-    this.updateLineDrawing();
+  ngOnChanges({ steps }: SimpleChanges): void {
+    if (steps.currentValue) {
+      this.updateLineDrawing();
+    }
   }
 
   onMapLoaded(map: Map): void {
     map.resize();
 
+    // Search bar
+
+    const mapboxGeocoder = new MapboxGeocoder({
+      accessToken: environment.mapBoxToken,
+      mapboxgl: mapboxgl as unknown as Map, // You can cry but I don't care.
+      language: this.translateService.currentLang,
+    });
+    map.addControl(
+      mapboxGeocoder,
+    );
+
+    // Update search bar language
+    this.translateService.onLangChange.subscribe((newLanguage) => {
+      mapboxGeocoder.setLanguage(newLanguage.lang);
+      map.removeControl(mapboxGeocoder);
+      map.addControl(mapboxGeocoder);
+    });
+
+    // Displayed point management
     this.updateDisplayedPoints(map);
     map
       .on('moveend', () => {this.updateDisplayedPoints(map);})
@@ -172,6 +211,18 @@ export class TripsMapComponent implements OnChanges, OnInit {
         }),
       },
     };
+  }
+
+  highlightPoint(pointId: number): void {
+    this.highlightMapMarkersService.highlightPoint(pointId);
+  }
+
+  hightlightStep(stepId: number): void {
+    this.highlightMapMarkersService.highlightStep(stepId);
+  }
+
+  unHighlight(): void {
+    this.highlightMapMarkersService.unHighlight();
   }
 
 }

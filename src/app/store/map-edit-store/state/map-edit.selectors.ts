@@ -17,3 +17,12 @@ export const selectDisplayedMapPointIds = () => createSelector(
   selectFeature,
   (state: MapEditState) => state.displayedPointIds,
 );
+
+export const selectHighlightedStepId = () => createSelector(
+  selectFeature,
+  (state: MapEditState) => state.highlightedStepId,
+);
+export const selectHighlightedPointId = () => createSelector(
+  selectFeature,
+  (state: MapEditState) => state.highlightedPointId,
+);
