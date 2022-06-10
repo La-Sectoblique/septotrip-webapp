@@ -1,4 +1,6 @@
-<div class="d-flex flex-column align-items-center justify-content-between card card-horizontal point-preview-wrapper">
+<div class="d-flex flex-column align-items-center justify-content-between card card-horizontal point-preview-wrapper"
+  [class.highlighted]="isHighlighted"
+>
   <h6 class="ellips-informations m-0">{{point.title}}</h6>
   <p *ngIf="point.description" class="ellips-informations m-0">{{point.description}}</p>
   <div class="d-flex align-items-center justify-content-center">

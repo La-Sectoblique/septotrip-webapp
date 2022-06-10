@@ -2,7 +2,7 @@
   <h2>{{isEditMode ? ('StepUpdate' | translate) : ('StepCreation' | translate)}}</h2>
 
   <form 
-    class="d-flex flex-column"
+    class="d-flex flex-column form-input-gap"
     [formGroup]="stepForm"
     (ngSubmit)="create()"
   >
