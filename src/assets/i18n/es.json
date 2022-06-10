@@ -1,0 +1,89 @@
+{
+    "CreateTripTitle": "Diseño de viaje",
+    "CreateTripValidation": "Crear el viaje",
+    "NoTripEmptyStateMessage": "No tienes viaje",
+    
+    "NoStepEmptyStateMessage": "No hay paso",
+
+    "NoPointEmptyStateMessage": "No hay puntos de interés",
+
+    "NoInformationEmptyStateMessage": "Ninguna información",
+
+    "ClickMapToBegin": "Click en el mapa para comenzar",
+    
+    "TripMemberTitle": "Miembros del viaje",
+    
+    "NameInputLabel": "Apellido",
+    "FirstnameInputLabel": "Nombre",
+    "MailAddressInputLabel": "Correo electrónico",
+    "DurationInputLabel": "Duración",
+    "DescriptionInputLabel": "Descripción",
+    "InformationInputLabel": "Información",
+    "PasswordInputLabel": "Contraseña",
+    
+    "Delete": "Borrar",
+    "Add": "Para agregar",
+    "Edition": "Edición",
+    "Stop": "Parar",
+    "Public": "Público",
+    "Private": "Privado",
+
+    "Days": "Días",
+    "Day": "Día",
+    "Steps": "Pasos",
+    "Points": "Puntos de interés",
+
+    "LoginButtonLabel": "Acceso",
+    "RegisterButtonLabel": "Registro",
+    "DisconnectButtonLabel": "Cerrar sesión",
+
+    "HomeNavLabel": "Bienvenida",
+    "TripNavLabel": "Viajes",
+    
+    "Parameters": "Configuraciones",
+    "PlanificationTabTitle": "Planificación",
+    "MemberTabTitle": "Miembros",
+    
+    "MyTripsTitle": "Mis viajes",
+    "VoyageInFrancePlaceholder": "Viajar en Francia",
+
+    "AddTravelerTitle": "Agregar un viajero",
+
+    "StepCreation": "Creando un paso",
+    "StepUpdate": "Edición de un paso",
+    "StepCreationValidation": "Crear paso",
+    "StepUpdateValidation": "Editar paso",
+    "StepEditMode": "Edición de pasos",
+
+    "PointCreation": "Creación de un punto de interés",
+    "PointUpdate": "Modificación de un punto de interés",
+    "PointUpdateValidation": "Modificar el punto de interés",
+    "PointCreationValidation": "Crear el punto de interés",
+    "PointEditMode": "Edición de puntos de interés",
+
+    "PathUpdate": "Modificación de la ruta",
+    "PathUpdateValidation": "Modificar la ruta",
+
+    "FilteredPointsTooltipButton": "Sólo aparecen en la lista los puntos mostrados en el mapa",
+    "NotFilteredPointsTooltipButton": "Todos los puntos del mapa aparecen en la lista",
+
+    "UpdateDone": "Actualización realizada",
+    "CreationDone": "Creación realizada",
+    "DeletionDone": "Borrado realizado",
+
+    "PathUpdated": "La ruta ha sido modificada",
+    "PointUpdated": "El punto de interés ha sido modificado",
+    "StepUpdated": "El paso ha sido modificado",
+    
+    "PointCreated": "El punto de interés ha sido creado",
+    "StepCreated": "El paso ha sido creado",
+
+    "PointDeleted": "El punto de interés ha sido eliminado",
+    "StepDeleted": "El paso ha sido eliminado",
+    "TripDeleted": "El viaje ha sido eliminado",
+
+    "Language": "idioma",
+    
+    "LoginError": "Error de autenticación",
+    "LoginErrorMessage": "Las credenciales no son correctas o la cuenta no existe"
+}

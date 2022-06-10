@@ -80,5 +80,10 @@
 
     "PointDeleted": "The intereset point has been deleted",
     "StepDeleted": "The step has been deleted",
-    "TripDeleted": "The trip has been deleted"
+    "TripDeleted": "The trip has been deleted",
+
+    "Language": "Language",
+
+    "LoginError": "Authentication error",
+    "LoginErrorMessage": "The credentials are not correct or the account does not exist."
 }

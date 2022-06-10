@@ -80,5 +80,10 @@
 
     "PointDeleted": "Le point d'intérêt a bien été supprimé",
     "StepDeleted": "L'étape a bien été supprimée",
-    "TripDeleted": "Le voyage a été supprimé"
+    "TripDeleted": "Le voyage a été supprimé",
+
+    "Language": "Langue",
+    
+    "LoginError": "Erreur lors de l'authentification",
+    "LoginErrorMessage": "Les identifiants sont incorect ou le compte n'existe pas."
 }
