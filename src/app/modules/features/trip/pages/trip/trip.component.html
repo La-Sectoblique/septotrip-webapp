@@ -42,8 +42,9 @@
             <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance.id)">SUPPRIMER</button>
           </nb-tab>
           <nb-tab tabTitle="Liste des tâches">
-            <h2>Liste des tâches</h2>
-            <spt-todolist></spt-todolist>
+            <h2>Créer une Tâches</h2>
+            <spt-todolist
+            [tripId]="trip.tripInstance.id"></spt-todolist>
           </nb-tab>
         </nb-tabset>
       </div>

@@ -1,5 +1,14 @@
 <div class="d-flex flex-column step-creation-wrapper">
-    <button nbButton>
-        créer une tâche
-    </button>
+    <div>
+        <input nbInput [(ngModel)]="taskName" placeholder="Faire la valise">
+        <button nbButton (click)="addTask(taskName)">
+            créer une tâche
+        </button>
+    </div>
+    <div>
+        <h2> Liste des taches</h2>
+        <ul *ngFor="let task from tripTask">
+            <li>{{ task.title }}</li>
+        </ul>
+    </div>
 </div>
