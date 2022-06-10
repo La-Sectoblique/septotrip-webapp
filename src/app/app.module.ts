@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,10 +23,15 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { PathsModule } from './modules/features/paths/paths.module';
 import { UnothorizedInterceptor } from './modules/shared/interceptors/unothorized.interceptor';
+import { AuthenticationService } from './modules/features/authentification/services/authentication.service';
 
 
 export const httpTranslateLoader = (http: HttpClient): TranslateHttpLoader =>
   new TranslateHttpLoader(http);
+
+const appUserInitializer = (authenticationService: AuthenticationService) => () => Promise.all([
+  authenticationService.getCurrentJwtUser(),
+]);
 
 @NgModule({
   declarations: [
@@ -67,6 +72,12 @@ export const httpTranslateLoader = (http: HttpClient): TranslateHttpLoader =>
   ],
   providers: [
     AuthGuard,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appUserInitializer,
+      multi: true,
+      deps: [AuthenticationService],
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: UnothorizedInterceptor,

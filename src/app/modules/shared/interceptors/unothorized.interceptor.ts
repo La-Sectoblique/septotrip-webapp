@@ -29,11 +29,13 @@ export class UnothorizedInterceptor implements HttpInterceptor {
             if (error.status !== HttpStatusCode.Unauthorized) {
               return;
             }
+            if (this.authenticationService.isUserLoggedIn) {
+              this.nbToastrService.info(
+                this.translateService.instant('SessionExpiredMessage'),
+                this.translateService.instant('SessionExpired'),
+              );
+            }
             this.authenticationService.logout();
-            this.nbToastrService.info(
-              this.translateService.instant('SessionExpiredMessage'),
-              this.translateService.instant('SessionExpired'),
-            );
           }
         },
       }),

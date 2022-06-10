@@ -86,5 +86,8 @@
     "LoginNeededMessage": "Please login to access this page.",
     
     "SessionExpired": "Session expired",
-    "SessionExpiredMessage": "You have been disconnected."
+    "SessionExpiredMessage": "You have been disconnected.",
+    
+    "LoginError": "Authentication error",
+    "LoginErrorMessage": "The credentials are not correct or the account does not exist."
 }

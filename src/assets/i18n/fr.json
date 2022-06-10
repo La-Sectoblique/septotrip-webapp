@@ -86,5 +86,8 @@
     "LoginNeededMessage": "Veuillez vous connecter pour accéder à la page.",
 
     "SessionExpired": "Session expirée",
-    "SessionExpiredMessage": "Vous avez été déconnecté."
+    "SessionExpiredMessage": "Vous avez été déconnecté.",
+
+    "LoginError": "Erreur lors de l'authentification",
+    "LoginErrorMessage": "Les identifiants sont incorect ou le compte n'existe pas."
 }
