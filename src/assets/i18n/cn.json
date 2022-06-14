@@ -85,5 +85,11 @@
     "Language": "语",
     
     "LoginError": "授权错误",
-    "LoginErrorMessage": "凭据不正确或帐户不存在"
+    "LoginErrorMessage": "凭据不正确或帐户不存在",
+    
+    "LoginNeeded": "需要连接",
+    "LoginNeededMessage": "请登录访问该页面",
+
+    "SessionExpired": "会议过期",
+    "SessionExpiredMessage": "你已经被切断了连接"
 }
