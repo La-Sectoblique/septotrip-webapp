@@ -85,5 +85,11 @@
     "Language": "",
     
     "LoginError": "",
-    "LoginErrorMessage": ""
+    "LoginErrorMessage": "",
+    
+    "LoginNeeded": "",
+    "LoginNeededMessage": "",
+
+    "SessionExpired": "",
+    "SessionExpiredMessage": "",
 }

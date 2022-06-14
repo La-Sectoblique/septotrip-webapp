@@ -85,5 +85,11 @@
     "Language": "Kieli",
     
     "LoginError": "Todennusvirhe",
-    "LoginErrorMessage": "Tunnukset eivät ole oikein tai tiliä ei ole olemassa"
+    "LoginErrorMessage": "Tunnukset eivät ole oikein tai tiliä ei ole olemassa",
+    
+    "LoginNeeded": "Tarvittava yhteys",
+    "LoginNeededMessage": "Kirjaudu sisään päästäksesi sivulle.",
+
+    "SessionExpired": "Istunto päättynyt",
+    "SessionExpiredMessage": "Sinulta on katkaistu yhteys"
 }

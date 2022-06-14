@@ -85,5 +85,11 @@
     "Language": "Língua",
     
     "LoginError": "Erro de autenticação",
-    "LoginErrorMessage": "As credenciais não estão corretas ou a conta não existe"
+    "LoginErrorMessage": "As credenciais não estão corretas ou a conta não existe",
+    
+    "LoginNeeded": "Ligação necessária",
+    "LoginNeededMessage": "Por favor inicie sessão para aceder ao",
+
+    "SessionExpired": "Sessão expirou",
+    "SessionExpiredMessage": "Foi desconectado."
 }
