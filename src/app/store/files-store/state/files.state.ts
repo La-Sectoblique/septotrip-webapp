@@ -1,9 +1,9 @@
 import { FileMetadataOutput } from '@la-sectoblique/septoblique-service/dist/types/models/File';
 
 export interface FilesState {
-  files: FileMetadataOutput[];
+  tripFiles: { [tripId: number]: FileMetadataOutput[] };
 }
 
 export const initialFilesState: FilesState = {
-  files: [],
+  tripFiles: {},
 };
