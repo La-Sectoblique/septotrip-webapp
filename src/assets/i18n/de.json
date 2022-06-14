@@ -85,11 +85,11 @@
     "Language": "Sprache",
     
     "LoginError": "Authentifizierungsfehler",
-    "LoginErrorMessage": "Die Anmeldeinformationen sind nicht korrekt oder das Konto existiert nicht"
+    "LoginErrorMessage": "Die Anmeldeinformationen sind nicht korrekt oder das Konto existiert nicht",
     
     "LoginNeeded": "Verbindung erforderlich",
     "LoginNeededMessage": "Bitte melden Sie sich an, um auf die Seite zuzugreifen.",
 
     "SessionExpired": "Abgelaufene Sitzung",
-    "SessionExpiredMessage": "Sie haben sich abgemeldet.",
+    "SessionExpiredMessage": "Sie haben sich abgemeldet."
 }
