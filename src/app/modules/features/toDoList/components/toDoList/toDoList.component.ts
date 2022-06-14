@@ -13,6 +13,9 @@ export class ToDoListComponent implements OnInit {
   //constructor() { }
   taskName: string;
   taskList: TodoEntryOutput[];
+  toDo = TodoState.TODO;
+  doing = TodoState.DOING;
+  done = TodoState.DONE;
 
   ngOnInit() {
     getTodoEntriesByTripId(this.tripId)

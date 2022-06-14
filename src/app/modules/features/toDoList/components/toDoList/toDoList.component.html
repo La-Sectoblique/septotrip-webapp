@@ -7,8 +7,15 @@
     </div>
     <div>
         <h2> Liste des taches</h2>
-        <ul *ngFor="let task from tripTask">
-            <li>{{ task.title }}</li>
+        <ul >
+            <li *ngFor="let task of taskList">
+                {{ task.title }}
+                <select nbSelect>
+                    <option value="toDo">A faire</option>
+                    <option value="doing">En cours</option>
+                    <option value="done">Fait</option>
+                </select>
+            </li>
         </ul>
     </div>
 </div>
