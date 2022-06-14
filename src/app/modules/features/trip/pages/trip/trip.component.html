@@ -25,6 +25,15 @@
               </div>
             </div>
           </nb-tab>
+
+          <!-- todo: TRANSLATE -->
+          <nb-tab tabTitle="Fichiers">
+            <ng-container *ngIf="tripFiles$ | async as tripFiles">
+              <spt-add-files></spt-add-files>
+
+              <spt-files-list [files]="tripFiles"></spt-files-list>
+            </ng-container>
+          </nb-tab>
   
           <nb-tab [tabTitle]="'MemberTabTitle' | translate">
             <ng-container *ngIf="travelers$ | async as travelers">
@@ -37,6 +46,7 @@
               </div>
             </ng-container>
           </nb-tab>
+
           <nb-tab [tabTitle]="'Parameters' | translate">
             <h2>{{'Parameters' | translate}}</h2>
             <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance.id)">{{'Delete' | translate}}</button>

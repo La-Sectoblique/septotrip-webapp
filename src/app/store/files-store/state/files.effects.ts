@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { getTripFiles } from '@la-sectoblique/septoblique-service';
 import { FileMetadataOutput } from '@la-sectoblique/septoblique-service/dist/types/models/File';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { from, map, mergeMap } from 'rxjs';
+import { map, mergeMap } from 'rxjs';
+import { FilesService } from 'src/app/modules/features/files/services/files.service';
 import * as FilesActions from './files.actions';
 
 @Injectable()
@@ -10,7 +10,7 @@ export class FilesEffects {
 
   GetTripFiles$ = createEffect(() => this.actions$.pipe(
     ofType(FilesActions.GetTripFiles),
-    mergeMap(({ tripId }) => from(getTripFiles(tripId))
+    mergeMap(({ tripId }) => this.filesService.getTripFiles(tripId)
       .pipe(
         map((files: FileMetadataOutput[]) =>
           FilesActions.GetTripFilesSuccess({ tripId, files }),
@@ -22,6 +22,7 @@ export class FilesEffects {
 
   constructor(
     private actions$: Actions,
+    private filesService: FilesService,
   ) {}
 
 }

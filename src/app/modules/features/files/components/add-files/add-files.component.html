@@ -1,0 +1,18 @@
+<form
+  [formGroup]="fileForm"
+  (ngSubmit)="onSubmit()"
+>
+  <input 
+    type="file" 
+    name="file" 
+    id="file" 
+    formControlName="file"
+    (change)="onFileChange($event)"
+  />
+  <button 
+    type="submit" 
+    status="success"
+  >
+    TAMERE
+  </button>
+</form> 
