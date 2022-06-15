@@ -1,18 +1,31 @@
-<form
+
+<!-- 1e+7 is 10mo -->
+<ngx-dropzone (change)="onFileDrop($event)" [maxFileSize]="10000000" [multiple]="false">
+	<ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+	<ngx-dropzone-preview  *ngIf="file" [removable]="true" (removed)="onFileRemove()">
+		<ngx-dropzone-label>{{ file.name }} ({{ file.type }})</ngx-dropzone-label>
+	</ngx-dropzone-preview>
+</ngx-dropzone>
+
+<!-- todo: TRANSLATE -->
+<form 
   [formGroup]="fileForm"
   (ngSubmit)="onSubmit()"
 >
-  <input 
-    type="file" 
-    name="file" 
-    id="file" 
-    formControlName="file"
-    (change)="onFileChange($event)"
-  />
+  <label for="name">Nom :</label>
+  <input nbInput name="name" id="name" formControlName="name">
+
+  <nb-radio-group formControlName="visibility">
+    <nb-radio value="public">Publique</nb-radio>
+    <nb-radio value="private">Privée</nb-radio>
+  </nb-radio-group>
+
   <button 
     type="submit" 
     status="success"
+    nbButton
+    [disabled]="!isValid()"
   >
-    TAMERE
+    Ajouter
   </button>
-</form> 
+</form>

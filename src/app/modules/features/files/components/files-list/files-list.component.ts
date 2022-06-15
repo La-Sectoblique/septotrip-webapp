@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class FilesListComponent {
 
+  @Input() tripId: number;
   @Input() files: FileMetadataOutput[];
 
   apiUrl = environment.baseURL;

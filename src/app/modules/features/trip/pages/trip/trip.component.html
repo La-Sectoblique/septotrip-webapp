@@ -28,9 +28,9 @@
           <!-- todo: TRANSLATE -->
           <nb-tab tabTitle="Fichiers">
             <ng-container *ngIf="tripFiles$ | async as tripFiles">
-              <spt-add-files></spt-add-files>
+              <spt-add-files [tripId]="trip.tripInstance.id"></spt-add-files>
 
-              <spt-files-list [files]="tripFiles"></spt-files-list>
+              <spt-files-list [files]="tripFiles" [tripId]="trip.tripInstance.id"></spt-files-list>
             </ng-container>
           </nb-tab>
   
