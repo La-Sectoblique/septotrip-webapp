@@ -3,7 +3,6 @@
     <ng-container *ngIf="(points$ | async) as points">
       <div class="h-100 w-100">
         <nb-tabset class="h-100 w-100 d-flex flex-column">
-          <p>{{trip.tripInstance.name}}</p>
           <nb-tab [tabTitle]="'PlanificationTabTitle' | translate" class="h-100 w-100">
             <div class="page-wrapper h-100 w-100">
               <div class="h-100">

@@ -1,4 +1,4 @@
 <div *ngFor="let file of files">
   <p>{{file.name}} {{file.extension}}</p>
-  <a [href]="apiUrl + '/file/'+ file.tempFileId">DOWNLOAD</a>
+  <a [href]="apiUrl + '/files/'+ file.tempFileId" (click)="getUrl(file)" target="_blank">DOWNLOAD</a>
 </div>
