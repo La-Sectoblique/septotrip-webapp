@@ -1,31 +1,41 @@
-
-<!-- 1e+7 is 10mo -->
-<ngx-dropzone (change)="onFileDrop($event)" [maxFileSize]="10000000" [multiple]="false">
-	<ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
-	<ngx-dropzone-preview  *ngIf="file" [removable]="true" (removed)="onFileRemove()">
-		<ngx-dropzone-label>{{ file.name }} ({{ file.type }})</ngx-dropzone-label>
-	</ngx-dropzone-preview>
-</ngx-dropzone>
-
 <!-- todo: TRANSLATE -->
-<form 
-  [formGroup]="fileForm"
-  (ngSubmit)="onSubmit()"
->
-  <label for="name">Nom :</label>
-  <input nbInput name="name" id="name" formControlName="name">
-
-  <nb-radio-group formControlName="visibility">
-    <nb-radio value="public">Publique</nb-radio>
-    <nb-radio value="private">Privée</nb-radio>
-  </nb-radio-group>
-
-  <button 
-    type="submit" 
-    status="success"
-    nbButton
-    [disabled]="!isValid()"
+<div class="add-files-wrapper d-flex flex-column justify-content-center align-items-center">
+  <h2>Ajouter un fichier</h2>
+  <!-- 1e+7 is 10mo -->
+  <ngx-dropzone 
+    (change)="onFileDrop($event)" 
+    [maxFileSize]="10000000" 
+    [multiple]="false" 
+    class="w-100 mb-4"
   >
-    Ajouter
-  </button>
-</form>
+    <ngx-dropzone-label>Glissez ou cliquez pour ajouter un fichier. <br> (10mo max)</ngx-dropzone-label>
+    <ngx-dropzone-preview  *ngIf="file" [removable]="true" (removed)="onFileRemove()">
+      <ngx-dropzone-label>{{ file.name }} ({{ file.type }})</ngx-dropzone-label>
+    </ngx-dropzone-preview>
+  </ngx-dropzone>
+  
+  <form 
+    class="d-flex flex-column justify-content-center align-items-center"
+    [formGroup]="fileForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="mb-4">
+      <label for="name" class="mr-2">Nom :</label>
+      <input nbInput name="name" id="name" formControlName="name">
+    </div>
+
+    <nb-radio-group formControlName="visibility" class="mb-4">
+      <nb-radio value="public">Publique</nb-radio>
+      <nb-radio value="private">Privée</nb-radio>
+    </nb-radio-group>
+  
+    <button 
+      type="submit" 
+      status="success"
+      nbButton
+      [disabled]="!isValid()"
+    >
+      Ajouter
+    </button>
+  </form>
+</div>

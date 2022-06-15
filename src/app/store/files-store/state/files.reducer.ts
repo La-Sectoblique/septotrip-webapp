@@ -13,4 +13,15 @@ export const filesReducer = createReducer(
     },
   })),
 
+  on(FilesActions.UploadTripFileSuccess, (state, { newFile, tripId }) => ({
+    ...state,
+    tripFiles: {
+      ...state.tripFiles,
+      [tripId]: [
+        ...state.tripFiles[tripId],
+        newFile,
+      ],
+    },
+  })),
+
 );

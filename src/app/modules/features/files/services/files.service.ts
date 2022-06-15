@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { getTripFiles } from '@la-sectoblique/septoblique-service';
-import { FileMetadataOutput } from '@la-sectoblique/septoblique-service/dist/types/models/File';
+import { getTripFiles, uploadFile } from '@la-sectoblique/septoblique-service';
+import { FileMetadataAttributes, FileMetadataOutput } from '@la-sectoblique/septoblique-service/dist/types/models/File';
+import { FileFormat } from '@la-sectoblique/septoblique-service/dist/utils/FormData';
 import { from, Observable } from 'rxjs';
 
 @Injectable({
@@ -10,6 +11,10 @@ export class FilesService {
 
   getTripFiles(tripId: number): Observable<FileMetadataOutput[]> {
     return from(getTripFiles(tripId));
+  }
+
+  uploadFile(options: FileMetadataAttributes, file: FileFormat): Observable<FileMetadataOutput> {
+    return from(uploadFile(options, file));
   }
 
 }

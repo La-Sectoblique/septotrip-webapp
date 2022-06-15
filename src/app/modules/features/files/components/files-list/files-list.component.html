@@ -1,4 +1,10 @@
+<!-- todo: TRANSLATE -->
+<button nbButton (click)="openAddFileModal()" status="primary">
+  <nb-icon icon="plus-square-outline"></nb-icon>
+   Ajouter un fichier
+</button>
+
 <div *ngFor="let file of files">
   <p>{{file.name}} {{file.extension}}</p>
-  <a [href]="apiUrl + '/files/'+ file.tempFileId" (click)="getUrl(file)" target="_blank">DOWNLOAD</a>
+  <a [href]="apiUrl + '/files/'+ file.tempFileId" target="_blank">DOWNLOAD</a>
 </div>

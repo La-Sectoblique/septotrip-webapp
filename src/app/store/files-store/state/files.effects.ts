@@ -20,6 +20,17 @@ export class FilesEffects {
     ),
   ));
 
+  UploadTripFile$ = createEffect(() => this.actions$.pipe(
+    ofType(FilesActions.UploadTripFile),
+    mergeMap(({ options, file }) => this.filesService.uploadFile(options, file)
+      .pipe(
+        map((newFile: FileMetadataOutput) =>
+          FilesActions.UploadTripFileSuccess({ newFile, tripId: options.tripId }),
+        ),
+      ),
+    ),
+  ));
+
   constructor(
     private actions$: Actions,
     private filesService: FilesService,
