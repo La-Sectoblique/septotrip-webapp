@@ -1344,10 +1344,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@la-sectoblique/septoblique-service@0.7.10":
-  version "0.7.10"
-  resolved "https://npm.pkg.github.com/download/@la-sectoblique/septoblique-service/0.7.10/05da5b948d97ff3fff4272b639a1c7083d9125c0568eadfeba71243658bb3de1#6ae95483e5f6718c0a6bde8db42ce17698e0dbfb"
-  integrity sha512-XxCElOHtlT0A2+SHp7+bHvOS2KW1Nlj8WM6oFcQQRoK4g6xrRoPZ7nM/U/+tPh0DMo6HIAyA4QeFLpBbM5WJsg==
+"@la-sectoblique/septoblique-service@0.8.5":
+  version "0.8.5"
+  resolved "https://npm.pkg.github.com/download/@la-sectoblique/septoblique-service/0.8.5/62dbbc711a78a2040575b003a6541f90226633462e0c1ada94d3bb18ea875584#826a11a81caa54f90b2eff20af6a7bf07b9b3b0f"
+  integrity sha512-kOzGtGHUsIZCCcckwA065IK+lou8/VqKWOWWNbKrbacdYQBpOoZZ0Oh412INU3ED0cYuK6dMzTAGnFLCg+xk5Q==
   dependencies:
     axios "^0.26.0"
     mime-types "^2.1.35"
