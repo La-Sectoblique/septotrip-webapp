@@ -1,0 +1,20 @@
+<div class="card d-flex align-items-center">
+  <p>{{file.name}}</p>
+  <ng-container [ngSwitch]="file.fileType">
+    <nb-icon *ngSwitchCase="FileType.DOCUMENT"
+      icon="file-text-outline"
+    ></nb-icon>
+    <nb-icon *ngSwitchCase="FileType.PHOTO"
+      icon="image-outline"
+    ></nb-icon>
+  </ng-container>
+  <button
+    nbButton
+    ghost
+  >
+    <nb-icon
+      icon="eye-outline"
+    ></nb-icon>
+  </button>
+  <ng-content></ng-content>
+</div>

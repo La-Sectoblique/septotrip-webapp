@@ -1,10 +1,18 @@
 <!-- todo: TRANSLATE -->
-<button nbButton (click)="openAddFileModal()" status="primary">
-  <nb-icon icon="plus-square-outline"></nb-icon>
-   Ajouter un fichier
-</button>
+<div class="d-flex flex-column justify-content-center">
+  <button nbButton (click)="openAddFileModal()" status="primary">
+    <nb-icon icon="plus-square-outline"></nb-icon>
+     Ajouter un fichier
+  </button>
 
-<div *ngFor="let file of files">
-  <p>{{file.name}} {{file.extension}}</p>
-  <a [href]="apiUrl + '/files/'+ file.tempFileId" target="_blank">DOWNLOAD</a>
+  <ng-container *ngFor="let file of files">
+    <spt-file-preview
+      [file]="file"
+    ></spt-file-preview>
+  </ng-container>
+  
+  <!-- <div *ngFor="let file of files">
+    <p>{{file.name}} {{file.extension}}</p>
+    <a [href]="apiUrl + '/files/'+ file.tempFileId" target="_blank">DOWNLOAD</a>
+  </div> -->
 </div>
