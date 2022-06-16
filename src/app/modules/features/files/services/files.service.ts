@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { getFileLink, getTripFiles, uploadFile } from '@la-sectoblique/septoblique-service';
+import { deleteFile, getFileLink, getTripFiles, uploadFile } from '@la-sectoblique/septoblique-service';
 import { FileMetadataAttributes, FileMetadataOutput } from '@la-sectoblique/septoblique-service/dist/types/models/File';
 import { FileFormat } from '@la-sectoblique/septoblique-service/dist/utils/FormData';
 import { from, Observable } from 'rxjs';
@@ -19,6 +19,10 @@ export class FilesService {
 
   getFileLink(tripId: number, fileId: number): Observable<string> {
     return from(getFileLink(tripId, fileId));
+  }
+
+  deleteFile(tripId: number, fileId: number): Observable<void> {
+    return from(deleteFile(tripId, fileId));
   }
 
 }

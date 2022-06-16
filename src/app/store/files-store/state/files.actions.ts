@@ -20,3 +20,12 @@ export const UploadTripFileSuccess = createAction(
   '[Files] Upload Trip File Success',
   props<{ newFile: FileMetadataOutput; tripId: number }>(),
 );
+
+export const DeleteTripFile = createAction(
+  '[Files] Delete Trip File',
+  props<{ tripId: number; fileId: number }>(),
+);
+export const DeleteTripFileSuccess = createAction(
+  '[Files] Delete Trip File Success',
+  props<{ tripId: number; fileId: number }>(),
+);

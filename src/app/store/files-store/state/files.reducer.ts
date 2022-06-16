@@ -24,4 +24,12 @@ export const filesReducer = createReducer(
     },
   })),
 
+  on(FilesActions.DeleteTripFileSuccess, (state, { fileId, tripId }) => ({
+    ...state,
+    tripFiles: {
+      ...state.tripFiles,
+      [tripId]: state.tripFiles[tripId].filter((file) => file.id !== fileId),
+    },
+  })),
+
 );

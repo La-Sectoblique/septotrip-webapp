@@ -31,6 +31,17 @@ export class FilesEffects {
     ),
   ));
 
+  DeleteTripFile$ = createEffect(() => this.actions$.pipe(
+    ofType(FilesActions.DeleteTripFile),
+    mergeMap(({ tripId, fileId }) => this.filesService.deleteFile(tripId, fileId)
+      .pipe(
+        map(() =>
+          FilesActions.DeleteTripFileSuccess({ tripId, fileId }),
+        ),
+      ),
+    ),
+  ));
+
   constructor(
     private actions$: Actions,
     private filesService: FilesService,
