@@ -10,3 +10,7 @@ export const NotifyError = createAction(
   '[Utils] Notify Error',
   props<ToastrPayload>(),
 );
+
+export const ResetAllStore = createAction(
+  '[Utils] Reset all store',
+);
