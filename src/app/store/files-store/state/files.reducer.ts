@@ -5,6 +5,10 @@ import * as FilesActions from './files.actions';
 export const filesReducer = createReducer(
   initialFilesState,
 
+  on(FilesActions.ResetFileStore, () => ({
+    ...initialFilesState,
+  })),
+
   on(FilesActions.GetTripFilesSuccess, (state, { tripId, files }) => ({
     ...state,
     tripFiles: {

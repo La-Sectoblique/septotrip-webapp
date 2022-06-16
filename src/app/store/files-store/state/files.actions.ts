@@ -2,6 +2,10 @@ import { FileMetadataAttributes, FileMetadataOutput } from '@la-sectoblique/sept
 import { FileFormat } from '@la-sectoblique/septoblique-service/dist/utils/FormData';
 import { createAction, props } from '@ngrx/store';
 
+export const ResetFileStore = createAction(
+  '[Files]: reset',
+);
+
 export const GetTripFiles = createAction(
   '[Files] Get Trip Files',
   props<{ tripId: number }>(),
