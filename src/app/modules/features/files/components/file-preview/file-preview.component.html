@@ -1,20 +1,18 @@
-<div class="card d-flex flex-column align-items-center">
-  <div class="d-flex">
+<div class="card d-flex align-items-center">
     <p>{{file.name}}</p>
     <button
       nbButton
       ghost
       (click)="download()"
     >
+    <div *ngIf="file.fileType === FileType.PHOTO" class="image-wrapper">
+      <!-- <ng-container *ngIf="filesService.getFileLink(file.tripId, file.id) | async as fileUrl"> -->
+        <img [src]="getUrl()" [alt]="file.name">
+      <!-- </ng-container> -->
+    </div>
       <nb-icon
-        icon="download-outline"
+        icon="external-link-outline"
       ></nb-icon>
     </button>
     <ng-content></ng-content>
-  </div>
-  <div *ngIf="file.fileType === FileType.PHOTO" class="image-wrapper">
-    <!-- <ng-container *ngIf="filesService.getFileLink(file.tripId, file.id) | async as fileUrl"> -->
-      <img [src]="getUrl()" [alt]="file.name">
-    <!-- </ng-container> -->
-  </div>
 </div>
