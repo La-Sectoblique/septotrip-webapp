@@ -11,6 +11,11 @@ import { UpdateTripPointPayload, UpdateTripStepPayload } from './trips.payload';
 
 // Trip
 
+export const ResetTripStore = createAction(
+  '[Trips]: reset',
+);
+
+
 export const GetUserTrips = createAction(
   '[Trips] Get user trips',
 );

@@ -5,6 +5,10 @@ import * as MapEditActions from './map-edit.actions';
 export const mapEditReducer = createReducer(
   initialMapEditState,
 
+  on(MapEditActions.ResetMapStore, () => ({
+    ...initialMapEditState,
+  })),
+
   on(MapEditActions.UpdateMapEditMode, (state, { mapMode }) => ({
     ...state,
     mode: mapMode,
