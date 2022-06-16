@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { uploadFile } from '@la-sectoblique/septoblique-service';
 import { FileType } from '@la-sectoblique/septoblique-service/dist/types/models/File';
 import { NbDialogRef } from '@nebular/theme';
 import { Store } from '@ngrx/store';
@@ -11,6 +10,7 @@ import { UploadTripFile } from 'src/app/store/files-store/state/files.actions';
   selector: 'spt-add-files',
   templateUrl: './add-files.component.html',
   styleUrls: ['./add-files.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AddFilesComponent {
 

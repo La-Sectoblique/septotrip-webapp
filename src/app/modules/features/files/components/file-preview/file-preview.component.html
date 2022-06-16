@@ -1,20 +1,20 @@
-<div class="card d-flex align-items-center">
-  <p>{{file.name}}</p>
-  <ng-container [ngSwitch]="file.fileType">
-    <nb-icon *ngSwitchCase="FileType.DOCUMENT"
-      icon="file-text-outline"
-    ></nb-icon>
-    <nb-icon *ngSwitchCase="FileType.PHOTO"
-      icon="image-outline"
-    ></nb-icon>
-  </ng-container>
-  <button
-    nbButton
-    ghost
-  >
-    <nb-icon
-      icon="eye-outline"
-    ></nb-icon>
-  </button>
-  <ng-content></ng-content>
+<div class="card d-flex flex-column align-items-center">
+  <div class="d-flex">
+    <p>{{file.name}}</p>
+    <button
+      nbButton
+      ghost
+      (click)="download()"
+    >
+      <nb-icon
+        icon="download-outline"
+      ></nb-icon>
+    </button>
+    <ng-content></ng-content>
+  </div>
+  <div *ngIf="file.fileType === FileType.PHOTO" class="image-wrapper">
+    <!-- <ng-container *ngIf="filesService.getFileLink(file.tripId, file.id) | async as fileUrl"> -->
+      <img [src]="getUrl()" [alt]="file.name">
+    <!-- </ng-container> -->
+  </div>
 </div>

@@ -1,18 +1,38 @@
 <!-- todo: TRANSLATE -->
 <div class="d-flex flex-column justify-content-center">
-  <button nbButton (click)="openAddFileModal()" status="primary">
-    <nb-icon icon="plus-square-outline"></nb-icon>
-     Ajouter un fichier
-  </button>
+  <div class="w-100 d-flex justify-content-center">
+    <button nbButton (click)="openAddFileModal()" status="primary">
+      <nb-icon icon="plus-square-outline"></nb-icon>
+       Ajouter un fichier
+    </button>
+  </div>
 
-  <ng-container *ngFor="let file of files">
-    <spt-file-preview
-      [file]="file"
-    ></spt-file-preview>
-  </ng-container>
-  
-  <!-- <div *ngFor="let file of files">
-    <p>{{file.name}} {{file.extension}}</p>
-    <a [href]="apiUrl + '/files/'+ file.tempFileId" target="_blank">DOWNLOAD</a>
-  </div> -->
+  <nb-tabset>
+    <nb-tab tabTitle="Photos" tabIcon="image-outline">
+      <ng-container
+      [ngTemplateOutlet]="filePreviews"
+      [ngTemplateOutletContext]="{
+        files: (files | filterDocumentByFileType:FileType.PHOTO)
+      }"
+    ></ng-container>
+    </nb-tab>
+    <nb-tab tabTitle="Documents" tabIcon="file-text-outline">
+      <ng-container
+        [ngTemplateOutlet]="filePreviews"
+        [ngTemplateOutletContext]="{
+          files: (files | filterDocumentByFileType:FileType.DOCUMENT)
+        }"
+      ></ng-container>
+    </nb-tab>
+  </nb-tabset>
 </div>
+
+<ng-template let-files="files" #filePreviews>
+  <spt-file-preview *ngFor="let file of files"
+    [file]="file"
+  >
+    <button nbButton ghost (click)="deleteFile(file.id)">
+      <nb-icon class="cursor-pointer trash-icon-color" icon="trash-2-outline" status="danger"></nb-icon>
+    </button>
+  </spt-file-preview>
+</ng-template>
