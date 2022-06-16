@@ -4,9 +4,11 @@ import { Router } from '@angular/router';
 import { login } from '@la-sectoblique/septoblique-service';
 import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
 import { NbToastrService } from '@nebular/theme';
+import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { lastValueFrom } from 'rxjs';
 import { TokenStorageService } from 'src/app/modules/core/services/token-storage.service';
+import { ResetAllStore } from 'src/app/store/utils-store/state/utils.actions';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -24,6 +26,7 @@ export class AuthenticationService {
     private http: HttpClient,
     private nbToastrService: NbToastrService,
     private translate: TranslateService,
+    private store: Store,
   ) {}
 
 
@@ -56,6 +59,7 @@ export class AuthenticationService {
     this.tokenStorageService.deleteToken();
     this.isUserLoggedIn = false;
     this.user = null;
+    this.store.dispatch(ResetAllStore());
     this.router.navigate([redirectRoute]);
   }
 
