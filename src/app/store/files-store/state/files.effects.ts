@@ -31,6 +31,17 @@ export class FilesEffects {
     ),
   ));
 
+  UpdateTripFile$ = createEffect(() => this.actions$.pipe(
+    ofType(FilesActions.UpdateTripFile),
+    mergeMap(({ fileId, metadata }) => this.filesService.updateFile(fileId, metadata)
+      .pipe(
+        map((updatedFile: FileMetadataOutput) =>
+          FilesActions.UpdateTripFileSuccess({ updatedFile }),
+        ),
+      ),
+    ),
+  ));
+
   DeleteTripFile$ = createEffect(() => this.actions$.pipe(
     ofType(FilesActions.DeleteTripFile),
     mergeMap(({ tripId, fileId }) => this.filesService.deleteFile(tripId, fileId)

@@ -14,6 +14,7 @@ import {
 } from '@nebular/theme';
 import { FilePreviewComponent } from './components/file-preview/file-preview.component';
 import { SharedModule } from '../../shared/shared.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { SharedModule } from '../../shared/shared.module';
     NbTabsetModule,
     SharedModule,
     NbTooltipModule,
+    TranslateModule,
   ],
   declarations: [
     FilesListComponent,

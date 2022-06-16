@@ -32,6 +32,16 @@ export class FilesListComponent {
     } });
   }
 
+  editFile(file: FileMetadataOutput): void {
+    this.nbDialogService.open(AddFilesComponent, {
+      context: {
+        tripId: this.tripId,
+        isEditMode: true,
+        fileMetadataToEdit: file,
+      },
+    });
+  }
+
   deleteFile(fileId: number): void {
     this.store.dispatch(DeleteTripFile({ tripId: this.tripId, fileId }));
   }

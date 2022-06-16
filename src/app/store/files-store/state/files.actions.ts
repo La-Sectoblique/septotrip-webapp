@@ -21,6 +21,15 @@ export const UploadTripFileSuccess = createAction(
   props<{ newFile: FileMetadataOutput; tripId: number }>(),
 );
 
+export const UpdateTripFile = createAction(
+  '[Files] Updte Trip File',
+  props<{ fileId: number; metadata: FileMetadataAttributes }>(),
+);
+export const UpdateTripFileSuccess = createAction(
+  '[Files] Updte Trip File Success',
+  props<{ updatedFile: FileMetadataOutput }>(),
+);
+
 export const DeleteTripFile = createAction(
   '[Files] Delete Trip File',
   props<{ tripId: number; fileId: number }>(),

@@ -16,9 +16,7 @@
       (click)="download()"
     >
       <div *ngIf="file.fileType === FileType.PHOTO" class="image-wrapper">
-        <!-- <ng-container *ngIf="filesService.getFileLink(file.tripId, file.id) | async as fileUrl"> -->
           <img [src]="getUrl()" [alt]="file.name">
-        <!-- </ng-container> -->
       </div>
       <nb-icon
         icon="external-link-outline"

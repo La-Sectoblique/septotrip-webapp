@@ -24,6 +24,20 @@ export const filesReducer = createReducer(
     },
   })),
 
+  on(FilesActions.UpdateTripFileSuccess, (state, { updatedFile }) => {
+    const updatedFiles = state.tripFiles[updatedFile.tripId].map((file) => {
+      if (file.id === updatedFile.id) {return updatedFile;}
+      return file;
+    });
+    return {
+      ...state,
+      tripFiles: {
+        ...state.tripFiles,
+        [updatedFile.tripId]: updatedFiles,
+      },
+    };
+  }),
+
   on(FilesActions.DeleteTripFileSuccess, (state, { fileId, tripId }) => ({
     ...state,
     tripFiles: {
