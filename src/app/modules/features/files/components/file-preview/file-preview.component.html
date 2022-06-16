@@ -1,0 +1,28 @@
+<!-- todo: TRANSLATE -->
+<div class="card d-flex align-items-center justify-content-between w-100 gap-4">
+    <p>{{file.name}}</p>
+    <nb-icon
+      [icon]="file.visibility === 'public' ? 'globe-outline' : 'lock-outline'"
+      [nbTooltip]="file.visibility === 'public'
+        ? 'Ce fichier est public. Toute personne disposant du lien peut y accéder.'
+        : 'Ce fichier est privé.'
+      "
+      nbTooltipStatus="info"
+    >  
+    </nb-icon>
+    <button
+      nbButton
+      ghost
+      (click)="download()"
+    >
+      <div *ngIf="file.fileType === FileType.PHOTO" class="image-wrapper">
+          <img [src]="getUrl()" [alt]="file.name">
+      </div>
+      <nb-icon
+        icon="external-link-outline"
+      ></nb-icon>
+    </button>
+    <div>
+      <ng-content></ng-content>
+    </div>
+</div>

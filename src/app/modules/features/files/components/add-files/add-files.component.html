@@ -1,0 +1,54 @@
+<!-- todo: TRANSLATE -->
+<div class="add-files-wrapper d-flex flex-column justify-content-center align-items-center">
+  <h2>{{isEditMode ? 'Modifier' : 'Ajouter'}} un fichier</h2>
+  
+  <ng-container [ngSwitch]="isEditMode">
+    <ng-container *ngSwitchCase="true">
+      <h4 class="m-0">Etat actuel</h4>
+      <spt-file-preview [file]="fileMetadataToEdit" class="mb-4"></spt-file-preview>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="false">
+      <!-- 1e+7 is 10mo -->
+      <ngx-dropzone
+        (change)="onFileDrop($event)" 
+        [maxFileSize]="10000000" 
+        [multiple]="false" 
+        class="w-100 mb-4"
+      > 
+        <ngx-dropzone-label>Glissez ou cliquez pour ajouter un fichier. <br> (10mo max)</ngx-dropzone-label>
+        <ngx-dropzone-preview  *ngIf="file" [removable]="true" (removed)="onFileRemove()">
+          <ngx-dropzone-label>{{ file.name }} ({{ file.type }})</ngx-dropzone-label>
+        </ngx-dropzone-preview>
+      </ngx-dropzone>
+    </ng-container>
+  </ng-container>
+
+  
+  <form 
+    class="d-flex flex-column justify-content-center align-items-center"
+    [formGroup]="fileForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="mb-4">
+      <label for="name" class="mr-2">Nom :</label>
+      <input nbInput name="name" id="name" formControlName="name">
+    </div>
+
+    <label for="visibility mr-2">Visibilitée :</label>
+    <nb-radio-group id="visibility" formControlName="visibility">
+      <nb-radio value="public">Publique</nb-radio>
+      <nb-radio value="private">Privée</nb-radio>
+    </nb-radio-group>
+  
+    <button
+      class="mt-4"
+      type="submit" 
+      status="success"
+      nbButton
+      [disabled]="!isValid()"
+    >
+      {{isEditMode ? 'Modifier le fichier' : 'Ajouter le fichier'}}
+    </button>
+  </form>
+</div>

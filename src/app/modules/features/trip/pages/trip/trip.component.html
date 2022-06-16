@@ -3,7 +3,6 @@
     <ng-container *ngIf="(points$ | async) as points">
       <div class="h-100 w-100">
         <nb-tabset class="h-100 w-100 d-flex flex-column">
-          <p>{{trip.tripInstance.name}}</p>
           <nb-tab [tabTitle]="'PlanificationTabTitle' | translate" class="h-100 w-100">
             <div class="page-wrapper h-100 w-100">
               <div class="h-100">
@@ -25,6 +24,13 @@
               </div>
             </div>
           </nb-tab>
+
+          <!-- todo: TRANSLATE -->
+          <nb-tab tabTitle="Fichiers" class="mt-4">
+            <ng-container *ngIf="tripFiles$ | async as tripFiles">
+              <spt-files-list [files]="tripFiles" [tripId]="trip.tripInstance.id"></spt-files-list>
+            </ng-container>
+          </nb-tab>
   
           <nb-tab [tabTitle]="'MemberTabTitle' | translate">
             <ng-container *ngIf="travelers$ | async as travelers">
@@ -37,6 +43,7 @@
               </div>
             </ng-container>
           </nb-tab>
+
           <nb-tab [tabTitle]="'Parameters' | translate">
             <h2>{{'Parameters' | translate}}</h2>
             <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance.id)">{{'Delete' | translate}}</button>

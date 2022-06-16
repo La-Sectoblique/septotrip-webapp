@@ -1,11 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FileMetadataOutput } from '@la-sectoblique/septoblique-service/dist/types/models/File';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { GetTripFiles } from 'src/app/store/files-store/state/files.actions';
+import { selectTripFiles } from 'src/app/store/files-store/state/files.selectors';
 import { DeleteTrip,
   GetTrip,
   GetTripPoints,
@@ -32,6 +35,7 @@ export class TripComponent implements OnInit, OnDestroy {
   steps$: Observable<FlattenedStep[]>;
   points$: Observable<PointOutput[]>;
   travelers$: Observable<UserOutput[]>;
+  tripFiles$: Observable<FileMetadataOutput[]>;
 
   constructor(
     private route: ActivatedRoute,
@@ -55,6 +59,10 @@ export class TripComponent implements OnInit, OnDestroy {
 
       this.store.dispatch(GetTripTravelers({ tripId }));
       this.travelers$ = this.store.select(selectTripTravelers(tripId));
+
+      this.store.dispatch(GetTripFiles({ tripId }));
+      this.tripFiles$ = this.store.select(selectTripFiles(tripId));
+      this.tripFiles$.subscribe((files) => console.log('files', files));
 
       this.trip$.pipe(untilDestroyed(this)).subscribe((trip) => {
         this.titleService.setTitle(trip?.tripInstance.name);
