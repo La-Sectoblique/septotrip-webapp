@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { init, Platform } from '@la-sectoblique/septoblique-service';
 import { TranslateService } from '@ngx-translate/core';
+import { SvgIconRegistryService } from 'angular-svg-icon';
 import { environment } from 'src/environments/environment';
 import { TokenStorageService } from './modules/core/services/token-storage.service';
 import { AuthenticationService } from './modules/features/authentification/services/authentication.service';

@@ -6,6 +6,7 @@ import { NbButtonModule, NbIconModule, NbInputModule, NbSelectModule } from '@ne
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { UserSettingsComponent } from './pages/user-settings/user-settings.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { UserSettingsComponent } from './pages/user-settings/user-settings.compo
     NbSelectModule,
     FormsModule,
     TranslateModule,
+    AngularSvgIconModule.forRoot(),
   ],
   exports: [
     HeaderComponent,
