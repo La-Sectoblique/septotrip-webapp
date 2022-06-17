@@ -1,14 +1,13 @@
-<!-- todo: TRANSLATE -->
 <div class="d-flex flex-column justify-content-center">
   <div class="w-100 d-flex justify-content-center">
     <button nbButton (click)="openAddFileModal()" status="primary">
       <nb-icon icon="plus-square-outline"></nb-icon>
-       Ajouter un fichier
+       {{'AddOneFile' | translate}}
     </button>
   </div>
 
   <nb-tabset class="d-flex flex-column justify-content-center">
-    <nb-tab tabTitle="Photos" tabIcon="image-outline" >
+    <nb-tab tabTitle="'TitlePhotos' | translate" tabIcon="image-outline" >
         <ng-container
         [ngTemplateOutlet]="filePreviews"
         [ngTemplateOutletContext]="{
@@ -16,7 +15,7 @@
         }"
       ></ng-container>
     </nb-tab>
-    <nb-tab tabTitle="Documents" tabIcon="file-text-outline">
+    <nb-tab tabTitle="'TitleDocuments' | translate" tabIcon="file-text-outline">
       <ng-container
         [ngTemplateOutlet]="filePreviews"
         [ngTemplateOutletContext]="{
