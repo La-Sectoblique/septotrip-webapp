@@ -91,5 +91,22 @@
     "LoginNeededMessage": "Veuillez vous connecter pour accéder à la page.",
 
     "SessionExpired": "La sesión ha caducado",
-    "SessionExpiredMessage": "Has sido desconectado."
+    "SessionExpiredMessage": "Has sido desconectado.",
+
+    "AddFileAction": "Arrastrar o hacer clic para añadir un archivo", 
+    "Visibility": "Visibilidad",
+
+    "UpdateFileLabel": "Modificar el archivo",
+    "AddFileLabel": "Añadir archivo", 
+    
+    "CurrentState": "Estado actual",
+
+    "FileIsPublic": "Este archivo es público. Cualquiera que tenga el enlace puede acceder a él", 
+    "FileIsPrivate": "Este archivo es privado",
+    
+    "AddOneFile": "Añadir un archivo",
+
+    "TítuloFotos": "Fotos",
+    "TítuloDocumentos": "Documentos", 
+    "TitleFiles": "Archivos"
 }

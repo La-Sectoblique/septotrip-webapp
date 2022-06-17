@@ -91,5 +91,22 @@
     "LoginNeededMessage": "Por favor inicie sessão para aceder ao",
 
     "SessionExpired": "Sessão expirou",
-    "SessionExpiredMessage": "Foi desconectado."
+    "SessionExpiredMessage": "Foi desconectado.", 
+
+    "AddFileAction": "Arrastar ou clicar para adicionar um ficheiro", 
+    "Visibility": "Visibilidade",
+
+    "UpdateFileLabel": "Modificar o ficheiro",
+    "AddFileLabel": "Acrescentar ficheiro", 
+    
+    "CurrentState": "Current state",
+
+    "FileIsPublic": "Este ficheiro é público. Qualquer pessoa que tenha a ligação pode aceder a ela", 
+    "FileIsPrivate": "Este ficheiro é privado",
+    
+    "AddOneFile": "Acrescentar um ficheiro",
+
+    "TitlePhotos": "Fotos",
+    "TitleDocuments": "Documentos", 
+    "TitleFiles": "Ficheiros"
 }

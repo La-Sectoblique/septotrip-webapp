@@ -91,5 +91,22 @@
     "LoginNeededMessage": "Effettuare il login per accedere alla pagina.",
 
     "SessionExpired": "Sessione scaduta",
-    "SessionExpiredMessage": "Siete stati disconnessi."
+    "SessionExpiredMessage": "Siete stati disconnessi.",
+    
+    "AddFileAction": "Trascinare o fare clic per aggiungere un file", 
+    "Visibility": "Visibilità",
+
+    "UpdateFileLabel": "Modifica del file",
+    "AddFileLabel": "Aggiungi file", 
+    
+    "CurrentState": "Stato attuale",
+
+    "FileIsPublic": "Questo file è pubblico. Chiunque abbia il link può accedervi", 
+    "FileIsPrivate": "Questo file è privato",
+    
+    "AddOneFile": "Aggiungi un file",
+
+    "TitoloFoto": "Foto",
+    "TitoloDocumenti": "Documenti", 
+    "TitoloFile": "File"
 }
