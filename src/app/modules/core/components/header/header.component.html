@@ -1,12 +1,14 @@
 <div class="header-wrapper">
-  <nav class="w-100">
+  <!-- <div> -->
     <div class="d-flex justify-content-between align-items-center w-100">
       <!-- <img src="/src/assets/septologo_fulltext.svg" alt=""> -->
-      <ul>
+      <div class="d-flex align-items-center">
         <svg-icon src="assets/septologo_fulltext.svg" [svgStyle]="{ 'height.px': 50 }"></svg-icon>
-        <li><a routerLink="/home" routerLinkActive="active">{{'HomeNavLabel' | translate}}</a></li>
-        <li><a routerLink="/trips" routerLinkActive="active">{{'TripNavLabel' | translate}}</a></li>
-      </ul>
+        <ul>
+          <li><a routerLink="/home" routerLinkActive="active">{{'HomeNavLabel' | translate}}</a></li>
+          <li><a routerLink="/trips" routerLinkActive="active">{{'TripNavLabel' | translate}}</a></li>
+        </ul>
+      </div>
       <div class="d-flex">
         <ul>
           <ng-container [ngSwitch]="authenticationService.isUserLoggedIn">
@@ -26,5 +28,4 @@
         </ul>
       </div>
     </div>
-  </nav>
 </div>

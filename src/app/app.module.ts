@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NbLayoutModule, NbThemeModule, NbToastrModule } from '@nebular/theme';
+import { NbGlobalPhysicalPosition, NbLayoutModule, NbThemeModule, NbToastrModule } from '@nebular/theme';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -67,7 +67,12 @@ const appUserInitializer = (authenticationService: AuthenticationService) => () 
     NbLayoutModule,
     AuthentificationModule,
     HttpClientModule,
-    NbToastrModule.forRoot({ limit: 3, duplicatesBehaviour: 'all', preventDuplicates: true }),
+    NbToastrModule.forRoot({
+      limit: 3,
+      duplicatesBehaviour: 'all',
+      preventDuplicates: true,
+      position: NbGlobalPhysicalPosition.BOTTOM_RIGHT,
+    }),
     PathsModule,
   ],
   providers: [
