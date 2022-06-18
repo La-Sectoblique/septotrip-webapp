@@ -9,7 +9,7 @@ export const tripReducer = createReducer(
 
   // === TRIPS ===
   on(TripsAction.GetUserTripsSuccess, (state, { trips }) => {
-    let newTrips = state.trips;
+    let newTrips = {};
     trips.forEach((trip) => {
       newTrips = {
         ...newTrips,
