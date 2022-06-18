@@ -3,9 +3,16 @@
     <div class="d-flex justify-content-between align-items-center w-100">
       <!-- <img src="/src/assets/septologo_fulltext.svg" alt=""> -->
       <div class="d-flex align-items-center">
-        <svg-icon src="assets/septologo_fulltext.svg" [svgStyle]="{ 'height.px': 50 }"></svg-icon>
         <ul>
-          <li><a routerLink="/home" routerLinkActive="active">{{'HomeNavLabel' | translate}}</a></li>
+          <li>
+            <a routerLink="/home" routerLinkActive="active" class="d-flex align-items-center gap-4">
+              <svg-icon
+                src="assets/septologo_fulltext.svg"
+                [svgStyle]="{ 'height.px': 50 }">
+              </svg-icon>
+              {{'HomeNavLabel' | translate}}
+            </a>
+          </li>
           <li><a routerLink="/trips" routerLinkActive="active">{{'TripNavLabel' | translate}}</a></li>
         </ul>
       </div>
