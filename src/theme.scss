@@ -5,13 +5,10 @@
 
 $nb-themes: nb-register-theme(
   (
-    // // we setting color-basic-800 instead of color-basic-1000
-    // text-basic-color: color-basic-800,
-    // // and color-basic-600 as instead of color-basic-500
-    // text-disabled-color: color-basic-600
-    background-basic-color-1: red,
-    header-height: 20rem
+    // background-basic-color-1: #3F4F5F,
+    // background-basic-color-1: #BE965B,
+    // layout-background-color: red
   ),
-  default,
+  septoStyle,
   default
 );

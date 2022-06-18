@@ -55,7 +55,7 @@ const appUserInitializer = (authenticationService: AuthenticationService) => () 
       },
     }),
     //
-    NbThemeModule.forRoot(),
+    NbThemeModule.forRoot({ name: 'septoStyle' }),
     NbEvaIconsModule,
     FormsModule,
     CoreModule,
