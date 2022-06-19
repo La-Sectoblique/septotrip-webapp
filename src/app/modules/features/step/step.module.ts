@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbButtonModule, NbIconModule, NbInputModule, NbRadioModule } from '@nebular/theme';
+import { NbButtonModule, NbIconModule, NbInputModule, NbRadioModule, NbTooltipModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StepPreviewComponent } from './components/step-preview/step-preview.component';
@@ -31,6 +31,7 @@ import { FilesModule } from '../files/files.module';
     PathsModule,
     TranslateModule,
     FilesModule,
+    NbTooltipModule,
   ],
   declarations: [
     StepPreviewComponent,
