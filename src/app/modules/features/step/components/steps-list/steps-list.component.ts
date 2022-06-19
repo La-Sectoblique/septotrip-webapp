@@ -14,6 +14,7 @@ import { DeleteTripStep,
 import { HighlightMapMarkersService } from '../../../map/services/highlight-map-markers.service';
 import { FlattenedStep } from '../../models/flattened-step';
 import { CreateStepComponent } from '../create-step/create-step.component';
+import { StepDetailsComponent } from '../step-details/step-details.component';
 
 @Component({
   selector: 'spt-steps-list',
@@ -56,11 +57,9 @@ export class StepsListComponent implements OnInit {
   }
 
   editStep(step: StepOutput): void {
-    this.nbDialogService.open(CreateStepComponent, {
+    this.nbDialogService.open(StepDetailsComponent, {
       context: {
-        tripId: this.tripId,
-        isEditMode: true,
-        editedStep: step,
+        step,
       },
     });
   }

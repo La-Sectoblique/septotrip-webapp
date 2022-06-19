@@ -3,5 +3,6 @@
 .details-wrapper {
     background-color: white;
     padding: 1.5rem;
+    width: 50vw;
     @include mixins.rounded-corner;
 }
