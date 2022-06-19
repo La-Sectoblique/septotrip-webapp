@@ -33,13 +33,13 @@ export class FilePreviewComponent implements OnInit  {
       map(([step, point]) => {
         let message = 'Lié';
         if (this.file.stepId) {
-          message += ` à l'étape ${step.stepInstance.name},`;
+          message += ` à l'étape "${step.stepInstance.name}",`;
         }
         if (this.file.pointId) {
-          message += ` au point d'intérêt ${point.title},`;
+          message += ` au point d'intérêt "${point.title}",`;
         }
         if (this.file.pathId) {
-          message += ` au trajet vers ${step.stepInstance.name},`;
+          message += ` au trajet vers "${step.stepInstance.name}",`;
         }
 
         message = message.substring(0, message.length - 1);

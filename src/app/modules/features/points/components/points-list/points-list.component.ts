@@ -12,7 +12,7 @@ import {
 } from 'src/app/store/map-edit-store/state/map-edit.selectors';
 import { DeleteTripPoint } from 'src/app/store/trips-store/state/trips.actions';
 import { HighlightMapMarkersService } from '../../../map/services/highlight-map-markers.service';
-import { CreatePointComponent } from '../create-point/create-point.component';
+import { PointDetailsComponent } from '../point-details/point-details.component';
 
 @Component({
   selector: 'spt-points-list',
@@ -61,11 +61,9 @@ export class PointsListComponent implements OnInit {
   }
 
   editPoint(editedPoint: PointOutput): void {
-    this.nbDialogService.open(CreatePointComponent, {
+    this.nbDialogService.open(PointDetailsComponent, {
       context: {
-        tripId: this.tripId,
-        isEditMode: true,
-        editedPoint,
+        point: editedPoint,
       },
     });
   }
