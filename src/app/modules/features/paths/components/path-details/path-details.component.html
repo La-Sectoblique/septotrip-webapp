@@ -1,0 +1,17 @@
+<!-- todo: Translate -->
+<spt-trip-element-details
+  [pageTitle]="'Détails du Trajet'"
+>
+  <spt-path-edit edit
+    [tripId]="tripId"
+    [path]="path"
+    [stepId]="path.destinationId"
+  ></spt-path-edit>
+
+  <spt-files-list file 
+    *ngIf="(pathFiles$ | async) as pointFiles"
+    [tripId]="tripId"
+    [files]="pointFiles"
+    [pathId]="path.id"
+  ></spt-files-list>
+</spt-trip-element-details>

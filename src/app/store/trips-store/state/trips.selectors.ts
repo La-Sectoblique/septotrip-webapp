@@ -38,6 +38,11 @@ export const selectTripPoint = (tripId: number, pointId: number) => createSelect
   (state: TripState) => state.trips[tripId].points.find((point) => point.id === pointId),
 );
 
+export const selectTripStepByPathId = (tripId: number, pathId: number) => createSelector(
+  selectFeature,
+  (state: TripState) => state.trips[tripId].steps.find((step) => step.pathToStep?.id === pathId),
+);
+
 export const selectTripTravelers = (tripId: number) => createSelector(
   selectFeature,
   (state: TripState) =>  state.trips[tripId].travelers,

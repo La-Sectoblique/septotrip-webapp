@@ -14,6 +14,7 @@
       nbButton
       ghost
       (click)="download()"
+      [nbTooltip]="file.name+'.'+file.extension"
     >
       <div *ngIf="file.fileType === FileType.PHOTO" class="image-wrapper">
           <img [src]="getUrl()" [alt]="file.name">
