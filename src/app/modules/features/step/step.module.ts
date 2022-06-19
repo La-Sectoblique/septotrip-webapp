@@ -11,6 +11,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DaysModule } from '../days/days.module';
 import { PathsModule } from '../paths/paths.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { StepDetailsComponent } from './components/step-details/step-details.component';
+import { FilesModule } from '../files/files.module';
 
 @NgModule({
   imports: [
@@ -28,11 +30,13 @@ import { TranslateModule } from '@ngx-translate/core';
     DaysModule,
     PathsModule,
     TranslateModule,
+    FilesModule,
   ],
   declarations: [
     StepPreviewComponent,
     StepsListComponent,
     CreateStepComponent,
+    StepDetailsComponent,
   ],
   exports: [
     StepPreviewComponent,

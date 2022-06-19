@@ -9,8 +9,5 @@ const selectFeature = createFeatureSelector<FilesState>(
 
 export const selectTripFiles = (tripId: number): any => createSelector(
   selectFeature,
-  (state: FilesState) => {
-    console.log('coucou');
-    return state.tripFiles[tripId];
-  },
+  (state: FilesState) => state.tripFiles[tripId],
 );
