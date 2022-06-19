@@ -22,6 +22,11 @@
         icon="external-link-outline"
       ></nb-icon>
     </button>
+    <nb-icon *ngIf="file.stepId || file.pointId || file.pathId"
+      icon="link-2-outline"
+      [nbTooltip]=" (fileLinkedTooltipMessage | async) || ''"
+    >
+    </nb-icon>
     <div>
       <ng-content></ng-content>
     </div>

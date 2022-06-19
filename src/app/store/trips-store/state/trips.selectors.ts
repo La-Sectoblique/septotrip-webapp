@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { FlattenedStep } from 'src/app/modules/features/step/models/flattened-step';
 import { TripState } from './trips.state';
 
 export const TRIP_FEATURE_KEY = 'trips';
@@ -24,14 +23,19 @@ export const selectTripSteps = (tripId: number) => createSelector(
   (state: TripState) => state.trips[tripId].steps,
 );
 
-export const selectTripStepById = (tripId: number, stepId: number) => createSelector(
+export const selectTripStep = (tripId: number, stepId: number) => createSelector(
   selectFeature,
-  (state: TripState) => state.trips[tripId].steps.find((step) => step.stepInstance.id === stepId) as FlattenedStep,
+  (state: TripState) => state.trips[tripId].steps.find((step) => step.stepInstance.id === stepId),
 );
 
 export const selectTripPoints = (tripId: number) => createSelector(
   selectFeature,
   (state: TripState) => state.trips[tripId]?.points,
+);
+
+export const selectTripPoint = (tripId: number, pointId: number) => createSelector(
+  selectFeature,
+  (state: TripState) => state.trips[tripId].points.find((point) => point.id === pointId),
 );
 
 export const selectTripTravelers = (tripId: number) => createSelector(

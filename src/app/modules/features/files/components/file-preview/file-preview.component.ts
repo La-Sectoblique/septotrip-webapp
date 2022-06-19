@@ -1,7 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { FileMetadataOutput, FileType } from '@la-sectoblique/septoblique-service/dist/types/models/File';
-import { first } from 'rxjs';
+import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
+import { Store } from '@ngrx/store';
+import { combineLatest, first, map, Observable } from 'rxjs';
+import { selectTripPoint, selectTripStep } from 'src/app/store/trips-store/state/trips.selectors';
 import { environment } from 'src/environments/environment';
+import { FlattenedStep } from '../../../step/models/flattened-step';
 import { FilesService } from '../../services/files.service';
 
 @Component({
@@ -10,15 +14,49 @@ import { FilesService } from '../../services/files.service';
   styleUrls: ['./file-preview.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FilePreviewComponent  {
+export class FilePreviewComponent implements OnInit  {
 
   @Input() file: FileMetadataOutput;
 
   FileType = FileType;
 
+  stepLinked$: Observable<FlattenedStep>;
+  pointLinked$: Observable<PointOutput>;
+
   constructor(
     readonly filesService: FilesService,
+    private store: Store,
   ) {}
+
+  get fileLinkedTooltipMessage(): Observable<string> {
+    return combineLatest([this.stepLinked$, this.pointLinked$]).pipe(
+      map(([step, point]) => {
+        let message = 'Lié';
+        if (this.file.stepId) {
+          message += ` à l'étape ${step.stepInstance.name},`;
+        }
+        if (this.file.pointId) {
+          message += ` au point d'intérêt ${point.title},`;
+        }
+        if (this.file.pathId) {
+          message += ` au trajet vers ${step.stepInstance.name},`;
+        }
+
+        message = message.substring(0, message.length - 1);
+        return message;
+      }),
+    );
+  }
+
+  ngOnInit(): void {
+    this.stepLinked$ = this.store.select(
+      selectTripStep(this.file.tripId, this.file.stepId || 0),
+    ) as Observable<FlattenedStep>;
+    this.pointLinked$ = this.store.select(
+      selectTripPoint(this.file.tripId, this.file.pointId || 0),
+    ) as Observable<PointOutput>;
+  }
+
 
   download(): void {
     this.filesService.getFileLink(this.file.tripId, this.file.id)
