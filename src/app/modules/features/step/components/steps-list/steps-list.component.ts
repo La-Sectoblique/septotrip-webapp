@@ -13,7 +13,6 @@ import { DeleteTripStep,
 } from 'src/app/store/trips-store/state/trips.actions';
 import { HighlightMapMarkersService } from '../../../map/services/highlight-map-markers.service';
 import { FlattenedStep } from '../../models/flattened-step';
-import { CreateStepComponent } from '../create-step/create-step.component';
 import { StepDetailsComponent } from '../step-details/step-details.component';
 
 @Component({
