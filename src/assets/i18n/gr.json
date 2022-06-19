@@ -91,5 +91,22 @@
     "LoginNeededMessage": "Παρακαλώ συνδεθείτε για να αποκτήσετε πρόσβαση στη σελίδα.",
 
     "SessionExpired": "Η σύνοδος έληξε",
-    "SessionExpiredMessage": "Έχετε αποσυνδεθεί"
+    "SessionExpiredMessage": "Έχετε αποσυνδεθεί",
+
+    "AddFileAction": "Σύρετε ή κάντε κλικ για να προσθέσετε ένα αρχείο", 
+    "Visibility": "Ορατότητα",
+
+    "UpdateFileLabel": "Τροποποίηση του αρχείου",
+    "AddFileLabel": "Προσθήκη αρχείου", 
+    
+    "CurrentState": "Τρέχουσα κατάσταση",
+
+    "FileIsPublic": "Αυτό το αρχείο είναι δημόσιο. Όποιος έχει τον σύνδεσμο μπορεί να έχει πρόσβαση σε αυτόν", 
+    "FileIsPrivate": "Αυτό το αρχείο είναι ιδιωτικό.",
+    
+    "AddOneFile": "Προσθήκη ενός αρχείου",
+
+    "TitlePhotos": "Φωτογραφίες",
+    "TitleDocuments": "Έγγραφα", 
+    "TitleFiles": "Αρχεία"
 }
