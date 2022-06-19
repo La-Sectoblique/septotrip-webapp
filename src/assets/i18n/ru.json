@@ -91,5 +91,22 @@
     "LoginNeededMessage": "Пожалуйста, войдите в систему, чтобы получить доступ к",
 
     "SessionExpired": "Сессия истекла",
-    "SessionExpiredMessage": "Вы были отключены"
+    "SessionExpiredMessage": "Вы были отключены",
+
+    "AddFileAction": "Перетащите или нажмите, чтобы добавить файл", 
+    "Visibility": "Видимость",
+
+    "UpdateFileLabel": "Изменить файл",
+    "AddFileLabel": "Добавить файл", 
+    
+    "CurrentState": "Текущее состояние",
+
+    "FileIsPublic": "Этот файл является общедоступным. Любой, у кого есть ссылка, может получить к нему доступ", 
+    "FileIsPrivate": "Этот файл является частным",
+    
+    "AddOneFile": "Добавить файл",
+
+    "TitlePhotos": "Фотографии",
+    "TitleDocuments": "Документы", 
+    "TitleFiles": "Файлы"
 }

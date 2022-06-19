@@ -92,4 +92,21 @@
 
     "SessionExpired": "",
     "SessionExpiredMessage": "",
+
+    "AddFileAction": "", 
+    "Visibility": "",
+
+    "UpdateFileLabel": "",
+    "AddFileLabel": "", 
+
+    "CurrentState": "", 
+
+    "FileIsPublic": "", 
+    "FileIsPrivate": "",
+    
+    "AddOneFile": "",
+
+    "TitlePhotos": "",
+    "TitleDocuments": "", 
+    "TitleFiles": ""
 }

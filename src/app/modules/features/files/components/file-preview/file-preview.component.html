@@ -1,12 +1,12 @@
-<!-- todo: TRANSLATE -->
 <div class="card d-flex align-items-center justify-content-between w-100 gap-4">
     <p>{{file.name}}</p>
     <nb-icon
       [icon]="file.visibility === 'public' ? 'globe-outline' : 'lock-outline'"
       [nbTooltip]="file.visibility === 'public'
-        ? 'Ce fichier est public. Toute personne disposant du lien peut y accéder.'
-        : 'Ce fichier est privé.'
+        ? ('FileIsPublic' | translate)
+        : ('FileIsPrivate' | translate)
       "
+      
       nbTooltipStatus="info"
     >  
     </nb-icon>

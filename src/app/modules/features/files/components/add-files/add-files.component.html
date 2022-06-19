@@ -1,10 +1,9 @@
-<!-- todo: TRANSLATE -->
 <div class="add-files-wrapper d-flex flex-column justify-content-center align-items-center">
   <h2>{{isEditMode ? 'Modifier' : 'Ajouter'}} un fichier</h2>
   
   <ng-container [ngSwitch]="isEditMode">
     <ng-container *ngSwitchCase="true">
-      <h4 class="m-0">Etat actuel</h4>
+      <h4 class="m-0">{{'CurrentState' | translate}}</h4>
       <spt-file-preview [file]="fileMetadataToEdit" class="mb-4"></spt-file-preview>
     </ng-container>
 
@@ -16,7 +15,7 @@
         [multiple]="false" 
         class="w-100 mb-4"
       > 
-        <ngx-dropzone-label>Glissez ou cliquez pour ajouter un fichier. <br> (10mo max)</ngx-dropzone-label>
+        <ngx-dropzone-label>{{'AddFileAction' | translate}} <br> (10mo max)</ngx-dropzone-label>
         <ngx-dropzone-preview  *ngIf="file" [removable]="true" (removed)="onFileRemove()">
           <ngx-dropzone-label>{{ file.name }} ({{ file.type }})</ngx-dropzone-label>
         </ngx-dropzone-preview>
@@ -31,14 +30,14 @@
     (ngSubmit)="onSubmit()"
   >
     <div class="mb-4">
-      <label for="name" class="mr-2">Nom :</label>
+      <label for="name" class="mr-2">{{'NameInputLabel' | translate}} :</label>
       <input nbInput name="name" id="name" formControlName="name">
     </div>
 
-    <label for="visibility mr-2">Visibilitée :</label>
+    <label for="visibility mr-2">{{'Visibility' | translate}} :</label>
     <nb-radio-group id="visibility" formControlName="visibility">
-      <nb-radio value="public">Publique</nb-radio>
-      <nb-radio value="private">Privée</nb-radio>
+      <nb-radio value="public">{{'Public' | translate}}</nb-radio>
+      <nb-radio value="private">{{'Private' | translate}}</nb-radio>
     </nb-radio-group>
   
     <button
@@ -48,7 +47,7 @@
       nbButton
       [disabled]="!isValid()"
     >
-      {{isEditMode ? 'Modifier le fichier' : 'Ajouter le fichier'}}
+      {{isEditMode ? {'UpdateFileLabel' | translate} : {'AddFileLabel' | translate'} }}
     </button>
   </form>
 </div>

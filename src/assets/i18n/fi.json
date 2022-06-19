@@ -91,5 +91,22 @@
     "LoginNeededMessage": "Kirjaudu sisään päästäksesi sivulle.",
 
     "SessionExpired": "Istunto päättynyt",
-    "SessionExpiredMessage": "Sinulta on katkaistu yhteys"
+    "SessionExpiredMessage": "Sinulta on katkaistu yhteys",
+
+    "AddFileAction": "Lisää tiedosto vetämällä tai klikkaamalla", 
+    "Visibility": "Näkyvyys",
+
+    "UpdateFileLabel": "Muokkaa tiedostoa",
+    "AddFileLabel": "Lisää tiedosto", 
+    
+    "CurrentState": "Nykyinen tila",
+
+    "FileIsPublic": "Tämä tiedosto on julkinen. Kuka tahansa, jolla on linkki, voi käyttää sitä", 
+    "FileIsPrivate": "Tämä tiedosto on yksityinen.",
+    
+    "AddOneFile": "Lisää tiedosto",
+
+    "TitlePhotos": "Photos",
+    "TitleDocuments": "Documents", 
+    "TitleFiles": "Tiedostot"
 }

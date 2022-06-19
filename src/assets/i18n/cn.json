@@ -91,5 +91,22 @@
     "LoginNeededMessage": "请登录访问该页面",
 
     "SessionExpired": "会议过期",
-    "SessionExpiredMessage": "你已经被切断了连接"
+    "SessionExpiredMessage": "你已经被切断了连接",
+
+    "AddFileAction": "拖动或点击来添加一个文件",
+    "Visibility": "可见性",
+
+    "UpdateFileLabel": "修改文件",
+    "AddFileLabel": "添加文件",
+    
+    "CurrentState": "当前状态",
+
+    "FileIsPublic": "这个文件是公开的。任何拥有该链接的人都可以访问它",
+    "FileIsPrivate": "这个文件是私有的。",
+    
+    "AddOneFile": "添加一个文件",
+
+    "TitlePhotos": "照片",
+    "TitleDocuments":"文件",
+    "TitleFiles": "文件"
 }
