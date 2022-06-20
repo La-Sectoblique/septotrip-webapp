@@ -105,7 +105,8 @@
     "FileIsPrivate": "Ce fichier est privé.",
     
     "AddOneFile": "Ajouter un fichier",
-
+    "UpdateOneFile": "Modifier un fichier",
+    
     "TitlePhotos": "Photos",
     "TitleDocuments": "Documents", 
     "TitleFiles": "Fichiers",
