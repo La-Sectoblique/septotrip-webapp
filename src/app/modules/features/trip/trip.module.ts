@@ -49,6 +49,7 @@ import { FilesModule } from '../files/files.module';
   ],
   exports: [
     TripPreviewComponent,
+    CreateTripComponent,
   ],
 })
 export class TripModule { }

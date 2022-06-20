@@ -45,7 +45,12 @@
 
           <nb-tab [tabTitle]="'Parameters' | translate">
             <h2>{{'Parameters' | translate}}</h2>
+            <spt-create-trip
+              [tripToEdit]="trip.tripInstance"
+              [isEditMode]="true"
+            ></spt-create-trip>
             <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance.id)">{{'Delete' | translate}}</button>
+
           </nb-tab>
   
         </nb-tabset>

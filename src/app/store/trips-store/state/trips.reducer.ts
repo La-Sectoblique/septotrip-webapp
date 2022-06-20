@@ -40,6 +40,17 @@ export const tripReducer = createReducer(
     },
   })),
 
+  on(TripsAction.UpdateTripSuccess, (state, { newTrip }) => ({
+    ...state,
+    trips: {
+      ...state.trips,
+      [newTrip.id]: {
+        ...state.trips[newTrip.id],
+        tripInstance: newTrip,
+      },
+    },
+  })),
+
   on(TripsAction.DeleteTripSuccess, (state, { tripId }) => ({
     ...state,
     trips: Object.values(state.trips).filter((trip) => trip.tripInstance.id !== tripId),

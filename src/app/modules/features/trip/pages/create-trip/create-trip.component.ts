@@ -1,35 +1,41 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Visibility } from '@la-sectoblique/septoblique-service/dist/types/utils/Visibility';
-import { TranslateService } from '@ngx-translate/core';
+import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
+import { Store } from '@ngrx/store';
+import { UpdateTrip } from 'src/app/store/trips-store/state/trips.actions';
 import { TripsService } from '../../services/trips.service';
 
 @Component({
-  selector: 'app-create-trip',
+  selector: 'spt-create-trip',
   templateUrl: './create-trip.component.html',
   styleUrls: ['./create-trip.component.scss'],
 })
-export class CreateTripComponent {
+export class CreateTripComponent implements OnInit {
 
   @Input() isEditMode = false;
+  @Input() tripToEdit: TripOutput;
 
   tripForm = this.formBuilder.group({
     name: new FormControl('', [Validators.required, Validators.minLength(1)]),
     visibility: new FormControl('private', [Validators.required]),
   });
 
-  visibilityOptions = [
-    { value: 'public', label: this.translateService.instant('Public') },
-    { value: 'private', label: this.translateService.instant('Private') },
-  ];
-
   constructor(
     private tripService: TripsService,
     private router: Router,
-    private translateService: TranslateService,
+    private store: Store,
     private formBuilder: FormBuilder,
   ) {}
+
+  ngOnInit(): void {
+    if (this.isEditMode) {
+      this.tripForm.patchValue({
+        name: this.tripToEdit.name,
+        visibility: this.tripToEdit.visibility,
+      });
+    }
+  }
 
 
   create(): void {
@@ -37,12 +43,23 @@ export class CreateTripComponent {
       return;
     }
 
-    this.tripService.createUserTrips(
-      this.tripForm.value.name,
-      this.tripForm.value.visibility,
-    ).subscribe((trip) => {
-      this.router.navigate(['/trips', trip.id]);
-    });
+    if (!this.isEditMode) {
+      this.tripService.createUserTrips(
+        this.tripForm.value.name,
+        this.tripForm.value.visibility,
+      ).subscribe((trip) => {
+        this.router.navigate(['/trips', trip.id]);
+      });
+    } else {
+      this.store.dispatch(UpdateTrip({
+        tripId: this.tripToEdit.id,
+        updatedTrip: {
+          ...this.tripToEdit,
+          name: this.tripForm.value.name,
+          visibility: this.tripForm.value.visibility,
+        },
+      }));
+    }
   }
 
   isValid(): boolean {
