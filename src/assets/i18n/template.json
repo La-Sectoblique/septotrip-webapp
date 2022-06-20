@@ -108,5 +108,11 @@
 
     "TitlePhotos": "",
     "TitleDocuments": "", 
-    "TitleFiles": ""
+    "TitleFiles": "",
+
+    "TripDetailsTitle": "",
+    "InterestPointDetailsTitle": "",
+    "StepDetailsTitle": "",
+    "UpdateInterestPointAndDocuments": "",
+    "UpdateTabTitle": ""
 }

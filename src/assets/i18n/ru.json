@@ -108,5 +108,11 @@
 
     "TitlePhotos": "Фотографии",
     "TitleDocuments": "Документы", 
-    "TitleFiles": "Файлы"
+    "TitleFiles": "Файлы",
+
+    "TripDetailsTitle": "Подробности поездки",
+    "InterestPointDetailsTitle": "Подробная информация о точке интереса",
+    "StepDetailsTitle": "Детали шага",
+    "UpdateInterestPointAndDocuments": "Изменить точку интереса и ее документы",
+    "UpdateTabTitle": "Изменить"
 }

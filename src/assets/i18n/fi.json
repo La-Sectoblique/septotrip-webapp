@@ -108,5 +108,11 @@
 
     "TitlePhotos": "Photos",
     "TitleDocuments": "Documents", 
-    "TitleFiles": "Tiedostot"
+    "TitleFiles": "Tiedostot",
+
+    "TripDetailsTitle": "Matkan tiedot",
+    "InterestPointDetailsTitle": "Kiinnostavan kohteen tiedot",
+    "StepDetailsTitle": "Step Details",
+    "UpdateInterestPointAndDocuments": "Muokkaa kiinnostavaa kohdetta ja sen asiakirjoja",
+    "UpdateTabTitle": "Muokkaa"
 }

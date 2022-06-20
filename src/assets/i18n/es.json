@@ -108,5 +108,11 @@
 
     "TítuloFotos": "Fotos",
     "TítuloDocumentos": "Documentos", 
-    "TitleFiles": "Archivos"
+    "TitleFiles": "Archivos",
+
+    "TripDetailsTitle": "Detalles del viaje",
+    "InterestPointDetailsTitle": "Detalles del punto de interés",
+    "StepDetailsTitle": "Detalles del paso",
+    "UpdateInterestPointAndDocuments": "Modificar el punto de interés y sus documentos",
+    "UpdateTabTitle": "Modificar"
 }

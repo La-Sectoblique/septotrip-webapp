@@ -108,5 +108,11 @@
 
     "TitlePhotos": "Fotos",
     "TitleDocuments": "Dokumente", 
-    "TitleFiles": "Dateien"
+    "TitleFiles": "Dateien",
+
+    "TripDetailsTitle": "Details zur Fahrt",
+    "InterestPointDetailsTitle": "Details des Sonderziels",
+    "StepDetailsTitle": "Details des Zwischenziels",
+    "UpdateInterestPointAndDocuments": "Sonderziel und seine Dokumente bearbeiten",
+    "UpdateTabTitle": "Bearbeiten"
 }
