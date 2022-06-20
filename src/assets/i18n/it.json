@@ -106,7 +106,7 @@
     
     "AddOneFile": "Aggiungi un file",
 
-    "TitoloFoto": "Foto",
-    "TitoloDocumenti": "Documenti", 
-    "TitoloFile": "File"
+    "TitlePhotos": "Foto",
+    "TitleDocuments": "Documenti", 
+    "TitleFiles": "File"
 }
