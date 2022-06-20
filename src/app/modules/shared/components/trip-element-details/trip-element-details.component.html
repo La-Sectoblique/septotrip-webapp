@@ -6,7 +6,7 @@
     <nb-tab tabTitle="('Modify' | translate)" tabIcon="edit-outline" >
       <ng-content select="[edit]"></ng-content>
     </nb-tab>
-    <nb-tab tabTitle="('TitleDocuments' | translate)" tabIcon="file-text-outline">
+    <nb-tab [tabTitle]="('TitleDocuments' | translate)" tabIcon="file-text-outline">
       <ng-content select="[file]"></ng-content>
     </nb-tab>
   </nb-tabset>
