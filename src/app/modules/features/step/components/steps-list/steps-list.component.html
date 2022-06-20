@@ -33,9 +33,8 @@
             [isHighlighted]="(highlithedStepId$ | async) === step.stepInstance.id"
           >
             <div>
-              <!-- todo: TRANSLATE nbTooltip -->
               <button nbButton ghost (click)="editStep(step.stepInstance)"
-                nbTooltip="Modifier l'étape et ses documents"
+                nbTooltip='UpdateInterestPointAndDocuments' | translate
               >
                 <nb-icon class="cursor-pointer"  icon="info-outline" status="primary"></nb-icon>
               </button>

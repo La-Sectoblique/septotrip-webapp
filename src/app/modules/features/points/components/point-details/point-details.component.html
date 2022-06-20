@@ -1,6 +1,5 @@
-<!-- todo: Translate -->
 <spt-trip-element-details
-  [pageTitle]="'Détails du point d\'intérêt ' + point.title"
+  [pageTitle]="('InterestPointDetailsTitle' | translate) + point.title"
 >
   <spt-create-point edit
     [tripId]="point.tripId"
