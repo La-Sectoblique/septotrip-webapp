@@ -1,21 +1,50 @@
 <div class="d-flex flex-column step-creation-wrapper">
     <div>
-        <input nbInput [(ngModel)]="taskName" placeholder="Faire la valise">
+        <h2> Liste des taches</h2>
+        <table>
+            <tbody *ngFor="let task of taskList; let idx = index">
+                <p *ngIf="idx !== indexList"> {{ task.title }} </p>
+                <p>
+                    <input *ngIf="idx === indexList"
+                        nbInput
+                        [(ngModel)]="taskName" 
+                        (keyup.enter)="changeName(task.id,taskName)"
+                    >
+                </p>
+                <ng-container class="state" *ngIf="task.state === toDo">
+                    <select nbSelect>
+                        <option (click)="changeState(toDo, task.id)" selected>A faire</option>
+                        <option (click)="changeState(doing, task.id)">En cours</option>
+                        <option (click)="changeState(done, task.id)">Fait</option>
+                    </select>
+                </ng-container>
+                <ng-container class="state" *ngIf="task.state === doing">
+                    <select nbSelect>
+                        <option (click)="changeState(toDo, task.id)">A faire</option>
+                        <option (click)="changeState(doing, task.id)" selected>En cours</option>
+                        <option (click)="changeState(done, task.id)">Fait</option>
+                    </select>
+                </ng-container>
+                <ng-container class="state" *ngIf="task.state === done">
+                    <select nbSelect>
+                        <option (click)="changeState(toDo, task.id)">A faire</option>
+                        <option (click)="changeState(doing, task.id)">En cours</option>
+                        <option (click)="changeState(done, task.id)" selected>Fait</option>
+                    </select>
+                </ng-container>
+                <button nbButton (click)="updateName(idx)"> modifier </button>
+                <button nbButton (click)="deleteTask(task.id, idx)"> suprimer </button>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="!create">
+        <button nbButton (click)="createTask()"> + </button>
+    </div>
+    <div *ngIf="create">
+        <h4>Créer une Tâches</h4>
+        <input nbInput [(ngModel)]="taskName" placeholder="Faire la valise" (keyup.enter)="onEnter(taskName)">
         <button nbButton (click)="addTask(taskName)">
             créer une tâche
         </button>
-    </div>
-    <div>
-        <h2> Liste des taches</h2>
-        <ul >
-            <li *ngFor="let task of taskList">
-                {{ task.title }}
-                <select nbSelect>
-                    <option value="toDo">A faire</option>
-                    <option value="doing">En cours</option>
-                    <option value="done">Fait</option>
-                </select>
-            </li>
-        </ul>
     </div>
 </div>
