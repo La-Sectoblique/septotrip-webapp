@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { FileMetadataOutput } from '@la-sectoblique/septoblique-service/dist/types/models/File';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { map, mergeMap } from 'rxjs';
+import { map, mergeMap, switchMap } from 'rxjs';
 import { FilesService } from 'src/app/modules/features/files/services/files.service';
 import * as FilesActions from './files.actions';
+import * as UtilsActions from '../../utils-store/state/utils.actions';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class FilesEffects {
@@ -24,8 +26,13 @@ export class FilesEffects {
     ofType(FilesActions.UploadTripFile),
     mergeMap(({ options, file }) => this.filesService.uploadFile(options, file)
       .pipe(
-        map((newFile: FileMetadataOutput) =>
+        switchMap((newFile: FileMetadataOutput) => [
           FilesActions.UploadTripFileSuccess({ newFile, tripId: options.tripId }),
+          UtilsActions.NotifySuccess({
+            title: this.translate.instant('CreationDone'),
+            message: this.translate.instant('FileCreated'),
+          }),
+        ],
         ),
       ),
     ),
@@ -35,9 +42,13 @@ export class FilesEffects {
     ofType(FilesActions.UpdateTripFile),
     mergeMap(({ fileId, metadata }) => this.filesService.updateFile(fileId, metadata)
       .pipe(
-        map((updatedFile: FileMetadataOutput) =>
+        switchMap((updatedFile: FileMetadataOutput) => [
           FilesActions.UpdateTripFileSuccess({ updatedFile }),
-        ),
+          UtilsActions.NotifySuccess({
+            title:  this.translate.instant('UpdateDone'),
+            message: this.translate.instant('FileUpdated'),
+          }),
+        ]),
       ),
     ),
   ));
@@ -46,9 +57,13 @@ export class FilesEffects {
     ofType(FilesActions.DeleteTripFile),
     mergeMap(({ tripId, fileId }) => this.filesService.deleteFile(tripId, fileId)
       .pipe(
-        map(() =>
+        switchMap(() => [
           FilesActions.DeleteTripFileSuccess({ tripId, fileId }),
-        ),
+          UtilsActions.NotifySuccess({
+            title:  this.translate.instant('DeletionDone'),
+            message: this.translate.instant('FileDeleted'),
+          }),
+        ]),
       ),
     ),
   ));
@@ -56,6 +71,7 @@ export class FilesEffects {
   constructor(
     private actions$: Actions,
     private filesService: FilesService,
+    private translate: TranslateService,
   ) {}
 
 }

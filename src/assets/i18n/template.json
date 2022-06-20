@@ -119,5 +119,9 @@
 
     "UpdateFileLinkedElements": "",
     "Paths": "",
-    "To": ""
+    "To": "",
+
+    "FileCreated": "",
+    "FileUpdated": "",
+    "FileDeleted": ""
 }

@@ -67,7 +67,7 @@ const appUserInitializer = (authenticationService: AuthenticationService) => () 
     NbLayoutModule,
     AuthentificationModule,
     HttpClientModule,
-    NbToastrModule.forRoot({ limit: 3, duplicatesBehaviour: 'all', preventDuplicates: true }),
+    NbToastrModule.forRoot({ limit: 3, duplicatesBehaviour: 'all' }),
     PathsModule,
   ],
   providers: [

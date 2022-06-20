@@ -119,7 +119,10 @@
 
     "UpdateFileLinkedElements": "Modifier les élements liés au fichier",
     "Paths": "Trajets",
+    "To": "Vers",
 
-    "To": "Vers"
+    "FileCreated": "Le fichier a bien été créé",
+    "FileUpdated": "Le fichier a bien été modifié",
+    "FileDeleted": "Le fichier a bien été supprimé"
 
 }
