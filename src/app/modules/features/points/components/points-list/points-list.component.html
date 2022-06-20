@@ -44,7 +44,7 @@
           <spt-point-preview [point]="point" [isHighlighted]="(highlightedPointId$ | async) === point.id">
             <div class="d-flex">
               <button nbButton ghost (click)="editPoint(point)"
-                nbTooltip='UpdateInterestPointAndDocuments' | translate
+                [nbTooltip]="('UpdateInterestPointAndDocuments' | translate)"
               >
                 <nb-icon class="cursor-pointer" icon="info-outline" status="primary"></nb-icon>
               </button>
