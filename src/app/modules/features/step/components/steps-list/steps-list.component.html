@@ -34,7 +34,7 @@
           >
             <div>
               <button nbButton ghost (click)="editStep(step.stepInstance)"
-                nbTooltip='UpdateInterestPointAndDocuments' | translate
+                [nbTooltip]="('UpdateInterestPointAndDocuments' | translate)"
               >
                 <nb-icon class="cursor-pointer"  icon="info-outline" status="primary"></nb-icon>
               </button>
