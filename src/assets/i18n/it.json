@@ -105,8 +105,15 @@
     "FileIsPrivate": "Questo file è privato",
     
     "AddOneFile": "Aggiungi un file",
+    "UpdateOneFile": "Modifica di un file",
 
     "TitlePhotos": "Foto",
     "TitleDocuments": "Documenti", 
-    "TitleFiles": "File"
+    "TitleFiles": "File",
+
+    "TripDetailsTitle": "Dettagli del viaggio",
+    "InterestPointDetailsTitle": "Dettagli del punto di interesse",
+    "StepDetailsTitle": "Dettagli del passo",
+    "UpdateInterestPointAndDocuments": "Modifica il punto di interesse e i suoi documenti",
+    "UpdateTabTitle": "Modifica"
 }

@@ -105,8 +105,15 @@
     "FileIsPrivate": "This file is private.",
     
     "AddOneFile": "Add a file",
+    "UpdateOneFile": "UpdateOnefile",
 
     "TitlePhotos": "Photos",
     "TitleDocuments": "Documents", 
-    "TitleFiles": "Files"
+    "TitleFiles": "Files",
+
+    "TripDetailsTitle": "Trip Details",
+    "InterestPointDetailsTitle": "Point of interest details",
+    "StepDetailsTitle": "Step Details",
+    "UpdateInterestPointAndDocuments": "Modify the point of interest and its documents.",
+    "UpdateTabTitle": "Modify"
 }

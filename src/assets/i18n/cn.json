@@ -105,8 +105,15 @@
     "FileIsPrivate": "这个文件是私有的。",
     
     "AddOneFile": "添加一个文件",
+    "UpdateOneFile": "修改一个文件",
 
     "TitlePhotos": "照片",
     "TitleDocuments":"文件",
-    "TitleFiles": "文件"
+    "TitleFiles": "文件",
+
+    "TripDetailsTitle": "行程详情",
+    "InterestPointDetailsTitle": "兴趣点详情",
+    "StepDetailsTitle":"步骤详情",
+    "UpdateInterestPointAndDocuments": "修改兴趣点和其文件",
+    "UpdateTabTitle": "修改"
 }

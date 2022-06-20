@@ -105,8 +105,15 @@
     "FileIsPrivate": "Αυτό το αρχείο είναι ιδιωτικό.",
     
     "AddOneFile": "Προσθήκη ενός αρχείου",
+    "UpdateOneFile": "Τροποποίηση ενός αρχείου",
 
     "TitlePhotos": "Φωτογραφίες",
     "TitleDocuments": "Έγγραφα", 
-    "TitleFiles": "Αρχεία"
+    "TitleFiles": "Αρχεία",
+
+    "TripDetailsTitle": "Λεπτομέρειες ταξιδιού",
+    "InterestPointDetailsTitle": "Λεπτομέρειες σημείου ενδιαφέροντος",
+    "StepDetailsTitle": "Λεπτομέρειες βήματος",
+    "UpdateInterestPointAndDocuments": "Τροποποίηση του σημείου ενδιαφέροντος και των εγγράφων του",
+    "UpdateTabTitle": "Τροποποίηση"
 }

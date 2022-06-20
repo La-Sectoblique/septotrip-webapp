@@ -3,10 +3,10 @@
   <h2>{{pageTitle}}</h2>
 
   <nb-tabset class="d-flex flex-column justify-content-center">
-    <nb-tab tabTitle="Modifier" tabIcon="edit-outline" >
+    <nb-tab [tabTitle]="('Modify' | translate)" tabIcon="edit-outline" >
       <ng-content select="[edit]"></ng-content>
     </nb-tab>
-    <nb-tab tabTitle="Documents" tabIcon="file-text-outline">
+    <nb-tab [tabTitle]="('TitleDocuments' | translate)" tabIcon="file-text-outline">
       <ng-content select="[file]"></ng-content>
     </nb-tab>
   </nb-tabset>
