@@ -80,5 +80,33 @@
 
     "PointDeleted": "The intereset point has been deleted",
     "StepDeleted": "The step has been deleted",
-    "TripDeleted": "The trip has been deleted"
+    "TripDeleted": "The trip has been deleted",
+
+    "Language": "Language",
+
+    "LoginNeeded": "Login needed",
+    "LoginNeededMessage": "Please login to access this page.",
+    
+    "SessionExpired": "Session expired",
+    "SessionExpiredMessage": "You have been disconnected.",
+    
+    "LoginError": "Authentication error",
+    "LoginErrorMessage": "The credentials are not correct or the account does not exist.",
+
+    "AddFileAction": "Drag or click to add a file.", 
+    "Visibility": "Visibility",
+
+    "UpdateFileLabel": "Modify the file",
+    "AddFileLabel": "Add the file", 
+    
+    "CurrentState": "Current state",
+
+    "FileIsPublic": "This file is public. Anyone who has the link can access it", 
+    "FileIsPrivate": "This file is private.",
+    
+    "AddOneFile": "Add a file",
+
+    "TitlePhotos": "Photos",
+    "TitleDocuments": "Documents", 
+    "TitleFiles": "Files"
 }

@@ -1344,10 +1344,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@la-sectoblique/septoblique-service@0.8.2":
-  version "0.8.2"
-  resolved "https://npm.pkg.github.com/download/@la-sectoblique/septoblique-service/0.8.2/92f78f96a50d825abea26463a1856407b18a7e51952d9f62ca71a059ffa2ebeb#ddf63740561d8417410ded26359094d9cc01f6b9"
-  integrity sha512-4iSjy8cIGHjdsXkWVoe6Bxrpnf5hsoxra4Vf14TUmLJ+2MpmTOUAvM/qRn4KKTCwY5ZvcpjuIDbZjGsoyt+Wkw==
+"@la-sectoblique/septoblique-service@0.8.6":
+  version "0.8.6"
+  resolved "https://npm.pkg.github.com/download/@la-sectoblique/septoblique-service/0.8.6/62a52d7926c8749a7e41786be59eea70d0077e5ed6f51188556f9da8390cf37a#193b5d33f20096ed185c8f7a47221cc8694f2a7a"
+  integrity sha512-Dc6DWPXqyDWIQUSxdwvqpvGyQk6xsS8FtHs6CvuKwkKjqjwQpznEWlF6WYiG4EVApDj/BtZsqT4bZFjeypiSAg==
   dependencies:
     axios "^0.26.0"
     mime-types "^2.1.35"
@@ -6009,6 +6009,13 @@ neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+
+ngx-dropzone@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/ngx-dropzone/-/ngx-dropzone-3.1.0.tgz#f2045a9ca90903fa96304f1b2aa33a922f14b15a"
+  integrity sha512-5RBaEl07QUcY6sv/BBPyIxN6nbWY/KqTGheEKgbuGS0N1QPFY7NJUo8+X3fYUwQgLS+wjJeqPiR37dd0YNDtWA==
+  dependencies:
+    tslib "^2.0.0"
 
 ngx-mapbox-gl@^7.1.2:
   version "7.1.2"

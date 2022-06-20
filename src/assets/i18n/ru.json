@@ -1,0 +1,112 @@
+{
+    "CreateTripTitle": "Создать поездку",
+    "CreateTripValidation": "Создать поездку",
+    "NoTripEmptyStateMessage": "У вас нет поездки",
+    
+    "NoStepEmptyStateMessage": "Нет шагов",
+
+    "NoPointEmptyStateMessage": "Нет точек интереса",
+    
+    "NoInformationEmptyStateMessage": "Нет информации",
+
+    "ClickMapToBegin": "Нажмите на карту, чтобы начать!",
+    
+    "TripMemberTitle": "Участники поездки",
+    
+    "NameInputLabel": "Имя",
+    "FirstnameInputLabel": "Имя",
+    "MailAddressInputLabel": "Адрес электронной почты",
+    "DurationInputLabel": "Продолжительность",
+    "DescriptionInputLabel": "Описание",
+    "InformationInputLabel": "Информация",
+    "PasswordInputLabel": "Пароль",
+    
+    "Delete": "Удалить",
+    "Add": "Добавить",
+    "Edition": "Редактировать",
+    "Stop": "Стоп",
+    "Public": "Общественный",
+    "Private": "Частный",
+
+    "Days": "Дни",
+    "Day": "День",
+    "Steps": "ЭТАПЫ",
+    "Points": "Точки интереса",
+
+    "LoginButtonLabel": "Вход",
+    "RegisterButtonLabel": "Зарегистрировать",
+    "DisconnectButtonLabel": "Отключить",
+
+    "HomeNavLabel": "Дом",
+    "TripNavLabel": "Путешествия",
+    
+    "Parameters": "Настройки",
+    "PlanificationTabTitle": "Планирование",
+    "MemberTabTitle": "Члены",
+    
+    "MyTripsTitle": "Мои поездки",
+    "VoyageInFrancePlaceholder": "Путешествие во Францию",
+
+    "AddTravelerTitle": "Добавить путешественника",
+
+    "StepCreation": "Создание шага",
+    "StepUpdate": "Изменение шага",
+    "StepCreationValidation": "Создать шаг",
+    "StepUpdateValidation": "Изменить шаг",
+    "StepEditMode": "Редактирование шагов",
+
+    "PointCreation": "Создание точки интереса",
+    "PointUpdate": "Изменение точки интереса",
+    "PointUpdateValidation": "Изменить точку интереса",
+    "PointCreationValidation": "Создать точку интереса",
+    "PointEditMode": "Редактирование точки интереса",
+
+    "PathUpdate": "Модификация пути",
+    "PathUpdateValidation": "Изменить путь",
+
+    "FilteredPointsTooltipButton": "В списке отображаются только точки, отображаемые на карте",
+    "NotFilteredPointsTooltipButton": "Все точки на карте отображаются в списке",
+
+    "UpdateDone": "Обновление выполнено",
+    "CreationDone": "Создание завершено",
+    "DeletionDone": "Удаление выполнено",
+
+    "PathUpdated": "Путь был изменен",
+    "PointUpdated": "Точка интереса была изменена",
+    "StepUpdated": "Шаг был изменен",
+    
+    "PointCreated": "Точка интереса была создана",
+    "StepCreated": "Шаг был создан",
+
+    "PointDeleted": "Точка интереса была удалена",
+    "StepDeleted": "Шаг был удален",
+    "TripDeleted": "Путевка была удалена",
+
+    "Language": "язык",
+    
+    "LoginError": "Ошибка аутентификации",
+    "LoginErrorMessage": "Учетные данные неверны или учетная запись не существует",
+    
+    "LoginNeeded": "Требуется подключение",
+    "LoginNeededMessage": "Пожалуйста, войдите в систему, чтобы получить доступ к",
+
+    "SessionExpired": "Сессия истекла",
+    "SessionExpiredMessage": "Вы были отключены",
+
+    "AddFileAction": "Перетащите или нажмите, чтобы добавить файл", 
+    "Visibility": "Видимость",
+
+    "UpdateFileLabel": "Изменить файл",
+    "AddFileLabel": "Добавить файл", 
+    
+    "CurrentState": "Текущее состояние",
+
+    "FileIsPublic": "Этот файл является общедоступным. Любой, у кого есть ссылка, может получить к нему доступ", 
+    "FileIsPrivate": "Этот файл является частным",
+    
+    "AddOneFile": "Добавить файл",
+
+    "TitlePhotos": "Фотографии",
+    "TitleDocuments": "Документы", 
+    "TitleFiles": "Файлы"
+}

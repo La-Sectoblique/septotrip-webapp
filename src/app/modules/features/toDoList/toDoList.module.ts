@@ -8,7 +8,8 @@ import {
   NbRadioModule,
   NbSelectModule,
 } from '@nebular/theme';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbRadioModule,
     FormsModule,
     NbSelectModule,
+    TranslateModule,
   ],
   declarations: [ToDoListComponent],
   exports: [ToDoListComponent],

@@ -7,6 +7,10 @@ import { initialTripState } from './trips.state';
 export const tripReducer = createReducer(
   initialTripState,
 
+  on(TripsAction.ResetTripStore, () => ({
+    ...initialTripState,
+  })),
+
   // === TRIPS ===
   on(TripsAction.GetUserTripsSuccess, (state, { trips }) => {
     let newTrips = state.trips;

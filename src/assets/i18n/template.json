@@ -1,0 +1,112 @@
+{
+    "CreateTripTitle": "",
+    "CreateTripValidation": "",
+    "NoTripEmptyStateMessage": "",
+    
+    "NoStepEmptyStateMessage": "",
+
+    "NoPointEmptyStateMessage": "",
+    
+    "NoInformationEmptyStateMessage": "",
+
+    "ClickMapToBegin": "",
+    
+    "TripMemberTitle": "",
+    
+    "NameInputLabel": "",
+    "FirstnameInputLabel": "",
+    "MailAddressInputLabel": "",
+    "DurationInputLabel": "",
+    "DescriptionInputLabel": "",
+    "InformationInputLabel": "",
+    "PasswordInputLabel": "",
+    
+    "Delete": "",
+    "Add": "",
+    "Edition": "",
+    "Stop": "",
+    "Public": "",
+    "Private": "",
+
+    "Days": "",
+    "Day": "",
+    "Steps": "",
+    "Points": "",
+
+    "LoginButtonLabel": "",
+    "RegisterButtonLabel": "",
+    "DisconnectButtonLabel": "",
+
+    "HomeNavLabel": "",
+    "TripNavLabel": "",
+    
+    "Parameters": "",
+    "PlanificationTabTitle": "",
+    "MemberTabTitle": "",
+    
+    "MyTripsTitle": "",
+    "VoyageInFrancePlaceholder": "",
+
+    "AddTravelerTitle": "",
+
+    "StepCreation": "",
+    "StepUpdate": "",
+    "StepCreationValidation": "",
+    "StepUpdateValidation": "",
+    "StepEditMode": "",
+
+    "PointCreation": "",
+    "PointUpdate": "",
+    "PointUpdateValidation": "",
+    "PointCreationValidation": "",
+    "PointEditMode": "",
+
+    "PathUpdate": "",
+    "PathUpdateValidation": "",
+
+    "FilteredPointsTooltipButton": "",
+    "NotFilteredPointsTooltipButton": "",
+
+    "UpdateDone": "",
+    "CreationDone": "",
+    "DeletionDone": "",
+
+    "PathUpdated": "",
+    "PointUpdated": "",
+    "StepUpdated": "",
+    
+    "PointCreated": "",
+    "StepCreated": "",
+
+    "PointDeleted": "",
+    "StepDeleted": "",
+    "TripDeleted": "",
+
+    "Language": "",
+    
+    "LoginError": "",
+    "LoginErrorMessage": "",
+    
+    "LoginNeeded": "",
+    "LoginNeededMessage": "",
+
+    "SessionExpired": "",
+    "SessionExpiredMessage": "",
+
+    "AddFileAction": "", 
+    "Visibility": "",
+
+    "UpdateFileLabel": "",
+    "AddFileLabel": "", 
+
+    "CurrentState": "", 
+
+    "FileIsPublic": "", 
+    "FileIsPrivate": "",
+    
+    "AddOneFile": "",
+
+    "TitlePhotos": "",
+    "TitleDocuments": "", 
+    "TitleFiles": ""
+}

@@ -15,6 +15,10 @@
     &-horizontal {
         margin: 0 .25rem;
     }
+
+    &.highlighted {
+        border: 1px solid #3366ff;
+    }
 }
 
 .list-card {
@@ -24,4 +28,10 @@
     padding: .5rem;
     // max-height: 100%;
     // overflow: auto;
+}
+
+.form-input-gap {
+    input {
+        margin-bottom: 2rem;
+    }
 }

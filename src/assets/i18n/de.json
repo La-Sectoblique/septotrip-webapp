@@ -1,0 +1,112 @@
+{
+    "CreateTripTitle": "Reise erstellen",
+    "CreateTripValidation": "Reise erstellen",
+    "NoTripEmptyStateMessage": "Sie haben keine Reise.",
+    
+    "NoStepEmptyStateMessage": "Es gibt keine Zwischenziele.",
+
+    "NoPointEmptyStateMessage": "Es gibt keine Sehenswürdigkeiten",
+    
+    "NoInformationEmptyStateMessage": "Keine Informationen",
+
+    "ClickMapToBegin": "Klicken Sie auf die Karte, um zu beginnen!",
+    
+    "TripMemberTitle": "Mitglieder der Reise",
+    
+    "NameInputLabel": "Name",
+    "FirstnameInputLabel": "Vorname",
+    "MailAddressInputLabel": "E-Mail-Adresse",
+    "DurationInputLabel": "Dauer",
+    "DescriptionInputLabel": "Beschreibung",
+    "InformationInputLabel": "Information",
+    "PasswordInputLabel": "Passwort",
+    
+    "Delete": "Löschen",
+    "Add": "Hinzufügen",
+    "Edition": "Bearbeiten",
+    "Stop": "Beenden",
+    "Public": "Öffentlich",
+    "Private": "Privat",
+
+    "Days": "Tage",
+    "Day": "Tag",
+    "Steps": "Schritte",
+    "Points": "Sehenswürdigkeiten",
+
+    "LoginButtonLabel": "Anmeldung",
+    "RegisterButtonLabel": "Registrieren",
+    "DisconnectButtonLabel": "Trennen",
+
+    "HomeNavLabel": "Startseite",
+    "TripNavLabel": "Reisen",
+    
+    "Parameters": "Einstellungen",
+    "PlanificationTabTitle": "Zeitlicher Ablauf",
+    "MemberTabTitle": "Mitglieder",
+    
+    "MyTripsTitle": "Meine Reisen",
+    "VoyageInFrancePlaceholder": "Reise nach Frankreich",
+
+    "AddTravelerTitle": "Einen Reisenden hinzufügen",
+
+    "StepCreation": "Erstellen eines Zwischenziels",
+    "StepUpdate": "Bearbeiten eines Schrittes",
+    "StepCreationValidation": "Schritt erstellen",
+    "StepUpdateValidation": "Schritt bearbeiten",
+    "StepEditMode": "Bearbeiten von Schritten",
+
+    "PointCreation": "Erstellen eines Sonderziels",
+    "PointUpdate": "Bearbeiten eines Sonderziels",
+    "PointUpdateValidation": "Sonderziel bearbeiten",
+    "PointCreationValidation": "Erstellen des Sonderziels",
+    "PointEditMode": "Bearbeiten von Sonderzielen",
+
+    "PathUpdate": "Bearbeiten der Route",
+    "PathUpdateValidation": "Route bearbeiten",
+
+    "FilteredPointsTooltipButton": "Nur die auf der Karte angezeigten Punkte werden in der Liste angezeigt.",
+    "NotFilteredPointsTooltipButton": "Alle Punkte auf der Karte werden in der Liste angezeigt.",
+
+    "UpdateDone": "Update durchgeführt",
+    "CreationDone": "Erstellung abgeschlossen",
+    "DeletionDone": "Löschung durchgeführt",
+
+    "PathUpdated": "Der Pfad wurde geändert",
+    "PointUpdated": "Der Sonderzielpunkt wurde geändert",
+    "StepUpdated": "Der Zwischenstopp wurde geändert",
+    
+    "PointCreated": "Der Sonderzielpunkt wurde erstellt",
+    "StepCreated": "Der Schritt wurde erstellt",
+
+    "PointDeleted": "Das Sonderziel wurde gelöscht",
+    "StepDeleted": "Der Wegpunkt wurde gelöscht",
+    "TripDeleted": "Die Reise wurde gelöscht.",
+
+    "Language": "Sprache",
+    
+    "LoginError": "Authentifizierungsfehler",
+    "LoginErrorMessage": "Die Anmeldeinformationen sind nicht korrekt oder das Konto existiert nicht",
+    
+    "LoginNeeded": "Verbindung erforderlich",
+    "LoginNeededMessage": "Bitte melden Sie sich an, um auf die Seite zuzugreifen.",
+
+    "SessionExpired": "Abgelaufene Sitzung",
+    "SessionExpiredMessage": "Sie haben sich abgemeldet.",
+
+    "AddFileAction": "Ziehen oder klicken Sie, um eine Datei hinzuzufügen.", 
+    "Visibility": "Sichtbarkeit",
+
+    "UpdateFileLabel": "Datei bearbeiten",
+    "AddFileLabel": "Datei hinzufügen", 
+    
+    "CurrentState": "Aktueller Status",
+
+    "FileIsPublic": "Diese Datei ist öffentlich. Jeder, der über den Link verfügt, kann auf sie zugreifen.", 
+    "FileIsPrivate": "Diese Datei ist privat.",
+    
+    "AddOneFile": "Eine Datei hinzufügen",
+
+    "TitlePhotos": "Fotos",
+    "TitleDocuments": "Dokumente", 
+    "TitleFiles": "Dateien"
+}

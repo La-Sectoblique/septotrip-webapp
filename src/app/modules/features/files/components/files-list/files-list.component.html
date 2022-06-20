@@ -1,0 +1,42 @@
+<div class="d-flex flex-column justify-content-center">
+  <div class="w-100 d-flex justify-content-center">
+    <button nbButton (click)="openAddFileModal()" status="primary">
+      <nb-icon icon="plus-square-outline"></nb-icon>
+       {{'AddOneFile' | translate}}
+    </button>
+  </div>
+
+  <nb-tabset class="d-flex flex-column justify-content-center">
+    <nb-tab [tabTitle]="('TitlePhotos' | translate)" tabIcon="image-outline" >
+        <ng-container
+        [ngTemplateOutlet]="filePreviews"
+        [ngTemplateOutletContext]="{
+          files: (files | filterDocumentByFileType:FileType.PHOTO)
+        }"
+      ></ng-container>
+    </nb-tab>
+    <nb-tab [tabTitle]="('TitleDocuments' | translate)" tabIcon="file-text-outline">
+      <ng-container
+        [ngTemplateOutlet]="filePreviews"
+        [ngTemplateOutletContext]="{
+          files: (files | filterDocumentByFileType:FileType.DOCUMENT)
+        }"
+      ></ng-container>
+    </nb-tab>
+  </nb-tabset>
+</div>
+
+<ng-template let-files="files" #filePreviews>
+  <div class="d-flex align-items-center flex-column">
+    <spt-file-preview *ngFor="let file of files"
+      [file]="file"
+    >
+      <button nbButton ghost (click)="editFile(file)">
+        <nb-icon class="cursor-pointer trash-icon-color" icon="edit-outline" status="primary"></nb-icon>
+      </button>
+      <button nbButton ghost (click)="deleteFile(file.id)">
+        <nb-icon class="cursor-pointer trash-icon-color" icon="trash-2-outline" status="danger"></nb-icon>
+      </button>
+    </spt-file-preview>
+  </div>
+</ng-template>

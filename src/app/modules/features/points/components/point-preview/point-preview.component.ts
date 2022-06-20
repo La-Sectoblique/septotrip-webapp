@@ -9,5 +9,6 @@ import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/mode
 export class PointPreviewComponent {
 
   @Input() point: PointOutput;
+  @Input() isHighlighted: boolean;
 
 }

@@ -1,0 +1,112 @@
+{
+    "CreateTripTitle": "Δημιουργία ταξιδιού",
+    "CreateTripValidation": "Δημιουργία ταξιδιού",
+    "NoTripEmptyStateMessage": "Δεν έχετε ταξίδι",
+    
+    "NoStepEmptyStateMessage": "Δεν υπάρχουν βήματα.",
+
+    "NoPointEmptyStateMessage": "Δεν υπάρχουν σημεία ενδιαφέροντος",
+    
+    "NoInformationEmptyStateMessage": "Δεν υπάρχουν πληροφορίες",
+
+    "ClickMapToBegin": "Κάντε κλικ στο χάρτη για να ξεκινήσετε!",
+    
+    "TripMemberTitle": "Μέλη ταξιδιού",
+    
+    "NameInputLabel": "Όνομα",
+    "FirstnameInputLabel": "Όνομα",
+    "MailAddressInputLabel": "Διεύθυνση ηλεκτρονικού ταχυδρομείου",
+    "DurationInputLabel": "Διάρκεια",
+    "DescriptionInputLabel": "Περιγραφή",
+    "InformationInputLabel": "Πληροφορίες",
+    "PasswordInputLabel": "Κωδικός πρόσβασης",
+    
+    "Delete": "Διαγραφή",
+    "Add": "Προσθήκη",
+    "Edition": "Επεξεργασία",
+    "Stop": "να σταματήσει",
+    "Public": "Δημόσιο",
+    "Private": "ιδιωτικός",
+
+    "Days": "Ημέρες",
+    "Day": "Ημέρα",
+    "Steps": "Βήματα",
+    "Points": "Σημεία ενδιαφέροντος",
+
+    "LoginButtonLabel": "Σύνδεση",
+    "RegisterButtonLabel": "κανω ΕΓΓΡΑΦΗ",
+    "DisconnectButtonLabel": "Αποσύνδεση",
+
+    "HomeNavLabel": "Σπίτι",
+    "TripNavLabel": "Ταξίδι",
+    
+    "Parameters": "Ρυθμίσεις",
+    "PlanificationTabTitle": "Σχεδιασμός",
+    "MemberTabTitle": "Μέλη",
+    
+    "MyTripsTitle": "Τα ταξίδια μου",
+    "VoyageInFrancePlaceholder": "Ταξίδι στη Γαλλία",
+
+    "AddTravelerTitle": "Προσθήκη ταξιδιώτη",
+
+    "StepCreation": "Δημιουργία βήματος",
+    "StepUpdate": "Τροποποίηση ενός βήματος",
+    "StepCreationValidation": "Δημιουργία βήματος",
+    "StepUpdateValidation": "Τροποποίηση βήματος",
+    "StepEditMode": "Επεξεργασία βημάτων",
+
+    "PointCreation": "Δημιουργία σημείου ενδιαφέροντος",
+    "PointUpdate": "Τροποποίηση ενός σημείου ενδιαφέροντος",
+    "PointUpdateValidation": "Τροποποίηση του σημείου ενδιαφέροντος",
+    "PointCreationValidation": "Δημιουργήστε το σημείο ενδιαφέροντος",
+    "PointEditMode": "Επεξεργασία σημείου ενδιαφέροντος",
+
+    "PathUpdate": "Τροποποίηση διαδρομής",
+    "PathUpdateValidation": "Τροποποίηση της διαδρομής",
+
+    "FilteredPointsTooltipButton": "Μόνο τα σημεία που εμφανίζονται στο χάρτη εμφανίζονται στη λίστα",
+    "NotFilteredPointsTooltipButton": "Όλα τα σημεία του χάρτη εμφανίζονται στη λίστα",
+
+    "UpdateDone": "Η ενημέρωση έγινε",
+    "CreationDone": "Η δημιουργία ολοκληρώθηκε",
+    "DeletionDone": "Η διαγραφή ολοκληρώθηκε",
+
+    "PathUpdated": "Η διαδρομή έχει τροποποιηθεί",
+    "PointUpdated": "Το σημείο ενδιαφέροντος έχει τροποποιηθεί",
+    "StepUpdated": "Το βήμα έχει τροποποιηθεί",
+    
+    "PointCreated": "Το σημείο ενδιαφέροντος έχει δημιουργηθεί",
+    "StepCreated": "Το βήμα έχει δημιουργηθεί",
+
+    "PointDeleted": "Το σημείο ενδιαφέροντος έχει διαγραφεί",
+    "StepDeleted": "Το βήμα έχει διαγραφεί",
+    "TripDeleted": "Το ταξίδι έχει διαγραφεί",
+
+    "Language": "Γλώσσα",
+    
+    "LoginError": "Σφάλμα ελέγχου ταυτότητας",
+    "LoginErrorMessage": "Τα διαπιστευτήρια δεν είναι σωστά ή ο λογαριασμός δεν υπάρχει",
+    
+    "LoginNeeded": "Απαιτούμενη σύνδεση",
+    "LoginNeededMessage": "Παρακαλώ συνδεθείτε για να αποκτήσετε πρόσβαση στη σελίδα.",
+
+    "SessionExpired": "Η σύνοδος έληξε",
+    "SessionExpiredMessage": "Έχετε αποσυνδεθεί",
+
+    "AddFileAction": "Σύρετε ή κάντε κλικ για να προσθέσετε ένα αρχείο", 
+    "Visibility": "Ορατότητα",
+
+    "UpdateFileLabel": "Τροποποίηση του αρχείου",
+    "AddFileLabel": "Προσθήκη αρχείου", 
+    
+    "CurrentState": "Τρέχουσα κατάσταση",
+
+    "FileIsPublic": "Αυτό το αρχείο είναι δημόσιο. Όποιος έχει τον σύνδεσμο μπορεί να έχει πρόσβαση σε αυτόν", 
+    "FileIsPrivate": "Αυτό το αρχείο είναι ιδιωτικό.",
+    
+    "AddOneFile": "Προσθήκη ενός αρχείου",
+
+    "TitlePhotos": "Φωτογραφίες",
+    "TitleDocuments": "Έγγραφα", 
+    "TitleFiles": "Αρχεία"
+}

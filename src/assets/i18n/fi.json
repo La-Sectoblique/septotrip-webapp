@@ -1,0 +1,112 @@
+{
+    "CreateTripTitle": "Luo matka",
+    "CreateTripValidation": "Luo matka",
+    "NoTripEmptyStateMessage": "Sinulla ei ole matkaa",
+    
+    "NoStepEmptyStateMessage": "Vaiheita ei ole.",
+
+    "NoPointEmptyStateMessage": "Ei ole kiinnostavia pisteitä",
+    
+    "NoInformationEmptyStateMessage": "Ei tietoa",
+
+    "ClickMapToBegin": "Klikkaa karttaa aloittaaksesi!",
+    
+    "TripMemberTitle": "Matkan jäsenet",
+    
+    "NameInputLabel": "Nimi",
+    "FirstnameInputLabel": "Etunimi",
+    "MailAddressInputLabel": "Sähköpostiosoite",
+    "DurationInputLabel": "Duration",
+    "DescriptionInputLabel": "Kuvaus",
+    "InformationInputLabel": "Tiedot",
+    "PasswordInputLabel": "Salasana",
+    
+    "Delete": "Poista",
+    "Add": "Lisätä",
+    "Edition": "Muokkaa",
+    "Stop": "Lopettaa",
+    "Public": "Julkinen",
+    "Private": "Yksityinen",
+
+    "Days": "Päivää",
+    "Day": "Päivä",
+    "Steps": "Askeleet",
+    "Points": "Kiinnostavia kohteita",
+
+    "LoginButtonLabel": "Kirjaudu sisään",
+    "RegisterButtonLabel": "Rekisteröidy",
+    "DisconnectButtonLabel": "Katkaista",
+
+    "HomeNavLabel": "Koti",
+    "TripNavLabel": "Matka",
+    
+    "Parameters": "Asetukset",
+    "PlanificationTabTitle": "Suunnittelu",
+    "MemberTabTitle": "Jäsenet",
+    
+    "MyTripsTitle": "Omat matkat",
+    "VoyageInFrancePlaceholder": "Matkustaa Ranskassa",
+
+    "AddTravelerTitle": "Lisää matkustaja",
+
+    "StepCreation": "Askeleen luominen",
+    "StepUpdate": "Vaiheen muuttaminen",
+    "StepCreationValidation": "Luo vaihe",
+    "StepUpdateValidation": "Muokkaa vaihetta",
+    "StepEditMode": "Muokkaa vaiheita",
+
+    "PointCreation": "Mielenkiintoisen pisteen luominen",
+    "PointUpdate": "Kiinnostavan pisteen muuttaminen",
+    "PointUpdateValidation": "Muokkaa kiinnostavaa pistettä",
+    "PointCreationValidation": "Luo kiinnostava piste",
+    "PointEditMode": "Kohteen muokkaus",
+
+    "PathUpdate": "Polun muutos",
+    "PathUpdateValidation": "Polun muuttaminen",
+
+    "FilteredPointsTooltipButton": "Vain kartalla näkyvät pisteet näkyvät luettelossa",
+    "NotFilteredPointsTooltipButton": "Kaikki kartan pisteet näkyvät luettelossa",
+
+    "UpdateDone": "Päivitys tehty",
+    "CreationDone": "Luominen tehty",
+    "DeletionDone": "Poisto tehty",
+
+    "PathUpdated": "Polkua on muutettu",
+    "PointUpdated": "Kiinnostavaa kohtaa on muutettu",
+    "StepUpdated": "Askel on muutettu",
+    
+    "PointCreated": "Kiinnostava piste on luotu",
+    "StepCreated": "Vaihe on luotu",
+
+    "PointDeleted": "Kiinnostava piste on poistettu",
+    "StepDeleted": "Vaihe on poistettu",
+    "TripDeleted": "Matka on poistettu",
+
+    "Language": "Kieli",
+    
+    "LoginError": "Todennusvirhe",
+    "LoginErrorMessage": "Tunnukset eivät ole oikein tai tiliä ei ole olemassa",
+    
+    "LoginNeeded": "Tarvittava yhteys",
+    "LoginNeededMessage": "Kirjaudu sisään päästäksesi sivulle.",
+
+    "SessionExpired": "Istunto päättynyt",
+    "SessionExpiredMessage": "Sinulta on katkaistu yhteys",
+
+    "AddFileAction": "Lisää tiedosto vetämällä tai klikkaamalla", 
+    "Visibility": "Näkyvyys",
+
+    "UpdateFileLabel": "Muokkaa tiedostoa",
+    "AddFileLabel": "Lisää tiedosto", 
+    
+    "CurrentState": "Nykyinen tila",
+
+    "FileIsPublic": "Tämä tiedosto on julkinen. Kuka tahansa, jolla on linkki, voi käyttää sitä", 
+    "FileIsPrivate": "Tämä tiedosto on yksityinen.",
+    
+    "AddOneFile": "Lisää tiedosto",
+
+    "TitlePhotos": "Photos",
+    "TitleDocuments": "Documents", 
+    "TitleFiles": "Tiedostot"
+}

@@ -5,10 +5,14 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { UpdateMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.actions';
-import { selectDisplayedMapPointIds, selectMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.selectors';
+import {
+  selectDisplayedMapPointIds,
+  selectHighlightedPointId,
+  selectMapEditMode,
+} from 'src/app/store/map-edit-store/state/map-edit.selectors';
 import { DeleteTripPoint } from 'src/app/store/trips-store/state/trips.actions';
 import { HighlightMapMarkersService } from '../../../map/services/highlight-map-markers.service';
-import { CreatePointComponent } from '../create-point/create-point.component';
+import { PointDetailsComponent } from '../point-details/point-details.component';
 
 @Component({
   selector: 'spt-points-list',
@@ -27,6 +31,8 @@ export class PointsListComponent implements OnInit {
   mapEditMode$: Observable<MapEditMode>;
   mapEditMode = MapEditMode;
 
+  highlightedPointId$: Observable<number | null>;
+
 
   constructor(
     private store: Store,
@@ -38,6 +44,8 @@ export class PointsListComponent implements OnInit {
   ngOnInit(): void {
     this.mapEditMode$ = this.store.select(selectMapEditMode());
     this.mapDisplayedPointIds$ = this.store.select(selectDisplayedMapPointIds());
+
+    this.highlightedPointId$ = this.store.select(selectHighlightedPointId());
   }
 
   switchPointEditMode(editMode: MapEditMode): void {
@@ -53,11 +61,9 @@ export class PointsListComponent implements OnInit {
   }
 
   editPoint(editedPoint: PointOutput): void {
-    this.nbDialogService.open(CreatePointComponent, {
+    this.nbDialogService.open(PointDetailsComponent, {
       context: {
-        tripId: this.tripId,
-        isEditMode: true,
-        editedPoint,
+        point: editedPoint,
       },
     });
   }

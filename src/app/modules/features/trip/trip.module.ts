@@ -21,6 +21,7 @@ import { TravelersModule } from '../travelers/travelers.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToDoListModule } from '../toDoList/toDoList.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { FilesModule } from '../files/files.module';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import { TranslateModule } from '@ngx-translate/core';
     NbTabsetModule,
     ToDoListModule,
     TranslateModule,
+    FilesModule,
   ],
   declarations: [
     TripPreviewComponent,

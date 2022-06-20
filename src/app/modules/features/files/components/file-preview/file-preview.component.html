@@ -1,0 +1,34 @@
+<div class="card d-flex align-items-center justify-content-between w-100 gap-4">
+    <p>{{file.name}}</p>
+    <nb-icon
+      [icon]="file.visibility === 'public' ? 'globe-outline' : 'lock-outline'"
+      [nbTooltip]="file.visibility === 'public'
+        ? ('FileIsPublic' | translate)
+        : ('FileIsPrivate' | translate)
+      "
+      
+      nbTooltipStatus="info"
+    >  
+    </nb-icon>
+    <button
+      nbButton
+      ghost
+      (click)="download()"
+      [nbTooltip]="file.name+'.'+file.extension"
+    >
+      <div *ngIf="file.fileType === FileType.PHOTO" class="image-wrapper">
+          <img [src]="getUrl()" [alt]="file.name">
+      </div>
+      <nb-icon
+        icon="external-link-outline"
+      ></nb-icon>
+    </button>
+    <nb-icon *ngIf="file.stepId || file.pointId || file.pathId"
+      icon="link-2-outline"
+      [nbTooltip]=" (fileLinkedTooltipMessage | async) || ''"
+    >
+    </nb-icon>
+    <div>
+      <ng-content></ng-content>
+    </div>
+</div>
