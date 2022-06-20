@@ -1,0 +1,44 @@
+<div class="file-link-edit-wrapper d-flex flex-column align-items-center">
+
+  <h2>Modifier les élements liés au fichier</h2>
+
+  <div class="d-flex" *ngIf="(tripSteps$ | async) as tripSteps">
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <h5>Etapes :</h5>
+      <nb-select shape="semi-round" size="small" [selected]="file.stepId"
+        (selectedChange)="updateFile({stepId: $event})"
+      >
+        <!-- (selectedChange)="updateTranslation($event)" -->
+        <nb-option *ngFor="let step of tripSteps" [value]="step.stepInstance.id">
+          {{step.stepInstance.name}}
+        </nb-option>
+      </nb-select>
+    </div>
+
+    <div class="d-flex flex-column align-items-center justify-content-center"
+      *ngIf="(tripPoints$ | async) as tripPoints"
+    >
+      <h5>Points :</h5>
+      <nb-select shape="semi-round" size="small" [selected]="file.pointId"
+        (selectedChange)="updateFile({pointId: $event})"
+      >
+        <!-- (selectedChange)="updateTranslation($event)" -->
+        <nb-option *ngFor="let point of tripPoints" [value]="point.id">
+          {{point.title}}
+        </nb-option>
+      </nb-select>
+    </div>
+    
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <h5>Trajets :</h5>
+      <nb-select shape="semi-round" size="small" [selected]="file.pathId"
+        (selectedChange)="updateFile({pathId: $event})"
+      >
+        <!-- (selectedChange)="updateTranslation($event)" -->
+        <nb-option *ngFor="let step of tripSteps" [value]="step.pathToStep?.id">
+          vers {{step.stepInstance.name}}
+        </nb-option>
+      </nb-select>
+    </div>
+  </div>
+</div>
