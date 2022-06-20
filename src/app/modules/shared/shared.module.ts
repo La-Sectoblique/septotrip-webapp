@@ -7,12 +7,14 @@ import { FilterPointsByPointIdsPipe } from './pipes/filter-points-by-pointIds.pi
 import { FilterDocumentByFileTypePipe } from './pipes/files/filter-document-by-file-type.pipe';
 import { NbIconModule, NbTabsetModule } from '@nebular/theme';
 import { TripElementDetailsComponent } from './components/trip-element-details/trip-element-details.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     NbIconModule,
     NbTabsetModule,
+    TranslateModule,
   ],
   declarations: [
     LoaderComponent,
