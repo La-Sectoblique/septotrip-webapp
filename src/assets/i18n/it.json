@@ -107,9 +107,9 @@
     "AddOneFile": "Aggiungi un file",
     "UpdateOneFile": "Modifica di un file",
 
-    "TitoloFoto": "Foto",
-    "TitoloDocumenti": "Documenti", 
-    "TitoloFile": "File",
+    "TitlePhotos": "Foto",
+    "TitleDocuments": "Documenti", 
+    "TitleFiles": "File",
 
     "TripDetailsTitle": "Dettagli del viaggio",
     "InterestPointDetailsTitle": "Dettagli del punto di interesse",
