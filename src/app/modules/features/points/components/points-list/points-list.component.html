@@ -43,8 +43,11 @@
         >
           <spt-point-preview [point]="point" [isHighlighted]="(highlightedPointId$ | async) === point.id">
             <div class="d-flex">
-              <button nbButton ghost (click)="editPoint(point)">
-                <nb-icon class="cursor-pointer" icon="edit-outline" status="primary"></nb-icon>
+              <!-- todo: Translate nbTooltip -->
+              <button nbButton ghost (click)="editPoint(point)"
+                nbTooltip="Modifier le point d'intérêt et ses documents."
+              >
+                <nb-icon class="cursor-pointer" icon="info-outline" status="primary"></nb-icon>
               </button>
               <button nbButton ghost (click)="deletePoint(point.id)">
                 <nb-icon class="cursor-pointer" icon="trash-2-outline" status="danger"></nb-icon>

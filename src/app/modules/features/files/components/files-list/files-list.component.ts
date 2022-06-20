@@ -17,6 +17,10 @@ export class FilesListComponent {
   @Input() tripId: number;
   @Input() files: FileMetadataOutput[];
 
+  @Input() stepId?: number;
+  @Input() pointId?: number;
+  @Input() pathId?: number;
+
   apiUrl = environment.baseURL;
 
   FileType = FileType;
@@ -29,6 +33,9 @@ export class FilesListComponent {
   openAddFileModal(): void {
     this.nbDialogService.open(AddFilesComponent, { context: {
       tripId: this.tripId,
+      stepId: this.stepId,
+      pointId: this.pointId,
+      pathId: this.pathId,
     } });
   }
 

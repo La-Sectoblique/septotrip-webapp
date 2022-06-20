@@ -7,7 +7,7 @@
   </div>
 
   <nb-tabset class="d-flex flex-column justify-content-center">
-    <nb-tab tabTitle="'TitlePhotos' | translate" tabIcon="image-outline" >
+    <nb-tab [tabTitle]="('TitlePhotos' | translate)" tabIcon="image-outline" >
         <ng-container
         [ngTemplateOutlet]="filePreviews"
         [ngTemplateOutletContext]="{
@@ -15,7 +15,7 @@
         }"
       ></ng-container>
     </nb-tab>
-    <nb-tab tabTitle="'TitleDocuments' | translate" tabIcon="file-text-outline">
+    <nb-tab [tabTitle]="('TitleDocuments' | translate)" tabIcon="file-text-outline">
       <ng-container
         [ngTemplateOutlet]="filePreviews"
         [ngTemplateOutletContext]="{

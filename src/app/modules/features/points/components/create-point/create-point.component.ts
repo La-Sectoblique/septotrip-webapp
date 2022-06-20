@@ -7,7 +7,7 @@ import { LngLat } from 'mapbox-gl';
 import { CreateTripPoint, UpdateTripPoint } from 'src/app/store/trips-store/state/trips.actions';
 
 @Component({
-  selector: 'app-create-point',
+  selector: 'spt-create-point',
   templateUrl: './create-point.component.html',
   styleUrls: ['./create-point.component.scss'],
 })

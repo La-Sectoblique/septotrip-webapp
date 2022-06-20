@@ -62,7 +62,6 @@ export class TripComponent implements OnInit, OnDestroy {
 
       this.store.dispatch(GetTripFiles({ tripId }));
       this.tripFiles$ = this.store.select(selectTripFiles(tripId));
-      this.tripFiles$.subscribe((files) => console.log('files', files));
 
       this.trip$.pipe(untilDestroyed(this)).subscribe((trip) => {
         this.titleService.setTitle(trip?.tripInstance.name);

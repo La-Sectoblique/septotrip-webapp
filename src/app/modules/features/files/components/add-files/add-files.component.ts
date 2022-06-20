@@ -15,8 +15,9 @@ import { UpdateTripFile, UploadTripFile } from 'src/app/store/files-store/state/
 export class AddFilesComponent implements OnInit {
 
   @Input() tripId: number;
-  @Input() pathId?: number;
   @Input() stepId?: number;
+  @Input() pointId?: number;
+  @Input() pathId?: number;
 
   @Input() isEditMode = false;
   @Input() fileMetadataToEdit: FileMetadataOutput;
@@ -60,8 +61,9 @@ export class AddFilesComponent implements OnInit {
           fileType: this.getFileType(extension),
           mimeType: this.file.type,
           tripId: this.tripId,
-          pathId: this.pathId,
           stepId: this.stepId,
+          pointId: this.pointId,
+          pathId: this.pathId,
           visibility: this.fileForm.value.visibility,
         },
         file: this.file,

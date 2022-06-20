@@ -25,7 +25,7 @@
             </div>
           </nb-tab>
 
-          <nb-tab tabTitle="'TitleFiles | translate'" class="mt-4">
+          <nb-tab [tabTitle]="'TitleFiles' | translate" class="mt-4">
             <ng-container *ngIf="tripFiles$ | async as tripFiles">
               <spt-files-list [files]="tripFiles" [tripId]="trip.tripInstance.id"></spt-files-list>
             </ng-container>
