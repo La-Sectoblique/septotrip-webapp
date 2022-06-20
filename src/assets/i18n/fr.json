@@ -115,6 +115,8 @@
     "InterestPointDetailsTitle": "Détails du point d'intérêt",
     "StepDetailsTitle": "Détails de l'étape",
     "UpdateInterestPointAndDocuments": "Modifier le point d'intérêt et ses documents.",
-    "UpdateTabTitle": "Modifier"
+    "UpdateTabTitle": "Modifier",
+
+    "UpdateTripLabel": "Modifier le trajet"
 
 }
