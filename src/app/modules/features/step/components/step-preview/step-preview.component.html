@@ -14,11 +14,10 @@
       <div class="d-flex align-items-center">
         <button
           nbButton 
-          ghost 
-          status="primary"
+          ghost
           (click)="switchMode()"
         >
-          <nb-icon [icon]="isDetailedModeEnabled ? 'arrow-ios-upward-outline' : 'arrow-ios-downward-outline'"></nb-icon>
+          <nb-icon status="primary" [icon]="isDetailedModeEnabled ? 'arrow-ios-upward-outline' : 'arrow-ios-downward-outline'"></nb-icon>
         </button>
         <ng-content></ng-content>
       </div>

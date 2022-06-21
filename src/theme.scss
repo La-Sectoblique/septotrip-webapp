@@ -5,10 +5,12 @@
 
 $nb-themes: nb-register-theme(
   (
-    // background-basic-color-1: #3F4F5F,
-    // background-basic-color-1: #BE965B,
-    // layout-background-color: red
 
+    // icon colors
+    icon-primary-color: #0869A6,	
+    icon-danger-color: #D31723,
+
+    // Button outline
     button-outline-primary-text-color: #0869A6,
     button-outline-primary-border-color: #0869A6,
     button-outline-primary-focus-border-color: #0869A6,
@@ -18,6 +20,7 @@ $nb-themes: nb-register-theme(
     button-outline-primary-active-border-color: #0869A6,
     button-outline-primary-active-text-color: #0869A6,
 
+    // Button normal primary
     button-filled-primary-background-color: #0869A6,
     button-filled-primary-border-color: #0869A6,
     button-filled-primary-focus-background-color: #08588a,
@@ -27,6 +30,7 @@ $nb-themes: nb-register-theme(
     button-filled-primary-active-background-color: #086096,
     button-filled-primary-active-border-color: #0f5784,
 
+    // Button hero
     button-hero-primary-left-background-color: #147ab9,
     button-hero-primary-right-background-color: #035a90,
     button-hero-primary-focus-left-background-color: #13689c,
@@ -36,6 +40,26 @@ $nb-themes: nb-register-theme(
     button-hero-primary-active-left-background-color: #0568a5,
     button-hero-primary-active-right-background-color: #015f98,
 
+    // Button normal danger
+    button-filled-danger-background-color: #D31723,
+    button-filled-danger-border-color: #bb1621,
+    button-filled-danger-focus-background-color: #c11521,
+    button-filled-danger-focus-border-color: #a1141d,
+    button-filled-danger-hover-background-color: #c31c27,
+    button-filled-danger-hover-border-color: #a3222b,
+    button-filled-danger-active-background-color: #b61620,
+    button-filled-danger-active-border-color: #981019,
+
+    // Tabs
+    tabset-tab-active-text-color: #0869A6,
+    tabset-tab-active-underline-color: #0869A6,
+    tabset-tab-focus-text-color: #055282,
+    tabset-tab-focus-underline-color: #055282,
+    tabset-tab-hover-text-color: #0d7ec4,
+    tabset-tab-hover-underline-color: #0d7ec4,
+
+
+    // Others
     border-radius: .75rem,
   ),
   septoStyle,
