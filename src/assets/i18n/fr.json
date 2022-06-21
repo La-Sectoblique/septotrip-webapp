@@ -119,6 +119,12 @@
 
     "UpdateTripLabel": "Modifier le voyage",
     "TripUpdated": "Le voyage a bien été modifié",
-    "UpdateTripTitle": "Modifier le voyage"
+    "UpdateTripTitle": "Modifier le voyage",
+
+    "Confirm": "Confirmer",
+    "Cancel": "Annuler",
+
+    "ConfirmTripDeletionMessage": "Etes vous sur de vouloir supprimer le voyage",
+    "DeleteTripTitle": "Supprimer le voyage"
 
 }

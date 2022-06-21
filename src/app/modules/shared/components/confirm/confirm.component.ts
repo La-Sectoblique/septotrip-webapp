@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'spt-confirm-component',
@@ -11,14 +12,15 @@ export class ConfirmComponent {
 
   @Input() confirmLabel: string;
 
-  @Input() confirmBtnLabel = 'Confirmer';
-  @Input() cancelBtnLabel = 'Annuler';
+  @Input() confirmBtnLabel = this.translate.instant('Confirm');
+  @Input() cancelBtnLabel = this.translate.instant('Cancel');
 
   @Input() confirmAction: () => void;
   @Input() cancelAction: () => void;
 
   constructor(
     private dialogRef: NbDialogRef<ConfirmComponent>,
+    private translate: TranslateService,
   ) {}
 
 

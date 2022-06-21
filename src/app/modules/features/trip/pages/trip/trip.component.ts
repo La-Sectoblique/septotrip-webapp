@@ -8,6 +8,7 @@ import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/model
 import { NbDialogService } from '@nebular/theme';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { ConfirmComponent } from 'src/app/modules/shared/components/confirm/confirm.component';
 import { GetTripFiles } from 'src/app/store/files-store/state/files.actions';
@@ -46,6 +47,7 @@ export class TripComponent implements OnInit, OnDestroy {
     private router: Router,
     private titleService: Title,
     private nbDialogService: NbDialogService,
+    private translate: TranslateService,
   ) { }
 
   ngOnInit() {
@@ -88,7 +90,7 @@ export class TripComponent implements OnInit, OnDestroy {
   deleteTrip(trip: TripOutput): void {
     this.nbDialogService.open(ConfirmComponent, {
       context: {
-        confirmLabel: `Etes vous sur de vouloir supprimer le voyage "${trip.name}" ?`,
+        confirmLabel: `${this.translate.instant('ConfirmTripDeletionMessage')} "${trip.name}" ?`,
         confirmAction: () => {
           this.store.dispatch(DeleteTrip({ tripId: trip.id }));
           this.router.navigate(['/trips']);

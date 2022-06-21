@@ -119,5 +119,11 @@
 
     "UpdateTripLabel": "",
     "TripUpdated": "",
-    "UpdateTripTitle": ""
+    "UpdateTripTitle": "",
+
+    "Confirm": "",
+    "Cancel": "",
+    "ConfirmTripDeletionMessage": "",
+
+    "DeleteTripTitle": ""
 }
