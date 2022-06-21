@@ -51,6 +51,7 @@ export class CreateTripComponent implements OnInit {
         this.router.navigate(['/trips', trip.id]);
       });
     } else {
+      console.log('ediiit');
       this.store.dispatch(UpdateTrip({
         tripId: this.tripToEdit.id,
         updatedTrip: {

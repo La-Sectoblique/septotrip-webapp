@@ -40,7 +40,7 @@ export const UpdateTrip = createAction(
   props<{ tripId: number; updatedTrip: Partial<TripOutput> }>(),
 );
 export const UpdateTripSuccess = createAction(
-  '[Trips] Update Trip',
+  '[Trips] Update Trip Success',
   props<{ newTrip: TripOutput }>(),
 );
 
