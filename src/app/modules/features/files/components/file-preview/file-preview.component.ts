@@ -3,6 +3,7 @@ import { FileMetadataOutput, FileType } from '@la-sectoblique/septoblique-servic
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
+import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, first, map, Observable } from 'rxjs';
 import {
   selectTripPoint,
@@ -34,21 +35,21 @@ export class FilePreviewComponent implements OnInit  {
     readonly filesService: FilesService,
     private store: Store,
     private nbDialogService: NbDialogService,
+    private translate: TranslateService,
   ) {}
 
-  // todo: translate
   get fileLinkedTooltipMessage(): Observable<string> {
     return combineLatest([this.stepLinked$, this.pointLinked$, this.stepPathStepLinked$]).pipe(
       map(([step, point, stepPath]) => {
-        let message = 'Lié';
+        let message = this.translate.instant('LinkedMessage');
         if (this.file.stepId) {
-          message += ` à l'étape "${step.stepInstance.name}",`;
+          message += ` ${this.translate.instant('ToTheStepMessage')} "${step.stepInstance.name}",`;
         }
         if (this.file.pointId) {
-          message += ` au point d'intérêt "${point.title}",`;
+          message += ` ${this.translate.instant('ToTheInterrestPointMessage')} "${point.title}",`;
         }
         if (this.file.pathId) {
-          message += ` au trajet vers "${stepPath?.stepInstance?.name}",`;
+          message += ` ${this.translate.instant('ToTheTripToMessage')} "${stepPath?.stepInstance?.name}",`;
         }
 
         message = message.substring(0, message.length - 1);
