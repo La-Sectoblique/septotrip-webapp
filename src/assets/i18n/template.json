@@ -125,5 +125,12 @@
     "Cancel": "",
     "ConfirmTripDeletionMessage": "",
 
-    "DeleteTripTitle": ""
+    "DeleteTripTitle": "",
+    "UpdateFileLinkedElements": "",
+    "Paths": "",
+    "To": "",
+
+    "FileCreated": "",
+    "FileUpdated": "",
+    "FileDeleted": ""
 }

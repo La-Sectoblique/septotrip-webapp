@@ -125,6 +125,13 @@
     "Cancel": "Annuler",
 
     "ConfirmTripDeletionMessage": "Etes vous sur de vouloir supprimer le voyage",
-    "DeleteTripTitle": "Supprimer le voyage"
+    "DeleteTripTitle": "Supprimer le voyage",
+    "UpdateFileLinkedElements": "Modifier les élements liés au fichier",
+    "Paths": "Trajets",
+    "To": "Vers",
+
+    "FileCreated": "Le fichier a bien été créé",
+    "FileUpdated": "Le fichier a bien été modifié",
+    "FileDeleted": "Le fichier a bien été supprimé"
 
 }
