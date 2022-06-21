@@ -141,5 +141,10 @@
     "UnlinkPointMessage": "Αποσύνδεση του σημείου ενδιαφέροντος",
 
     "RegisterSuccessTitle": "Επιτυχής εγγραφή",
-    "RegisterSuccessMessage": "Μπορείτε τώρα να συνδεθείτε"
+    "RegisterSuccessMessage": "Μπορείτε τώρα να συνδεθείτε",
+
+    "ErrorMessageTitle": "Εμφανίστηκε σφάλμα",
+    "ErrorMessageText": "Προσπαθήστε ξανά αργότερα ή σε διαφορετικό χρόνο",
+    
+    "TasksListTabTitle": "Κατάλογος εργασιών"
 }

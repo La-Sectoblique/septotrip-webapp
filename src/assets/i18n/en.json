@@ -141,5 +141,10 @@
     "UnlinkPointMessage": "Désasigner le point d'intérêt",
 
     "RegisterSuccessTitle": "Registration successful",
-    "RegisterSuccessMessage": "You can now login"
+    "RegisterSuccessMessage": "You can now login",
+
+    "ErrorMessageTitle": "An error has occurred",
+    "ErrorMessageText": "Please try again later or at a different time",
+    
+    "TasksListTabTitle": "List of tasks"
 }

@@ -141,5 +141,10 @@
     "UnlinkPointMessage": "Scollegamento del punto di interesse",
 
     "RegisterSuccessTitle": "Registrazione riuscita",
-    "RegisterSuccessMessage": "Ora è possibile effettuare il login"
+    "RegisterSuccessMessage": "Ora è possibile effettuare il login",
+
+    "ErrorMessageTitle": "Si è verificato un errore",
+    "ErrorMessageText": "Riprovare più tardi o in un momento diverso",
+    
+    "TasksListTabTitle": "Elenco dei compiti"
 }

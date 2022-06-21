@@ -141,5 +141,10 @@
     "UnlinkPointMessage": "Sonderziel ausblenden",
 
     "RegisterSuccessTitle": "Anmeldung erfolgreich abgeschlossen",
-    "RegisterSuccessMessage": "Sie können sich jetzt anmelden"
+    "RegisterSuccessMessage": "Sie können sich jetzt anmelden",
+
+    "ErrorMessageTitle": "Es ist ein Fehler aufgetreten",
+    "ErrorMessageText": "Bitte versuchen Sie es später oder zu einem anderen Zeitpunkt erneut",
+    
+    "TasksListTabTitle": "Liste der Aufgaben"
 }

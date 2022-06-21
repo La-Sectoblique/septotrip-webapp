@@ -145,5 +145,7 @@
     "RegisterSuccessMessage": "",
 
     "ErrorMessageTitle": "",
-    "ErrorMessageText": ""
+    "ErrorMessageText": "",
+    
+    "TasksListTabTitle": ""
 }
