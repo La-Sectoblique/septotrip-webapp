@@ -8,6 +8,16 @@
     padding: 0;
 }
 
+.big-wrapper {
+    position: relative
+}
+
+.page-title {
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+}
+
 .page-wrapper {
     display: grid;
 
