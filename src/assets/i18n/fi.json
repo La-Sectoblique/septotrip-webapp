@@ -115,5 +115,18 @@
     "InterestPointDetailsTitle": "Kiinnostavan kohteen tiedot",
     "StepDetailsTitle": "Step Details",
     "UpdateInterestPointAndDocuments": "Muokkaa kiinnostavaa kohdetta ja sen asiakirjoja",
-    "UpdateTabTitle": "Muokkaa"
+    "UpdateTabTitle": "Muokkaa",
+
+    "UpdateFileLinkedElements": "Muokkaa tiedostoon linkitettyjä elementtejä",
+    "Paths": "Polut",
+    "To": "To",
+
+    "FileCreated": "Tiedosto on luotu",
+    "FileUpdated": "Tiedostoa on muutettu",
+    "FileDeleted": "Tiedosto on poistettu",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "askeleelle",
+    "ToTheInterrestPointMessage": "kiinnostavaan kohtaan",
+    "ToTheTripToMessage": "matkalle"
 }

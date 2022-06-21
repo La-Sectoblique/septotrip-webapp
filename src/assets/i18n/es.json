@@ -115,5 +115,19 @@
     "InterestPointDetailsTitle": "Detalles del punto de interés",
     "StepDetailsTitle": "Detalles del paso",
     "UpdateInterestPointAndDocuments": "Modificar el punto de interés y sus documentos",
-    "UpdateTabTitle": "Modificar"
+    "UpdateTabTitle": "Modificar",
+
+    "UpdateFileLinkedElements": "Modificar los elementos vinculados al archivo",
+    "Paths": "Caminos",
+    "To": "Para",
+
+    "FileCreated": "El archivo ha sido creado",
+    "FileUpdated": "El archivo ha sido modificado",
+    "FileDeleted": "El archivo ha sido eliminado",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "al paso",
+    "ToTheInterrestPointMessage": "al punto de interés",
+    "AElMensajeDelViaje": "al viaje a"
+
 }

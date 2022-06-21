@@ -115,5 +115,18 @@
     "InterestPointDetailsTitle": "Λεπτομέρειες σημείου ενδιαφέροντος",
     "StepDetailsTitle": "Λεπτομέρειες βήματος",
     "UpdateInterestPointAndDocuments": "Τροποποίηση του σημείου ενδιαφέροντος και των εγγράφων του",
-    "UpdateTabTitle": "Τροποποίηση"
+    "UpdateTabTitle": "Τροποποίηση",
+
+    "UpdateFileLinkedElements": "Τροποποίηση των στοιχείων που συνδέονται με το αρχείο",
+    "Paths": "Μονοπάτια",
+    "To": "To",
+
+    "FileCreated": "Το αρχείο έχει δημιουργηθεί",
+    "FileUpdated": "Το αρχείο έχει τροποποιηθεί",
+    "FileDeleted": "Το αρχείο έχει διαγραφεί",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "στο βήμα",
+    "ToTheInterrestPointMessage": "στο σημείο ενδιαφέροντος",
+    "ToTheTripToMessage": "στο ταξίδι προς"
 }

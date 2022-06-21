@@ -115,5 +115,18 @@
     "InterestPointDetailsTitle": "Details des Sonderziels",
     "StepDetailsTitle": "Details des Zwischenziels",
     "UpdateInterestPointAndDocuments": "Sonderziel und seine Dokumente bearbeiten",
-    "UpdateTabTitle": "Bearbeiten"
+    "UpdateTabTitle": "Bearbeiten",
+
+    "UpdateFileLinkedElements": "Mit der Datei verknüpfte Elemente ändern",
+    "Paths": "Pfade",
+    "To": "Nach",
+
+    "FileCreated": "Die Datei wurde erstellt",
+    "FileUpdated": "Die Datei wurde geändert",
+    "FileDeleted": "Die Datei wurde gelöscht",
+
+    "LinkedMessage": "Verlinkt",
+    "ToTheStepMessage": "Auf der Etappe",
+    "ToTheInterrestPointMessage": "zum Point of Interest",
+    "ToTheTripToMessage": "auf dem Weg nach"
 }

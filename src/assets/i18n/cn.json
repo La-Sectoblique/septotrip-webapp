@@ -115,5 +115,18 @@
     "InterestPointDetailsTitle": "兴趣点详情",
     "StepDetailsTitle":"步骤详情",
     "UpdateInterestPointAndDocuments": "修改兴趣点和其文件",
-    "UpdateTabTitle": "修改"
+    "UpdateTabTitle": "修改",
+
+    "UpdateFileLinkedElements": "修改链接到文件的元素",
+    "Paths":"路径",
+    "To":"到",
+
+    "FileCreated": "该文件已被创建",
+    "FileUpdated": "该文件已被修改",
+    "FileDeleted": "该文件已被删除",
+
+    "LinkedMessage":"链接",
+    "ToTheStepMessage":"到了这一步",
+    "ToTheInterrestPointMessage":"到兴趣点",
+    "ToTheTripToMessage": "给旅行的"
 }
