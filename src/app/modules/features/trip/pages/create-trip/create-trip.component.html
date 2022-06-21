@@ -8,7 +8,7 @@
   >
   <div class="mb-4">
     <label for="name" class="mr-2">{{'NameInputLabel' | translate}} :</label>
-    <input nbInput name="name" id="name" formControlName="name">
+    <input nbInput name="name" id="name" formControlName="name" [maxlength]="255">
   </div>
 
   <label for="visibility mr-2">{{'Visibility' | translate}} :</label>

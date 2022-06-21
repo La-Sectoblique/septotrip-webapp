@@ -6,16 +6,16 @@
     (ngSubmit)="register()"
   >
     <label for="firstname">{{'FirstnameInputLabel' | translate}} : </label>
-    <input type="text" id="firstname" formControlName="firstname" required nbInput>
+    <input type="text" id="firstname" formControlName="firstname" required nbInput [maxlength]="255">
     
     <label for="lastname">{{'NameInputLabel' | translate}} : </label>
-    <input type="text" id="lastname" formControlName="lastname" required nbInput>
+    <input type="text" id="lastname" formControlName="lastname" required nbInput [maxlength]="255">
     
     <label for="email">{{'MailAddressInputLabel' | translate}} : </label>
-    <input type="email" id="email" formControlName="email" required nbInput>
+    <input type="email" id="email" formControlName="email" required nbInput [maxlength]="255">
     
     <label for="password">{{'PasswordInputLabel' | translate}} : </label>
-    <input type="password" id="password" formControlName="password" required nbInput>
+    <input type="password" id="password" formControlName="password" required nbInput [maxlength]="255">
 
     <button 
       type="submit" 
