@@ -105,9 +105,10 @@ export class ToDoListComponent implements OnInit {
     this.create = true;
   }
 
-  updateName(idx: number): void {
+  updateName(taskName: string, idx: number): void {
     this.indexList = idx;
     this.update = true;
+    this.taskName = taskName;
   }
 
 }

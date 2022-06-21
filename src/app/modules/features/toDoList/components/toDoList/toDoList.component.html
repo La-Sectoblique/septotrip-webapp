@@ -5,43 +5,47 @@
         <table>
             <tbody>
                 <tr *ngFor="let task of taskList; let idx = index">
-                    <div class="d-flex">
-                        <p *ngIf="idx !== indexList"> {{ task.title }} </p>
-                        <input *ngIf="idx === indexList"
-                            nbInput
-                            [(ngModel)]="taskName" 
-                            (keyup.enter)="changeName(task.id,taskName)"
-                        >
-                        <nb-select [selected]="task.state" (selectedChange)="changeState($event, task.id)">
-                            <nb-option [value]="TodoState.TODO">A faire</nb-option>
-                            <nb-option [value]="TodoState.DOING">En cours</nb-option>
-                            <nb-option [value]="TodoState.DONE">Fait</nb-option>
-                        </nb-select>
-                        <button 
-                            nbButton 
-                            (click)="changeName(task.id,taskName)" 
-                            status="primary"
-                            *ngIf="update"
-                        > Valider</button>
-                        <button 
-                            nbButton 
-                            (click)="updateName(idx)" 
-                            status="primary"
-                            *ngIf="!update"
-                        > modifier </button>
-                        <button nbButton (click)="deleteTask(task.id, idx)" status="danger"> suprimer </button>
-                    </div>
+                    <!-- <div class="d-flex"> -->
+                        <td>
+                            <p *ngIf="idx !== indexList"> {{ task.title }} </p>
+                            <input *ngIf="idx === indexList"
+                                nbInput
+                                [(ngModel)]="taskName" 
+                                (keyup.enter)="changeName(task.id,taskName)"
+                            >
+                        </td>
+                        <td>
+                            <nb-select [selected]="task.state" (selectedChange)="changeState($event, task.id)">
+                                <nb-option [value]="TodoState.TODO">A faire</nb-option>
+                                <nb-option [value]="TodoState.DOING">En cours</nb-option>
+                                <nb-option [value]="TodoState.DONE">Fait</nb-option>
+                            </nb-select>
+                            <button 
+                                nbButton 
+                                (click)="changeName(task.id,taskName)" 
+                                status="primary"
+                                *ngIf="update"
+                            > Valider</button>
+                            <button 
+                                nbButton 
+                                (click)="updateName(task.title, idx)" 
+                                status="primary"
+                                *ngIf="!update"
+                            > modifier </button>
+                            <button nbButton (click)="deleteTask(task.id, idx)" status="danger"> suprimer </button>
+                        </td>
+                    <!-- </div> -->
                 </tr>
             </tbody>
         </table>
     </div>
     <div *ngIf="!create">
-        <button nbButton (click)="createTask()"> + </button>
+        <button nbButton status="primary" (click)="createTask()"> + </button>
     </div>
     <div *ngIf="create">
         <h4>Créer une Tâches</h4>
         <input nbInput [(ngModel)]="taskName" placeholder="Faire la valise" (keyup.enter)="onEnter(taskName)">
-        <button nbButton (click)="addTask(taskName)">
+        <button nbButton (click)="addTask(taskName)" status="primary">
             créer une tâche
         </button>
     </div>
