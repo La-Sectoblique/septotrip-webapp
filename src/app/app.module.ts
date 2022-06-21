@@ -24,6 +24,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { PathsModule } from './modules/features/paths/paths.module';
 import { UnothorizedInterceptor } from './modules/shared/interceptors/unothorized.interceptor';
 import { AuthenticationService } from './modules/features/authentification/services/authentication.service';
+import { LottieModule } from 'ngx-lottie';
+import player, { LottiePlayer } from 'lottie-web/build/player/lottie_svg';
 
 
 export const httpTranslateLoader = (http: HttpClient): TranslateHttpLoader =>
@@ -32,6 +34,9 @@ export const httpTranslateLoader = (http: HttpClient): TranslateHttpLoader =>
 const appUserInitializer = (authenticationService: AuthenticationService) => () => Promise.all([
   authenticationService.getCurrentJwtUser(),
 ]);
+
+export const playerFactory = (): LottiePlayer => player;
+
 
 @NgModule({
   declarations: [
@@ -73,6 +78,7 @@ const appUserInitializer = (authenticationService: AuthenticationService) => () 
       position: NbGlobalPhysicalPosition.BOTTOM_RIGHT,
     }),
     PathsModule,
+    LottieModule.forRoot({ player: playerFactory }),
   ],
   providers: [
     AuthGuard,

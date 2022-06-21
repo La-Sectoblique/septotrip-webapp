@@ -16,8 +16,9 @@
             </div>
         </ng-container>
         <ng-template #emptyBlock>
-            <div class="d-flex justify-content-center">
-               {{'NoTripEmptyStateMessage' | translate}}
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                <ng-lottie [options]="animationOptions"></ng-lottie>
+                <h6 class="m-0">{{'NoTripEmptyStateMessage' | translate}}</h6>
             </div>
         </ng-template>
     </ng-container>

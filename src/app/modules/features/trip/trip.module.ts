@@ -20,6 +20,7 @@ import { PointsModule } from '../points/points.module';
 import { TravelersModule } from '../travelers/travelers.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { FilesModule } from '../files/files.module';
+import { LottieModule } from 'ngx-lottie';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import { FilesModule } from '../files/files.module';
     NbTabsetModule,
     TranslateModule,
     FilesModule,
+    LottieModule,
   ],
   declarations: [
     TripPreviewComponent,

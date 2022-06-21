@@ -139,6 +139,9 @@
     "ToTheInterrestPointMessage": "au point d'intérêt",
     "ToTheTripToMessage": "au trajet vers",
 
-    "UnlinkPointMessage": "Désassigner le point d'intérêt"
+    "UnlinkPointMessage": "Désassigner le point d'intérêt",
+
+    "RegisterSuccessTitle": "Inscription réussie",
+    "RegisterSuccessMessage": "Vous pouvez à présent vous connecter"
 
 }
