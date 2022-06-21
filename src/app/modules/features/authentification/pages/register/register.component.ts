@@ -3,7 +3,9 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { register } from '@la-sectoblique/septoblique-service';
 import { NbToastrService } from '@nebular/theme';
+import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
+import { ErrorHappenedNotify } from 'src/app/store/utils-store/state/utils.actions';
 
 @Component({
   selector: 'app-register',
@@ -37,6 +39,7 @@ export class RegisterComponent /*implements OnInit*/ {
     private formBuilder: FormBuilder,
     private nbToastrService: NbToastrService,
     private translate: TranslateService,
+    private store: Store,
   ) { }
 
   register(): void {
@@ -52,6 +55,9 @@ export class RegisterComponent /*implements OnInit*/ {
           this.translate.instant('RegisterSuccessMessage'),
           this.translate.instant('RegisterSuccessTitle'),
         );
+      })
+      .catch(() => {
+        this.store.dispatch(ErrorHappenedNotify());
       });
   }
 

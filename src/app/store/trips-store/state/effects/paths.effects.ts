@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PathOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Path';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import {  map, mergeMap, switchMap } from 'rxjs';
+import {  catchError, map, mergeMap, switchMap } from 'rxjs';
 import { PathsService } from 'src/app/modules/features/paths/services/paths.service';
 import * as TripsActions from '../trips.actions';
 import * as UtilsActions from '../../../utils-store/state/utils.actions';
@@ -19,7 +19,7 @@ export class PathsEffects {
           TripsActions.GetPathToStepSuccess({ tripId, stepId, path })
           ,
         ),
-        // @TODO: catchError(()) => CALL ERROR ACTION),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));
@@ -36,6 +36,7 @@ export class PathsEffects {
             message: this.translate.instant('PathUpdated'),
           }),
         ]),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       )),
   ));
 

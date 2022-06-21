@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import {  map, mergeMap, switchMap } from 'rxjs';
+import {  catchError, map, mergeMap, switchMap } from 'rxjs';
 import { TripsService } from 'src/app/modules/features/trip/services/trips.service';
 import * as TripsActions from '../trips.actions';
 import * as UtilsActions from '../../../utils-store/state/utils.actions';
@@ -17,8 +17,7 @@ export class TripsEffects {
     mergeMap(() => this.tripsService.getUserTrips()
       .pipe(
         map((trips: TripOutput[]) => TripsActions.GetUserTripsSuccess({ trips })),
-        // @TODO: catchError(() => CALL ERROR ACTION),
-      ),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()])      ),
     ),
   ));
 
@@ -27,8 +26,7 @@ export class TripsEffects {
     mergeMap(({ tripId }) => this.tripsService.getTrip(tripId)
       .pipe(
         map((trip: TripOutput) => TripsActions.GetTripSuccess({ trip })),
-        // @TODO: catchError(() => CALL ERROR ACTION),
-      ),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()])      ),
     ),
   ));
 
@@ -43,6 +41,7 @@ export class TripsEffects {
             message: this.translate.instant('TripUpdated'),
           }),
         ]),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       )),
   ));
 
@@ -57,12 +56,7 @@ export class TripsEffects {
             message: this.translate.instant('TripDeleted'),
           }),
         ]),
-        // catchError(() =>  [
-        //   UtilsActions.NotifyError({
-        //     title: 'Echec de la supression',
-        //     message: 'le voyage n\'a pas été supprimé',
-        //   }),
-        // ]),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));
