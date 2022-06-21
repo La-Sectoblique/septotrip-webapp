@@ -91,5 +91,42 @@
     "LoginNeededMessage": "Por favor inicie sessão para aceder ao",
 
     "SessionExpired": "Sessão expirou",
-    "SessionExpiredMessage": "Foi desconectado."
+    "SessionExpiredMessage": "Foi desconectado.", 
+
+    "AddFileAction": "Arrastar ou clicar para adicionar um ficheiro", 
+    "Visibility": "Visibilidade",
+
+    "UpdateFileLabel": "Modificar o ficheiro",
+    "AddFileLabel": "Acrescentar ficheiro", 
+    
+    "CurrentState": "Current state",
+
+    "FileIsPublic": "Este ficheiro é público. Qualquer pessoa que tenha a ligação pode aceder a ela", 
+    "FileIsPrivate": "Este ficheiro é privado",
+    
+    "AddOneFile": "Acrescentar um ficheiro",
+    "UpdateOneFile": "Modificar um ficheiro",
+
+    "TitlePhotos": "Fotos",
+    "TitleDocuments": "Documentos", 
+    "TitleFiles": "Ficheiros",
+
+    "TripDetailsTitle": "Trip Details",
+    "InterestPointDetailsTitle": "Point of Interest Details",
+    "StepDetailsTitle": "Step Details",
+    "UpdateInterestPointAndDocuments": "Modificar o ponto de interesse e os seus documentos",
+    "UpdateTabTitle": "Modificar",
+
+    "UpdateFileLinkedElements": "Modificar os elementos ligados ao ficheiro",
+    "Paths": "Caminhos",
+    "To": "Para",
+
+    "FileCreated": "O ficheiro foi criado",
+    "FileUpdated": "O ficheiro foi modificado",
+    "FileDeleted": "O ficheiro foi apagado",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "para o degrau",
+    "ToTheInterrestPointMessage": "até ao ponto de interesse",
+    "ToTheTripToMessage": "para a viagem a"
 }

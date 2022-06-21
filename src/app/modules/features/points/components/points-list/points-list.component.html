@@ -43,8 +43,10 @@
         >
           <spt-point-preview [point]="point" [isHighlighted]="(highlightedPointId$ | async) === point.id">
             <div class="d-flex">
-              <button nbButton ghost (click)="editPoint(point)">
-                <nb-icon class="cursor-pointer" icon="edit-outline" status="primary"></nb-icon>
+              <button nbButton ghost (click)="editPoint(point)"
+                [nbTooltip]="('UpdateInterestPointAndDocuments' | translate)"
+              >
+                <nb-icon class="cursor-pointer" icon="info-outline" status="primary"></nb-icon>
               </button>
               <button nbButton ghost (click)="deletePoint(point.id)">
                 <nb-icon class="cursor-pointer" icon="trash-2-outline" status="danger"></nb-icon>
@@ -55,7 +57,6 @@
         </div>
       </ng-container>
     </div>
-    <!--  -->
     
   </div>
 </ng-container>

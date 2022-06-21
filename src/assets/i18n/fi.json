@@ -91,5 +91,42 @@
     "LoginNeededMessage": "Kirjaudu sisään päästäksesi sivulle.",
 
     "SessionExpired": "Istunto päättynyt",
-    "SessionExpiredMessage": "Sinulta on katkaistu yhteys"
+    "SessionExpiredMessage": "Sinulta on katkaistu yhteys",
+
+    "AddFileAction": "Lisää tiedosto vetämällä tai klikkaamalla", 
+    "Visibility": "Näkyvyys",
+
+    "UpdateFileLabel": "Muokkaa tiedostoa",
+    "AddFileLabel": "Lisää tiedosto", 
+    
+    "CurrentState": "Nykyinen tila",
+
+    "FileIsPublic": "Tämä tiedosto on julkinen. Kuka tahansa, jolla on linkki, voi käyttää sitä", 
+    "FileIsPrivate": "Tämä tiedosto on yksityinen.",
+    
+    "AddOneFile": "Lisää tiedosto",
+    "UpdateOneFile": "Muokkaa tiedostoa",
+
+    "TitlePhotos": "Photos",
+    "TitleDocuments": "Documents", 
+    "TitleFiles": "Tiedostot",
+
+    "TripDetailsTitle": "Matkan tiedot",
+    "InterestPointDetailsTitle": "Kiinnostavan kohteen tiedot",
+    "StepDetailsTitle": "Step Details",
+    "UpdateInterestPointAndDocuments": "Muokkaa kiinnostavaa kohdetta ja sen asiakirjoja",
+    "UpdateTabTitle": "Muokkaa",
+
+    "UpdateFileLinkedElements": "Muokkaa tiedostoon linkitettyjä elementtejä",
+    "Paths": "Polut",
+    "To": "To",
+
+    "FileCreated": "Tiedosto on luotu",
+    "FileUpdated": "Tiedostoa on muutettu",
+    "FileDeleted": "Tiedosto on poistettu",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "askeleelle",
+    "ToTheInterrestPointMessage": "kiinnostavaan kohtaan",
+    "ToTheTripToMessage": "matkalle"
 }

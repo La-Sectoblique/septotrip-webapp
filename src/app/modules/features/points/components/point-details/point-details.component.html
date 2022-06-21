@@ -1,0 +1,16 @@
+<spt-trip-element-details
+  [pageTitle]="('InterestPointDetailsTitle' | translate) + ' ' + point.title"
+>
+  <spt-create-point edit
+    [tripId]="point.tripId"
+    [isEditMode]="true"
+    [editedPoint]="point"
+  ></spt-create-point>
+
+  <spt-files-list file 
+    *ngIf="(pointFiles$ | async) as pointFiles"
+    [tripId]="point.tripId"
+    [files]="pointFiles"
+    [pointId]="point.id"
+  ></spt-files-list>
+</spt-trip-element-details>

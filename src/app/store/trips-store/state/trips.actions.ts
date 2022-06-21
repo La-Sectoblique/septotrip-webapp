@@ -11,6 +11,11 @@ import { UpdateTripPointPayload, UpdateTripStepPayload } from './trips.payload';
 
 // Trip
 
+export const ResetTripStore = createAction(
+  '[Trips]: reset',
+);
+
+
 export const GetUserTrips = createAction(
   '[Trips] Get user trips',
 );
@@ -28,6 +33,15 @@ export const GetTrip = createAction(
 export const GetTripSuccess = createAction(
   '[Trips] Get user trip success',
   props<{ trip: TripOutput }>(),
+);
+
+export const UpdateTrip = createAction(
+  '[Trips] Update Trip',
+  props<{ tripId: number; updatedTrip: Partial<TripOutput> }>(),
+);
+export const UpdateTripSuccess = createAction(
+  '[Trips] Update Trip Success',
+  props<{ newTrip: TripOutput }>(),
 );
 
 export const DeleteTrip = createAction(

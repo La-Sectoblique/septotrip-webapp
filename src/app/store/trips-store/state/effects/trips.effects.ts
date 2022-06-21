@@ -32,6 +32,20 @@ export class TripsEffects {
     ),
   ));
 
+  UpdateTrip$ = createEffect(() => this.actions$.pipe(
+    ofType(TripsActions.UpdateTrip),
+    mergeMap(({ tripId, updatedTrip }) => this.tripsService.updateTrip(tripId, updatedTrip)
+      .pipe(
+        switchMap((newTrip) => [
+          TripsActions.UpdateTripSuccess({ newTrip }),
+          UtilsActions.NotifySuccess({
+            title: this.translate.instant('UpdateDone'),
+            message: this.translate.instant('TripUpdated'),
+          }),
+        ]),
+      )),
+  ));
+
   DeleteUserTrip$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.DeleteTrip),
     mergeMap(({ tripId }) => this.tripsService.deleteTrip(tripId)

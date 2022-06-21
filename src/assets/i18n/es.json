@@ -91,5 +91,43 @@
     "LoginNeededMessage": "Veuillez vous connecter pour accéder à la page.",
 
     "SessionExpired": "La sesión ha caducado",
-    "SessionExpiredMessage": "Has sido desconectado."
+    "SessionExpiredMessage": "Has sido desconectado.",
+
+    "AddFileAction": "Arrastrar o hacer clic para añadir un archivo", 
+    "Visibility": "Visibilidad",
+
+    "UpdateFileLabel": "Modificar el archivo",
+    "AddFileLabel": "Añadir archivo", 
+    
+    "CurrentState": "Estado actual",
+
+    "FileIsPublic": "Este archivo es público. Cualquiera que tenga el enlace puede acceder a él", 
+    "FileIsPrivate": "Este archivo es privado",
+    
+    "AddOneFile": "Añadir un archivo",
+    "UpdateOneFile": "Modificar un archivo",
+
+    "TitlePhotos": "Fotos",
+    "TitleDocuments": "Documentos", 
+    "TitleFiles": "Archivos",
+
+    "TripDetailsTitle": "Detalles del viaje",
+    "InterestPointDetailsTitle": "Detalles del punto de interés",
+    "StepDetailsTitle": "Detalles del paso",
+    "UpdateInterestPointAndDocuments": "Modificar el punto de interés y sus documentos",
+    "UpdateTabTitle": "Modificar",
+
+    "UpdateFileLinkedElements": "Modificar los elementos vinculados al archivo",
+    "Paths": "Caminos",
+    "To": "Para",
+
+    "FileCreated": "El archivo ha sido creado",
+    "FileUpdated": "El archivo ha sido modificado",
+    "FileDeleted": "El archivo ha sido eliminado",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "al paso",
+    "ToTheInterrestPointMessage": "al punto de interés",
+    "AElMensajeDelViaje": "al viaje a"
+
 }

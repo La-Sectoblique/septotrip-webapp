@@ -1,0 +1,18 @@
+<div class="confirm-wrapper">
+  <h4>{{confirmLabel}}</h4>
+  <div class="d-flex gap-4 justify-content-end">
+    <button
+      nbButton
+      (click)="cancel()"
+    >
+      {{cancelBtnLabel}}
+    </button>
+    <button
+      nbButton
+      status="primary"
+      (click)="confirm()"
+    >
+      {{confirmBtnLabel}}
+    </button>
+  </div>
+</div>

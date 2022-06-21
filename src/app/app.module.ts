@@ -70,7 +70,6 @@ const appUserInitializer = (authenticationService: AuthenticationService) => () 
     NbToastrModule.forRoot({
       limit: 3,
       duplicatesBehaviour: 'all',
-      preventDuplicates: true,
       position: NbGlobalPhysicalPosition.BOTTOM_RIGHT,
     }),
     PathsModule,

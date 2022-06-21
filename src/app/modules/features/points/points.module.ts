@@ -8,6 +8,8 @@ import { CreatePointComponent } from './components/create-point/create-point.com
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SharedModule } from '../../shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { PointDetailsComponent } from './components/point-details/point-details.component';
+import { FilesModule } from '../files/files.module';
 
 @NgModule({
   imports: [
@@ -22,11 +24,13 @@ import { TranslateModule } from '@ngx-translate/core';
     SharedModule,
     NbTooltipModule,
     TranslateModule,
+    FilesModule,
   ],
   declarations: [
     PointsListComponent,
     PointPreviewComponent,
     CreatePointComponent,
+    PointDetailsComponent,
   ],
   exports: [
     PointsListComponent,

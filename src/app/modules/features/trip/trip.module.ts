@@ -12,13 +12,14 @@ import { TripComponent } from './pages/trip/trip.component';
 import { TripsComponent } from './pages/trips/trips.component';
 import { CreateTripComponent } from './pages/create-trip/create-trip.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StepModule } from '../step/step.module';
 import { SharedModule } from '../../shared/shared.module';
 import { MapModule } from '../map/map.module';
 import { PointsModule } from '../points/points.module';
 import { TravelersModule } from '../travelers/travelers.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { FilesModule } from '../files/files.module';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { TranslateModule } from '@ngx-translate/core';
     NbInputModule,
     NbRadioModule,
     FormsModule,
+    ReactiveFormsModule,
     StepModule,
     SharedModule,
     MapModule,
@@ -37,6 +39,7 @@ import { TranslateModule } from '@ngx-translate/core';
     NbPopoverModule,
     NbTabsetModule,
     TranslateModule,
+    FilesModule,
   ],
   declarations: [
     TripPreviewComponent,
@@ -46,6 +49,7 @@ import { TranslateModule } from '@ngx-translate/core';
   ],
   exports: [
     TripPreviewComponent,
+    CreateTripComponent,
   ],
 })
 export class TripModule { }

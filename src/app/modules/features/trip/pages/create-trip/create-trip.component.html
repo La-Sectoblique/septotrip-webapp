@@ -1,17 +1,30 @@
 <div class="d-flex flex-column align-items-center">
-  <h2>{{'CreateTripTitle' | translate}}</h2>
-  <div class="input-wrapper">
-    <label>{{'Name' | translate}} :</label>
-    <input nbInput [(ngModel)]="tripName" [placeholder]="'VoyageInFrancePlaceholder' | translate">
+  <h2>{{isEditMode ? ('UpdateTripTitle' | translate) : ('CreateTripTitle' | translate)}}</h2>
+
+  <form 
+    class="d-flex flex-column justify-content-center align-items-center"
+    [formGroup]="tripForm"
+    (ngSubmit)="create()"
+  >
+  <div class="mb-4">
+    <label for="name" class="mr-2">{{'NameInputLabel' | translate}} :</label>
+    <input nbInput name="name" id="name" formControlName="name">
   </div>
-  <div class="input-wrapper d-flex align-items-center">
-    <nb-radio-group [(ngModel)]="visibility">
-      <nb-radio
-        *ngFor="let option of visibilityOptions"
-        [value]="option.value">
-        {{ option.label }}
-      </nb-radio>
-    </nb-radio-group>
-  </div>
-  <button nbButton status="primary" (click)="create()" [disabled]="!isCreationValid()">{{'CreateTripValidation' | translate}}</button>
+
+  <label for="visibility mr-2">{{'Visibility' | translate}} :</label>
+  <nb-radio-group id="visibility" formControlName="visibility">
+    <nb-radio value="public">{{'Public' | translate}}</nb-radio>
+    <nb-radio value="private">{{'Private' | translate}}</nb-radio>
+  </nb-radio-group>
+
+  <button
+    class="mt-4"
+    type="submit" 
+    status="primary"
+    nbButton
+    [disabled]="!isValid()"
+  >
+    {{isEditMode ? ('UpdateTripLabel' | translate) : ('CreateTripValidation' | translate) }}
+  </button>
+</form>
 </div>

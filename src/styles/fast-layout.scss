@@ -12,6 +12,9 @@
     &-end {
         justify-content: flex-end;
     }
+    &-evenly {
+        justify-content: space-evenly;
+    }
 }
 
 .flex {
@@ -47,8 +50,14 @@
 }
 
 .w- {
+    &fit-content {
+        width: fit-content;
+    }
     &100 {
         width: 100%;
+    }
+    &75 {
+        width: 75%;
     }
     &50 {
         width: 50%;
@@ -101,12 +110,15 @@
     }
     &b {
         &-4 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.5rem!important;
         }
     }
     &t {
         &-2 {
             margin-top: .75rem;
+        }
+        &-4 {
+            margin-top: 1.5rem;
         }
     }
 }
@@ -122,6 +134,12 @@
         &-3 {
             padding: 0 1.25rem!important;
         }
+    }
+}
+
+.gap- {
+    &4 {
+        gap: 1.5rem
     }
 }
 
