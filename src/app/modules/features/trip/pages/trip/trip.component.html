@@ -34,8 +34,7 @@
             </ng-container>
           </nb-tab>
 
-          <!-- todo: Translate -->
-          <nb-tab tabTitle="Liste des tâches">
+          <nb-tab [tabTitle]="'TasksListTabTitle' | translate">
             <spt-todolist
             [tripId]="trip.tripInstance.id"
             ></spt-todolist>
