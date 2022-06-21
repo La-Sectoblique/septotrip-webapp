@@ -3,38 +3,35 @@
         <!-- toDo translate -->
         <h2> Liste des taches</h2>
         <table>
-            <tbody *ngFor="let task of taskList; let idx = index">
-                <p *ngIf="idx !== indexList"> {{ task.title }} </p>
-                <p>
-                    <input *ngIf="idx === indexList"
-                        nbInput
-                        [(ngModel)]="taskName" 
-                        (keyup.enter)="changeName(task.id,taskName)"
-                    >
-                </p>
-                <ng-container class="state" *ngIf="task.state === toDo">
-                    <select nbSelect>
-                        <option (click)="changeState(toDo, task.id)" selected>A faire</option>
-                        <option (click)="changeState(doing, task.id)">En cours</option>
-                        <option (click)="changeState(done, task.id)">Fait</option>
-                    </select>
-                </ng-container>
-                <ng-container class="state" *ngIf="task.state === doing">
-                    <select nbSelect>
-                        <option (click)="changeState(toDo, task.id)">A faire</option>
-                        <option (click)="changeState(doing, task.id)" selected>En cours</option>
-                        <option (click)="changeState(done, task.id)">Fait</option>
-                    </select>
-                </ng-container>
-                <ng-container class="state" *ngIf="task.state === done">
-                    <select nbSelect>
-                        <option (click)="changeState(toDo, task.id)">A faire</option>
-                        <option (click)="changeState(doing, task.id)">En cours</option>
-                        <option (click)="changeState(done, task.id)" selected>Fait</option>
-                    </select>
-                </ng-container>
-                <button nbButton (click)="updateName(idx)"> modifier </button>
-                <button nbButton (click)="deleteTask(task.id, idx)"> suprimer </button>
+            <tbody>
+                <tr *ngFor="let task of taskList; let idx = index">
+                    <div class="d-flex">
+                        <p *ngIf="idx !== indexList"> {{ task.title }} </p>
+                        <input *ngIf="idx === indexList"
+                            nbInput
+                            [(ngModel)]="taskName" 
+                            (keyup.enter)="changeName(task.id,taskName)"
+                        >
+                        <nb-select [selected]="task.state" (selectedChange)="changeState($event, task.id)">
+                            <nb-option [value]="TodoState.TODO">A faire</nb-option>
+                            <nb-option [value]="TodoState.DOING">En cours</nb-option>
+                            <nb-option [value]="TodoState.DONE">Fait</nb-option>
+                        </nb-select>
+                        <button 
+                            nbButton 
+                            (click)="changeName(task.id,taskName)" 
+                            status="primary"
+                            *ngIf="update"
+                        > Valider</button>
+                        <button 
+                            nbButton 
+                            (click)="updateName(idx)" 
+                            status="primary"
+                            *ngIf="!update"
+                        > modifier </button>
+                        <button nbButton (click)="deleteTask(task.id, idx)" status="danger"> suprimer </button>
+                    </div>
+                </tr>
             </tbody>
         </table>
     </div>

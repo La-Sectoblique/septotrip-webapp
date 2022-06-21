@@ -47,9 +47,11 @@
             <h2>{{'Parameters' | translate}}</h2>
             <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance.id)">{{'Delete' | translate}}</button>
           </nb-tab>
+          <!-- todo: Translate -->
           <nb-tab tabTitle="Liste des tâches">
             <spt-todolist
-            [tripId]="trip.tripInstance.id"></spt-todolist>
+            [tripId]="trip.tripInstance.id"
+            ></spt-todolist>
           </nb-tab>
         </nb-tabset>
       </div>

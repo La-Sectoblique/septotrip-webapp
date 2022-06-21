@@ -18,18 +18,23 @@ export class ToDoListComponent implements OnInit {
   //constructor() { }
   taskName: string;
   taskList: TodoEntryOutput[];
-  toDo = TodoState.TODO;
-  doing = TodoState.DOING;
-  done = TodoState.DONE;
+  TodoState = TodoState;
   taskState: TodoState;
   create = false;
   update = false;
-  indexList: any;
+  indexList: number | null;
 
   ngOnInit() {
     getTodoEntriesByTripId(this.tripId)
       .then((res: TodoEntryOutput[]) => {
         this.taskList = res;
+        this.taskList.sort((task1, task2) => {
+          if (task1.state === task2.state) {
+            return task1.id - task2.id;
+          } else {
+            return task1.state - task2.state;
+          }
+        });
       });
   }
 
@@ -41,6 +46,13 @@ export class ToDoListComponent implements OnInit {
     updateTodoEntry(taskId, { state })
       .then((res: TodoEntryOutput) => {
         this.taskState = res.state;
+        this.taskList.sort((task1, task2) => {
+          if (task1.state === task2.state) {
+            return task1.id - task2.id;
+          } else {
+            return task1.state - task2.state;
+          }
+        });
       });
   }
 
@@ -49,9 +61,17 @@ export class ToDoListComponent implements OnInit {
       .then(() => {
         this.indexList = null;
         this.taskName = ' ';
+        this.update = false;
         getTodoEntriesByTripId(this.tripId)
           .then((res: TodoEntryOutput[]) => {
             this.taskList = res;
+            this.taskList.sort((task1, task2) => {
+              if (task1.state === task2.state) {
+                return task1.id - task2.id;
+              } else {
+                return task1.state - task2.state;
+              }
+            });
           });
       });
   }
@@ -63,6 +83,13 @@ export class ToDoListComponent implements OnInit {
         this.taskState = res.state;
         this.taskName = ' ';
         this.create = false;
+        this.taskList.sort((task1, task2) => {
+          if (task1.state === task2.state) {
+            return task1.id - task2.id;
+          } else {
+            return task1.state - task2.state;
+          }
+        });
       });
   }
 
