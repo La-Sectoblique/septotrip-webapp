@@ -26,6 +26,7 @@ import { UnothorizedInterceptor } from './modules/shared/interceptors/unothorize
 import { AuthenticationService } from './modules/features/authentification/services/authentication.service';
 import { LottieCacheModule, LottieModule } from 'ngx-lottie';
 import player, { LottiePlayer } from 'lottie-web/build/player/lottie_light';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 
 export const httpTranslateLoader = (http: HttpClient): TranslateHttpLoader =>
@@ -80,6 +81,7 @@ export const playerFactory = (): LottiePlayer => player;
     PathsModule,
     LottieModule.forRoot({ player: playerFactory }),
     LottieCacheModule.forRoot(),
+    AngularSvgIconModule.forRoot(),
   ],
   providers: [
     AuthGuard,

@@ -21,6 +21,7 @@ import { TravelersModule } from '../travelers/travelers.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { FilesModule } from '../files/files.module';
 import { LottieModule } from 'ngx-lottie';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
   imports: [
@@ -42,6 +43,7 @@ import { LottieModule } from 'ngx-lottie';
     TranslateModule,
     FilesModule,
     LottieModule,
+    AngularSvgIconModule,
   ],
   declarations: [
     TripPreviewComponent,

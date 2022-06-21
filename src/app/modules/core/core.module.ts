@@ -18,7 +18,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     NbSelectModule,
     FormsModule,
     TranslateModule,
-    AngularSvgIconModule.forRoot(),
+    AngularSvgIconModule,
   ],
   exports: [
     HeaderComponent,
