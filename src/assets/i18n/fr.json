@@ -115,6 +115,14 @@
     "InterestPointDetailsTitle": "Détails du point d'intérêt",
     "StepDetailsTitle": "Détails de l'étape",
     "UpdateInterestPointAndDocuments": "Modifier le point d'intérêt et ses documents.",
-    "UpdateTabTitle": "Modifier"
+    "UpdateTabTitle": "Modifier",
+
+    "UpdateFileLinkedElements": "Modifier les élements liés au fichier",
+    "Paths": "Trajets",
+    "To": "Vers",
+
+    "FileCreated": "Le fichier a bien été créé",
+    "FileUpdated": "Le fichier a bien été modifié",
+    "FileDeleted": "Le fichier a bien été supprimé"
 
 }

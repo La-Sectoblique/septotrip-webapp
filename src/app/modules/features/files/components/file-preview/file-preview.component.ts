@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { FileMetadataOutput, FileType } from '@la-sectoblique/septoblique-service/dist/types/models/File';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
+import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
 import { combineLatest, first, map, Observable } from 'rxjs';
 import {
@@ -11,6 +12,7 @@ import {
 import { environment } from 'src/environments/environment';
 import { FlattenedStep } from '../../../step/models/flattened-step';
 import { FilesService } from '../../services/files.service';
+import { FileLinkEditComponent } from '../file-link-edit/file-link-edit.component';
 
 @Component({
   selector: 'spt-file-preview',
@@ -31,8 +33,10 @@ export class FilePreviewComponent implements OnInit  {
   constructor(
     readonly filesService: FilesService,
     private store: Store,
+    private nbDialogService: NbDialogService,
   ) {}
 
+  // todo: translate
   get fileLinkedTooltipMessage(): Observable<string> {
     return combineLatest([this.stepLinked$, this.pointLinked$, this.stepPathStepLinked$]).pipe(
       map(([step, point, stepPath]) => {
@@ -76,6 +80,14 @@ export class FilePreviewComponent implements OnInit  {
 
   getUrl(): string {
     return `${environment.baseURL}/files/${this.file.tempFileId}`;
+  }
+
+  openFileLinkEdit(): void {
+    this.nbDialogService.open(FileLinkEditComponent, {
+      context: {
+        file: this.file,
+      },
+    });
   }
 
 }
