@@ -24,8 +24,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { PathsModule } from './modules/features/paths/paths.module';
 import { UnothorizedInterceptor } from './modules/shared/interceptors/unothorized.interceptor';
 import { AuthenticationService } from './modules/features/authentification/services/authentication.service';
-import { LottieModule } from 'ngx-lottie';
-import player, { LottiePlayer } from 'lottie-web/build/player/lottie_svg';
+import { LottieCacheModule, LottieModule } from 'ngx-lottie';
+import player, { LottiePlayer } from 'lottie-web/build/player/lottie_light';
 
 
 export const httpTranslateLoader = (http: HttpClient): TranslateHttpLoader =>
@@ -79,6 +79,7 @@ export const playerFactory = (): LottiePlayer => player;
     }),
     PathsModule,
     LottieModule.forRoot({ player: playerFactory }),
+    LottieCacheModule.forRoot(),
   ],
   providers: [
     AuthGuard,
