@@ -35,6 +35,15 @@ export const GetTripSuccess = createAction(
   props<{ trip: TripOutput }>(),
 );
 
+export const UpdateTrip = createAction(
+  '[Trips] Update Trip',
+  props<{ tripId: number; updatedTrip: Partial<TripOutput> }>(),
+);
+export const UpdateTripSuccess = createAction(
+  '[Trips] Update Trip Success',
+  props<{ newTrip: TripOutput }>(),
+);
+
 export const DeleteTrip = createAction(
   '[Trips] Delete user trip',
   props<{ tripId: number }>(),

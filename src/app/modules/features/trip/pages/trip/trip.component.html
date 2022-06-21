@@ -45,7 +45,16 @@
 
           <nb-tab [tabTitle]="'Parameters' | translate">
             <h2>{{'Parameters' | translate}}</h2>
-            <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance.id)">{{'Delete' | translate}}</button>
+            <div class="d-flex justify-content-evenly">
+              <spt-create-trip
+                [tripToEdit]="trip.tripInstance"
+                [isEditMode]="true"
+              ></spt-create-trip>
+              <div class="d-flex flex-column align-items-center">
+                <h2>{{'DeleteTripTitle' | translate}}</h2>
+                <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance)">{{'Delete' | translate}}</button>
+              </div>
+            </div>
           </nb-tab>
   
         </nb-tabset>

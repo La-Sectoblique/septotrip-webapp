@@ -117,6 +117,15 @@
     "UpdateInterestPointAndDocuments": "Modifier le point d'intérêt et ses documents.",
     "UpdateTabTitle": "Modifier",
 
+    "UpdateTripLabel": "Modifier le voyage",
+    "TripUpdated": "Le voyage a bien été modifié",
+    "UpdateTripTitle": "Modifier le voyage",
+
+    "Confirm": "Confirmer",
+    "Cancel": "Annuler",
+
+    "ConfirmTripDeletionMessage": "Etes vous sur de vouloir supprimer le voyage",
+    "DeleteTripTitle": "Supprimer le voyage",
     "UpdateFileLinkedElements": "Modifier les élements liés au fichier",
     "Paths": "Trajets",
     "To": "Vers",
