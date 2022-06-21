@@ -1,10 +1,9 @@
-::ng-deep .layout-header{
-    nav {
-        padding: 0!important;
-    }
-}
-
 .layout-column {
     // Overide default nb theme
     padding: .5rem !important;
+}
+
+nb-layout-header {
+    // background-color: #BE965B!important;
+    background-color: #0869A6!important;
 }

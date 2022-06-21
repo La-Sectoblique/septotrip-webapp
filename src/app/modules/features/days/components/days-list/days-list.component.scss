@@ -1,8 +1,9 @@
 @use '/src/styles/mixins';
+@use '/src/theme.scss' as *;
 
 .point-dropzone {
     width: 7rem;
     height: 5rem;
     @include mixins.rounded-corner();
-    border: 2px dashed blue;
+    border: 2px dashed nb-theme(icon-primary-color);
 }
