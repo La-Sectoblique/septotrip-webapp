@@ -1,4 +1,5 @@
 @use 'mixins';
+@use '../theme.scss' as *;
 
 .rounded-corner {
     @include mixins.rounded-corner();
@@ -17,7 +18,7 @@
     }
 
     &.highlighted {
-        border: 1px solid #3366ff;
+        border: 1px solid nb-theme(icon-primary-color);
     }
 }
 

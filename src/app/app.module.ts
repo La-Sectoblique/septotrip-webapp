@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NbLayoutModule, NbThemeModule, NbToastrModule } from '@nebular/theme';
+import { NbGlobalPhysicalPosition, NbLayoutModule, NbThemeModule, NbToastrModule } from '@nebular/theme';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -24,6 +24,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { PathsModule } from './modules/features/paths/paths.module';
 import { UnothorizedInterceptor } from './modules/shared/interceptors/unothorized.interceptor';
 import { AuthenticationService } from './modules/features/authentification/services/authentication.service';
+import { LottieCacheModule, LottieModule } from 'ngx-lottie';
+import player, { LottiePlayer } from 'lottie-web/build/player/lottie_light';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 
 export const httpTranslateLoader = (http: HttpClient): TranslateHttpLoader =>
@@ -32,6 +35,9 @@ export const httpTranslateLoader = (http: HttpClient): TranslateHttpLoader =>
 const appUserInitializer = (authenticationService: AuthenticationService) => () => Promise.all([
   authenticationService.getCurrentJwtUser(),
 ]);
+
+export const playerFactory = (): LottiePlayer => player;
+
 
 @NgModule({
   declarations: [
@@ -55,7 +61,7 @@ const appUserInitializer = (authenticationService: AuthenticationService) => () 
       },
     }),
     //
-    NbThemeModule.forRoot(),
+    NbThemeModule.forRoot({ name: 'septoStyle' }),
     NbEvaIconsModule,
     FormsModule,
     CoreModule,
@@ -67,8 +73,15 @@ const appUserInitializer = (authenticationService: AuthenticationService) => () 
     NbLayoutModule,
     AuthentificationModule,
     HttpClientModule,
-    NbToastrModule.forRoot({ limit: 3, duplicatesBehaviour: 'all' }),
+    NbToastrModule.forRoot({
+      limit: 3,
+      duplicatesBehaviour: 'all',
+      position: NbGlobalPhysicalPosition.BOTTOM_RIGHT,
+    }),
     PathsModule,
+    LottieModule.forRoot({ player: playerFactory }),
+    LottieCacheModule.forRoot(),
+    AngularSvgIconModule.forRoot(),
   ],
   providers: [
     AuthGuard,

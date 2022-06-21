@@ -8,7 +8,12 @@
                     [point]="point"
                 >
                     <div class="d-flex">
-                        <button nbButton ghost (click)="unlinkPoint(point, day.id)">
+                        <button
+                            nbButton
+                            ghost
+                            (click)="unlinkPoint(point, day.id)"
+                            [nbTooltip]="'UnlinkPointMessage' | translate"
+                        >
                             <nb-icon icon="link-2-outline"></nb-icon>
                         </button>
                     </div>

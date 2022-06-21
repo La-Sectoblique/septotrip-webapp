@@ -1,9 +1,9 @@
 {
     "CreateTripTitle": "Création de voyage",
     "CreateTripValidation": "Créer le voyage",
-    "NoTripEmptyStateMessage": "Vous n'avez aucun voyage.",
+    "NoTripEmptyStateMessage": "Vous n'avez aucun voyage",
     
-    "NoStepEmptyStateMessage": "Il n'y a aucune étape.",
+    "NoStepEmptyStateMessage": "Il n'y a aucune étape",
 
     "NoPointEmptyStateMessage": "Il n'y a aucun point d'intérêt",
     
@@ -137,6 +137,11 @@
     "LinkedMessage" : "Lié",
     "ToTheStepMessage": "à l'étape",
     "ToTheInterrestPointMessage": "au point d'intérêt",
-    "ToTheTripToMessage": "au trajet vers"
+    "ToTheTripToMessage": "au trajet vers",
+
+    "UnlinkPointMessage": "Désassigner le point d'intérêt",
+
+    "RegisterSuccessTitle": "Inscription réussie",
+    "RegisterSuccessMessage": "Vous pouvez à présent vous connecter"
 
 }
