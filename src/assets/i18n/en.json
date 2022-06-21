@@ -117,6 +117,14 @@
     "UpdateInterestPointAndDocuments": "Modify the point of interest and its documents.",
     "UpdateTabTitle": "Modify",
 
+    "UpdateTripLabel": "Modify trip",
+    "TripUpdated": "Trip has been modified",
+    "UpdateTripTitle": "Modify the trip",
+
+    "Confirm": "Confirm",
+    "Cancel": "Cancel",
+    "ConfirmTripDeletionMessage": "Are you sure you want to delete the trip",
+
     "UpdateFileLinkedElements": "Modify the elements linked to the file",
     "Paths": "Paths",
     "To": "To",
@@ -130,5 +138,8 @@
     "ToTheInterrestPointMessage": "to the point of interest",
     "ToTheTripToMessage": "to the trip to",
 
-    "UnlinkPointMessage": "Désasigner le point d'intérêt"
+    "UnlinkPointMessage": "Désasigner le point d'intérêt",
+
+    "RegisterSuccessTitle": "Registration successful",
+    "RegisterSuccessMessage": "You can now login"
 }

@@ -117,6 +117,14 @@
     "UpdateInterestPointAndDocuments": "修改兴趣点和其文件",
     "UpdateTabTitle": "修改",
 
+    "UpdateTripLabel": "修改行程",
+    "TripUpdated": "旅程已被修改",
+    "UpdateTripTitle": "修改行程",
+
+    "Confirm":"确认",
+    "Cancel":"取消",
+    "ConfirmTripDeletionMessage": "你确定要删除行程吗",
+
     "UpdateFileLinkedElements": "修改链接到文件的元素",
     "Paths":"路径",
     "To":"到",
@@ -130,5 +138,8 @@
     "ToTheInterrestPointMessage":"到兴趣点",
     "ToTheTripToMessage": "给旅行的",
 
-    "UnlinkPointMessage": "解除兴趣点的链接"
+    "UnlinkPointMessage": "解除兴趣点的链接",
+
+    "RegisterSuccessTitle":"注册成功",
+    "RegisterSuccessMessage": "你现在可以登录了"
 }
