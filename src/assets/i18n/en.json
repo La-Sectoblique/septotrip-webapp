@@ -115,5 +115,18 @@
     "InterestPointDetailsTitle": "Point of interest details",
     "StepDetailsTitle": "Step Details",
     "UpdateInterestPointAndDocuments": "Modify the point of interest and its documents.",
-    "UpdateTabTitle": "Modify"
+    "UpdateTabTitle": "Modify",
+
+    "UpdateFileLinkedElements": "Modify the elements linked to the file",
+    "Paths": "Paths",
+    "To": "To",
+
+    "FileCreated": "The file has been created",
+    "FileUpdated": "The file has been modified",
+    "FileDeleted": "The file has been deleted",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "to the step",
+    "ToTheInterrestPointMessage": "to the point of interest",
+    "ToTheTripToMessage": "to the trip to"
 }

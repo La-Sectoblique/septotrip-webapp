@@ -123,6 +123,11 @@
 
     "FileCreated": "Le fichier a bien été créé",
     "FileUpdated": "Le fichier a bien été modifié",
-    "FileDeleted": "Le fichier a bien été supprimé"
+    "FileDeleted": "Le fichier a bien été supprimé",
+
+    "LinkedMessage" : "Lié",
+    "ToTheStepMessage": "à l'étape",
+    "ToTheInterrestPointMessage": "au point d'intérêt",
+    "ToTheTripToMessage": "au trajet vers"
 
 }

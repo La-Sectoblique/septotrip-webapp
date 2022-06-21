@@ -123,5 +123,10 @@
 
     "FileCreated": "",
     "FileUpdated": "",
-    "FileDeleted": ""
+    "FileDeleted": "",
+
+    "LinkedMessage" : "",
+    "ToTheStepMessage": "",
+    "ToTheInterrestPointMessage": "",
+    "ToTheTripToMessage": ""
 }
