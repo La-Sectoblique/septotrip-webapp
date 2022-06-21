@@ -137,5 +137,7 @@
     "LinkedMessage" : "",
     "ToTheStepMessage": "",
     "ToTheInterrestPointMessage": "",
-    "ToTheTripToMessage": ""
+    "ToTheTripToMessage": "",
+
+    "UnlinkPointMessage": ""
 }

@@ -137,6 +137,8 @@
     "LinkedMessage" : "Lié",
     "ToTheStepMessage": "à l'étape",
     "ToTheInterrestPointMessage": "au point d'intérêt",
-    "ToTheTripToMessage": "au trajet vers"
+    "ToTheTripToMessage": "au trajet vers",
+
+    "UnlinkPointMessage": "Désassigner le point d'intérêt"
 
 }
