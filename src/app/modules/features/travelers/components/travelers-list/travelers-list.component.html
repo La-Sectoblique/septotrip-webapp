@@ -2,7 +2,10 @@
   *ngFor="let traveler of travelers"
   [traveler]="traveler"
 >
-  <button nbButton ghost (click)="removeTraveler(traveler.id)">
+  <button 
+    *ngIf="traveler.id !== tripAuthorId"   
+    nbButton ghost (click)="removeTraveler(traveler.id)"
+  >
     <nb-icon icon="trash-2-outline" status="danger"></nb-icon>
   </button>
 </app-traveler-preview>
@@ -13,5 +16,5 @@
   <label for="mailAddress">{{'MailAddressInputLabel' | translate}}</label><br>
   <input type="email" id="mailAddress" formControlName="mailAddress" nbInput>
 
-  <button type="submit" nbButton status="success">{{'Add' | translate}}</button>
+  <button type="submit" nbButton status="primary">{{'Add' | translate}}</button>
 </form>

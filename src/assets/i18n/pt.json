@@ -105,8 +105,41 @@
     "FileIsPrivate": "Este ficheiro é privado",
     
     "AddOneFile": "Acrescentar um ficheiro",
+    "UpdateOneFile": "Modificar um ficheiro",
 
     "TitlePhotos": "Fotos",
     "TitleDocuments": "Documentos", 
-    "TitleFiles": "Ficheiros"
+    "TitleFiles": "Ficheiros",
+
+    "TripDetailsTitle": "Trip Details",
+    "InterestPointDetailsTitle": "Point of Interest Details",
+    "StepDetailsTitle": "Step Details",
+    "UpdateInterestPointAndDocuments": "Modificar o ponto de interesse e os seus documentos",
+    "UpdateTabTitle": "Modificar",
+
+    "UpdateTripLabel": "Modificar a viagem",
+    "TripUpdated": "Trip foi modificado",
+    "UpdateTripTitle": "Modificar a viagem",
+
+    "Confirm": "Confirmar",
+    "Cancel": "Cancelar",
+    "ConfirmTripDeletionMessage": "Tem a certeza que quer apagar a viagem",
+
+    "UpdateFileLinkedElements": "Modificar os elementos ligados ao ficheiro",
+    "Paths": "Caminhos",
+    "To": "Para",
+
+    "FileCreated": "O ficheiro foi criado",
+    "FileUpdated": "O ficheiro foi modificado",
+    "FileDeleted": "O ficheiro foi apagado",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "para o degrau",
+    "ToTheInterrestPointMessage": "até ao ponto de interesse",
+    "ToTheTripToMessage": "para a viagem a",
+
+    "UnlinkPointMessage": "Unlink the point of interest",
+
+    "RegisterSuccessTitle": "Registo com sucesso",
+    "RegisterSuccessMessage": "Pode agora fazer login"
 }

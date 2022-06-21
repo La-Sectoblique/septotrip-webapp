@@ -83,7 +83,7 @@ export class TripsMapComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges({ steps }: SimpleChanges): void {
-    if (steps.currentValue) {
+    if (steps?.currentValue) {
       this.updateLineDrawing();
     }
   }

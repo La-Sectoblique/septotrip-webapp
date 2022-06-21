@@ -1,6 +1,5 @@
-<!-- todo: Translate -->
 <spt-trip-element-details
-  [pageTitle]="'Détails de l\'étape ' + step.name"
+  [pageTitle]="('StepDetailsTitle' | translate) + ' ' + step.name"
 >
   <spt-create-step edit
     [tripId]="step.tripId"

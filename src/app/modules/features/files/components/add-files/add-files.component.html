@@ -1,5 +1,5 @@
 <div class="add-files-wrapper d-flex flex-column justify-content-center align-items-center">
-  <h2>{{isEditMode ? 'Modifier' : 'Ajouter'}} un fichier</h2>
+  <h2>{{isEditMode ? ('UpdateOneFile' | translate) : ('AddOneFile' | translate)}}</h2>
   
   <ng-container [ngSwitch]="isEditMode">
     <ng-container *ngSwitchCase="true">
@@ -31,7 +31,7 @@
   >
     <div class="mb-4">
       <label for="name" class="mr-2">{{'NameInputLabel' | translate}} :</label>
-      <input nbInput name="name" id="name" formControlName="name">
+      <input nbInput name="name" id="name" formControlName="name" [maxlength]="255">
     </div>
 
     <label for="visibility mr-2">{{'Visibility' | translate}} :</label>
@@ -47,7 +47,7 @@
       nbButton
       [disabled]="!isValid()"
     >
-      {{isEditMode ? {'UpdateFileLabel' | translate} : {'AddFileLabel' | translate'} }}
+      {{isEditMode ? ('UpdateFileLabel' | translate) : ('AddFileLabel' | translate) }}
     </button>
   </form>
 </div>

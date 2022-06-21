@@ -1,7 +1,7 @@
+@use '/src/theme.scss' as *;
 
-
-$arrow--color: #3366ff;
-$arrow-hover--color: #102694;
+$arrow--color: nb-theme(icon-primary-color);
+$arrow-hover--color: nb-theme(tabset-tab-focus-text-color);
 
 .line {
     width: 2px;

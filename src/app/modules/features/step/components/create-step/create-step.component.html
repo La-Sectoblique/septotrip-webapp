@@ -7,13 +7,13 @@
     (ngSubmit)="create()"
   >
     <label for="name">{{'NameInputLabel' | translate}} :</label>
-    <input type="text" id="name" formControlName="name" required nbInput>
+    <input type="text" id="name" formControlName="name" required nbInput [maxlength]="255">
     <label for="duration">{{'DurationInputLabel' | translate}} :</label>
-    <input type="number" id="duration" formControlName="duration" min="1" max="100" required nbInput>
+    <input type="number" id="duration" formControlName="duration" min="1" max="60" required nbInput>
 
     <button 
       type="submit" 
-      status="success"
+      status="primary"
       nbButton
       [disabled]="!isFormValid()"
     >

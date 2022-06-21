@@ -43,9 +43,8 @@
         >
           <spt-point-preview [point]="point" [isHighlighted]="(highlightedPointId$ | async) === point.id">
             <div class="d-flex">
-              <!-- todo: Translate nbTooltip -->
               <button nbButton ghost (click)="editPoint(point)"
-                nbTooltip="Modifier le point d'intérêt et ses documents."
+                [nbTooltip]="('UpdateInterestPointAndDocuments' | translate)"
               >
                 <nb-icon class="cursor-pointer" icon="info-outline" status="primary"></nb-icon>
               </button>
@@ -58,7 +57,6 @@
         </div>
       </ng-container>
     </div>
-    <!--  -->
     
   </div>
 </ng-container>

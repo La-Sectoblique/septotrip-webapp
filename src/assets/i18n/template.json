@@ -105,8 +105,42 @@
     "FileIsPrivate": "",
     
     "AddOneFile": "",
-
+    "UpdateOneFile": "",
+    
     "TitlePhotos": "",
     "TitleDocuments": "", 
-    "TitleFiles": ""
+    "TitleFiles": "",
+
+    "TripDetailsTitle": "",
+    "InterestPointDetailsTitle": "",
+    "StepDetailsTitle": "",
+    "UpdateInterestPointAndDocuments": "",
+    "UpdateTabTitle": "",
+
+    "UpdateTripLabel": "",
+    "TripUpdated": "",
+    "UpdateTripTitle": "",
+
+    "Confirm": "",
+    "Cancel": "",
+    "ConfirmTripDeletionMessage": "",
+
+    "DeleteTripTitle": "",
+    "UpdateFileLinkedElements": "",
+    "Paths": "",
+    "To": "",
+
+    "FileCreated": "",
+    "FileUpdated": "",
+    "FileDeleted": "",
+
+    "LinkedMessage" : "",
+    "ToTheStepMessage": "",
+    "ToTheInterrestPointMessage": "",
+    "ToTheTripToMessage": "",
+
+    "UnlinkPointMessage": "",
+
+    "RegisterSuccessTitle": "",
+    "RegisterSuccessMessage": ""
 }

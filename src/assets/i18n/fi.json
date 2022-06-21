@@ -105,8 +105,41 @@
     "FileIsPrivate": "Tämä tiedosto on yksityinen.",
     
     "AddOneFile": "Lisää tiedosto",
+    "UpdateOneFile": "Muokkaa tiedostoa",
 
     "TitlePhotos": "Photos",
     "TitleDocuments": "Documents", 
-    "TitleFiles": "Tiedostot"
+    "TitleFiles": "Tiedostot",
+
+    "TripDetailsTitle": "Matkan tiedot",
+    "InterestPointDetailsTitle": "Kiinnostavan kohteen tiedot",
+    "StepDetailsTitle": "Step Details",
+    "UpdateInterestPointAndDocuments": "Muokkaa kiinnostavaa kohdetta ja sen asiakirjoja",
+    "UpdateTabTitle": "Muokkaa",
+
+    "UpdateTripLabel": "Muuta matkaa",
+    "TripUpdated": "Matkaa on muutettu",
+    "UpdateTripTitle": "Muuta matkaa",
+
+    "Confirm": "Vahvista",
+    "Cancel": "Peruuta",
+    "ConfirmTripDeletionMessage": "Haluatko varmasti poistaa matkan",
+
+    "UpdateFileLinkedElements": "Muokkaa tiedostoon linkitettyjä elementtejä",
+    "Paths": "Polut",
+    "To": "To",
+
+    "FileCreated": "Tiedosto on luotu",
+    "FileUpdated": "Tiedostoa on muutettu",
+    "FileDeleted": "Tiedosto on poistettu",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "askeleelle",
+    "ToTheInterrestPointMessage": "kiinnostavaan kohtaan",
+    "ToTheTripToMessage": "matkalle",
+
+    "UnlinkPointMessage": "Poista linkki kiinnostavasta pisteestä",
+
+    "RegisterSuccessTitle": "Rekisteröinti onnistui",
+    "RegisterSuccessMessage": "Voit nyt kirjautua sisään"
 }

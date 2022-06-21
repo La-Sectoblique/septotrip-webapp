@@ -105,8 +105,41 @@
     "FileIsPrivate": "Αυτό το αρχείο είναι ιδιωτικό.",
     
     "AddOneFile": "Προσθήκη ενός αρχείου",
+    "UpdateOneFile": "Τροποποίηση ενός αρχείου",
 
     "TitlePhotos": "Φωτογραφίες",
     "TitleDocuments": "Έγγραφα", 
-    "TitleFiles": "Αρχεία"
+    "TitleFiles": "Αρχεία",
+
+    "TripDetailsTitle": "Λεπτομέρειες ταξιδιού",
+    "InterestPointDetailsTitle": "Λεπτομέρειες σημείου ενδιαφέροντος",
+    "StepDetailsTitle": "Λεπτομέρειες βήματος",
+    "UpdateInterestPointAndDocuments": "Τροποποίηση του σημείου ενδιαφέροντος και των εγγράφων του",
+    "UpdateTabTitle": "Τροποποίηση",
+
+    "UpdateTripLabel": "Τροποποίηση ταξιδιού",
+    "TripUpdated": "Το ταξίδι έχει τροποποιηθεί",
+    "UpdateTripTitle": "Τροποποίηση του ταξιδιού",
+
+    "Confirm": "Επιβεβαίωση",
+    "Cancel": "Ακύρωση",
+    "ConfirmTripDeletionMessage": "Είστε σίγουρος ότι θέλετε να διαγράψετε το ταξίδι",
+
+    "UpdateFileLinkedElements": "Τροποποίηση των στοιχείων που συνδέονται με το αρχείο",
+    "Paths": "Μονοπάτια",
+    "To": "To",
+
+    "FileCreated": "Το αρχείο έχει δημιουργηθεί",
+    "FileUpdated": "Το αρχείο έχει τροποποιηθεί",
+    "FileDeleted": "Το αρχείο έχει διαγραφεί",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "στο βήμα",
+    "ToTheInterrestPointMessage": "στο σημείο ενδιαφέροντος",
+    "ToTheTripToMessage": "στο ταξίδι προς",
+
+    "UnlinkPointMessage": "Αποσύνδεση του σημείου ενδιαφέροντος",
+
+    "RegisterSuccessTitle": "Επιτυχής εγγραφή",
+    "RegisterSuccessMessage": "Μπορείτε τώρα να συνδεθείτε"
 }

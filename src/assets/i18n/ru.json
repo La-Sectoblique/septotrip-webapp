@@ -105,8 +105,41 @@
     "FileIsPrivate": "Этот файл является частным",
     
     "AddOneFile": "Добавить файл",
+    "UpdateOneFile": "Изменить файл",
 
     "TitlePhotos": "Фотографии",
     "TitleDocuments": "Документы", 
-    "TitleFiles": "Файлы"
+    "TitleFiles": "Файлы",
+
+    "TripDetailsTitle": "Подробности поездки",
+    "InterestPointDetailsTitle": "Подробная информация о точке интереса",
+    "StepDetailsTitle": "Детали шага",
+    "UpdateInterestPointAndDocuments": "Изменить точку интереса и ее документы",
+    "UpdateTabTitle": "Изменить",
+
+    "UpdateTripLabel": "Изменить поездку",
+    "TripUpdated": "Путевка была изменена",
+    "UpdateTripTitle": "Изменить поездку",
+
+    "Confirm": "Подтвердить",
+    "Cancel": "Отмена",
+    "ConfirmTripDeletionMessage": "Вы уверены, что хотите удалить поездку",
+
+    "UpdateFileLinkedElements": "Изменить элементы, связанные с файлом",
+    "Paths": "Пути",
+    "To": "To",
+
+    "FileCreated": "Файл был создан",
+    "FileUpdated": "Файл был изменен",
+    "FileDeleted": "Файл был удален",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "на шаг",
+    "ToTheInterrestPointMessage": "к точке интереса",
+    "ToTheTripToMessage": "к поездке в",
+
+    "UnlinkPointMessage": "Отключить точку интереса",
+
+    "RegisterSuccessTitle": "Регистрация успешна",
+    "RegisterSuccessMessage": "Теперь вы можете войти в систему"
 }

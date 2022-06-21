@@ -1,9 +1,9 @@
 {
     "CreateTripTitle": "Création de voyage",
     "CreateTripValidation": "Créer le voyage",
-    "NoTripEmptyStateMessage": "Vous n'avez aucun voyage.",
+    "NoTripEmptyStateMessage": "Vous n'avez aucun voyage",
     
-    "NoStepEmptyStateMessage": "Il n'y a aucune étape.",
+    "NoStepEmptyStateMessage": "Il n'y a aucune étape",
 
     "NoPointEmptyStateMessage": "Il n'y a aucun point d'intérêt",
     
@@ -105,9 +105,43 @@
     "FileIsPrivate": "Ce fichier est privé.",
     
     "AddOneFile": "Ajouter un fichier",
-
+    "UpdateOneFile": "Modifier un fichier",
+    
     "TitlePhotos": "Photos",
     "TitleDocuments": "Documents", 
-    "TitleFiles": "Fichiers"
+    "TitleFiles": "Fichiers",
+
+    "TripDetailsTitle": "Détails du trajet",
+    "InterestPointDetailsTitle": "Détails du point d'intérêt",
+    "StepDetailsTitle": "Détails de l'étape",
+    "UpdateInterestPointAndDocuments": "Modifier le point d'intérêt et ses documents.",
+    "UpdateTabTitle": "Modifier",
+
+    "UpdateTripLabel": "Modifier le voyage",
+    "TripUpdated": "Le voyage a bien été modifié",
+    "UpdateTripTitle": "Modifier le voyage",
+
+    "Confirm": "Confirmer",
+    "Cancel": "Annuler",
+    "ConfirmTripDeletionMessage": "Etes vous sur de vouloir supprimer le voyage",
+    
+    "DeleteTripTitle": "Supprimer le voyage",
+    "UpdateFileLinkedElements": "Modifier les élements liés au fichier",
+    "Paths": "Trajets",
+    "To": "Vers",
+
+    "FileCreated": "Le fichier a bien été créé",
+    "FileUpdated": "Le fichier a bien été modifié",
+    "FileDeleted": "Le fichier a bien été supprimé",
+
+    "LinkedMessage" : "Lié",
+    "ToTheStepMessage": "à l'étape",
+    "ToTheInterrestPointMessage": "au point d'intérêt",
+    "ToTheTripToMessage": "au trajet vers",
+
+    "UnlinkPointMessage": "Désassigner le point d'intérêt",
+
+    "RegisterSuccessTitle": "Inscription réussie",
+    "RegisterSuccessMessage": "Vous pouvez à présent vous connecter"
 
 }

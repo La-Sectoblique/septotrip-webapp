@@ -105,8 +105,41 @@
     "FileIsPrivate": "这个文件是私有的。",
     
     "AddOneFile": "添加一个文件",
+    "UpdateOneFile": "修改一个文件",
 
     "TitlePhotos": "照片",
     "TitleDocuments":"文件",
-    "TitleFiles": "文件"
+    "TitleFiles": "文件",
+
+    "TripDetailsTitle": "行程详情",
+    "InterestPointDetailsTitle": "兴趣点详情",
+    "StepDetailsTitle":"步骤详情",
+    "UpdateInterestPointAndDocuments": "修改兴趣点和其文件",
+    "UpdateTabTitle": "修改",
+
+    "UpdateTripLabel": "修改行程",
+    "TripUpdated": "旅程已被修改",
+    "UpdateTripTitle": "修改行程",
+
+    "Confirm":"确认",
+    "Cancel":"取消",
+    "ConfirmTripDeletionMessage": "你确定要删除行程吗",
+
+    "UpdateFileLinkedElements": "修改链接到文件的元素",
+    "Paths":"路径",
+    "To":"到",
+
+    "FileCreated": "该文件已被创建",
+    "FileUpdated": "该文件已被修改",
+    "FileDeleted": "该文件已被删除",
+
+    "LinkedMessage":"链接",
+    "ToTheStepMessage":"到了这一步",
+    "ToTheInterrestPointMessage":"到兴趣点",
+    "ToTheTripToMessage": "给旅行的",
+
+    "UnlinkPointMessage": "解除兴趣点的链接",
+
+    "RegisterSuccessTitle":"注册成功",
+    "RegisterSuccessMessage": "你现在可以登录了"
 }

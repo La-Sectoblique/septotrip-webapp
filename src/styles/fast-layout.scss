@@ -12,6 +12,9 @@
     &-end {
         justify-content: flex-end;
     }
+    &-evenly {
+        justify-content: space-evenly;
+    }
 }
 
 .flex {
@@ -155,4 +158,8 @@
 
 .word-break-all {
     word-break: break-all;
+}
+
+.gap-4 {
+    gap: 1.5rem;
 }

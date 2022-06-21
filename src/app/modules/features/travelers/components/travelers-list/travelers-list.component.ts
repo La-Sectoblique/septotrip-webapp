@@ -13,6 +13,7 @@ import { TravelersService } from '../../services/travelers.service';
 export class TravelersListComponent  {
 
   @Input() tripId: number;
+  @Input() tripAuthorId: number;
   @Input() travelers: UserOutput[];
 
   addTravelerForm = this.formBuilder.group({

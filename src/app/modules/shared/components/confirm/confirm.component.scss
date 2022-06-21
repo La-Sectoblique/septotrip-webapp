@@ -1,0 +1,7 @@
+@use 'src/styles/mixins' as mixins;
+
+.confirm-wrapper {
+    background-color: white;
+    padding: 1.5rem;
+    @include mixins.rounded-corner;
+}

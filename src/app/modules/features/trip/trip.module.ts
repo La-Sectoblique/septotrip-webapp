@@ -12,16 +12,17 @@ import { TripComponent } from './pages/trip/trip.component';
 import { TripsComponent } from './pages/trips/trips.component';
 import { CreateTripComponent } from './pages/create-trip/create-trip.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StepModule } from '../step/step.module';
 import { SharedModule } from '../../shared/shared.module';
 import { MapModule } from '../map/map.module';
 import { PointsModule } from '../points/points.module';
 import { TravelersModule } from '../travelers/travelers.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToDoListModule } from '../toDoList/toDoList.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { FilesModule } from '../files/files.module';
+import { LottieModule } from 'ngx-lottie';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { ToDoListModule } from '../toDoList/toDoList.module';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { FilesModule } from '../files/files.module';
     NbInputModule,
     NbRadioModule,
     FormsModule,
+    ReactiveFormsModule,
     StepModule,
     SharedModule,
     MapModule,
@@ -42,6 +44,8 @@ import { FilesModule } from '../files/files.module';
     ToDoListModule,
     TranslateModule,
     FilesModule,
+    LottieModule,
+    AngularSvgIconModule,
   ],
   declarations: [
     TripPreviewComponent,
@@ -51,6 +55,7 @@ import { FilesModule } from '../files/files.module';
   ],
   exports: [
     TripPreviewComponent,
+    CreateTripComponent,
   ],
 })
 export class TripModule { }

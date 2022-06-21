@@ -105,8 +105,42 @@
     "FileIsPrivate": "Este archivo es privado",
     
     "AddOneFile": "Añadir un archivo",
+    "UpdateOneFile": "Modificar un archivo",
 
-    "TítlePhotos": "Fotos",
-    "TítleDocuments": "Documentos", 
-    "TitleFiles": "Archivos"
+    "TitlePhotos": "Fotos",
+    "TitleDocuments": "Documentos", 
+    "TitleFiles": "Archivos",
+
+    "TripDetailsTitle": "Detalles del viaje",
+    "InterestPointDetailsTitle": "Detalles del punto de interés",
+    "StepDetailsTitle": "Detalles del paso",
+    "UpdateInterestPointAndDocuments": "Modificar el punto de interés y sus documentos",
+    "UpdateTabTitle": "Modificar",
+
+    "UpdateTripLabel": "Modificar viaje",
+    "TripUpdated": "El viaje ha sido modificado",
+    "UpdateTripTitle": "Modificar el viaje",
+
+    "Confirm": "Confirmar",
+    "Cancel": "Cancelar",
+    "ConfirmTripDeletionMessage": "¿Estás seguro de que quieres eliminar el viaje?",
+
+    "UpdateFileLinkedElements": "Modificar los elementos vinculados al archivo",
+    "Paths": "Caminos",
+    "To": "Para",
+
+    "FileCreated": "El archivo ha sido creado",
+    "FileUpdated": "El archivo ha sido modificado",
+    "FileDeleted": "El archivo ha sido eliminado",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "al paso",
+    "ToTheInterrestPointMessage": "al punto de interés",
+    "AElMensajeDelViaje": "al viaje a",
+
+    "UnlinkPointMessage": "Desenlazar el punto de interés",
+
+    "RegisterSuccessTitle": "Registro exitoso",
+    "RegisterSuccessMessage": "Ya puede iniciar sesión"
+
 }
