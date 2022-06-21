@@ -142,6 +142,9 @@
     "UnlinkPointMessage": "Désassigner le point d'intérêt",
 
     "RegisterSuccessTitle": "Inscription réussie",
-    "RegisterSuccessMessage": "Vous pouvez à présent vous connecter"
+    "RegisterSuccessMessage": "Vous pouvez à présent vous connecter",
+
+    "ErrorMessageTitle": "Une erreur est survenue",
+    "ErrorMessageText": "Merci de réessayer plus tard ou différement"
 
 }

@@ -142,5 +142,8 @@
     "UnlinkPointMessage": "",
 
     "RegisterSuccessTitle": "",
-    "RegisterSuccessMessage": ""
+    "RegisterSuccessMessage": "",
+
+    "ErrorMessageTitle": "",
+    "ErrorMessageText": ""
 }

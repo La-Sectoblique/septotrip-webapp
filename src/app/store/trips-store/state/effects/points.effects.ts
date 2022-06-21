@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import {  map, mergeMap, switchMap } from 'rxjs';
+import {  catchError, map, mergeMap, switchMap } from 'rxjs';
 import { PointsService } from 'src/app/modules/features/points/services/points.service';
 import * as TripsActions from '../trips.actions';
 import * as MapsActions from '../../../map-edit-store/state/map-edit.actions';
@@ -19,7 +19,7 @@ export class PointsEffects {
     mergeMap(({ tripId }) => this.pointsService.getTripPoints(tripId)
       .pipe(
         map((points: PointOutput[]) => TripsActions.GetTripPointsSuccess({ points, tripId })),
-        // @TODO: catchError(() => CALL ERROR ACTION),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));
@@ -41,7 +41,7 @@ export class PointsEffects {
             message: this.translate.instant('PointCreated'),
           }),
         ]),
-        // @TODO: catchError(() => CALL ERROR ACTION),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));
@@ -58,7 +58,7 @@ export class PointsEffects {
           message: this.translate.instant('PointUpdated'),
         }),
       ]),
-      // @TODO: catchError(() => CALL ERROR ACTION),
+      catchError(() => [UtilsActions.ErrorHappenedNotify()]),
     )),
   ));
 
@@ -73,7 +73,7 @@ export class PointsEffects {
             message: this.translate.instant('PointDeleted'),
           }),
         ]),
-        // @TODO: catchError(() => CALL ERROR ACTION),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));
@@ -84,6 +84,7 @@ export class PointsEffects {
       this.pointsService.getPointsByDay(dayId)
         .pipe(
           map((dayPoints) => TripsActions.RefreshPointsDayIdsSuccess({ tripId, dayId, dayPoints })),
+          catchError(() => [UtilsActions.ErrorHappenedNotify()]),
         ),
     ),
   ));
@@ -93,6 +94,7 @@ export class PointsEffects {
     mergeMap(({ tripId, pointId, daysIds }) =>
       this.pointsService.updatePointDays(pointId, daysIds).pipe(
         map(() =>  TripsActions.UpdatePointDaysSuccess({ tripId, pointId, daysIds })),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));

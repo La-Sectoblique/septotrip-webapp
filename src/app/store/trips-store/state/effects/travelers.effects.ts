@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import {  map, mergeMap } from 'rxjs';
+import {  catchError, map, mergeMap } from 'rxjs';
 import { TravelersService } from 'src/app/modules/features/travelers/services/travelers.service';
 import * as TripsActions from '../trips.actions';
+import * as UtilsActions from '../../../utils-store/state/utils.actions';
 
 @Injectable()
 export class TravelersEffects {
@@ -14,6 +15,7 @@ export class TravelersEffects {
     mergeMap(({ tripId }) => this.travelersService.getTravelers(tripId)
       .pipe(
         map((travelers) => TripsActions.GetTripTravelersSuccess({ tripId, travelers })),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));
@@ -23,6 +25,7 @@ export class TravelersEffects {
     mergeMap(({ tripId, userId }) => this.travelersService.removeTraveler(tripId, userId)
       .pipe(
         map(() => TripsActions.RemoveTripTravelerSuccess({ tripId, userId })),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));

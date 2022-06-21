@@ -6,6 +6,7 @@ import * as UtilsActions from './utils.actions';
 import * as MapEditActions from '../../map-edit-store/state/map-edit.actions';
 import * as TripsActions from '../../trips-store/state/trips.actions';
 import * as FilesActions from '../../files-store/state/files.actions';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class UtilsEffects {
@@ -47,9 +48,21 @@ export class UtilsEffects {
     { dispatch: false },
   );
 
+  ErrorHappenedNotify$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(UtilsActions.ErrorHappenedNotify),
+        map(() => UtilsActions.NotifyError({
+          title: this.translate.instant('ErrorMessageTitle'),
+          message: this.translate.instant('ErrorMessageText'),
+        })),
+      ),
+  );
+
   constructor(
     private actions$: Actions,
     private nbToastrService: NbToastrService,
+    private translate: TranslateService,
   ) {}
 
 }

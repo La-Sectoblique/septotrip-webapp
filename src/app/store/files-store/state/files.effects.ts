@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FileMetadataOutput } from '@la-sectoblique/septoblique-service/dist/types/models/File';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { map, mergeMap, switchMap } from 'rxjs';
+import { catchError, map, mergeMap, switchMap } from 'rxjs';
 import { FilesService } from 'src/app/modules/features/files/services/files.service';
 import * as FilesActions from './files.actions';
 import * as UtilsActions from '../../utils-store/state/utils.actions';
@@ -17,7 +17,7 @@ export class FilesEffects {
         map((files: FileMetadataOutput[]) =>
           FilesActions.GetTripFilesSuccess({ tripId, files }),
         ),
-        // @TODO: catchError(()) => CALL ERROR ACTION),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));
@@ -32,8 +32,8 @@ export class FilesEffects {
             title: this.translate.instant('CreationDone'),
             message: this.translate.instant('FileCreated'),
           }),
-        ],
-        ),
+        ]),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));
@@ -49,6 +49,7 @@ export class FilesEffects {
             message: this.translate.instant('FileUpdated'),
           }),
         ]),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));
@@ -64,6 +65,7 @@ export class FilesEffects {
             message: this.translate.instant('FileDeleted'),
           }),
         ]),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));

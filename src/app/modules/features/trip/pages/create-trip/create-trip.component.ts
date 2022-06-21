@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { Store } from '@ngrx/store';
 import { UpdateTrip } from 'src/app/store/trips-store/state/trips.actions';
+import { ErrorHappenedNotify } from 'src/app/store/utils-store/state/utils.actions';
 import { TripsService } from '../../services/trips.service';
 
 @Component({
@@ -47,9 +48,14 @@ export class CreateTripComponent implements OnInit {
       this.tripService.createUserTrips(
         this.tripForm.value.name,
         this.tripForm.value.visibility,
-      ).subscribe((trip) => {
-        this.router.navigate(['/trips', trip.id]);
-      });
+      ).subscribe(({
+        next: (trip) => {
+          this.router.navigate(['/trips', trip.id]);
+        },
+        error: () => {
+          this.store.dispatch(ErrorHappenedNotify());
+        },
+      }));
     } else {
       console.log('ediiit');
       this.store.dispatch(UpdateTrip({
