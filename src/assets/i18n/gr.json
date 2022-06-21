@@ -128,5 +128,7 @@
     "LinkedMessage": "Linked",
     "ToTheStepMessage": "στο βήμα",
     "ToTheInterrestPointMessage": "στο σημείο ενδιαφέροντος",
-    "ToTheTripToMessage": "στο ταξίδι προς"
+    "ToTheTripToMessage": "στο ταξίδι προς",
+
+    "UnlinkPointMessage": "Αποσύνδεση του σημείου ενδιαφέροντος"
 }

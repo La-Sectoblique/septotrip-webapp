@@ -128,5 +128,7 @@
     "LinkedMessage": "Linked",
     "ToTheStepMessage": "askeleelle",
     "ToTheInterrestPointMessage": "kiinnostavaan kohtaan",
-    "ToTheTripToMessage": "matkalle"
+    "ToTheTripToMessage": "matkalle",
+
+    "UnlinkPointMessage": "Poista linkki kiinnostavasta pisteestä"
 }

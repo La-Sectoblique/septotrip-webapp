@@ -128,5 +128,7 @@
     "LinkedMessage": "Linked",
     "ToTheStepMessage": "para o degrau",
     "ToTheInterrestPointMessage": "até ao ponto de interesse",
-    "ToTheTripToMessage": "para a viagem a"
+    "ToTheTripToMessage": "para a viagem a",
+
+    "UnlinkPointMessage": "Unlink the point of interest"
 }

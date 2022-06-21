@@ -128,5 +128,7 @@
     "LinkedMessage": "Linked",
     "ToTheStepMessage": "на шаг",
     "ToTheInterrestPointMessage": "к точке интереса",
-    "ToTheTripToMessage": "к поездке в"
+    "ToTheTripToMessage": "к поездке в",
+
+    "UnlinkPointMessage": "Отключить точку интереса"
 }

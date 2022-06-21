@@ -128,5 +128,7 @@
     "LinkedMessage": "Verlinkt",
     "ToTheStepMessage": "Auf der Etappe",
     "ToTheInterrestPointMessage": "zum Point of Interest",
-    "ToTheTripToMessage": "auf dem Weg nach"
+    "ToTheTripToMessage": "auf dem Weg nach",
+
+    "UnlinkPointMessage": "Sonderziel ausblenden"
 }

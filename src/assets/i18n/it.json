@@ -128,5 +128,7 @@
     "LinkedMessage": "Linked",
     "ToTheStepMessage": "al passo",
     "ToTheInterrestPointMessage": "al punto di interesse",
-    "ToTheTripToMessage": "al viaggio verso"
+    "ToTheTripToMessage": "al viaggio verso",
+
+    "UnlinkPointMessage": "Scollegamento del punto di interesse"
 }

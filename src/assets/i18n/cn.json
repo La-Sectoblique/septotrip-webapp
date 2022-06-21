@@ -128,5 +128,7 @@
     "LinkedMessage":"链接",
     "ToTheStepMessage":"到了这一步",
     "ToTheInterrestPointMessage":"到兴趣点",
-    "ToTheTripToMessage": "给旅行的"
+    "ToTheTripToMessage": "给旅行的",
+
+    "UnlinkPointMessage": "解除兴趣点的链接"
 }
