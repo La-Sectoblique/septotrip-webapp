@@ -3,10 +3,13 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FileMetadataOutput } from '@la-sectoblique/septoblique-service/dist/types/models/File';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
+import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
+import { NbDialogService } from '@nebular/theme';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { ConfirmComponent } from 'src/app/modules/shared/components/confirm/confirm.component';
 import { GetTripFiles } from 'src/app/store/files-store/state/files.actions';
 import { selectTripFiles } from 'src/app/store/files-store/state/files.selectors';
 import { DeleteTrip,
@@ -42,6 +45,7 @@ export class TripComponent implements OnInit, OnDestroy {
     private store: Store,
     private router: Router,
     private titleService: Title,
+    private nbDialogService: NbDialogService,
   ) { }
 
   ngOnInit() {
@@ -81,9 +85,16 @@ export class TripComponent implements OnInit, OnDestroy {
     return daysIds;
   }
 
-  deleteTrip(tripId: number): void {
-    this.store.dispatch(DeleteTrip({ tripId }));
-    this.router.navigate(['/trips']);
+  deleteTrip(trip: TripOutput): void {
+    this.nbDialogService.open(ConfirmComponent, {
+      context: {
+        confirmLabel: `Etes vous sur de vouloir supprimer le voyage "${trip.name}" ?`,
+        confirmAction: () => {
+          this.store.dispatch(DeleteTrip({ tripId: trip.id }));
+          this.router.navigate(['/trips']);
+        },
+      },
+    });
   }
 
   ngOnDestroy(): void {

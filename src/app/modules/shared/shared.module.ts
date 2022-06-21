@@ -5,9 +5,10 @@ import { FilterPointsByStepIdPipe } from './pipes/filter-points-by-stepId.pipe';
 import { FilterPointsByDayIdPipe } from './pipes/filter-points-by-dayId.pipe';
 import { FilterPointsByPointIdsPipe } from './pipes/filter-points-by-pointIds.pipe';
 import { FilterDocumentByFileTypePipe } from './pipes/files/filter-document-by-file-type.pipe';
-import { NbIconModule, NbTabsetModule } from '@nebular/theme';
+import { NbButtonModule, NbIconModule, NbTabsetModule } from '@nebular/theme';
 import { TripElementDetailsComponent } from './components/trip-element-details/trip-element-details.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
     NbIconModule,
     NbTabsetModule,
     TranslateModule,
+    NbButtonModule,
   ],
   declarations: [
     LoaderComponent,
@@ -23,6 +25,7 @@ import { TranslateModule } from '@ngx-translate/core';
     FilterPointsByPointIdsPipe,
     FilterDocumentByFileTypePipe,
     TripElementDetailsComponent,
+    ConfirmComponent,
   ],
   exports: [
     LoaderComponent,
@@ -31,6 +34,7 @@ import { TranslateModule } from '@ngx-translate/core';
     FilterPointsByPointIdsPipe,
     FilterDocumentByFileTypePipe,
     TripElementDetailsComponent,
+    ConfirmComponent,
   ],
 })
 export class SharedModule { }
