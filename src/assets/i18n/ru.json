@@ -117,6 +117,14 @@
     "UpdateInterestPointAndDocuments": "Изменить точку интереса и ее документы",
     "UpdateTabTitle": "Изменить",
 
+    "UpdateTripLabel": "Изменить поездку",
+    "TripUpdated": "Путевка была изменена",
+    "UpdateTripTitle": "Изменить поездку",
+
+    "Confirm": "Подтвердить",
+    "Cancel": "Отмена",
+    "ConfirmTripDeletionMessage": "Вы уверены, что хотите удалить поездку",
+
     "UpdateFileLinkedElements": "Изменить элементы, связанные с файлом",
     "Paths": "Пути",
     "To": "To",
@@ -128,5 +136,10 @@
     "LinkedMessage": "Linked",
     "ToTheStepMessage": "на шаг",
     "ToTheInterrestPointMessage": "к точке интереса",
-    "ToTheTripToMessage": "к поездке в"
+    "ToTheTripToMessage": "к поездке в",
+
+    "UnlinkPointMessage": "Отключить точку интереса",
+
+    "RegisterSuccessTitle": "Регистрация успешна",
+    "RegisterSuccessMessage": "Теперь вы можете войти в систему"
 }
