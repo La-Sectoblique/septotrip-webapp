@@ -22,6 +22,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FilesModule } from '../files/files.module';
 import { LottieModule } from 'ngx-lottie';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { ToDoListModule } from '../toDoList/toDoList.module';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     TravelersModule,
     NbPopoverModule,
     NbTabsetModule,
+    ToDoListModule,
     TranslateModule,
     FilesModule,
     LottieModule,
