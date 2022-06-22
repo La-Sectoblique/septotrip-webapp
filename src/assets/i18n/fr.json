@@ -124,8 +124,7 @@
     "Confirm": "Confirmer",
     "Cancel": "Annuler",
     "ConfirmTripDeletionMessage": "Etes vous sur de vouloir supprimer le voyage",
-    
-    "DeleteTripTitle": "Supprimer le voyage",
+
     "UpdateFileLinkedElements": "Modifier les élements liés au fichier",
     "Paths": "Trajets",
     "To": "Vers",
@@ -157,6 +156,14 @@
     "CreateTaskPlaceholder": "Faire sa valise",
 
     "AddTravelersNotFoundErrorTitle": "L'utilisateur n'existe pas",
-    "AddTravelersNotFoundErrorMessage": "Merci de vérifier que l'email est correct"
+    "AddTravelersNotFoundErrorMessage": "Merci de vérifier que l'email est correct",
+    
+    "DeleteTripTitle": "Supprimer le voyage",
+    "FileUploadPending": "Envoie du fichier en cours...",
+    "FileUploadPendingMessage": "Merci de patienter quelques instants",
+    "NoPictureEmptyState": "Vous n'avez aucune photo",
+    "NoFileEmptyState": "Vous n'avez aucun fichier",
+    "NoStepsEmptyState": "Vous n'avez aucune étape",
+    "NoPointsEmptyState": "Vous n'avez aucun point d'intérêt"
 
 }

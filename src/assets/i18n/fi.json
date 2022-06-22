@@ -155,5 +155,13 @@
     "CreateTaskLabel": "Luo tehtävä",
 
     "AddTravelersNotFoundErrorTitle": "Käyttäjää ei ole olemassa",
-    "AddTravelersNotFoundErrorMessage": "Tarkista, että sähköpostiosoite on oikein"
+    "AddTravelersNotFoundErrorMessage": "Tarkista, että sähköpostiosoite on oikein",
+    
+    "DeleteTripTitle": "Poista matka",
+    "FileUploadPending": "Nykyisen tiedoston lähettäminen...",
+    "FileUploadPendingMessage": "Odota hetki",
+    "NoPictureEmptyState": "Sinulla ei ole kuvia",
+    "NoFileEmptyState": "Sinulla ei ole tiedostoja",
+    "NoStepsEmptyState": "Sinulla ei ole askelia",
+    "NoPointsEmptyState": "Sinulla ei ole kiinnostavia pisteitä"
 }

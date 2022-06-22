@@ -156,5 +156,13 @@
     "CreateTaskPlaceholderCREATETASKPLACEHOLDER": "KOFFER PACKEN",
 
     "AddTravelersNotFoundErrorTitle": "DER BENUTZER EXISTIERT NICHT",
-    "AddTravelersNotFoundErrorMessage": "BITTE ÜBERPRÜFEN SIE, OB DIE E-MAIL-ADRESSE KORREKT IST"
+    "AddTravelersNotFoundErrorMessage": "BITTE ÜBERPRÜFEN SIE, OB DIE E-MAIL-ADRESSE KORREKT IST",
+    
+    "DeleteTripTitle": "REISE LÖSCHEN",
+    "FileUploadPending": "SENDET DIE AKTUELLE DATEI...",
+    "FileUploadPendingMessage": "BITTE HABEN SIE EINEN MOMENT GEDULD",
+    "NoPictureEmptyState": "SIE HABEN KEINE FOTOS",
+    "NoFileEmptyState": "SIE HABEN KEINE DATEIEN",
+    "NoStepsEmptyState": "SIE HABEN KEINE SCHRITTE",
+    "NoPointsEmptyState": "SIE HABEN KEINE SEHENSWÜRDIGKEITEN"
 }

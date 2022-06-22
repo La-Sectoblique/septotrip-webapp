@@ -156,5 +156,13 @@
     "CreateTaskPlaceholder": "Koffer packen",
 
     "AddTravelersNotFoundErrorTitle": "Der Benutzer existiert nicht",
-    "AddTravelersNotFoundErrorMessage": "Bitte überprüfen Sie, ob die E-Mail-Adresse korrekt ist"
+    "AddTravelersNotFoundErrorMessage": "Bitte überprüfen Sie, ob die E-Mail-Adresse korrekt ist",
+    
+    "DeleteTripTitle": "Reise löschen",
+    "FileUploadPending": "Sendet die aktuelle Datei...",
+    "FileUploadPendingMessage": "Bitte haben Sie einen Moment Geduld",
+    "NoPictureEmptyState": "Sie haben keine Fotos",
+    "NoFileEmptyState": "Sie haben keine Dateien",
+    "NoStepsEmptyState": "Sie haben keine Schritte",
+    "NoPointsEmptyState": "Sie haben keine Sehenswürdigkeiten"
 }

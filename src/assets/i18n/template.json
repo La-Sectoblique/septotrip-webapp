@@ -125,7 +125,6 @@
     "Cancel": "",
     "ConfirmTripDeletionMessage": "",
 
-    "DeleteTripTitle": "",
     "UpdateFileLinkedElements": "",
     "Paths": "",
     "To": "",
@@ -157,5 +156,13 @@
     "CreateTaskPlaceholder": "",
 
     "AddTravelersNotFoundErrorTitle": "",
-    "AddTravelersNotFoundErrorMessage": ""
+    "AddTravelersNotFoundErrorMessage": "",
+
+    "DeleteTripTitle": "",
+    "FileUploadPending": "",
+    "FileUploadPendingMessage": "",
+    "NoPictureEmptyState": "",
+    "NoFileEmptyState": "",
+    "NoStepsEmptyState": "",
+    "NoPointsEmptyState": ""
 }
