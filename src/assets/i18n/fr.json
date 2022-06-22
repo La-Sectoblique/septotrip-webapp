@@ -164,5 +164,6 @@
 
     "NoPictureEmptyState": "Vous n'avez aucune photo",
     "NoFileEmptyState": "Vous n'avez aucun fichier",
-    "NoStepsEmptyState": "Vous n'avez aucune étape"
+    "NoStepsEmptyState": "Vous n'avez aucune étape",
+    "NoPointsEmptyState": "Vous n'avez aucun point d'intérêt"
 }
