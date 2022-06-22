@@ -163,5 +163,18 @@
     "NoPictureEmptyState": "Não tem fotografias",
     "NoFileEmptyState": "Não tem ficheiros",
     "NoStepsEmptyState": "Não tem passos",
-    "NoPointsEmptyState": "Não tem pontos de interesse"
+    "NoPointsEmptyState": "Não tem pontos de interesse",
+
+    "CatchPhrase": "No fim do mundo como em casa",
+    "HomeTopDescription": "Septotrip é uma aplicação que lhe permite planear uma viagem ao fim do mundo, um fim-de-semana familiar no campo, ou uma baratona, acompanhar o seu progresso e partilhá-lo com outros utilizadores, a partir de um browser ou de uma aplicação móvel",
+    "PlanYourTrip": "Planeie a sua viagem",
+    "PlanYourTripDescription": "Septotrip permite-lhe planear uma viagem a partir do website, passo a passo, e visualizá-la imediatamente num mapa. Por exemplo, uma viagem por estrada para Itália poderia ter Milão como ponto de partida, Nápoles como ponto final, e paragens em Veneza, Florença e Roma",
+    "HomePointsDescription": "A definição de pontos de interesse facilita a organização de uma viagem ao visualizar rapidamente as actividades próximas de cada etapa. Se alguém estiver interessado no Coliseu, num restaurante antipasti familiar e na Fonte de Trevi, mas também numa visita ao Vaticano, pode mais facilmente planear os seus movimentos em Roma durante a estadia",
+    "InviteYourFriends": "Invite your friends",
+    "InviteYourFriendsDescription": "Os amigos podem ser convidados e juntar-se à viagem a partir do seu próprio dispositivo. Poderão também partilhar fotografias e documentos",
+    "KeepYourDocuments": "Guarde os seus documentos",
+    "KeepYourDocumentsDescription": "Os utilizadores podem guardar os seus documentos tais como reservas de hotel, mapas ou códigos QR de qualquer tipo para fácil acesso e nunca arriscar perder nenhum deles durante a sua viagem",
+    "Guarda as tuas memórias": "Guarda as tuas memórias",
+    "KeepYourMemoriesDescription": "Durante a sua viagem, Septotrip fica consigo, no seu bolso ou mochila, para adicionar as suas fotografias de viagem, guardá-las e partilhá-las"
+
 }

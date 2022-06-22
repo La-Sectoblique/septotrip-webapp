@@ -164,5 +164,18 @@
     "NoPictureEmptyState": "你没有图片",
     "NoFileEmptyState": "你没有文件",
     "NoStepsEmptyState": "你没有步骤",
-    "NoPointsEmptyState": "你没有兴趣点"
+    "NoPointsEmptyState": "你没有兴趣点",
+
+    "CatchPhrase":"在世界尽头像在家里一样",
+    "HomeTopDescription": "Septotrip是一个应用程序，它允许你计划到世界尽头的旅行，在乡下的家庭周末，或一个酒吧马拉松，跟踪你的进展，并与其他用户分享，从浏览器或移动应用程序",
+    "PlanYourTrip": "计划你的旅行",
+    "PlanYourTripDescription": "Septotrip允许你从网站上一步一步地计划旅行，并立即在地图上进行可视化。例如，意大利的公路旅行可以以米兰为起点，那不勒斯为终点，并在威尼斯、佛罗伦萨和罗马停留",
+    "HomePointsDescription": "定义兴趣点使其更容易通过快速可视化每个阶段附近的活动来组织一次旅行。如果一个人对斗兽场、家庭式的安提帕斯蒂餐厅和特雷维喷泉感兴趣，同时也对参观梵蒂冈感兴趣，那么他可以更容易地计划自己在罗马逗留期间的行动。",
+    "InviteYourFriends": "邀请你的朋友",
+    "InviteYourFriendsDescription": "朋友可以被邀请并从他们自己的设备上加入旅行。他们也将能够分享照片和文件",
+    "KeepYourDocuments": "保留你的文件",
+    "KeepYourDocumentsDescription": "用户可以存储他们的文件，如酒店预订、地图或任何类型的二维码，以便于访问，在你的旅行中永远没有丢失任何文件的风险",
+    "KeepYourMemories": "保留你的记忆",
+    "KeepYourMemoriesDescription": "在你的整个旅程中，Septotrip与你同在，在你的口袋或背包中，添加你的旅行照片，保留它们并分享它们。"
+    
 }
