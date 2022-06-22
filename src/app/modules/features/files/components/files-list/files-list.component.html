@@ -6,22 +6,52 @@
     </button>
   </div>
 
-  <nb-tabset class="d-flex flex-column justify-content-center">
-    <nb-tab [tabTitle]="('TitlePhotos' | translate)" tabIcon="image-outline" >
-        <ng-container
+  <nb-tabset class="d-flex flex-column justify-content-center" 
+    *ngIf="{
+      pictures: (files | filterDocumentByFileType:FileType.PHOTO),
+      documents: (files | filterDocumentByFileType:FileType.DOCUMENT)
+    } as sortedFiles"
+  >
+    <nb-tab
+    [active]="isPhotoTabActive"
+      [tabTitle]="('TitlePhotos' | translate)"
+      tabIcon="image-outline"
+    >
+      <ng-container *ngIf="sortedFiles.pictures.length > 0; else emptyPictureBlock"
         [ngTemplateOutlet]="filePreviews"
         [ngTemplateOutletContext]="{
-          files: (files | filterDocumentByFileType:FileType.PHOTO)
+          files: sortedFiles.pictures
         }"
       ></ng-container>
+      <ng-template #emptyPictureBlock>
+        <div class="w-100 d-flex flex-column align-items-center justify-content-center">
+          <div class="w-25">
+            <ng-lottie [options]="emptyPictureAnimation"></ng-lottie>
+          </div>
+          <h6 class="m-0">{{'NoPictureEmptyState' | translate}}</h6>
+        </div>
+      </ng-template>
     </nb-tab>
-    <nb-tab [tabTitle]="('TitleDocuments' | translate)" tabIcon="file-text-outline">
+    <nb-tab
+      [active]="!isPhotoTabActive"
+      [tabTitle]="('TitleDocuments' | translate)"
+      tabIcon="file-text-outline"
+    >
       <ng-container
+        *ngIf="sortedFiles.documents.length > 0; else emptyDocumentBlock"
         [ngTemplateOutlet]="filePreviews"
         [ngTemplateOutletContext]="{
-          files: (files | filterDocumentByFileType:FileType.DOCUMENT)
+          files: sortedFiles.documents
         }"
       ></ng-container>
+      <ng-template #emptyDocumentBlock>
+        <div class="w-100 d-flex flex-column align-items-center justify-content-center">
+          <div class="w-25">
+            <ng-lottie [options]="emptyDocumentAnimation"></ng-lottie>
+          </div>
+          <h6 class="m-0">{{'NoFileEmptyState' | translate}}</h6>
+        </div>
+      </ng-template>
     </nb-tab>
   </nb-tabset>
 </div>

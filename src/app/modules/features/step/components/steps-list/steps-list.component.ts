@@ -4,6 +4,7 @@ import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/mode
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { NbDialogService } from '@nebular/theme';
 import { Store } from '@ngrx/store';
+import { AnimationOptions } from 'ngx-lottie';
 import { Observable } from 'rxjs';
 import { MapEditMode } from 'src/app/modules/shared/models/map-edit-mode.enum';
 import { UpdateMapEditMode } from 'src/app/store/map-edit-store/state/map-edit.actions';
@@ -30,6 +31,10 @@ export class StepsListComponent implements OnInit {
   mapEditMode = MapEditMode;
 
   highlithedStepId$: Observable<number | null>;
+
+  emptyStepsAnimation: AnimationOptions = {
+    path: '/assets/lottie/steps-empty-state.json',
+  };
 
   constructor(
     private store: Store,

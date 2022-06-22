@@ -29,33 +29,35 @@
     </div>
     <div 
       cdkDropList 
-      class="d-flex point-list-wrapper"
+      class="d-flex point-list-wrapper w-100"
       [cdkDropListData]="points"
       [cdkDropListConnectedTo]="getLinkedDropListId()"
       cdkDropListOrientation="horizontal"
     >
-      <ng-container *ngFor="let point of (points | filterPointsByPointIds:(isMapFilteringEnabled ? (mapDisplayedPointIds$ | async) : null))">
-        <div
-          cdkDrag
-          [cdkDragData]="point"
-          (mouseenter)="highlightPoint(point.id)"
-          (mouseleave)="unHighlight()"
-        >
-          <spt-point-preview [point]="point" [isHighlighted]="(highlightedPointId$ | async) === point.id">
-            <div class="d-flex">
-              <button nbButton ghost (click)="editPoint(point)"
-                [nbTooltip]="('UpdateInterestPointAndDocuments' | translate)"
-              >
-                <nb-icon class="cursor-pointer" icon="info-outline" status="primary"></nb-icon>
-              </button>
-              <button nbButton ghost (click)="deletePoint(point.id)">
-                <nb-icon class="cursor-pointer" icon="trash-2-outline" status="danger"></nb-icon>
-              </button>
-            </div>
-            <nb-icon cdkDragHandle handle icon="menu-outline" class="cursor-grab"></nb-icon>
-          </spt-point-preview>
-        </div>
+      <ng-container *ngIf="points.length > 0; else pointsEmptyStateBlock">
+        <ng-container *ngFor="let point of (points | filterPointsByPointIds:(isMapFilteringEnabled ? (mapDisplayedPointIds$ | async) : null))">
+          <div
+            cdkDrag
+            [cdkDragData]="point"
+            (mouseenter)="highlightPoint(point.id)"
+            (mouseleave)="unHighlight()"
+          >
+            <spt-point-preview [point]="point" [isHighlighted]="(highlightedPointId$ | async) === point.id">
+              <div class="d-flex">
+                <button nbButton ghost (click)="deletePoint(point.id)">
+                  <nb-icon class="cursor-pointer" icon="trash-2-outline" status="danger"></nb-icon>
+                </button>
+              </div>
+              <nb-icon cdkDragHandle handle icon="menu-outline" class="cursor-grab mr-4"></nb-icon>
+            </spt-point-preview>
+          </div>
+        </ng-container>
       </ng-container>
+      <ng-template #pointsEmptyStateBlock>
+        <div class="w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+          <h6 class="m-0">{{'NoPointsEmptyState' | translate}}</h6>
+        </div>
+      </ng-template>
     </div>
     
   </div>

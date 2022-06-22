@@ -154,6 +154,16 @@
     "Done": "fait",
 
     "CreateTaskLabel": "Créer une tâche",
-    "CreateTaskPlaceholder": "Faire sa valise"
+    "CreateTaskPlaceholder": "Faire sa valise",
 
+    "AddTravelersNotFoundErrorTitle": "L'utilisateur n'existe pas",
+    "AddTravelersNotFoundErrorMessage": "Merci de vérifier que l'email est correct",
+
+    "FileUploadPending": "Envoi du fichier en cours...",
+    "FileUploadPendingMessage": "Merci de patienter quelques instants",
+
+    "NoPictureEmptyState": "Vous n'avez aucune photo",
+    "NoFileEmptyState": "Vous n'avez aucun fichier",
+    "NoStepsEmptyState": "Vous n'avez aucune étape",
+    "NoPointsEmptyState": "Vous n'avez aucun point d'intérêt"
 }

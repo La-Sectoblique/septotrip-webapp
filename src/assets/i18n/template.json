@@ -154,5 +154,11 @@
     "Done": "",
 
     "CreateTaskLabel": "",
-    "CreateTaskPlaceholder": ""
+    "CreateTaskPlaceholder": "",
+
+    "AddTravelersNotFoundErrorTitle": "",
+    "AddTravelersNotFoundErrorMessage": "",
+
+    "FileUploadPending": "",
+    "FileUploadPendingMessage": ""
 }
