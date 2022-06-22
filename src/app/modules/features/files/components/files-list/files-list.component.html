@@ -13,28 +13,45 @@
     } as sortedFiles"
   >
     <nb-tab
-      [active]="sortedFiles.documents.length === 0 || ((sortedFiles.documents.length >= 0 && sortedFiles.pictures.length >= 0) && sortedFiles.pictures.length !== 0)"
+    [active]="isPhotoTabActive"
       [tabTitle]="('TitlePhotos' | translate)"
       tabIcon="image-outline"
     >
-      <ng-container
+      <ng-container *ngIf="sortedFiles.pictures.length > 0; else emptyPictureBlock"
         [ngTemplateOutlet]="filePreviews"
         [ngTemplateOutletContext]="{
           files: sortedFiles.pictures
         }"
       ></ng-container>
+      <ng-template #emptyPictureBlock>
+        <div class="w-100 d-flex flex-column align-items-center justify-content-center">
+          <div class="w-25">
+            <ng-lottie [options]="emptyPictureAnimation"></ng-lottie>
+          </div>
+          <h6 class="m-0">{{'NoPictureEmptyState' | translate}}</h6>
+        </div>
+      </ng-template>
     </nb-tab>
     <nb-tab
-      [active]="sortedFiles.pictures.length === 0"
+      [active]="!isPhotoTabActive"
       [tabTitle]="('TitleDocuments' | translate)"
       tabIcon="file-text-outline"
     >
       <ng-container
+        *ngIf="sortedFiles.documents.length > 0; else emptyDocumentBlock"
         [ngTemplateOutlet]="filePreviews"
         [ngTemplateOutletContext]="{
           files: sortedFiles.documents
         }"
       ></ng-container>
+      <ng-template #emptyDocumentBlock>
+        <div class="w-100 d-flex flex-column align-items-center justify-content-center">
+          <div class="w-25">
+            <ng-lottie [options]="emptyDocumentAnimation"></ng-lottie>
+          </div>
+          <h6 class="m-0">{{'NoFileEmptyState' | translate}}</h6>
+        </div>
+      </ng-template>
     </nb-tab>
   </nb-tabset>
 </div>
