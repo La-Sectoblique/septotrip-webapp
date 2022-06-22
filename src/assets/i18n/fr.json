@@ -155,6 +155,17 @@
     "CreateTaskLabel": "Créer une tâche",
     "CreateTaskPlaceholder": "Faire sa valise",
 
+    "CatchPhrase": "Au bout du monde comme à la maison",
+    "HomeTopDescription": "Septotrip est une application permettant de planifier un voyage au bout du monde, un weekend en famille à la campagne, ou encore un barathon, de suivre sa progression et de le partager à d’autres utilisateurs, depuis un navigateur ou une application mobile.",
+    "PlanYourTrip": "Planifiez votre voyage",
+    "PlanYourTripDescription": "Septotrip vous permet de planifier un voyage depuis le site web, étape par étape, et de le visualiser immédiatement sur une carte. Par exemple, un road trip en Italie pourra avoir Milan comme point de départ, Naples comme point d’arrivée, et des étapes à Venise, Florence et Rome.",
+    "HomePointsDescription": "Définir des points d’intérêt permet de faciliter l’organisation d’un voyage en visualisant rapidement les activités à proximité de chaque étape. Si on est intéressé par le Colisée, un restaurant familial d’antipasti et la fontaine de Trevi, mais aussi par une visite du Vatican, on peut plus facilement prévoir ses déplacements dans Rome pendant le séjour.",
+    "InviteYourFriends": "Inviter vos amis",
+    "InviteYourFriendsDescription": "Des amis peuvent être invités et rejoindre le voyage depuis leur propre appareil. Ils pourront également partager des photos et des documents.",
+    "KeepYourDocuments": "Garder vos documents",
+    "KeepYourDocumentsDescription": "Les utilisateurs peuvent stocker leurs documents tels que réservations d’hôtels, plans ou QR codes de pandémies en tout genre afin d’en faciliter l’accès et ne jamais risquer d’en perdre un seul pendant votre voyage.",
+    "KeepYourMemories": "Conserver vos souvenirs",
+    "KeepYourMemoriesDescription": "Tout au long du voyage, Septotrip reste avec vous, dans votre poche ou votre sac à dos, pour ajouter vos photos de voyage, les conserver et les partager.",
     "AddTravelersNotFoundErrorTitle": "L'utilisateur n'existe pas",
     "AddTravelersNotFoundErrorMessage": "Merci de vérifier que l'email est correct",
     
