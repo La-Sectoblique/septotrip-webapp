@@ -147,6 +147,13 @@
     "ErrorMessageTitle": "Une erreur est survenue",
     "ErrorMessageText": "Merci de réessayer plus tard ou différement",
     
-    "TasksListTabTitle": "Liste des tâches"
+    "TasksListTabTitle": "Liste des tâches",
+
+    "ToDo": "à faire",
+    "Doing": "en cours",
+    "Done": "fait",
+
+    "CreateTaskLabel": "Créer une tâche",
+    "CreateTaskPlaceholder": "Faire sa valise"
 
 }
