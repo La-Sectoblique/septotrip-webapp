@@ -11,6 +11,7 @@
                             nbInput
                             [(ngModel)]="taskName" 
                             (keyup.enter)="changeName(task.id,taskName)"
+                            autocomplete="off" data-lpignore="true" data-form-type="other"
                         >
                     </td>
                     <td>
@@ -44,7 +45,7 @@
     </div>
     <div *ngIf="create">
         <h4>{{'CreateTaskLabel' | translate}}</h4>
-        <input nbInput [(ngModel)]="taskName" [placeholder]="'CreateTaskPlaceholder' | translate" (keyup.enter)="onEnter(taskName)">
+        <input nbInput [(ngModel)]="taskName" [placeholder]="'CreateTaskPlaceholder' | translate" (keyup.enter)="onEnter(taskName)" autocomplete="off" data-lpignore="true" data-form-type="other">
         <button nbButton (click)="addTask(taskName)" status="primary">
             {{'Add' | translate}}
         </button>
