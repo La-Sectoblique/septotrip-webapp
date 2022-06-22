@@ -146,5 +146,12 @@
     "ErrorMessageTitle": "Es ist ein Fehler aufgetreten",
     "ErrorMessageText": "Bitte versuchen Sie es später oder zu einem anderen Zeitpunkt erneut",
     
-    "TasksListTabTitle": "Liste der Aufgaben"
+    "TasksListTabTitle": "Liste der Aufgaben",
+
+    "Todo": "zu tun",
+    "Doing": "in Arbeit",
+    "Done": "erledigt",
+
+    "CreateTaskLabel": "Eine Aufgabe erstellen",
+    "CreateTaskPlaceholder": "Koffer packen"
 }

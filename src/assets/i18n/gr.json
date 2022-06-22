@@ -146,5 +146,11 @@
     "ErrorMessageTitle": "Εμφανίστηκε σφάλμα",
     "ErrorMessageText": "Προσπαθήστε ξανά αργότερα ή σε διαφορετικό χρόνο",
     
-    "TasksListTabTitle": "Κατάλογος εργασιών"
+    "TasksListTabTitle": "Κατάλογος εργασιών",
+
+    "Todo": "να κάνω",
+    "Doing": "σε εξέλιξη",
+    "Done": "έγινε",
+
+    "CreateTaskLabel": "Δημιουργία εργασίας"
 }

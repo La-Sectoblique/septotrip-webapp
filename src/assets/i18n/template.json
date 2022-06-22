@@ -118,7 +118,7 @@
     "UpdateTabTitle": "",
 
     "UpdateTripLabel": "",
-    "TripUpdated": "",
+    "TripUpdate": "",
     "UpdateTripTitle": "",
 
     "Confirm": "",
@@ -147,5 +147,12 @@
     "ErrorMessageTitle": "",
     "ErrorMessageText": "",
     
-    "TasksListTabTitle": ""
+    "TasksListTabTitle": "",
+
+    "Todo": "",
+    "Doing": "",
+    "Done": "",
+
+    "CreateTaskLabel": "",
+    "CreateTaskPlaceholder": ""
 }

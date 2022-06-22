@@ -146,5 +146,12 @@
     "ErrorMessageTitle": "Произошла ошибка",
     "ErrorMessageText": "Пожалуйста, повторите попытку позже или в другое время",
     
-    "TasksListTabTitle": "Список задач"
+    "TasksListTabTitle": "Список задач",
+
+    "Todo": "делать",
+    "Doing": "в процессе",
+    "Done": "сделано",
+
+    "CreateTaskLabel": "Создать задачу"
+
 }
