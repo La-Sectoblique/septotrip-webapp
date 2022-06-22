@@ -141,6 +141,11 @@
     "UnlinkPointMessage": "Desenlazar el punto de interés",
 
     "RegisterSuccessTitle": "Registro exitoso",
-    "RegisterSuccessMessage": "Ya puede iniciar sesión"
+    "RegisterSuccessMessage": "Ya puede iniciar sesión",
+
+    "ErrorMessageTitle": "Se ha producido un error",
+    "ErrorMessageText": "Por favor, inténtelo de nuevo más tarde o en otro momento",
+    
+    "TasksListTabTitle": "Lista de tareas"
 
 }

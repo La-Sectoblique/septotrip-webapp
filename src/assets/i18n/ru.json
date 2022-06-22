@@ -141,5 +141,10 @@
     "UnlinkPointMessage": "Отключить точку интереса",
 
     "RegisterSuccessTitle": "Регистрация успешна",
-    "RegisterSuccessMessage": "Теперь вы можете войти в систему"
+    "RegisterSuccessMessage": "Теперь вы можете войти в систему",
+
+    "ErrorMessageTitle": "Произошла ошибка",
+    "ErrorMessageText": "Пожалуйста, повторите попытку позже или в другое время",
+    
+    "TasksListTabTitle": "Список задач"
 }

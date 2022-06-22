@@ -141,5 +141,10 @@
     "UnlinkPointMessage": "解除兴趣点的链接",
 
     "RegisterSuccessTitle":"注册成功",
-    "RegisterSuccessMessage": "你现在可以登录了"
+    "RegisterSuccessMessage": "你现在可以登录了",
+
+    "ErrorMessageTitle":"发生了一个错误",
+    "ErrorMessageText": "请稍后或在不同时间再试",
+    
+    "TasksListTabTitle": "任务清单"
 }

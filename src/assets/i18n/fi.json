@@ -141,5 +141,10 @@
     "UnlinkPointMessage": "Poista linkki kiinnostavasta pisteestä",
 
     "RegisterSuccessTitle": "Rekisteröinti onnistui",
-    "RegisterSuccessMessage": "Voit nyt kirjautua sisään"
+    "RegisterSuccessMessage": "Voit nyt kirjautua sisään",
+
+    "ErrorMessageTitle": "On tapahtunut virhe",
+    "ErrorMessageText": "Yritä uudelleen myöhemmin tai eri aikaan",
+    
+    "TasksListTabTitle": "Luettelo tehtävistä"
 }
