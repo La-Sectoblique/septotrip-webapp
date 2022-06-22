@@ -164,5 +164,17 @@
     "NoPictureEmptyState": "",
     "NoFileEmptyState": "",
     "NoStepsEmptyState": "",
-    "NoPointsEmptyState": ""
+    "NoPointsEmptyState": "",
+
+    "CatchPhrase": "",
+    "HomeTopDescription": "",
+    "PlanYourTrip": "",
+    "PlanYourTripDescription": "",
+    "HomePointsDescription": "",
+    "InviteYourFriends": "",
+    "InviteYourFriendsDescription": "",
+    "KeepYourDocuments": "",
+    "KeepYourDocumentsDescription": "",
+    "KeepYourMemories": "",
+    "KeepYourMemoriesDescription": ""
 }

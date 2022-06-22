@@ -163,5 +163,18 @@
     "NoPictureEmptyState": "Sinulla ei ole kuvia",
     "NoFileEmptyState": "Sinulla ei ole tiedostoja",
     "NoStepsEmptyState": "Sinulla ei ole askelia",
-    "NoPointsEmptyState": "Sinulla ei ole kiinnostavia pisteitä"
+    "NoPointsEmptyState": "Sinulla ei ole kiinnostavia pisteitä",
+
+    "CatchPhrase": "Maailman lopussa kuin kotona",
+    "HomeTopDescription": "Septotrip on sovellus, jonka avulla voit suunnitella matkan maailman ääriin, perheviikonlopun maaseudulla tai baratonin, seurata edistymistäsi ja jakaa sen muiden käyttäjien kanssa selaimesta tai mobiilisovelluksesta",
+    "PlanYourTrip": "Suunnittele matkasi",
+    "PlanYourTripDescription": "Septotripin avulla voit suunnitella matkan verkkosivulta vaihe vaiheelta ja visualisoida sen välittömästi kartalla. Esimerkiksi Italian automatkan lähtöpiste voisi olla Milano, päätepiste Napoli ja pysähdykset Venetsiassa, Firenzessä ja Roomassa",
+    "HomePointsDescription": "Kiinnostavien kohteiden määrittäminen helpottaa matkan järjestämistä, kun kunkin etapin lähellä olevat aktiviteetit näkyvät nopeasti. Jos on kiinnostunut Colosseumista, perheen antipasti-ravintolasta ja Trevin suihkulähteestä, mutta myös vierailusta Vatikaaniin, voi helpommin suunnitella liikkumisensa Roomassa oleskelun aikana.",
+    "InviteYourFriends": "Kutsu ystäväsi",
+    "InviteYourFriendsDescription": "Ystäviä voi kutsua ja liittyä matkalle omasta laitteestaan. He voivat myös jakaa valokuvia ja asiakirjoja",
+    "KeepYourDocuments": "Säilytä asiakirjasi",
+    "KeepYourDocumentsDescription": "Käyttäjät voivat tallentaa asiakirjojaan, kuten hotellivarauksia, karttoja tai kaikenlaisia QR-koodeja, jotta ne ovat helposti saatavilla, eivätkä koskaan ole vaarassa menettää mitään niistä matkan aikana",
+    "KeepYourMemories": "Säilytä muistosi",
+    "KeepYourMemoriesDescription": "Koko matkasi ajan Septotrip pysyy mukanasi taskussa tai repussasi, jotta voit lisätä matkakuvasi, säilyttää ne ja jakaa ne."
+    
 }
