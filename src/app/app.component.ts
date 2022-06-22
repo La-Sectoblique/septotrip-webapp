@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
     private userLanguageService: UserLanguageService,
     private authenticationService: AuthenticationService,
   ) {
-    translate.addLangs(['fr', 'en', 'cn', 'es', 'it', 'ru', 'de', 'fi', 'gr', 'pt']);
+    translate.addLangs(['fr', 'en', 'cn', 'es', 'it', 'ru', 'de', 'deac', 'fi', 'gr', 'pt']);
     translate.setDefaultLang(this.userLanguageService.getLanguage() ?? 'fr');
   }
 

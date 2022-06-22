@@ -152,6 +152,17 @@
     "Doing": "в процессе",
     "Done": "сделано",
 
-    "CreateTaskLabel": "Создать задачу"
+    "CreateTaskLabel": "Создать задачу",
+
+    "AddTravelersNotFoundErrorTitle": "Пользователь не существует",
+    "AddTravelersNotFoundErrorMessage": "Пожалуйста, проверьте правильность электронной почты",
+    
+    "DeleteTripTitle": "Удалить поездку",
+    "FileUploadPending": "Отправка текущего файла...",
+    "FileUploadPendingMessage": "Пожалуйста, подождите минутку",
+    "NoPictureEmptyState": "У вас нет фотографий",
+    "NoFileEmptyState": "У вас нет файлов",
+    "NoStepsEmptyState": "У вас нет ступеней",
+    "NoPointsEmptyState": "У вас нет точек интереса"
 
 }

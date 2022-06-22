@@ -152,5 +152,16 @@
     "Doing": "in progress",
     "Done": "done",
 
-    "CreateTaskLabel": "Create a task"
+    "CreateTaskLabel": "Create a task",
+
+    "AddTravelersNotFoundErrorTitle": "The user does not exist",
+    "AddTravelersNotFoundErrorMessage": "Please check that the email is correct",
+    
+    "DeleteTripTitle": "Delete the trip",
+    "FileUploadPending": "Sending the current file...",
+    "FileUploadPendingMessage": "Please wait a moment",
+    "NoPictureEmptyState": "You have no pictures",
+    "NoFileEmptyState": "You don't have any files",
+    "NoStepsEmptyState": "You have no steps",
+    "NoPointsEmptyState": "You have no points of interest"
 }

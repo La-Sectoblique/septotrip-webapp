@@ -152,5 +152,16 @@
     "Doing": "σε εξέλιξη",
     "Done": "έγινε",
 
-    "CreateTaskLabel": "Δημιουργία εργασίας"
+    "CreateTaskLabel": "Δημιουργία εργασίας",
+
+    "AddTravelersNotFoundErrorTitle": "Ο χρήστης δεν υπάρχει",
+    "AddTravelersNotFoundErrorMessage": "Παρακαλούμε ελέγξτε ότι το email είναι σωστό",
+    
+    "DeleteTripTitle": "Διαγραφή του ταξιδιού",
+    "FileUploadPending": "Αποστολή του τρέχοντος αρχείου...",
+    "FileUploadPendingMessage": "Παρακαλώ περιμένετε μια στιγμή",
+    "NoPictureEmptyState": "Δεν έχετε φωτογραφίες",
+    "NoFileEmptyState": "Δεν έχετε αρχεία",
+    "NoStepsEmptyState": "Δεν έχετε καθόλου βήματα",
+    "NoPointsEmptyState": "Δεν έχετε σημεία ενδιαφέροντος"
 }
