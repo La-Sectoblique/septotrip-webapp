@@ -15,9 +15,9 @@
                     </td>
                     <td>
                         <nb-select [selected]="task.state" (selectedChange)="changeState($event, task.id)">
-                            <nb-option [value]="TodoState.TODO">{{'ToDo' | translate}}</nb-option>
+                            <nb-option [value]="TodoState.TODO">{{'Todo' | translate}}</nb-option>
                             <nb-option [value]="TodoState.DOING">{{'Doing' | translate}}</nb-option>
-                            <nb-option [value]="TodoState.DONE">{{'Done'}}</nb-option>
+                            <nb-option [value]="TodoState.DONE">{{'Done' | translate}}</nb-option>
                         </nb-select>
                         <button 
                             nbButton 

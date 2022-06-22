@@ -154,5 +154,8 @@
     "Done": "",
 
     "CreateTaskLabel": "",
-    "CreateTaskPlaceholder": ""
+    "CreateTaskPlaceholder": "",
+
+    "AddTravelersNotFoundErrorTitle": "L'utilisateur n'existe pas",
+    "AddTravelersNotFoundErrorMessage": "Merci de vérifier que l'email est correct"
 }
