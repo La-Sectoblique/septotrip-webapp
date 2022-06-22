@@ -15,7 +15,13 @@
               </button>
             </a>
           </li>
-          <li><a routerLink="/trips" routerLinkActive="active"><button class="menu-btn" nbButton ghost>{{'TripNavLabel' | translate}}</button></a></li>
+          <li>
+            <a routerLink="/trips" routerLinkActive="active">
+              <button class="menu-btn" nbButton ghost>
+                {{'TripNavLabel' | translate}}
+              </button>
+            </a>
+          </li>
         </ul>
       </div>
       <div class="d-flex">
@@ -23,18 +29,40 @@
           <ng-container [ngSwitch]="authenticationService.isUserLoggedIn">
             
             <ng-container *ngSwitchCase="false">
-              <li><a routerLink="/login" routerLinkActive="active"><button class="menu-btn" nbButton ghost>{{'LoginButtonLabel' | translate}}</button></a></li>
-              <li><a routerLink="/register" routerLinkActive="active"><button class="menu-btn" nbButton ghost>{{'RegisterButtonLabel' | translate}}</button></a></li>
+              <li>
+                <a routerLink="/login" routerLinkActive="active">
+                  <button class="menu-btn" nbButton ghost>
+                    {{'LoginButtonLabel' | translate}}
+                  </button>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/register" routerLinkActive="active">
+                  <button class="menu-btn" nbButton ghost>
+                    {{'RegisterButtonLabel' | translate}}
+                  </button>
+                </a>
+              </li>
             </ng-container>
 
             <ng-container *ngSwitchCase="true">
-              <li><p>{{authenticationService.user?.firstName}} {{authenticationService.user?.lastName}}</p></li>
-              <li><a routerLink="" (click)="logout()"><button class="menu-btn" nbButton ghost>{{'DisconnectButtonLabel' | translate}}</button></a></li>
+              <li>
+                <p>
+                  {{authenticationService.user?.firstName}} {{authenticationService.user?.lastName}}
+                </p>
+              </li>
+              <li>
+                <a routerLink="" (click)="logout()">
+                  <button class="menu-btn" nbButton ghost>
+                    {{'DisconnectButtonLabel' | translate}}
+                  </button>
+                </a>
+              </li>
             </ng-container>
 
             <li>
               <a routerLink="/settings" routerLinkActive="active">
-                  <button class="menu-btn" nbButton ghost>
+                <button class="menu-btn" nbButton ghost>
                 <nb-icon class="settings-icon"
                   icon="settings-2-outline"
                 ></nb-icon>
