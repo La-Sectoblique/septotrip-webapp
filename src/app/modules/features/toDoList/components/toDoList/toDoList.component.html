@@ -10,13 +10,14 @@
                             nbInput
                             [(ngModel)]="taskName" 
                             (keyup.enter)="changeName(task.id,taskName)"
+                            autocomplete="off" data-lpignore="true" data-form-type="other"
                         >
                     </td>
                     <td>
                         <nb-select [selected]="task.state" (selectedChange)="changeState($event, task.id)">
-                            <nb-option [value]="TodoState.TODO">{{'ToDo' | translate}}</nb-option>
+                            <nb-option [value]="TodoState.TODO">{{'Todo' | translate}}</nb-option>
                             <nb-option [value]="TodoState.DOING">{{'Doing' | translate}}</nb-option>
-                            <nb-option [value]="TodoState.DONE">{{'Done'}}</nb-option>
+                            <nb-option [value]="TodoState.DONE">{{'Done' | translate}}</nb-option>
                         </nb-select>
                         <button 
                             nbButton 
@@ -43,7 +44,7 @@
     </div>
     <div *ngIf="create">
         <h4>{{'CreateTaskLabel' | translate}}</h4>
-        <input nbInput [(ngModel)]="taskName" [placeholder]="'CreateTaskPlaceholder' | translate" (keyup.enter)="onEnter(taskName)">
+        <input nbInput [(ngModel)]="taskName" [placeholder]="'CreateTaskPlaceholder' | translate" (keyup.enter)="onEnter(taskName)" autocomplete="off" data-lpignore="true" data-form-type="other">
         <button nbButton (click)="addTask(taskName)" status="primary">
             {{'Add' | translate}}
         </button>

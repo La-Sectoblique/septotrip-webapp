@@ -7,7 +7,7 @@
     (ngSubmit)="create()"
   >
     <label for="description">{{'InformationInputLabel' | translate}}:</label>
-    <input type="text" id="description" formControlName="description" required nbInput [maxlength]="255">
+    <input type="text" id="description" formControlName="description" required nbInput [maxlength]="255" autocomplete="off" data-lpignore="true" data-form-type="other">
 
     <button 
       type="submit" 

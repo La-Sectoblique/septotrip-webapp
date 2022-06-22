@@ -17,6 +17,7 @@ import { FilePreviewComponent } from './components/file-preview/file-preview.com
 import { SharedModule } from '../../shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { FileLinkEditComponent } from './components/file-link-edit/file-link-edit.component';
+import { LottieModule } from 'ngx-lottie';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { FileLinkEditComponent } from './components/file-link-edit/file-link-edi
     NbTooltipModule,
     TranslateModule,
     NbSelectModule,
+    LottieModule,
   ],
   declarations: [
     FilesListComponent,

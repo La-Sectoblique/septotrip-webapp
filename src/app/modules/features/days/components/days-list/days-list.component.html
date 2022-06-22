@@ -4,20 +4,26 @@
         <!-- here are going the points preview for this day ! -->
         <div class="d-flex flex-wrap align-items-center">
             <ng-container *ngFor="let point of (points | filterPointsByDayId:day.id)">
-                <spt-point-preview
-                    [point]="point"
+                <div 
+                    (mouseenter)="highlightPoint(point.id)"
+                    (mouseleave)="unHighlight()"
                 >
-                    <div class="d-flex">
-                        <button
-                            nbButton
-                            ghost
-                            (click)="unlinkPoint(point, day.id)"
-                            [nbTooltip]="'UnlinkPointMessage' | translate"
-                        >
-                            <nb-icon icon="link-2-outline"></nb-icon>
-                        </button>
-                    </div>
-                </spt-point-preview>
+                    <spt-point-preview
+                        [point]="point"
+                        [isHighlighted]="(highlightedPointId$ | async) === point.id"
+                    >
+                        <div class="d-flex">
+                            <button
+                                nbButton
+                                ghost
+                                (click)="unlinkPoint(point, day.id)"
+                                [nbTooltip]="'UnlinkPointMessage' | translate"
+                            >
+                                <nb-icon icon="link-2-outline"></nb-icon>
+                            </button>
+                        </div>
+                    </spt-point-preview>
+                </div>
             </ng-container>
     
             <!-- DropZone -->
