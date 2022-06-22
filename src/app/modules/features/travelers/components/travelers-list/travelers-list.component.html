@@ -14,7 +14,7 @@
 <form [formGroup]="addTravelerForm" (ngSubmit)="addTraveler()">
 
   <label for="mailAddress">{{'MailAddressInputLabel' | translate}}</label><br>
-  <input type="email" id="mailAddress" formControlName="mailAddress" nbInput>
+  <input type="email" id="mailAddress" formControlName="mailAddress" placeholder="email@septotrip.com" nbInput>
 
-  <button type="submit" nbButton status="primary">{{'Add' | translate}}</button>
+  <button type="submit" nbButton status="primary" [disabled]="!this.isFormValid()">{{'Add' | translate}}</button>
 </form>
