@@ -153,5 +153,8 @@
     "Done": "erledigt",
 
     "CreateTaskLabel": "Eine Aufgabe erstellen",
-    "CreateTaskPlaceholder": "Koffer packen"
+    "CreateTaskPlaceholder": "Koffer packen",
+
+    "AddTravelersNotFoundErrorTitle": "Der Benutzer existiert nicht",
+    "AddTravelersNotFoundErrorMessage": "Bitte überprüfen Sie, ob die E-Mail-Adresse korrekt ist"
 }

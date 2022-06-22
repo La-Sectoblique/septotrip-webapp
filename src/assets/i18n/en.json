@@ -152,5 +152,8 @@
     "Doing": "in progress",
     "Done": "done",
 
-    "CreateTaskLabel": "Create a task"
+    "CreateTaskLabel": "Create a task",
+
+    "AddTravelersNotFoundErrorTitle": "The user does not exist",
+    "AddTravelersNotFoundErrorMessage": "Please check that the email is correct"
 }

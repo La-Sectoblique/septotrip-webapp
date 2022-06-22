@@ -152,5 +152,8 @@
     "Doing": "käynnissä",
     "Done": "tehty",
 
-    "CreateTaskLabel": "Luo tehtävä"
+    "CreateTaskLabel": "Luo tehtävä",
+
+    "AddTravelersNotFoundErrorTitle": "Käyttäjää ei ole olemassa",
+    "AddTravelersNotFoundErrorMessage": "Tarkista, että sähköpostiosoite on oikein"
 }

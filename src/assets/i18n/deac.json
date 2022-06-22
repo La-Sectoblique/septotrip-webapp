@@ -153,5 +153,8 @@
     "Done": "ERLEDIGT",
 
     "CreateTaskLabel": "EINE AUFGABE ERSTELLEN",
-    "CreateTaskPlaceholderCREATETASKPLACEHOLDER": "KOFFER PACKEN"
+    "CreateTaskPlaceholderCREATETASKPLACEHOLDER": "KOFFER PACKEN",
+
+    "AddTravelersNotFoundErrorTitle": "DER BENUTZER EXISTIERT NICHT",
+    "AddTravelersNotFoundErrorMessage": "BITTE ÜBERPRÜFEN SIE, OB DIE E-MAIL-ADRESSE KORREKT IST"
 }

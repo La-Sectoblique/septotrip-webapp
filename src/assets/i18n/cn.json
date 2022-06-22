@@ -152,5 +152,9 @@
     "Doing":"正在进行",
     "Done":"完成",
 
-    "CreateTaskLabel": "创建一个任务"
+    "CreateTaskLabel": "创建一个任务",
+    "CreateTaskPlaceholder":"包装",
+
+    "AddTravelersNotFoundErrorTitle":"该用户不存在",
+    "AddTravelersNotFoundErrorMessage": "请检查电子邮件是否正确"
 }

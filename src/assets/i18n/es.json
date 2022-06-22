@@ -152,6 +152,9 @@
     "Doing": "en curso",
     "Done": "hecho",
 
-    "CreateTaskLabel": "Crear una tarea"
+    "CreateTaskLabel": "Crear una tarea",
+
+    "AddTravelersNotFoundErrorTitle": "El usuario no existe",
+    "AddTravelersNotFoundErrorMessage": "Por favor, compruebe que el correo electrónico es correcto"
 
 }

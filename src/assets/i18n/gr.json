@@ -152,5 +152,8 @@
     "Doing": "σε εξέλιξη",
     "Done": "έγινε",
 
-    "CreateTaskLabel": "Δημιουργία εργασίας"
+    "CreateTaskLabel": "Δημιουργία εργασίας",
+
+    "AddTravelersNotFoundErrorTitle": "Ο χρήστης δεν υπάρχει",
+    "AddTravelersNotFoundErrorMessage": "Παρακαλούμε ελέγξτε ότι το email είναι σωστό"
 }

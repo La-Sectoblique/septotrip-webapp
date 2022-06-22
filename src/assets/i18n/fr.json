@@ -154,6 +154,9 @@
     "Done": "fait",
 
     "CreateTaskLabel": "Créer une tâche",
-    "CreateTaskPlaceholder": "Faire sa valise"
+    "CreateTaskPlaceholder": "Faire sa valise",
+
+    "AddTravelersNotFoundErrorTitle": "L'utilisateur n'existe pas",
+    "AddTravelersNotFoundErrorMessage": "Merci de vérifier que l'email est correct"
 
 }

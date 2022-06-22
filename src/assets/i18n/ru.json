@@ -152,6 +152,9 @@
     "Doing": "в процессе",
     "Done": "сделано",
 
-    "CreateTaskLabel": "Создать задачу"
+    "CreateTaskLabel": "Создать задачу",
+
+    "AddTravelersNotFoundErrorTitle": "Пользователь не существует",
+    "AddTravelersNotFoundErrorMessage": "Пожалуйста, проверьте правильность электронной почты"
 
 }
