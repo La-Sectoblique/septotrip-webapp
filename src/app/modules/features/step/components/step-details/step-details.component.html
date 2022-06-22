@@ -1,0 +1,16 @@
+<spt-trip-element-details
+  [pageTitle]="('StepDetailsTitle' | translate) + ' ' + step.name"
+>
+  <spt-create-step edit
+    [tripId]="step.tripId"
+    [isEditMode]="true"
+    [editedStep]="step"
+  ></spt-create-step>
+
+  <spt-files-list file 
+    *ngIf="(stepFiles$ | async) as stepFiles"
+    [tripId]="step.tripId"
+    [files]="stepFiles"
+    [stepId]="step.id"
+  ></spt-files-list>
+</spt-trip-element-details>

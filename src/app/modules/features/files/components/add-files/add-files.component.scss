@@ -1,0 +1,8 @@
+@use 'src/styles/mixins' as mixins;
+
+.add-files-wrapper {
+    background-color: white;
+    padding: 1.5rem;
+    @include mixins.rounded-corner;
+    width: 50vw;
+}

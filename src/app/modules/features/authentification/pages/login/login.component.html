@@ -6,14 +6,14 @@
     (ngSubmit)="login()"
   >    
     <label for="email">{{'MailAddressInputLabel' | translate}} : </label>
-    <input type="email" id="email" formControlName="email" required nbInput>
+    <input type="email" id="email" formControlName="email" required nbInput [maxlength]="255">
     
     <label for="password">{{'PasswordInputLabel' | translate}} : </label>
-    <input type="password" id="password" formControlName="password" required nbInput>
+    <input type="password" id="password" formControlName="password" required nbInput [maxlength]="255">
 
     <button 
       type="submit" 
-      status="success"
+      status="primary"
       nbButton
       [disabled]="!loginForm.valid"
     >

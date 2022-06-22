@@ -85,5 +85,73 @@
     "Language": "Sprache",
     
     "LoginError": "Authentifizierungsfehler",
-    "LoginErrorMessage": "Die Anmeldeinformationen sind nicht korrekt oder das Konto existiert nicht"
+    "LoginErrorMessage": "Die Anmeldeinformationen sind nicht korrekt oder das Konto existiert nicht",
+    
+    "LoginNeeded": "Verbindung erforderlich",
+    "LoginNeededMessage": "Bitte melden Sie sich an, um auf die Seite zuzugreifen.",
+
+    "SessionExpired": "Abgelaufene Sitzung",
+    "SessionExpiredMessage": "Sie haben sich abgemeldet.",
+
+    "AddFileAction": "Ziehen oder klicken Sie, um eine Datei hinzuzufügen.", 
+    "Visibility": "Sichtbarkeit",
+
+    "UpdateFileLabel": "Datei bearbeiten",
+    "AddFileLabel": "Datei hinzufügen", 
+    
+    "CurrentState": "Aktueller Status",
+
+    "FileIsPublic": "Diese Datei ist öffentlich. Jeder, der über den Link verfügt, kann auf sie zugreifen.", 
+    "FileIsPrivate": "Diese Datei ist privat.",
+    
+    "AddOneFile": "Eine Datei hinzufügen",
+    "UpdateOneFile": "Eine Datei bearbeiten",
+
+    "TitlePhotos": "Fotos",
+    "TitleDocuments": "Dokumente", 
+    "TitleFiles": "Dateien",
+
+    "TripDetailsTitle": "Details zur Fahrt",
+    "InterestPointDetailsTitle": "Details des Sonderziels",
+    "StepDetailsTitle": "Details des Zwischenziels",
+    "UpdateInterestPointAndDocuments": "Sonderziel und seine Dokumente bearbeiten",
+    "UpdateTabTitle": "Bearbeiten",
+
+    "UpdateTripLabel": "Die Reise wurde geändert",
+    "TripUpdated": "Die Reise wurde geändert",
+    "UpdateTripTitle": "Reise ändern",
+
+    "Confirm": "Bestätigen",
+    "Cancel": "Abbrechen",
+    "ConfirmTripDeletionMessage": "Sind Sie sicher, dass Sie die Reise löschen wollen",
+
+    "UpdateFileLinkedElements": "Mit der Datei verknüpfte Elemente ändern",
+    "Paths": "Pfade",
+    "To": "Nach",
+
+    "FileCreated": "Die Datei wurde erstellt",
+    "FileUpdated": "Die Datei wurde geändert",
+    "FileDeleted": "Die Datei wurde gelöscht",
+
+    "LinkedMessage": "Verlinkt",
+    "ToTheStepMessage": "Auf der Etappe",
+    "ToTheInterrestPointMessage": "zum Point of Interest",
+    "ToTheTripToMessage": "auf dem Weg nach",
+
+    "UnlinkPointMessage": "Sonderziel ausblenden",
+
+    "RegisterSuccessTitle": "Anmeldung erfolgreich abgeschlossen",
+    "RegisterSuccessMessage": "Sie können sich jetzt anmelden",
+
+    "ErrorMessageTitle": "Es ist ein Fehler aufgetreten",
+    "ErrorMessageText": "Bitte versuchen Sie es später oder zu einem anderen Zeitpunkt erneut",
+    
+    "TasksListTabTitle": "Liste der Aufgaben",
+
+    "Todo": "zu tun",
+    "Doing": "in Arbeit",
+    "Done": "erledigt",
+
+    "CreateTaskLabel": "Eine Aufgabe erstellen",
+    "CreateTaskPlaceholder": "Koffer packen"
 }

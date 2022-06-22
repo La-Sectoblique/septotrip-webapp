@@ -97,14 +97,8 @@ export class StepsEffects {
 
   UpdateTripStepOrder$ = createEffect(() => this.actions$.pipe(
     ofType(TripsActions.UpdateTripStepOrder),
-    mergeMap(({ toIdx, tripId, step }) => this.stepsService.updateTripStepOrder(step.stepInstance.id, toIdx + 1)
-      .pipe(
-        map((steps) => TripsActions.GetTripStepsSuccess({ steps, tripId })),
-      ),
-    ),
-  ));
-
-
+    map(({ toIdx, step }) => this.stepsService.updateTripStepOrder(step.stepInstance.id, toIdx)),
+  ), { dispatch: false });
 
   constructor(
     private actions$: Actions,

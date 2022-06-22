@@ -1,0 +1,12 @@
+<div class="details-wrapper">
+  <h2>{{pageTitle}}</h2>
+
+  <nb-tabset class="d-flex flex-column justify-content-center">
+    <nb-tab [tabTitle]="('UpdateTabTitle' | translate)" tabIcon="edit-outline" >
+      <ng-content select="[edit]"></ng-content>
+    </nb-tab>
+    <nb-tab [tabTitle]="('TitleDocuments' | translate)" tabIcon="file-text-outline">
+      <ng-content select="[file]"></ng-content>
+    </nb-tab>
+  </nb-tabset>
+</div>

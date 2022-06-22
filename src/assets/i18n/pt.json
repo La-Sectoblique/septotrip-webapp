@@ -85,5 +85,72 @@
     "Language": "Língua",
     
     "LoginError": "Erro de autenticação",
-    "LoginErrorMessage": "As credenciais não estão corretas ou a conta não existe"
+    "LoginErrorMessage": "As credenciais não estão corretas ou a conta não existe",
+    
+    "LoginNeeded": "Ligação necessária",
+    "LoginNeededMessage": "Por favor inicie sessão para aceder ao",
+
+    "SessionExpired": "Sessão expirou",
+    "SessionExpiredMessage": "Foi desconectado.", 
+
+    "AddFileAction": "Arrastar ou clicar para adicionar um ficheiro", 
+    "Visibility": "Visibilidade",
+
+    "UpdateFileLabel": "Modificar o ficheiro",
+    "AddFileLabel": "Acrescentar ficheiro", 
+    
+    "CurrentState": "Current state",
+
+    "FileIsPublic": "Este ficheiro é público. Qualquer pessoa que tenha a ligação pode aceder a ela", 
+    "FileIsPrivate": "Este ficheiro é privado",
+    
+    "AddOneFile": "Acrescentar um ficheiro",
+    "UpdateOneFile": "Modificar um ficheiro",
+
+    "TitlePhotos": "Fotos",
+    "TitleDocuments": "Documentos", 
+    "TitleFiles": "Ficheiros",
+
+    "TripDetailsTitle": "Trip Details",
+    "InterestPointDetailsTitle": "Point of Interest Details",
+    "StepDetailsTitle": "Step Details",
+    "UpdateInterestPointAndDocuments": "Modificar o ponto de interesse e os seus documentos",
+    "UpdateTabTitle": "Modificar",
+
+    "UpdateTripLabel": "Modificar a viagem",
+    "TripUpdated": "Trip foi modificado",
+    "UpdateTripTitle": "Modificar a viagem",
+
+    "Confirm": "Confirmar",
+    "Cancel": "Cancelar",
+    "ConfirmTripDeletionMessage": "Tem a certeza que quer apagar a viagem",
+
+    "UpdateFileLinkedElements": "Modificar os elementos ligados ao ficheiro",
+    "Paths": "Caminhos",
+    "To": "Para",
+
+    "FileCreated": "O ficheiro foi criado",
+    "FileUpdated": "O ficheiro foi modificado",
+    "FileDeleted": "O ficheiro foi apagado",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "para o degrau",
+    "ToTheInterrestPointMessage": "até ao ponto de interesse",
+    "ToTheTripToMessage": "para a viagem a",
+
+    "UnlinkPointMessage": "Unlink the point of interest",
+
+    "RegisterSuccessTitle": "Registo com sucesso",
+    "RegisterSuccessMessage": "Pode agora fazer login",
+
+    "ErrorMessageTitle": "Ocorreu um erro",
+    "ErrorMessageText": "Por favor, tente novamente mais tarde ou num momento diferente",
+    
+    "TasksListTabTitle": "Lista de tarefas",
+
+    "Todo": "a fazer",
+    "Doing": "em curso",
+    "Done": "feito",
+
+    "CreateTaskLabel": "Criar uma tarefa"
 }

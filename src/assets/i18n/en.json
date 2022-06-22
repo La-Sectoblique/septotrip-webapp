@@ -91,5 +91,66 @@
     "SessionExpiredMessage": "You have been disconnected.",
     
     "LoginError": "Authentication error",
-    "LoginErrorMessage": "The credentials are not correct or the account does not exist."
+    "LoginErrorMessage": "The credentials are not correct or the account does not exist.",
+
+    "AddFileAction": "Drag or click to add a file.", 
+    "Visibility": "Visibility",
+
+    "UpdateFileLabel": "Modify the file",
+    "AddFileLabel": "Add the file", 
+    
+    "CurrentState": "Current state",
+
+    "FileIsPublic": "This file is public. Anyone who has the link can access it", 
+    "FileIsPrivate": "This file is private.",
+    
+    "AddOneFile": "Add a file",
+    "UpdateOneFile": "UpdateOnefile",
+
+    "TitlePhotos": "Photos",
+    "TitleDocuments": "Documents", 
+    "TitleFiles": "Files",
+
+    "TripDetailsTitle": "Trip Details",
+    "InterestPointDetailsTitle": "Point of interest details",
+    "StepDetailsTitle": "Step Details",
+    "UpdateInterestPointAndDocuments": "Modify the point of interest and its documents.",
+    "UpdateTabTitle": "Modify",
+
+    "UpdateTripLabel": "Modify trip",
+    "TripUpdated": "Trip has been modified",
+    "UpdateTripTitle": "Modify the trip",
+
+    "Confirm": "Confirm",
+    "Cancel": "Cancel",
+    "ConfirmTripDeletionMessage": "Are you sure you want to delete the trip",
+
+    "UpdateFileLinkedElements": "Modify the elements linked to the file",
+    "Paths": "Paths",
+    "To": "To",
+
+    "FileCreated": "The file has been created",
+    "FileUpdated": "The file has been modified",
+    "FileDeleted": "The file has been deleted",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "to the step",
+    "ToTheInterrestPointMessage": "to the point of interest",
+    "ToTheTripToMessage": "to the trip to",
+
+    "UnlinkPointMessage": "Désasigner le point d'intérêt",
+
+    "RegisterSuccessTitle": "Registration successful",
+    "RegisterSuccessMessage": "You can now login",
+
+    "ErrorMessageTitle": "An error has occurred",
+    "ErrorMessageText": "Please try again later or at a different time",
+    
+    "TasksListTabTitle": "List of tasks",
+
+    "Todo": "to do",
+    "Doing": "in progress",
+    "Done": "done",
+
+    "CreateTaskLabel": "Create a task"
 }

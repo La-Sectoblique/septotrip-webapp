@@ -85,5 +85,72 @@
     "Language": "Γλώσσα",
     
     "LoginError": "Σφάλμα ελέγχου ταυτότητας",
-    "LoginErrorMessage": "Τα διαπιστευτήρια δεν είναι σωστά ή ο λογαριασμός δεν υπάρχει"
+    "LoginErrorMessage": "Τα διαπιστευτήρια δεν είναι σωστά ή ο λογαριασμός δεν υπάρχει",
+    
+    "LoginNeeded": "Απαιτούμενη σύνδεση",
+    "LoginNeededMessage": "Παρακαλώ συνδεθείτε για να αποκτήσετε πρόσβαση στη σελίδα.",
+
+    "SessionExpired": "Η σύνοδος έληξε",
+    "SessionExpiredMessage": "Έχετε αποσυνδεθεί",
+
+    "AddFileAction": "Σύρετε ή κάντε κλικ για να προσθέσετε ένα αρχείο", 
+    "Visibility": "Ορατότητα",
+
+    "UpdateFileLabel": "Τροποποίηση του αρχείου",
+    "AddFileLabel": "Προσθήκη αρχείου", 
+    
+    "CurrentState": "Τρέχουσα κατάσταση",
+
+    "FileIsPublic": "Αυτό το αρχείο είναι δημόσιο. Όποιος έχει τον σύνδεσμο μπορεί να έχει πρόσβαση σε αυτόν", 
+    "FileIsPrivate": "Αυτό το αρχείο είναι ιδιωτικό.",
+    
+    "AddOneFile": "Προσθήκη ενός αρχείου",
+    "UpdateOneFile": "Τροποποίηση ενός αρχείου",
+
+    "TitlePhotos": "Φωτογραφίες",
+    "TitleDocuments": "Έγγραφα", 
+    "TitleFiles": "Αρχεία",
+
+    "TripDetailsTitle": "Λεπτομέρειες ταξιδιού",
+    "InterestPointDetailsTitle": "Λεπτομέρειες σημείου ενδιαφέροντος",
+    "StepDetailsTitle": "Λεπτομέρειες βήματος",
+    "UpdateInterestPointAndDocuments": "Τροποποίηση του σημείου ενδιαφέροντος και των εγγράφων του",
+    "UpdateTabTitle": "Τροποποίηση",
+
+    "UpdateTripLabel": "Τροποποίηση ταξιδιού",
+    "TripUpdated": "Το ταξίδι έχει τροποποιηθεί",
+    "UpdateTripTitle": "Τροποποίηση του ταξιδιού",
+
+    "Confirm": "Επιβεβαίωση",
+    "Cancel": "Ακύρωση",
+    "ConfirmTripDeletionMessage": "Είστε σίγουρος ότι θέλετε να διαγράψετε το ταξίδι",
+
+    "UpdateFileLinkedElements": "Τροποποίηση των στοιχείων που συνδέονται με το αρχείο",
+    "Paths": "Μονοπάτια",
+    "To": "To",
+
+    "FileCreated": "Το αρχείο έχει δημιουργηθεί",
+    "FileUpdated": "Το αρχείο έχει τροποποιηθεί",
+    "FileDeleted": "Το αρχείο έχει διαγραφεί",
+
+    "LinkedMessage": "Linked",
+    "ToTheStepMessage": "στο βήμα",
+    "ToTheInterrestPointMessage": "στο σημείο ενδιαφέροντος",
+    "ToTheTripToMessage": "στο ταξίδι προς",
+
+    "UnlinkPointMessage": "Αποσύνδεση του σημείου ενδιαφέροντος",
+
+    "RegisterSuccessTitle": "Επιτυχής εγγραφή",
+    "RegisterSuccessMessage": "Μπορείτε τώρα να συνδεθείτε",
+
+    "ErrorMessageTitle": "Εμφανίστηκε σφάλμα",
+    "ErrorMessageText": "Προσπαθήστε ξανά αργότερα ή σε διαφορετικό χρόνο",
+    
+    "TasksListTabTitle": "Κατάλογος εργασιών",
+
+    "Todo": "να κάνω",
+    "Doing": "σε εξέλιξη",
+    "Done": "έγινε",
+
+    "CreateTaskLabel": "Δημιουργία εργασίας"
 }

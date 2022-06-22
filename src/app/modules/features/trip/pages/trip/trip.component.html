@@ -1,9 +1,11 @@
 <ng-container *ngIf="(trip$ | async) as trip">
   <ng-container *ngIf="(steps$ | async) as steps">
     <ng-container *ngIf="(points$ | async) as points">
-      <div class="h-100 w-100">
+      <div class="h-100 w-100 big-wrapper">
+        <div class="page-title">
+          <h2 class="m-0">{{trip.tripInstance.name}}</h2>
+        </div>
         <nb-tabset class="h-100 w-100 d-flex flex-column">
-          <p>{{trip.tripInstance.name}}</p>
           <nb-tab [tabTitle]="'PlanificationTabTitle' | translate" class="h-100 w-100">
             <div class="page-wrapper h-100 w-100">
               <div class="h-100">
@@ -25,7 +27,19 @@
               </div>
             </div>
           </nb-tab>
-  
+
+          <nb-tab [tabTitle]="'TitleFiles' | translate" class="mt-4">
+            <ng-container *ngIf="tripFiles$ | async as tripFiles">
+              <spt-files-list [files]="tripFiles" [tripId]="trip.tripInstance.id"></spt-files-list>
+            </ng-container>
+          </nb-tab>
+
+          <nb-tab [tabTitle]="'TasksListTabTitle' | translate">
+            <spt-todolist
+            [tripId]="trip.tripInstance.id"
+            ></spt-todolist>
+          </nb-tab>
+          
           <nb-tab [tabTitle]="'MemberTabTitle' | translate">
             <ng-container *ngIf="travelers$ | async as travelers">
               <div class="w-50">
@@ -33,15 +47,25 @@
                 <spt-travelers-list
                   [travelers]="travelers"
                   [tripId]="trip.tripInstance.id"
+                  [tripAuthorId]="trip.tripInstance.authorId"
                 ></spt-travelers-list>
               </div>
             </ng-container>
           </nb-tab>
+          
           <nb-tab [tabTitle]="'Parameters' | translate">
             <h2>{{'Parameters' | translate}}</h2>
-            <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance.id)">{{'Delete' | translate}}</button>
+            <div class="d-flex justify-content-evenly">
+              <spt-create-trip
+                [tripToEdit]="trip.tripInstance"
+                [isEditMode]="true"
+              ></spt-create-trip>
+              <div class="d-flex flex-column align-items-center">
+                <h2>{{'DeleteTripTitle' | translate}}</h2>
+                <button nbButton status="danger" (click)="deleteTrip(trip.tripInstance)">{{'Delete' | translate}}</button>
+              </div>
+            </div>
           </nb-tab>
-  
         </nb-tabset>
       </div>
 

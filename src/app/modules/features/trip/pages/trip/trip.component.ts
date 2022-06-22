@@ -1,11 +1,18 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FileMetadataOutput } from '@la-sectoblique/septoblique-service/dist/types/models/File';
 import { PointOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Point';
+import { TripOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Trip';
 import { UserOutput } from '@la-sectoblique/septoblique-service/dist/types/models/User';
+import { NbDialogService } from '@nebular/theme';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
+import { ConfirmComponent } from 'src/app/modules/shared/components/confirm/confirm.component';
+import { GetTripFiles } from 'src/app/store/files-store/state/files.actions';
+import { selectTripFiles } from 'src/app/store/files-store/state/files.selectors';
 import { DeleteTrip,
   GetTrip,
   GetTripPoints,
@@ -32,12 +39,15 @@ export class TripComponent implements OnInit, OnDestroy {
   steps$: Observable<FlattenedStep[]>;
   points$: Observable<PointOutput[]>;
   travelers$: Observable<UserOutput[]>;
+  tripFiles$: Observable<FileMetadataOutput[]>;
 
   constructor(
     private route: ActivatedRoute,
     private store: Store,
     private router: Router,
     private titleService: Title,
+    private nbDialogService: NbDialogService,
+    private translate: TranslateService,
   ) { }
 
   ngOnInit() {
@@ -55,6 +65,9 @@ export class TripComponent implements OnInit, OnDestroy {
 
       this.store.dispatch(GetTripTravelers({ tripId }));
       this.travelers$ = this.store.select(selectTripTravelers(tripId));
+
+      this.store.dispatch(GetTripFiles({ tripId }));
+      this.tripFiles$ = this.store.select(selectTripFiles(tripId));
 
       this.trip$.pipe(untilDestroyed(this)).subscribe((trip) => {
         this.titleService.setTitle(trip?.tripInstance.name);
@@ -74,9 +87,16 @@ export class TripComponent implements OnInit, OnDestroy {
     return daysIds;
   }
 
-  deleteTrip(tripId: number): void {
-    this.store.dispatch(DeleteTrip({ tripId }));
-    this.router.navigate(['/trips']);
+  deleteTrip(trip: TripOutput): void {
+    this.nbDialogService.open(ConfirmComponent, {
+      context: {
+        confirmLabel: `${this.translate.instant('ConfirmTripDeletionMessage')} "${trip.name}" ?`,
+        confirmAction: () => {
+          this.store.dispatch(DeleteTrip({ tripId: trip.id }));
+          this.router.navigate(['/trips']);
+        },
+      },
+    });
   }
 
   ngOnDestroy(): void {

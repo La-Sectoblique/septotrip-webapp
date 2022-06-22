@@ -33,14 +33,16 @@
             [isHighlighted]="(highlithedStepId$ | async) === step.stepInstance.id"
           >
             <div>
-              <button nbButton ghost (click)="editStep(step.stepInstance)">
-                <nb-icon class="cursor-pointer"  icon="edit-outline" status="primary"></nb-icon>
+              <button nbButton ghost (click)="editStep(step.stepInstance)"
+                [nbTooltip]="('UpdateInterestPointAndDocuments' | translate)"
+              >
+                <nb-icon class="cursor-pointer" icon="info-outline" status="primary"></nb-icon>
               </button>
               <button nbButton ghost (click)="deleteStep(step.stepInstance.id)">
                 <nb-icon class="cursor-pointer trash-icon-color" icon="trash-2-outline" status="danger"></nb-icon>
               </button>
             </div>
-            <nb-icon cdkDragHandle handle icon="menu-outline" class="cursor-grab"></nb-icon>
+            <nb-icon cdkDragHandle handle icon="menu-outline" class="cursor-grab flex-shrink-0"></nb-icon>
           </spt-step-preview>
         </div>
       </ng-container>

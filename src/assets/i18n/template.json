@@ -85,5 +85,74 @@
     "Language": "",
     
     "LoginError": "",
-    "LoginErrorMessage": ""
+    "LoginErrorMessage": "",
+    
+    "LoginNeeded": "",
+    "LoginNeededMessage": "",
+
+    "SessionExpired": "",
+    "SessionExpiredMessage": "",
+
+    "AddFileAction": "", 
+    "Visibility": "",
+
+    "UpdateFileLabel": "",
+    "AddFileLabel": "", 
+
+    "CurrentState": "", 
+
+    "FileIsPublic": "", 
+    "FileIsPrivate": "",
+    
+    "AddOneFile": "",
+    "UpdateOneFile": "",
+    
+    "TitlePhotos": "",
+    "TitleDocuments": "", 
+    "TitleFiles": "",
+
+    "TripDetailsTitle": "",
+    "InterestPointDetailsTitle": "",
+    "StepDetailsTitle": "",
+    "UpdateInterestPointAndDocuments": "",
+    "UpdateTabTitle": "",
+
+    "UpdateTripLabel": "",
+    "TripUpdate": "",
+    "UpdateTripTitle": "",
+
+    "Confirm": "",
+    "Cancel": "",
+    "ConfirmTripDeletionMessage": "",
+
+    "DeleteTripTitle": "",
+    "UpdateFileLinkedElements": "",
+    "Paths": "",
+    "To": "",
+
+    "FileCreated": "",
+    "FileUpdated": "",
+    "FileDeleted": "",
+
+    "LinkedMessage" : "",
+    "ToTheStepMessage": "",
+    "ToTheInterrestPointMessage": "",
+    "ToTheTripToMessage": "",
+
+    "UnlinkPointMessage": "",
+
+    "RegisterSuccessTitle": "",
+    "RegisterSuccessMessage": "",
+
+    "ErrorMessageTitle": "",
+    "ErrorMessageText": "",
+    
+    "TasksListTabTitle": "",
+
+    "Todo": "",
+    "Doing": "",
+    "Done": "",
+
+    "CreateTaskLabel": "",
+    "CreateTaskPlaceholder": ""
 }
