@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { UserSettingsComponent } from './pages/user-settings/user-settings.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
   ],
   declarations: [
     HeaderComponent,
+    HomeComponent,
     UserSettingsComponent,
   ],
 })
