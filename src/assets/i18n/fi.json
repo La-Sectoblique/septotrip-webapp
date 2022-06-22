@@ -146,5 +146,11 @@
     "ErrorMessageTitle": "On tapahtunut virhe",
     "ErrorMessageText": "Yritä uudelleen myöhemmin tai eri aikaan",
     
-    "TasksListTabTitle": "Luettelo tehtävistä"
+    "TasksListTabTitle": "Luettelo tehtävistä",
+
+    "Todo": "tehtävä",
+    "Doing": "käynnissä",
+    "Done": "tehty",
+
+    "CreateTaskLabel": "Luo tehtävä"
 }

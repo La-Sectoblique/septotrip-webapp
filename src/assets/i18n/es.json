@@ -146,6 +146,12 @@
     "ErrorMessageTitle": "Se ha producido un error",
     "ErrorMessageText": "Por favor, inténtelo de nuevo más tarde o en otro momento",
     
-    "TasksListTabTitle": "Lista de tareas"
+    "TasksListTabTitle": "Lista de tareas",
+
+    "Todo": "hacer",
+    "Doing": "en curso",
+    "Done": "hecho",
+
+    "CreateTaskLabel": "Crear una tarea"
 
 }

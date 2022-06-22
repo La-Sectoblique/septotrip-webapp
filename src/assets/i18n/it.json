@@ -146,5 +146,11 @@
     "ErrorMessageTitle": "Si è verificato un errore",
     "ErrorMessageText": "Riprovare più tardi o in un momento diverso",
     
-    "TasksListTabTitle": "Elenco dei compiti"
+    "TasksListTabTitle": "Elenco dei compiti",
+
+    "Todo": "da fare",
+    "Doing": "in corso",
+    "Done": "fatto",
+
+    "CreateTaskLabel": "Crea un'attività"
 }

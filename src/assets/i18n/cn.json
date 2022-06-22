@@ -146,5 +146,11 @@
     "ErrorMessageTitle":"发生了一个错误",
     "ErrorMessageText": "请稍后或在不同时间再试",
     
-    "TasksListTabTitle": "任务清单"
+    "TasksListTabTitle": "任务清单",
+
+    "Todo":"做",
+    "Doing":"正在进行",
+    "Done":"完成",
+
+    "CreateTaskLabel": "创建一个任务"
 }
