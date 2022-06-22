@@ -1,0 +1,157 @@
+{
+    "CreateTripTitle": "REIRSE ERSTELLEN",
+    "CreateTripValidation": "REISE ERSTELLEN",
+    "NoTripEmptyStateMessage": "SIE HABEN KEINE REISE",
+    
+    "NoStepEmptyStateMessage": "ES GIBT KEINE ZWISCHENZIELE",
+
+    "NoPointEmptyStateMessage": "ES GIBT KEINE SEHENWÜRDIGKEITEN",
+    
+    "NoInformationEmptyStateMessage": "KEINE INFORMATIONEN",
+
+    "ClickMapToBegin": "KLICKEN SIE AUF DIE KARTE, UM ZU BEGINNEN!",
+    
+    "TripMemberTitle": "MITGLIEDER DER REISE",
+    
+    "NameInputLabel": "NAME",
+    "FirstnameInputLabel": "VORNAME",
+    "MailAddressInputLabel": "E-MAIL ADRESSE",
+    "DurationInputLabel": "DAUER",
+    "DescriptionInputLabel": "BESCHREIBUNG",
+    "InformationInputLabel": "INFORMATION",
+    "PasswordInputLabel": "PASSWORT",
+    
+    "Delete": "LÖSCHEN",
+    "Add": "HINZUFÜGEN",
+    "Edition": "BEARBEITEN",
+    "Stop": "BEENDEN",
+    "Public": "ÖFFENTLICH",
+    "Private": "PRIVAT",
+
+    "Days": "TAGE",
+    "Day": "TAG",
+    "Steps": "SCHRITTE",
+    "Points": "SEHENSWÜRDIGKEITEN",
+
+    "LoginButtonLabel": "ANMELDUNG",
+    "RegisterButtonLabel": "REGISTRIEREN",
+    "DisconnectButtonLabel": "TRENNEN",
+
+    "HomeNavLabel": "STARTSEITE",
+    "TripNavLabel": "REISEN",
+    
+    "Parameters": "EINSTELLUNGEN",
+    "PlanificationTabTitle": "ZEITLICHER ABLAUF",
+    "MemberTabTitle": "MITGLIEDER",
+    
+    "MyTripsTitle": "MEINE REISEN",
+    "VoyageInFrancePlaceholder": "REISE NACH FRANKREICH",
+
+    "AddTravelerTitle": "EINEN REISENDEN HINZUFÜGEN",
+
+    "StepCreation": "ERSTELLEN EINES ZWISCHENZIELS",
+    "StepUpdate": "BEARBEITEN EINES SCHRITTES",
+    "StepCreationValidation": "SCHRITT ERSTELLEN",
+    "StepUpdateValidation": "SCHRITT BEARBEITTEN",
+    "StepEditMode": "BEARBEITEN VON SCHRITTEN",
+
+    "PointCreation": "ERSTELLEN EINES SONDERZIELS",
+    "PointUpdate": "BEARBEITEN EINES SONDERZIELS",
+    "PointUpdateValidation": "SONDERZIEL BEARBEITEN",
+    "PointCreationValidation": "ERSTELLEN DES SONDERZIELS",
+    "PointEditMode": "BEARBEITEN VON SONDERZIELEN",
+
+    "PathUpdate": "BEARBEITEN DER ROUTE",
+    "PathUpdateValidation": "ROUTE BEARBEITEN",
+
+    "FilteredPointsTooltipButton": "NUR DIE AUF DER KARTE ANGEZEIGTEN PUNKTEWERDEN IN DER LISTE ANGEZIGT",
+    "NotFilteredPointsTooltipButton": "ALLE PUNKTE AUF DER KARTE WERDEN IN DER LISTE ANGEZEIGT",
+
+    "UpdateDone": "UPDATE DURCHGEFÜHRT",
+    "CreationDone": "ERSTELLUNG ABGESCHLOSSEN",
+    "DeletionDone": "LÖSCHUNG DURCHGEFÜHRT",
+
+    "PathUpdated": "DER PFAD WURDE GEÄNDERT",
+    "PointUpdated": "DER SONDERZIELPUNKT WURDE GEÄNDERT",
+    "StepUpdated": "DER ZWISCHENSTOPP WURDE GEÄNDERT",
+    
+    "PointCreated": "DER SONDERZIELPUNKT WURDE ERSTELLT",
+    "StepCreated": "DER SCHRITT WURDE ERSTELLT",
+
+    "PointDeleted": "DAS SONDERZIEL WURDE GELÖSCHT",
+    "StepDeleted": "DER WEGPUNKT WURDE GELÖSCHT",
+    "TripDeleted": "DIE REISE WURDE GELÖSCHT.",
+
+    "Language": "SPRACHE",
+    
+    "LoginError": "AUTHENTIFIZIERUNGSFEHLER",
+    "LoginErrorMessage": "DIE ANMELDEINFORMATIONEN SIND NICHT KORREKT ODER DAS KONTO EXISTIERT NICHT",
+    
+    "LoginNeeded": "VERBINDUNG ERFORDERLICH",
+    "LoginNeededMessage": "BITTE MELDEN SIE SICH AN, UM AUF DIE SEITE ZUZUGREIFEN.",
+
+    "SessionExpired": "ABGELAUFENE SITZUNG",
+    "SessionExpiredMessage": "SIE HABEN SICH ABGEMELDET.",
+
+    "AddFileAction": "ZIEHEN ODER KLICKEN SIE, UM EINE DATEI HINZUZUFÜGEN.", 
+    "Visibility": "SICHTBARKEIT",
+
+    "UpdateFileLabel": "DATEI BEARBEITEN",
+    "AddFileLabel": "DATEI HINZUFÜGEN", 
+    
+    "CurrentState": "AKTUELLER STATUS",
+
+    "FileIsPublic": "DIESE DATEI IST ÖFFENTLICH. JEDER, DER ÜBER DEN LINK VERFÜGT, KANN AUF SIE ZUGREIFEN.", 
+    "FileIsPrivate": "DIESE DATEI IST PRIVAT.",
+    
+    "AddOneFile": "EINE DATEI HINZUFÜGEN",
+    "UpdateOneFile": "EINE DATEI BEARBEITEN",
+
+    "TittlePhotos": "FOTOS",
+    "TitleDocuments": "DOKUMENTE", 
+    "TitleFiles": "DATEIEN",
+
+    "TripDetailsTitle": "DETAILS ZUR FAHRT",
+    "InterestPointDetailsTitle": "DETAILS DES SONDERZIELS",
+    "StepDetailsTitle": "DETAILS DES ZWISCHENZIELS",
+    "UpdateInterestPointAndDocuments": "SONDERZIEL UND SEINE DOKUMENTE BEARBEITEN",
+    "UpdateTabTitle": "BEARBEITEN",
+
+    "UpdateDateTripLabel": "DIE REISE WURDE GEÄNDERT",
+    "TripUpdated": "DIE REISE WURDE GEÄNDERT",
+    "UpdateTripTitle": "REISE ÄNDERN",
+
+    "Confirm": "BESTÄTIGEN",
+    "Cancel": "ABBRECHEN",
+    "ConfirmTripDeletionMessage": "SIND SIE SICHER, DASS SIE DIE REISE LÖSCHEN WOLLEN",
+
+    "UpdateFileLinkedElements": "MIT DER DATEI VERKNÜPFTE ELEMENTE ÄNDERN",
+    "Paths": "PFADE",
+    "To": "NACH",
+
+    "FileCreated": "DIE DATEI WURDE ERSTELLT",
+    "FileUpdated": "DIE DATEI WURDE GEÄNDERT",
+    "FileDeleted": "DIE DATEI WURDE GELÖSCHT",
+
+    "LinkedMessage": "VERLINKT",
+    "ToTheStepMessage": "AUF DER ETAPPE",
+    "ToTheInterrestPointMessage": "ZUM POINT OF INTEREST",
+    "ToTheTripToMessage": "AUF DEM WEG NACH",
+
+    "UnlinkPointMessage": "SONDERZIEL AUSBLENDEN",
+
+    "RegisterSuccessTitle": "ANMELDUNG ERFOLGREICH ABGESCHLOSSEN",
+    "RegisterSuccessMessage": "SIE KÖNNEN SICH JETZT ANMELDEN",
+
+    "ErrorMessageTitle": "ES IST EIN FEHLER AUFGETRETEN",
+    "ErrorMessageText": "BITTE VERSUCHEN SIE ES SPÄTER ODER ZU EINEM ANDEREN ZEITPUNKT ERNEUT",
+    
+    "TasksListTabTitle": "LISTE DER AUFGABEN",
+
+    "Todo": "ZU TUN",
+    "Doing": "IN ARBEIT",
+    "Done": "ERLEDIGT",
+
+    "CreateTaskLabel": "EINE AUFGABE ERSTELLEN",
+    "CreateTaskPlaceholderCREATETASKPLACEHOLDER": "KOFFER PACKEN"
+}
