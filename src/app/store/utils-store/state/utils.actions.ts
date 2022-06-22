@@ -6,6 +6,11 @@ export const NotifySuccess = createAction(
   props<ToastrPayload>(),
 );
 
+export const NotifyInfo = createAction(
+  '[Utils] Notify Info',
+  props<ToastrPayload>(),
+);
+
 export const NotifyError = createAction(
   '[Utils] Notify Error',
   props<ToastrPayload>(),

@@ -157,5 +157,8 @@
     "CreateTaskPlaceholder": "Faire sa valise",
 
     "AddTravelersNotFoundErrorTitle": "L'utilisateur n'existe pas",
-    "AddTravelersNotFoundErrorMessage": "Merci de vérifier que l'email est correct"
+    "AddTravelersNotFoundErrorMessage": "Merci de vérifier que l'email est correct",
+
+    "FileUploadPending": "Envoi du fichier en cours...",
+    "FileUploadPendingMessage": "Merci de patienter quelques instants"
 }

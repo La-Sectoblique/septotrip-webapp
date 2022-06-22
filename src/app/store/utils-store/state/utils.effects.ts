@@ -35,6 +35,19 @@ export class UtilsEffects {
     { dispatch: false },
   );
 
+  NotifyInfo$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(UtilsActions.NotifyInfo),
+        map(({
+          message, title,
+        }) =>
+          this.nbToastrService.info(message, title),
+        ),
+      ),
+    { dispatch: false },
+  );
+
   NotifyError$ = createEffect(
     () =>
       this.actions$.pipe(
