@@ -6,20 +6,33 @@
     </button>
   </div>
 
-  <nb-tabset class="d-flex flex-column justify-content-center">
-    <nb-tab [tabTitle]="('TitlePhotos' | translate)" tabIcon="image-outline" >
-        <ng-container
-        [ngTemplateOutlet]="filePreviews"
-        [ngTemplateOutletContext]="{
-          files: (files | filterDocumentByFileType:FileType.PHOTO)
-        }"
-      ></ng-container>
-    </nb-tab>
-    <nb-tab [tabTitle]="('TitleDocuments' | translate)" tabIcon="file-text-outline">
+  <nb-tabset class="d-flex flex-column justify-content-center" 
+    *ngIf="{
+      pictures: (files | filterDocumentByFileType:FileType.PHOTO),
+      documents: (files | filterDocumentByFileType:FileType.DOCUMENT)
+    } as sortedFiles"
+  >
+    <nb-tab
+      [active]="sortedFiles.documents.length === 0 || ((sortedFiles.documents.length >= 0 && sortedFiles.pictures.length >= 0) && sortedFiles.pictures.length !== 0)"
+      [tabTitle]="('TitlePhotos' | translate)"
+      tabIcon="image-outline"
+    >
       <ng-container
         [ngTemplateOutlet]="filePreviews"
         [ngTemplateOutletContext]="{
-          files: (files | filterDocumentByFileType:FileType.DOCUMENT)
+          files: sortedFiles.pictures
+        }"
+      ></ng-container>
+    </nb-tab>
+    <nb-tab
+      [active]="sortedFiles.pictures.length === 0"
+      [tabTitle]="('TitleDocuments' | translate)"
+      tabIcon="file-text-outline"
+    >
+      <ng-container
+        [ngTemplateOutlet]="filePreviews"
+        [ngTemplateOutletContext]="{
+          files: sortedFiles.documents
         }"
       ></ng-container>
     </nb-tab>
