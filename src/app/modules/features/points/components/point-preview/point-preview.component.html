@@ -2,7 +2,7 @@
   [class.highlighted]="isHighlighted"
 >
   <h6 class="ellips-informations m-0">{{point.title}}</h6>
-  <p *ngIf="point.description" class="ellips-informations m-0">{{point.description}}</p>
+  <p *ngIf="point.description" [nbTooltip]="point.description" class="ellips-informations m-0">{{point.description}}</p>
   <div class="d-flex align-items-center justify-content-center">
     <ng-content select="[handle]"></ng-content>
     <div class="d-flex">
