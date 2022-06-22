@@ -8,6 +8,11 @@
     @include nb-theme-global();
 }
 
+@font-face {
+    font-family: "Party-Pocket";
+    src: local("Party-Pocket"), url(./assets/fonts/Party-Pocket.otf) format("truetype");
+}
+
 /* You can add global styles to this file, and also import other style files */
 body {
     margin: 0;
