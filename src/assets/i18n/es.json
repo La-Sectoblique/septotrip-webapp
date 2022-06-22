@@ -152,6 +152,30 @@
     "Doing": "en curso",
     "Done": "hecho",
 
-    "CreateTaskLabel": "Crear una tarea"
+    "CreateTaskLabel": "Crear una tarea",
+
+    "AddTravelersNotFoundErrorTitle": "El usuario no existe",
+    "AddTravelersNotFoundErrorMessage": "Por favor, compruebe que el correo electrónico es correcto",
+    
+    "DeleteTripTitle": "Eliminar el viaje",
+    "FileUploadPending": "Enviando el archivo actual...",
+    "FileUploadPendingMessage": "Por favor, espere un momento",
+    "NoPictureEmptyState": "No tiene imágenes",
+    "NoFileEmptyState": "No tiene archivos",
+    "NoStepsEmptyState": "No tiene pasos",
+    "NoPointsEmptyState": "No tiene puntos de interés",
+
+    "CatchPhrase": "En el fin del mundo como en casa",
+    "HomeTopDescription": "Septotrip es una aplicación que te permite planificar un viaje al fin del mundo, un fin de semana familiar en el campo o un baratón, seguir tu progreso y compartirlo con otros usuarios, desde un navegador o una aplicación móvil",
+    "PlanYourTrip": "Planifica tu viaje",
+    "PlanYourTripDescription": "Septotrip permite planificar un viaje desde la web, paso a paso, y visualizarlo inmediatamente en un mapa. Por ejemplo, un viaje por carretera a Italia podría tener Milán como punto de partida, Nápoles como punto final, y paradas en Venecia, Florencia y Roma",
+    "HomePointsDescription": "La definición de puntos de interés facilita la organización de un viaje al visualizar rápidamente las actividades cercanas a cada etapa. Si uno está interesado en el Coliseo, en un restaurante familiar de antipasti y en la Fontana di Trevi, pero también en una visita al Vaticano, puede planificar más fácilmente sus movimientos en Roma durante la estancia",
+    "InviteYourFriends": "Invita a tus amigos",
+    "InviteYourFriendsDescription": "Los amigos pueden ser invitados y unirse al viaje desde su propio dispositivo. También podrán compartir fotos y documentos",
+    "KeepYourDocuments": "Guarda tus documentos",
+    "KeepYourDocumentsDescription": "Los usuarios pueden guardar sus documentos, como reservas de hotel, mapas o códigos QR de cualquier tipo, para acceder fácilmente a ellos y no arriesgarse a perderlos durante su viaje",
+    "KeepYourMemories": "Guarda tus recuerdos",
+    "KeepYourMemoriesDescription": "A lo largo de tu viaje, Septotrip se queda contigo, en tu bolsillo o mochila, para añadir tus fotos de viaje, guardarlas y compartirlas"
+    
 
 }

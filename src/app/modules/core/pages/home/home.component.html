@@ -1,3 +1,66 @@
-<p>
-  home works!
-</p>
+<div class="d-flex flex-column align-items-center">
+  <p class="catch-phrase">
+    {{'CatchPhrase' | translate}}
+  </p>
+  
+  <div class="card w-50 mb-4">
+    <p>
+      {{'HomeTopDescription' | translate}}
+    </p>
+  </div>
+
+  <ng-container
+    [ngTemplateOutlet]="paragraphBlock"
+    [ngTemplateOutletContext]="{
+      title: ('PlanYourTrip' | translate),
+      text: ('PlanYourTripDescription' | translate),
+      imgSrc: 'assets/pictures/septotrip-world-tour-transparant.png'
+    }"
+  ></ng-container>
+
+  <ng-container
+    [ngTemplateOutlet]="paragraphBlock"
+    [ngTemplateOutletContext]="{
+      title: ('Points' | translate),
+      text: ('HomePointsDescription' | translate),
+      imgSrc: 'assets/pictures/septotrip-logo-poststamp.png',
+      isPictureInverted: true
+    }"
+  ></ng-container>
+
+  <ng-container
+    [ngTemplateOutlet]="paragraphBlock"
+    [ngTemplateOutletContext]="{
+      title: ('InviteYourFriends' | translate),
+      text: ('InviteYourFriendsDescription' | translate)
+    }"
+  ></ng-container>
+
+  <ng-container
+    [ngTemplateOutlet]="paragraphBlock"
+    [ngTemplateOutletContext]="{
+      title: ('KeepYourDocuments' | translate),
+      text: ('KeepYourDocumentsDescription' | translate)
+    }"
+  ></ng-container>
+
+  <ng-container
+    [ngTemplateOutlet]="paragraphBlock"
+    [ngTemplateOutletContext]="{
+      title: ('KeepYourMemories' | translate),
+      text: ('KeepYourMemoriesDescription' | translate)
+    }"
+  ></ng-container>
+</div>
+
+<ng-template let-title="title" let-text="text" let-imgSrc="imgSrc" let-isPictureInverted="isPictureInverted" #paragraphBlock>
+  <div class="card d-flex flex-column align-items-center w-75 mb-4">
+    <h3 class="m-0">{{title}}</h3>
+    <div class="d-flex align-items-center" [class.flex-row-reverse]="isPictureInverted">
+      <p>
+        {{text}}
+      </p>
+      <img *ngIf="imgSrc" class="illustration-img" [src]="imgSrc" alt="">
+    </div>
+  </div>
+</ng-template>

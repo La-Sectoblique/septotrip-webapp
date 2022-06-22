@@ -38,6 +38,14 @@ export class FilesEffects {
     ),
   ));
 
+  UploadTripFileNotify$ = createEffect(() => this.actions$.pipe(
+    ofType(FilesActions.UploadTripFile),
+    map(() => UtilsActions.NotifyInfo({
+      title: this.translate.instant('FileUploadPending'),
+      message: this.translate.instant('FileUploadPendingMessage'),
+    })),
+  ));
+
   UpdateTripFile$ = createEffect(() => this.actions$.pipe(
     ofType(FilesActions.UpdateTripFile),
     mergeMap(({ fileId, metadata }) => this.filesService.updateFile(fileId, metadata)

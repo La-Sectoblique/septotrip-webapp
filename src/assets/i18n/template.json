@@ -125,7 +125,6 @@
     "Cancel": "",
     "ConfirmTripDeletionMessage": "",
 
-    "DeleteTripTitle": "",
     "UpdateFileLinkedElements": "",
     "Paths": "",
     "To": "",
@@ -154,5 +153,28 @@
     "Done": "",
 
     "CreateTaskLabel": "",
-    "CreateTaskPlaceholder": ""
+    "CreateTaskPlaceholder": "",
+
+    "AddTravelersNotFoundErrorTitle": "",
+    "AddTravelersNotFoundErrorMessage": "",
+
+    "DeleteTripTitle": "",
+    "FileUploadPending": "",
+    "FileUploadPendingMessage": "",
+    "NoPictureEmptyState": "",
+    "NoFileEmptyState": "",
+    "NoStepsEmptyState": "",
+    "NoPointsEmptyState": "",
+
+    "CatchPhrase": "",
+    "HomeTopDescription": "",
+    "PlanYourTrip": "",
+    "PlanYourTripDescription": "",
+    "HomePointsDescription": "",
+    "InviteYourFriends": "",
+    "InviteYourFriendsDescription": "",
+    "KeepYourDocuments": "",
+    "KeepYourDocumentsDescription": "",
+    "KeepYourMemories": "",
+    "KeepYourMemoriesDescription": ""
 }

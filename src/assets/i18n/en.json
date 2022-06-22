@@ -152,5 +152,29 @@
     "Doing": "in progress",
     "Done": "done",
 
-    "CreateTaskLabel": "Create a task"
+    "CreateTaskLabel": "Create a task",
+
+    "AddTravelersNotFoundErrorTitle": "The user does not exist",
+    "AddTravelersNotFoundErrorMessage": "Please check that the email is correct",
+    
+    "DeleteTripTitle": "Delete the trip",
+    "FileUploadPending": "Sending the current file...",
+    "FileUploadPendingMessage": "Please wait a moment",
+    "NoPictureEmptyState": "You have no pictures",
+    "NoFileEmptyState": "You don't have any files",
+    "NoStepsEmptyState": "You have no steps",
+    "NoPointsEmptyState": "You have no points of interest",
+
+    "CatchPhrase": "At the end of the world like at home",
+    "HomeTopDescription": "Septotrip is an application that allows you to plan a trip to the end of the world, a family weekend in the country, or a barathon, to follow your progress and to share it with other users, from a browser or a mobile application",
+    "PlanYourTrip": "Plan your trip",
+    "PlanYourTripDescription": "Septotrip allows you to plan a trip from the website, step by step, and to visualize it immediately on a map. For example, a road trip to Italy could have Milan as the starting point, Naples as the ending point, and stops in Venice, Florence and Rome.",
+    "HomePointsDescription": "Defining points of interest makes it easier to organize a trip by quickly visualizing the activities near each stop. If one is interested in the Colosseum, a family antipasti restaurant, and the Trevi Fountain, but also a visit to the Vatican, one can more easily plan one's travels in Rome during the stay.",
+    "InviteYourFriends": "Invite your friends.",
+    "InviteYourFriendsDescription": "Friends can be invited and join the trip from their own device. They will also be able to share photos and documents.",
+    "KeepYourDocuments": "Keep your documents",
+    "KeepYourDocumentsDescription": "Users can store their documents such as hotel reservations, maps or QR codes of any kind for easy access and never risk losing one during your trip.",
+    "KeepYourMemories": "Keep your memories",
+    "KeepYourMemoriesDescription": "Throughout your trip, Septotrip stays with you, in your pocket or backpack, to add your travel photos, keep them and share them."
+    
 }

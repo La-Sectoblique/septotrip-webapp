@@ -153,5 +153,29 @@
     "Done": "erledigt",
 
     "CreateTaskLabel": "Eine Aufgabe erstellen",
-    "CreateTaskPlaceholder": "Koffer packen"
+    "CreateTaskPlaceholder": "Koffer packen",
+
+    "AddTravelersNotFoundErrorTitle": "Der Benutzer existiert nicht",
+    "AddTravelersNotFoundErrorMessage": "Bitte überprüfen Sie, ob die E-Mail-Adresse korrekt ist",
+    
+    "DeleteTripTitle": "Reise löschen",
+    "FileUploadPending": "Sendet die aktuelle Datei...",
+    "FileUploadPendingMessage": "Bitte haben Sie einen Moment Geduld",
+    "NoPictureEmptyState": "Sie haben keine Fotos",
+    "NoFileEmptyState": "Sie haben keine Dateien",
+    "NoStepsEmptyState": "Sie haben keine Schritte",
+    "NoPointsEmptyState": "Sie haben keine Sehenswürdigkeiten",
+
+    "CatchPhrase": "Am Ende der Welt wie zu Hause",
+    "HomeTopDescription": "Septotrip ist eine App, mit der Sie eine Reise ans Ende der Welt, ein Familienwochenende auf dem Land oder einen Barathon planen, Ihren Fortschritt verfolgen und ihn mit anderen Nutzern teilen können - über einen Browser oder eine mobile Anwendung.",
+    "PlanYourTrip": "Planen Sie Ihre Reise",
+    "PlanYourTripDescription": "Mit Septotrip können Sie eine Reise von der Website aus Schritt für Schritt planen und sie sofort auf einer Karte anzeigen lassen. Ein Roadtrip durch Italien könnte beispielsweise in Mailand beginnen, in Neapel enden und in Venedig, Florenz und Rom enden",
+    "HomePointsDescription": "Das Festlegen von Points of Interest erleichtert die Planung einer Reise, da man schnell sehen kann, welche Aktivitäten sich in der Nähe der einzelnen Etappen befinden. Wenn man sich für das Kolosseum, ein familiengeführtes Antipasti-Restaurant und den Trevi-Brunnen interessiert, aber auch für einen Besuch des Vatikans, kann man seine Bewegungen in Rom während des Aufenthalts leichter planen.",
+    "InviteYourFriends": "Laden Sie Ihre Freunde ein",
+    "InviteYourFriendsDescription": "Freunde können eingeladen werden und von ihrem eigenen Gerät aus an der Reise teilnehmen. Sie können auch Fotos und Dokumente teilen",
+    "KeepYourDocuments": "Behalten Sie Ihre Dokumente",
+    "KeepYourDocumentsDescription": "Nutzer können ihre Dokumente wie Hotelreservierungen, Stadtpläne oder QR-Codes von Pandemien speichern, um sie leichter zugänglich zu machen und nie Gefahr zu laufen, ein einziges Dokument während der Reise zu verlieren",
+    "KeepYourMemories": "Bewahren Sie Ihre Erinnerungen",
+    "KeepYourMemoriesDescription": "Septotrip bleibt während der gesamten Reise in Ihrer Tasche oder Ihrem Rucksack bei Ihnen, um Ihre Reisefotos hinzuzufügen, sie aufzubewahren und mit anderen zu teilen."
+    
 }
