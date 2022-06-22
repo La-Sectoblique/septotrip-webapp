@@ -1,14 +1,13 @@
-// .header-wrapper {
+.settings-icon {
+    font-size: 1.7rem;
+}
 
-//     nav {
-//         padding: 0!important;
-//     }
-// }
+.menu-btn {
+    text-transform: none!important;
+}
 
 .header-wrapper {
     width: 100vw;
-    // background-color: #7800B0;
-    // height: 100%;
 
     ul {
         height: 100%;
@@ -16,6 +15,7 @@
         align-items: center;
         margin: 0;
         padding: 0;
+        padding-right: 1rem;
 
         li {
             text-decoration: none;
@@ -30,7 +30,7 @@
             }
         }
 
-        a, p {
+        a, p, .menu-btn {
             text-decoration: none;
             color: rgb(224, 224, 224);
             font-size: 1.5rem;
@@ -41,8 +41,6 @@
             }
         }
     }
-
-
 }
 
 .right{
