@@ -124,8 +124,7 @@
     "Confirm": "Confirmer",
     "Cancel": "Annuler",
     "ConfirmTripDeletionMessage": "Etes vous sur de vouloir supprimer le voyage",
-    
-    "DeleteTripTitle": "Supprimer le voyage",
+
     "UpdateFileLinkedElements": "Modifier les élements liés au fichier",
     "Paths": "Trajets",
     "To": "Vers",
@@ -166,5 +165,15 @@
     "KeepYourDocuments": "Garder vos documents",
     "KeepYourDocumentsDescription": "Les utilisateurs peuvent stocker leurs documents tels que réservations d’hôtels, plans ou QR codes de pandémies en tout genre afin d’en faciliter l’accès et ne jamais risquer d’en perdre un seul pendant votre voyage.",
     "KeepYourMemories": "Conserver vos souvenirs",
-    "KeepYourMemoriesDescription": "Tout au long du voyage, Septotrip reste avec vous, dans votre poche ou votre sac à dos, pour ajouter vos photos de voyage, les conserver et les partager."
+    "KeepYourMemoriesDescription": "Tout au long du voyage, Septotrip reste avec vous, dans votre poche ou votre sac à dos, pour ajouter vos photos de voyage, les conserver et les partager.",
+    "AddTravelersNotFoundErrorTitle": "L'utilisateur n'existe pas",
+    "AddTravelersNotFoundErrorMessage": "Merci de vérifier que l'email est correct",
+    
+    "DeleteTripTitle": "Supprimer le voyage",
+    "FileUploadPending": "Envoie du fichier en cours...",
+    "FileUploadPendingMessage": "Merci de patienter quelques instants",
+    "NoPictureEmptyState": "Vous n'avez aucune photo",
+    "NoFileEmptyState": "Vous n'avez aucun fichier",
+    "NoStepsEmptyState": "Vous n'avez aucune étape",
+    "NoPointsEmptyState": "Vous n'avez aucun point d'intérêt"
 }

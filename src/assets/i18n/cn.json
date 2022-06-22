@@ -152,5 +152,17 @@
     "Doing":"正在进行",
     "Done":"完成",
 
-    "CreateTaskLabel": "创建一个任务"
+    "CreateTaskLabel": "创建一个任务",
+    "CreateTaskPlaceholder":"包装",
+
+    "AddTravelersNotFoundErrorTitle":"该用户不存在",
+    "AddTravelersNotFoundErrorMessage": "请检查电子邮件是否正确",
+    
+    "DeleteTripTitle": "删除行程",
+    "FileUploadPending": "发送当前文件...",
+    "FileUploadPendingMessage":"请稍候",
+    "NoPictureEmptyState": "你没有图片",
+    "NoFileEmptyState": "你没有文件",
+    "NoStepsEmptyState": "你没有步骤",
+    "NoPointsEmptyState": "你没有兴趣点"
 }

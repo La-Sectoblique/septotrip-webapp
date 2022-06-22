@@ -152,5 +152,16 @@
     "Doing": "em curso",
     "Done": "feito",
 
-    "CreateTaskLabel": "Criar uma tarefa"
+    "CreateTaskLabel": "Criar uma tarefa",
+
+    "AddTravelersNotFoundErrorTitle": "O utilizador não existe",
+    "AddTravelersNotFoundErrorMessage": "Por favor verifique se o e-mail está correcto",
+    
+    "DeleteTripTitle": "Delete the trip",
+    "FileUploadPending": "Enviando o ficheiro actual...",
+    "FileUploadPendingMessage": "Por favor aguarde um momento",
+    "NoPictureEmptyState": "Não tem fotografias",
+    "NoFileEmptyState": "Não tem ficheiros",
+    "NoStepsEmptyState": "Não tem passos",
+    "NoPointsEmptyState": "Não tem pontos de interesse"
 }

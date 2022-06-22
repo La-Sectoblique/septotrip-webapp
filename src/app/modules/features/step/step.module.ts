@@ -13,6 +13,7 @@ import { PathsModule } from '../paths/paths.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { StepDetailsComponent } from './components/step-details/step-details.component';
 import { FilesModule } from '../files/files.module';
+import { LottieModule } from 'ngx-lottie';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { FilesModule } from '../files/files.module';
     TranslateModule,
     FilesModule,
     NbTooltipModule,
+    LottieModule,
   ],
   declarations: [
     StepPreviewComponent,
