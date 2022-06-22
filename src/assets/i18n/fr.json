@@ -163,5 +163,6 @@
     "FileUploadPendingMessage": "Merci de patienter quelques instants",
 
     "NoPictureEmptyState": "Vous n'avez aucune photo",
-    "NoFileEmptyState": "Vous n'avez aucun fichier"
+    "NoFileEmptyState": "Vous n'avez aucun fichier",
+    "NoStepsEmptyState": "Vous n'avez aucune étape"
 }

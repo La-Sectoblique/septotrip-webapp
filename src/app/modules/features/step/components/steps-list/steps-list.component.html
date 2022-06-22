@@ -15,37 +15,47 @@
     </div>
     <div 
       cdkDropList 
-      class="step-list-wrapper"
+      class="step-list-wrapper h-100"
       (cdkDropListDropped)="drop($event)"
       [cdkDropListData]="steps"
     >
-      <ng-container *ngFor="let step of steps">
-        <div
-          cdkDrag
-          [cdkDragData]="step"
-          cdk
-          (mouseenter)="highlightStep(step.stepInstance.id)"
-          (mouseleave)="unHighlight()"
-        >
-          <spt-step-preview 
-            [step]="step"
-            [stepPoints]="points | filterPointsByStepId:step.stepInstance.id"
-            [isHighlighted]="(highlithedStepId$ | async) === step.stepInstance.id"
+      <ng-container *ngIf="steps.length > 0; else stepEmptyStateBlock">
+        <ng-container *ngFor="let step of steps">
+          <div
+            cdkDrag
+            [cdkDragData]="step"
+            cdk
+            (mouseenter)="highlightStep(step.stepInstance.id)"
+            (mouseleave)="unHighlight()"
           >
-            <div>
-              <button nbButton ghost (click)="editStep(step.stepInstance)"
-                [nbTooltip]="('UpdateInterestPointAndDocuments' | translate)"
-              >
-                <nb-icon class="cursor-pointer" icon="info-outline" status="primary"></nb-icon>
-              </button>
-              <button nbButton ghost (click)="deleteStep(step.stepInstance.id)">
-                <nb-icon class="cursor-pointer trash-icon-color" icon="trash-2-outline" status="danger"></nb-icon>
-              </button>
-            </div>
-            <nb-icon cdkDragHandle handle icon="menu-outline" class="cursor-grab flex-shrink-0"></nb-icon>
-          </spt-step-preview>
-        </div>
+            <spt-step-preview
+              [step]="step"
+              [stepPoints]="points | filterPointsByStepId:step.stepInstance.id"
+              [isHighlighted]="(highlithedStepId$ | async) === step.stepInstance.id"
+            >
+              <div>
+                <button nbButton ghost (click)="editStep(step.stepInstance)"
+                  [nbTooltip]="('UpdateInterestPointAndDocuments' | translate)"
+                >
+                  <nb-icon class="cursor-pointer" icon="info-outline" status="primary"></nb-icon>
+                </button>
+                <button nbButton ghost (click)="deleteStep(step.stepInstance.id)">
+                  <nb-icon class="cursor-pointer trash-icon-color" icon="trash-2-outline" status="danger"></nb-icon>
+                </button>
+              </div>
+              <nb-icon cdkDragHandle handle icon="menu-outline" class="cursor-grab flex-shrink-0"></nb-icon>
+            </spt-step-preview>
+          </div>
+        </ng-container>
       </ng-container>
+      <ng-template #stepEmptyStateBlock>
+        <div class="w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+          <div class="w-25">
+            <ng-lottie [options]="emptyStepsAnimation"></ng-lottie>
+          </div>
+          <h6 class="m-0">{{'NoStepsEmptyState' | translate}}</h6>
+        </div>
+      </ng-template>
     </div>
   </div>
 </ng-container>
