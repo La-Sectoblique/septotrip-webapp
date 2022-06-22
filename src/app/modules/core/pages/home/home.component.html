@@ -1,21 +1,19 @@
 <div class="d-flex flex-column align-items-center">
   <p class="catch-phrase">
-    Au bout du monde comme à la maison
+    {{'CatchPhrase' | translate}}
   </p>
   
-  <div class="card w-50">
+  <div class="card w-50 mb-4">
     <p>
-      Septotrip est une application permettant de planifier un voyage au bout du monde, un weekend en famille
-      à la campagne, ou encore un barathon, de suivre sa progression et de le partager à d’autres utilisateurs,
-      depuis un navigateur ou une application mobile.
+      {{'HomeTopDescription' | translate}}
     </p>
   </div>
 
   <ng-container
     [ngTemplateOutlet]="paragraphBlock"
     [ngTemplateOutletContext]="{
-      title: 'Planifiez votre voyage',
-      text: 'Septotrip vous permet de planifier un voyage depuis le site web, étape par étape, et de le visualiser immédiatement sur une carte. Par exemple, un road trip en Italie pourra avoir Milan comme point de départ, Naples comme point d’arrivée, et des étapes à Venise, Florence et Rome.',
+      title: ('PlanYourTrip' | translate),
+      text: ('PlanYourTripDescription' | translate),
       imgSrc: 'assets/pictures/septotrip-world-tour-transparant.png'
     }"
   ></ng-container>
@@ -23,8 +21,8 @@
   <ng-container
     [ngTemplateOutlet]="paragraphBlock"
     [ngTemplateOutletContext]="{
-      title: 'Points d’intérêt',
-      text: 'Définir des points d’intérêt permet de faciliter l’organisation d’un voyage en visualisant rapidement les activités à proximité de chaque étape. Si on est intéressé par le Colisée, un restaurant familial d’antipasti et la fontaine de Trevi, mais aussi par une visite du Vatican, on peut plus facilement prévoir ses déplacements dans Rome pendant le séjour.',
+      title: ('Points' | translate),
+      text: ('HomePointsDescription' | translate),
       imgSrc: 'assets/pictures/septotrip-logo-poststamp.png',
       isPictureInverted: true
     }"
@@ -33,30 +31,30 @@
   <ng-container
     [ngTemplateOutlet]="paragraphBlock"
     [ngTemplateOutletContext]="{
-      title: 'Inviter vos amis',
-      text: 'Des amis peuvent être invités et rejoindre le voyage depuis leur propre appareil. Ils pourront également partager des photos et des documents.'
+      title: ('InviteYourFriends' | translate),
+      text: ('InviteYourFriendsDescription' | translate)
     }"
   ></ng-container>
 
   <ng-container
     [ngTemplateOutlet]="paragraphBlock"
     [ngTemplateOutletContext]="{
-      title: 'Garder vos documents',
-      text: 'Les utilisateurs peuvent stocker leurs documents tels que réservations d’hôtels, plans ou QR codes de pandémies en tout genre afin d’en faciliter l’accès et ne jamais risquer d’en perdre un seul pendant votre voyage.'
+      title: ('KeepYourDocuments' | translate),
+      text: ('KeepYourDocumentsDescription' | translate)
     }"
   ></ng-container>
 
   <ng-container
     [ngTemplateOutlet]="paragraphBlock"
     [ngTemplateOutletContext]="{
-      title: 'Conserver vos souvenirs',
-      text: 'Tout au long du voyage, Septotrip reste avec vous, dans votre poche ou votre sac à dos, pour ajouter vos photos de voyage, les conserver et les partager.'
+      title: ('KeepYourMemories' | translate),
+      text: ('KeepYourMemoriesDescription' | translate)
     }"
   ></ng-container>
 </div>
 
 <ng-template let-title="title" let-text="text" let-imgSrc="imgSrc" let-isPictureInverted="isPictureInverted" #paragraphBlock>
-  <div class="card d-flex flex-column align-items-center w-75">
+  <div class="card d-flex flex-column align-items-center w-75 mb-4">
     <h3 class="m-0">{{title}}</h3>
     <div class="d-flex align-items-center" [class.flex-row-reverse]="isPictureInverted">
       <p>
