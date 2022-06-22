@@ -60,14 +60,6 @@ export class PointsListComponent implements OnInit {
     this.store.dispatch(DeleteTripPoint({ tripId: this.tripId, pointId }));
   }
 
-  editPoint(editedPoint: PointOutput): void {
-    this.nbDialogService.open(PointDetailsComponent, {
-      context: {
-        point: editedPoint,
-      },
-    });
-  }
-
   getLinkedDropListId(): string[] {
     return this.daysId.map((dayId) => `${dayId}-day-dropzone`);
   }

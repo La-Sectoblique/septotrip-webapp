@@ -5,6 +5,13 @@
   <p *ngIf="point.description" class="ellips-informations m-0">{{point.description}}</p>
   <div class="d-flex align-items-center justify-content-center">
     <ng-content select="[handle]"></ng-content>
-    <ng-content></ng-content>
+    <div class="d-flex">
+      <button nbButton ghost (click)="openPointInfos()"
+        [nbTooltip]="('UpdateInterestPointAndDocuments' | translate)"
+      >
+        <nb-icon class="cursor-pointer" icon="info-outline" status="primary"></nb-icon>
+      </button>
+      <ng-content></ng-content>
+    </div>
   </div>
 </div>
