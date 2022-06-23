@@ -182,11 +182,19 @@ export class TripsMapComponent implements OnChanges, OnInit {
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   updatePointAfterDrag(evt: any, updatePoint: PointOutput): void {
+    console.log('point', updatePoint);
     this.store.dispatch(UpdateTripPoint({
       pointId: updatePoint.id,
       tripId: this.tripId,
       editedPoint: {
-        ...updatePoint,
+        authorId: updatePoint.authorId,
+        createdAt: updatePoint.createdAt,
+        description: updatePoint.description,
+        id: updatePoint.id,
+        stepId: updatePoint.stepId,
+        title: updatePoint.title,
+        tripId: updatePoint.tripId,
+        updatedAt: updatePoint.updatedAt,
         localisation: {
           ...updatePoint.localisation,
           // eslint-disable-next-line no-underscore-dangle
