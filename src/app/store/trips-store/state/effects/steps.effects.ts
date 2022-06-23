@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { StepOutput } from '@la-sectoblique/septoblique-service/dist/types/models/Step';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import {  map, mergeMap, switchMap } from 'rxjs';
+import {  catchError, map, mergeMap, switchMap } from 'rxjs';
 import { StepsService } from 'src/app/modules/features/step/services/steps.service';
 import * as TripsActions from '../trips.actions';
 import * as UtilsActions from '../../../utils-store/state/utils.actions';
@@ -22,7 +22,7 @@ export class StepsEffects {
           TripsActions.GetTripStepsSuccess({ steps, tripId }),
         ],
         ),
-        // @TODO: catchError(() => CALL ERROR ACTION),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));
@@ -59,7 +59,7 @@ export class StepsEffects {
             message: this.translate.instant('StepCreated'),
           }),
         ]),
-        // @TODO: catchError(() => CALL ERROR ACTION),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       ),
     ),
   ));
@@ -76,7 +76,7 @@ export class StepsEffects {
             message: this.translate.instant('StepUpdated'),
           }),
         ]),
-        // @TODO: catchError(() => CALL ERROR ACTION),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       )),
   ));
 
@@ -91,7 +91,7 @@ export class StepsEffects {
             message: this.translate.instant('StepDeleted'),
           }),
         ]),
-        // @TODO: catchError(() => CALL ERROR ACTION),
+        catchError(() => [UtilsActions.ErrorHappenedNotify()]),
       )),
   ));
 

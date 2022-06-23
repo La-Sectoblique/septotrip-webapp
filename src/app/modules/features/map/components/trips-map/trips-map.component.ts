@@ -186,7 +186,14 @@ export class TripsMapComponent implements OnChanges, OnInit {
       pointId: updatePoint.id,
       tripId: this.tripId,
       editedPoint: {
-        ...updatePoint,
+        authorId: updatePoint.authorId,
+        createdAt: updatePoint.createdAt,
+        description: updatePoint.description,
+        id: updatePoint.id,
+        stepId: updatePoint.stepId,
+        title: updatePoint.title,
+        tripId: updatePoint.tripId,
+        updatedAt: updatePoint.updatedAt,
         localisation: {
           ...updatePoint.localisation,
           // eslint-disable-next-line no-underscore-dangle
